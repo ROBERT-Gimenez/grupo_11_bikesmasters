@@ -1,0 +1,22 @@
+{
+  "name": "grupo_11_bikesmasters",
+  "version": "1.0.0",
+  "description": "** Bienvenidos a Bikes-Master\r **",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrianFloresOk/grupo_11_bikesmasters.git"
+  },
+  "author": "bikes_master",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrianFloresOk/grupo_11_bikesmasters/issues"
+  },
+  "homepage": "https://github.com/BrianFloresOk/grupo_11_bikesmasters#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
