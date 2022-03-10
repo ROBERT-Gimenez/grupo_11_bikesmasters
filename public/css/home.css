@@ -46,7 +46,8 @@ main h3 {
 }
 
 main section {
-    padding: 10px;;
+    padding: 10px;
+
 } 
 
 main section article {
@@ -60,6 +61,7 @@ main section article {
 main section article div.producto {
     width: 100%;
     height: 100%;
+    padding: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,10 +75,22 @@ main section article p {
     height: fit-content
 }
 
+
+main section.categorias div {
+    width: 100%;
+    display: flex;
+    margin: 10px 0px;
+}
+main section.categorias div img {
+    width: 100%;
+}
+
 footer {
     height: 200px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+
 
 @media (min-width: 760px) {
     main section {
