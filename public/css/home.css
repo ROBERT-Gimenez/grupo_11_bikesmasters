@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 :root {
@@ -9,21 +10,17 @@
     --negro: #1B1717;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-    background-color: var(--naranja);
-    height: fit-content;
-    width: fit-content;
-    border-radius: 2px;
-}
 
+/* HEADER */
 
 header {
     width: 100%;
     height: 160px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+
+/* MAIN */
 
 main {
     background-color: lightgray;
@@ -47,8 +44,12 @@ main h3 {
 
 main section {
     padding: 10px;
-
 } 
+
+main section a {
+    text-decoration: none;
+    color: rgb(187, 173, 173);
+}
 
 main section article {
     display: flex;
@@ -56,9 +57,10 @@ main section article {
     background-color: white;
     margin-bottom: 1rem;
     align-items: center;
+    justify-content: space-between;
 }
 
-main section article div.producto {
+main section article div.img-producto {
     width: 100%;
     height: 100%;
     padding: 2rem;
@@ -67,7 +69,7 @@ main section article div.producto {
     align-items: center;
 }
 
-main section article div.producto img {
+main section article div.img-producto img {
     width: 100%;
 }
 
@@ -76,14 +78,36 @@ main section article p {
 }
 
 
-main section.categorias div {
-    width: 100%;
+main section.categorias div.img-link {
     display: flex;
+    position: relative;
+    width: 100%;
     margin: 10px 0px;
 }
-main section.categorias div img {
+
+main section.categorias div.img-link img {
     width: 100%;
 }
+
+main section.categorias div.img-link span {
+    text-align: center;
+    background-color: rgba(27, 23, 23, 0.8);
+    width: 80%;
+    padding: 0.8rem;
+    border-radius: 5px;
+    position: absolute;
+    top: 40%;
+    left: 10.5%;
+}
+
+main section.categorias div.img-link span a {
+    font-size: 21px;
+    width: 100%;
+    font-weight: bolder;
+}
+
+
+/* FOOTER */
 
 footer {
     height: 200px;
