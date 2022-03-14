@@ -8,10 +8,49 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- Footer -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://kit.fontawesome.com/adc0842e66.js" crossorigin="anonymous"></script>
+    <!-- Style sheets -->
     <link rel="stylesheet" href="/css/home.css">
     <title>Bikesmasters</title>
 </head>
 <body>
+    <header>
+        <div class="contenedor_header">
+        <a href="/header.html"><img src="/images/logo-sinfondo.svg" alt="logo" class="logo"></a>
+        <div class="buscador">
+        <form action="/search" method="GET" class="search-form">
+                     <input type="text" name="keywords" placeholder="Buscar productos" class="search-form_input">
+                     <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+                 </form></div>
+        <div class="botones">
+        <button class="carrito" ><img src="/images/carrito.svg" alt="carrito" class="carrito"> Carrito</button>
+        <button class="inicio">Iniciar Sesion</button>
+        <button class="registrar">Registrar</button>
+         </div>   
+        </div>
+                   
+        <nav>
+            <input type="checkbox" id="menu" class="botton">
+            <label for="menu"><i class="fas fa-bars"></i>  </label>
+            <ul>
+                <li id="app_nav"><a href="#">Registrarse</a></li>
+                <li id="app_nav"><a href="#">Cuenta</a></li>
+                <li id="app_nav"><a href="#">Carrito</a></li>
+                <li><a href="#">Accesorios</a></li>
+                <li><a href="#">Bicicletas</a></li>
+                <li><a href="#">Fitnes</a></li>
+                <li><a href="#">Indumentaria</a></li>
+                <li><a href="#">Repuestos</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Consejos</a></li>
+               
+            </ul>
+        </nav>
+    </header>
+
     <main>
         <div class="banner">
             <img src="/images/Banner-1.svg" alt="banner">
@@ -148,6 +187,24 @@
             </div>
         </section>
     </main>
-    <footer></footer>
+    <footer>
+      
+        <ul class="social_icon">
+            <li><a href="#"><ion-icon name="logo-facebook"></ion-icon.com></a></li>
+            <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-youtube"></ion-icon></a></li>
+
+        </ul>
+        <ul class="menu">
+            <li><a href="#">MercadoPago</a></li>
+            <li><a href="#"> Master Card</a></li>
+            <li><a href="#">Visa</a></li>
+            <li><a href="#">PayPal</a></li>
+            <li><a href="#">PagoFacil</a></li>
+        </ul>
+        <p>Comision 13 - Grupo 11 - &#169; Derechos Reservados.</p>
+    </footer>
+
 </body>
 </html>
