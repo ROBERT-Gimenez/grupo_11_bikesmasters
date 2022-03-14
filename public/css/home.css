@@ -1,8 +1,10 @@
+@import url(Header.css);
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 :root {
@@ -36,10 +38,14 @@ main div.banner img{
     width: 100%;
 }
 
-main h3 {
+main div.titulo-seccion {
+    margin: 10px;
+}
+
+main div h3 {
     color: var(--negro);
-    font-weight: 900;
-    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 26px;
 }
 
 main section {
@@ -57,7 +63,6 @@ main section article {
     background-color: white;
     margin-bottom: 1rem;
     align-items: center;
-    justify-content: space-between;
 }
 
 main section article div.img-producto {
@@ -67,16 +72,36 @@ main section article div.img-producto {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 main section article div.img-producto img {
     width: 100%;
+    margin: 1rem;
 }
 
 main section article p {
-    height: fit-content
+    height: fit-content;
+    margin: 10px;
 }
 
+main section article p.sale-off {
+    position: absolute;
+    margin: 5px 10px;
+    bottom: 1rem;
+    left: 0;
+    background: var(--naranja);
+    color: white;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+main section article p.precio {
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+/* Section Categorias */
 
 main section.categorias div.img-link {
     display: flex;
@@ -122,8 +147,36 @@ footer {
         flex-wrap: wrap;
         gap: 2rem;
         justify-content: center;
+        padding-bottom: 10px;
+        margin-top: 40px;
     }
     main section article {
-        width: 45%;
+        width: 40%;
+        margin-bottom: 0px;
+    }
+
+    main section article div.img-producto {
+        height: 300px;
+    }
+
+    main section.categorias {
+        gap: 0.5rem;
+    }
+
+    main section.categorias div.img-link  {
+        width: 40%;
+        margin: 0px;
+    }
+}
+
+/* DESKTOP */
+
+@media (min-width: 1024px) {
+    main section article {
+        width: 20%;
+    }
+
+    main section.categorias div.img-link {
+        width: 30%;
     }
 }
