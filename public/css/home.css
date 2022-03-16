@@ -14,15 +14,6 @@
 }
 
 
-/* HEADER */
-
-/* header {
-    width: 100%;
-    height: 160px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-} */
-
-
 /* MAIN */
 
 main {
@@ -30,14 +21,9 @@ main {
 }
 
 main div.banner {
-    display: flex;
-    width: 100%;
-    margin-bottom: 1rem;
+    display: none;
 }
 
-main div.banner img{
-    width: 100%;
-}
 
 main div.titulo-seccion {
     margin: 10px;
@@ -133,16 +119,23 @@ main section.categorias div.img-link span a {
 }
 
 
-/* FOOTER */
+/* Media Queries */
 
-footer {
-    height: 200px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-
+/* TABLET */
 
 @media (min-width: 760px) {
+    main div.banner {
+        display: flex;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    main div.banner img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
     main section {
         display: flex;
         flex-wrap: wrap;
