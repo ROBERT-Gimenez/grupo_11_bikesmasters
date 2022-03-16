@@ -4,11 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro-Bikesmasters</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Registro</title>
 </head>
-<body>
-    <section>
-        
-    </section>
+<body class="forms">
+    <main>
+        <section class="form-container login">
+            <h2>Registrarse</h2>
+            <form action="" method="">
+                    <div class="input-container">
+                        <label for="nombre">Nombre y apellido</label>
+                        <input type="text" name="nombre" class="input-style"placeholder="Ingrese su nombre y apellido">
+                    </div>
+                    <div class="input-container">
+                        <label for="tel">Celular</label>
+                        <input type="num" name="tel" class="input-style"placeholder="Ingrese su número">
+                    </div>
+                    <div class="input-container">
+                        <label for="email">Correo electronico</label>
+                        <input type="email" name="email" class="input-style"placeholder="Ingrese su mail">
+                    </div>
+                    <div class="input-container">
+                        <label for="pass">Ingrese una contraseña</label>
+                        <input type="password" name="pass" class="input-style">
+                    </div>
+                    <div class="input-container">
+                        <label for="pass">Confirme su contraseña</label>
+                        <input type="password" name="pass" class="input-style">
+                    </div>
+                    <div class="btn-container">
+                        <button type="submit" class="btn btn-submit">Registrarme</button>
+                        <span><a href="login.html">Ya tengo cuenta</a></span>
+                        <span>Acepto términos y condiciones<input type="checkbox" name="terms"></span>
+                    </div>
+            </form>
+        </section>
+    </main>
 </body>
 </html>
