@@ -110,6 +110,9 @@ main section.categorias div.img-link span {
     position: absolute;
     top: 40%;
     left: 10.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 main section.categorias div.img-link span a {

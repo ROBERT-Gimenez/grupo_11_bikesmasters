@@ -1,25 +1,28 @@
-/* *{
+*{
     box-sizing: border-box;
      margin: 0px;
     padding: 0px; 
-} */
-/* body{
+}
+body{
     font-size:10px ;
     min-height: 100vh;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 300;
-    background-color: gray;
-} */
+}
+a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+}
 header{
     background-color: white;
-    border-bottom:1px solid black;
 }
 div.botones,
 img.carrito{
 display:none;
 }
-div button.carrito{
+button.carrito{
     display: none;
 }
 .contenedor_header{
@@ -48,7 +51,7 @@ form{
     padding: 7px 35px 7px 7px;
     border-radius: 60px;
     height: 30px;
-    font-size: 1.5em;
+    font-size: 0.8rem;
     outline: none;
 }
 .search-form_button {
@@ -56,13 +59,13 @@ form{
     right: -1px;
     height: 1.9rem;
     width: 1.9rem;
-    background-color: #ff4500;
+    background-color: #ae7662;
     cursor: pointer;
     border-radius: 50%;
 }
 .logo{
-    width: 18rem;
-    margin: -9rem 2rem -9rem 10px;
+    width: 12rem;
+    margin: -9rem 2rem -6.8rem 10px;
    
 }
 @keyframes menu-out{
@@ -90,7 +93,7 @@ header nav ul {
     top: 1rem;
     left: 0;
     width: 100%;
-    height: 10rem;
+    height: 12rem;
     background-color: black;
     z-index: 10;
     display: flex;
@@ -157,7 +160,7 @@ header nav input{
 }
 
 /* ---version Tablet--- */
-@media (min-width:400px) {
+@media (min-width:700px) {
     .contenedor_header{
         flex-direction: row;
         justify-content: space-between;
@@ -226,6 +229,7 @@ header nav input{
         align-items: flex-end;
         height: 4rem;
         padding-bottom: 0.6rem;
+        text-decoration: none;
     }
     img.carrito{
         display: flex;
@@ -243,17 +247,23 @@ header nav input{
         background-color: #ff4500;
     }
     div button.inicio:hover{
-        background-color: rgba(27, 27, 245, 0.562);
+        background-color: rgba(0, 0, 0, 0.562);
         color: white;
+    }
+    div button.inicio a:hover{
+        color:white
     }
     div button.registrar:hover{
         background-color: #ff4500;
         color: white;
     }
+    div button.registrar a:hover{
+        color: white;
+    }
     .logo{
         padding-bottom: 3.8rem;
         width: 14rem;
-        margin: -9rem -2rem -9rem 10px;
+        margin: -9rem -2rem -9.4rem 10px;
     }
 }
 @media (min-width:988px){
