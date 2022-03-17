@@ -1,11 +1,12 @@
-
+@import url('Header.css');
+@import url('footer.css');
 
 /*------------------------------HEADER------------------------*/
-header{
+/* header{
     background-color: white;
     border-bottom:1px solid black;
-}
-h3.titulo_producto{
+} */
+/* h3.titulo_producto{
 text-align: center;
 
 }
@@ -152,6 +153,7 @@ header nav input{
 }
 
 /* ---version Tablet--- */
+/*
 @media (min-width:400px) {
     .contenedor_header{
         flex-direction: row;
@@ -261,7 +263,7 @@ header nav input{
     div button.carrito{
         margin-right: 6rem;
     }    
-}
+} */
 
 /*-----------------------------Main-----------------------------*/
     * {
@@ -370,7 +372,6 @@ main div span.protegida{
     margin-top: 4rem;
 }
 
-}
 div.dropdown{
 color: gray ;
 margin-left: 1rem;
@@ -440,9 +441,5 @@ margin-top: 1rem;
        font-size: 20px;
      margin-top: 1.6rem;
      margin-left: 1rem;
-   
    }
-
-/*----------computadora----------------*/
-@media (min-width:768px) { 
-  
+}
