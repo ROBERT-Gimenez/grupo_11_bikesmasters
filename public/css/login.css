@@ -3,6 +3,12 @@
     margin: 0;
     padding: 0;  
   }
+  img{
+    width: 18rem;
+    position: relative;
+    top: 5rem;
+    padding-right: 18px;
+  }
   
   body.forms {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -22,6 +28,7 @@
   body.forms h2{
     margin-bottom: 1rem;
     text-align: center;
+    text-transform: uppercase;
   
   }
   body.forms hr{
@@ -118,7 +125,7 @@ section.login {
     position: absolute;
     top: -9rem;
     margin: auto;
-    text-align: center;;
+    text-align: center;
 }
 div.google{
     display: flex;
@@ -128,6 +135,8 @@ div.google{
     width: 14rem;
     justify-content: center;
     align-items: center;
+    position: relative;
+    bottom: 1rem;
 }
 div.google button{
     width: 100%;
