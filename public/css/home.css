@@ -128,7 +128,31 @@ main section.categorias div.img-link span a {
         display: flex;
         width: 100%;
         margin-bottom: 1rem;
+        position: relative;
     }
+
+    main div.banner .ver-mas {
+        display: flex;
+        position: absolute;
+        top: 45%;
+        right: 30px;
+        border: none;
+        border-radius: 5px;
+        background-color: var(--negro);
+        justify-content: center;
+        align-items: center;
+        width: 4.5rem;
+        height: 1.5rem;
+        padding: 2px;
+    }
+
+    main div.banner .ver-mas a {
+        width: 100%;
+        height: 100%;
+        color: white;
+        text-decoration: none;
+    }
+
     
     main div.banner img{
         width: 100%;
