@@ -92,7 +92,7 @@ Bienvenidos a Bikes-Master
 ---
 *** Elegimos Trello porque es una herramienta muy flexible que permite dar seguimiento a todo tipo de proyectos o procesos. Les dejamos un tablero de muestra:***    
 
-> ***《grupo-11》:***  [Trello](http://https://trello.com/b/MxYWjp0i/%E3%80%8Agrupo-11%E3%80%8B-c13 "Trello")
+> ***《grupo-11》:*** [Trello](https://trello.com/b/MxYWjp0i "Trello")
 ----
 
 
