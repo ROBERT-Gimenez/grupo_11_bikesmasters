@@ -443,3 +443,26 @@ margin-top: 1rem;
      margin-left: 1rem;
    }
 }
+@media (min-width:700px){
+    main div.box1{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    div.carousel#carouselExampleSlidesOnly{
+        max-width: 50%;
+    }
+    div.carousel-inner{
+        width: 100%;
+    }
+    div.p-detalles{
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    /* border: 1px solid grey; */
+    box-shadow: 2px 1px 18px 1px;
+    margin-left: 0.3rem;
+    padding: 2rem;
+    border-radius: 10px;
+    }
+}
