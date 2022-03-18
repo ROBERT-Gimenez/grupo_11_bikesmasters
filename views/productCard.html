@@ -6,26 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css">
-    
-    
+    <link rel="stylesheet" href="/css/carrito.css">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-    <script src="https://kit.fontawesome.com/adc0842e66.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/adc0842e66.js" crossorigin="anonymous"></script>
 
     <title>Tienda</title>
 </head>
 
 <body>
-
-    
-    <header>
-        <div class="container">
-            <h1 class="text-center">CARRITO DE COMPRAS</h1>
-            <hr>
-        </div>
+        <header>
+            <div class="contenedor_header">
+            <a href="/views/header.html"><img src="/images/logo-sinfondo.svg" alt="logo" class="logo"></a>
+            <div class="buscador">
+            <form action="/search" method="GET" class="search-form">
+                         <input type="text" name="keywords" placeholder="Buscar productos" class="search-form_input">
+                         <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+                     </form></div>
+            <div class="botones">
+            <button class="carrito" ><img src="/images/carrito.svg" alt="carrito" class="carrito"> Carrito</button>
+            <button class="inicio">Iniciar Sesion</button>
+            <button class="registrar">Registrar</button>
+             </div>   
+            </div>
+                       
+            <nav>
+                <input type="checkbox" id="menu" class="botton">
+                <label for="menu"><i class="fas fa-bars"></i>  </label>
+                <ul>
+                    <li id="app_nav"><a href="#">Registrarse</a></li>
+                    <li id="app_nav"><a href="#">Cuenta</a></li>
+                    <li id="app_nav"><a href="#">Carrito</a></li>
+                    <li><a href="#">Accesorios</a></li>
+                    <li><a href="#">Bicicletas</a></li>
+                    <li><a href="#">Fitnes</a></li>
+                    <li><a href="#">Indumentaria</a></li>
+                    <li><a href="#">Repuestos</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Consejos</a></li>
+                   
+                </ul>
+            </nav>
     </header>
+    <br>
     <!-- START SECTION STORE -->
     <section class="store">
         <div class="container">
@@ -34,11 +58,11 @@
 
                     <div class="col-12 col-md-6">
                         <div class="item shadow mb-4">
-                            <h3 class="item-title">Kit de reparacion de bicicleta</h3>
-                            <img class="item-image" src="/images/Kit-bici-2.png">
+                            <h3 class="item-title">CASCO</h3>
+                            <img class="item-image" src="/images/casco.jpg">
 
                             <div class="item-details">
-                                <h4 class="item-price">$1899</h4>
+                                <h4 class="item-price">3300</h4>
                                 <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                             </div>
                         </div>
@@ -50,7 +74,7 @@
                             <img class="item-image" src="/images/bicivENTA (1).jpg">
 
                             <div class="item-details">
-                                <h4 class="item-price">$71.489</h4>
+                                <h4 class="item-price">71489</h4>
                                 <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                             </div>
                         </div>
@@ -60,19 +84,19 @@
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <div class="item shadow mb-4">
-                            <h3 class="item-title">REMERA RALEIGH MANGA CORTA TALLES VARIADOS </h3>
+                            <h3 class="item-title">REMERA RALEIGH MANGA CORTA </h3>
 
                             <img class="item-image" src="/images/ROPA.jpg">
 
                             <div class="item-details">
-                                <h4 class="item-price">$4.950</h4>
+                                <h4 class="item-price">4950</h4>
                                 <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="item shadow mb-4">
-                            <h3 class="item-title">ASIENTO BICICLETA NIÑO MTI ACTIVE CONTROL</h3>
+                            <h3 class="item-title">Asiento Bicicleta Niño Mti Active Control</h3>
 
                             <img class="item-image" src="/images/ASIENTO.jpg">
 
@@ -119,17 +143,17 @@
             <div class="row">
                 <div class="col-6">
                     <div class="shopping-cart-header">
-                        <h5>Producto</h5>
+                        <h6>Producto</h6>
                     </div>
                 </div>
                 <div class="col-2">
                     <div class="shopping-cart-header">
-                        <h5 class="text-truncate">Precio</h5>
+                        <h6 class="text-truncate">Precio</h6>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="shopping-cart-header">
-                        <h5>Cantidad</h5>
+                        <h6>Cantidad</h6>
                     </div>
                 </div>
             </div>
@@ -142,13 +166,13 @@
             <div class="row">
                 <div class="col-12">
                     <div class="shopping-cart-total d-flex align-items-center">
-                        <p class="mb-0"><H5>TOTAL :</H5></p>
-                        <p class="ml-4 mb-0 shoppingCartTotal">0</p>
+                        <h5 class="mb-0">Total</h5>
+                        <h5 class="ml-4 mb-0 shoppingCartTotal">0</h5>
                         <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
                             data-delay="2000">
                             <div class="toast-header">
                                 <span>✅</span>
-                                <strong class="mr-auto ml-1 text-secondary">EL ARTICULO YA FUE SELECCIONADO</strong>
+                                <strong class="mr-auto ml-1 text-secondary">Elemento en el carrito</strong>
                                 <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -177,7 +201,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p>PRONTO RECIBIRA SU PEDIDO</p>
+                            <p>Pronto recibirá su pedido</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -198,18 +222,18 @@
     <footer>
       
         <ul class="social_icon">
-            <li><a href="#"><ion-icon name="logo-facebook"></ion-icon.com></a></li>
-            <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
-            <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
-            <li><a href="#"><ion-icon name="logo-youtube"></ion-icon></a></li>
+            <li><a href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-icon.com></a></li>
+            <li><a href="https://twitter.com/?lang=es"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a href="https://www.instagram.com/?hl=es-la"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li><a href="https://www.youtube.com/"><ion-icon name="logo-youtube"></ion-icon></a></li>
 
         </ul>
         <ul class="menu">
-            <li><a href="#">MercadoPago</a></li>
-            <li><a href="#"> Master Card</a></li>
-            <li><a href="#">Visa</a></li>
-            <li><a href="#">PayPal</a></li>
-            <li><a href="#">PagoFacil</a></li>
+            <li><a href="https://www.mercadopago.com.ar/">MercadoPago</a></li>
+          <li><a href="https://www.masterconsultas.com.ar/"> Master Card</a></li>
+          <li><a href="https://www.visa.com.ar/">Visa</a></li>
+          <li><a href="https://www.paypal.com/">PayPal</a></li>
+          <li><a href="https://www.e-pagofacil.com/">PagoFacil</a></li>
         </ul>
         <p>Comision 13 - Grupo 11 - &#169; Derechos Reservados.</p>
     </footer>
