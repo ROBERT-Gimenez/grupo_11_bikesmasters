@@ -211,4 +211,9 @@ main section.categorias div.img-link span a {
     main section.categorias div.img-link {
         width: 30%;
     }
+
+    main section.categorias div.img-link a:hover {
+        color: white;
+    }
+
 }

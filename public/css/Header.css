@@ -1,15 +1,15 @@
-*{
+/* *{
     box-sizing: border-box;
      margin: 0px;
     padding: 0px; 
-}
-body{
+} */
+/* body{
     font-size:10px ;
     min-height: 100vh;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 300;
-}
+} */
 a{
     text-decoration: none;
     color: black;

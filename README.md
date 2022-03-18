@@ -4,9 +4,9 @@ Bienvenidos a Bikes-Master
 
 > **¿Qué es Bikes-Master y Para que sirve?**
 
-- Descripción del Producto *¿Qué es Bikes-Master y Para que sirve? Bikes-Master es una plataforma ecommerce que ofrece la venta de accesorios, herramientas, bicicletas. este sitio esta completamente relacionado para los amantes a las bicicletas dándoles el mejor servicio a la hora de usar nuestro ecommerce.
+- Bikes-Master es una plataforma ecommerce que ofrece la venta de accesorios, herramientas, bicicletas y productos relacionados con el mundo del ciclismo. Este sitio esta completamente relacionado para los amantes a las bicicletas dándoles el mejor servicio a la hora de usar nuestra plataforma.
 
-- Puedes vender todos tus productos, en todo el país, sin importar dónde residas. Tu cuenta de Bikes-Master puede ser un complemento de tu local a la calle o ser tu único canal de ventas. La plataforma de comercio electrónico de Biker-Master aumenta el volumen de ventas si ofreces buenos productos a buenos precios. Es como tener un local abierto las 24 horas los 7 días de la semana.
+- Puedes vender todos tus productos, en todo el país sin importar dónde residas. Tu cuenta de Bikes-Master puede ser un complemento de tu local a la calle o ser tu único canal de ventas. La plataforma de comercio electrónico de Biker-Master aumenta el volumen de ventas si ofreces buenos productos a buenos precios.
 
 > **Bikes-Master: entrega rápida y segura**
 
@@ -21,7 +21,7 @@ Bienvenidos a Bikes-Master
 
 ----------
 > #### Una breve descripción de los integrantes del equipo
-> - *Hola! Mi Nombres es: **Brian Flores** tengo 27 años, vivo en capital federal - Buenos Aires Argentina, Este año que paso logre aplicar a una beca de programación “full-stack con JavaScript” Junto a mis ex compañeros de estudios decidimos realizar este proyecto, para lograrlo pusimos todo de Nosotros, como también muchas horas de sueño. Personalmente estoy muy conforme con nuestro trabajo y espero poder hacer mucho mas proyectos como este en el futuro.*
+> - *Hola! Mi Nombres es: **Brian Flores** tengo 27 años, vivo en Capital Federal, Buenos Aires, Argentina. Este año logre aplicar a una beca de programación “full-stack con JavaScript” y junto a mis ex compañeros de grupo llevamos a cabo este proyecto integrador del curso que fue algo que nos llevo muchas horas de trabajo y dedicación, personalmente estoy muy conforme con nuestro trabajo y espero poder hacer mucho mas proyectos como este en el futuro.*
 
 > - *Hola! Mi Nombre es: **Carlos Moreno Sanabria**, actualmente trabajo en una fuerza de seguridad, Gendarmería nacional, tengo conocimientos previo en el área de informática, realizando trabajos de Programación y diseño de pagina Web, Conocimientos adquiridos atreves del curso dictado en “Formar”, Mi manejo de idiomas como Portugués e Ingles Básico. Tengo buena experiencia en trabajos en equipo adaptándome rápidamente ante diferentes ecosistemas laborales. Permitiéndome desarrollarme tanto personal como profesionalmente*
 
@@ -35,30 +35,32 @@ Bienvenidos a Bikes-Master
 
  **¿Quién será nuestra audiencia objetiva?**
 
->   ####***1. Audiencia objetiva Vendedor:***
+>   ***1. Audiencia objetiva Vendedor:***
 
 > Tiendas físicas:
-- este segmento busca expandir su negocio atraves de Bikes-Master, publicando sus productos mas relevantes con los mejores precios para que sea mas atractivo para nuestros compradores. no tiene una edad especifica. ingreso económico Medio-Alto.
+
+ Este segmento busca expandir su negocio a traves de Bikes-Master, publicando sus productos mas relevantes con los mejores precios para que sea mas atractivo para nuestros compradores.
 
 > Vendedores sin tienda física o Emprendedores:
 
->-  Estos dos factores están enfocados en el mismo segmento porque es un mismo grupo de personas que buscan vender la totalidad de sus productos en nuestra plataforma, no tienen un establecimiento, se enfocan al 100 porciento en publicar su negocio en nuestra plataforma buscando hacer crecer su negocio. son personas de 18 a 50 años, nivel socioeconómico medio-alto.
+Estos dos factores están enfocados en el mismo segmento porque es un mismo grupo de personas que buscan vender la totalidad de sus productos en nuestra plataforma que no tienen un local abierto al publico, se enfocan al 100% en publicar su negocio en nuestra plataforma buscando hacer crecer su negocio.
 
 > Venta segunda mano: 
 
-> - este segmento de grupo busca vender las cosas que ya no utiliza y le este quitando lugar necesario, dándoles posibilidad a nuevos usos a otros usuarios, este factor esta entre los 18 a 60 años, nivel socioeconómico medio.
+Este segmento de grupo busca vender las cosas que ya no utiliza, de nuestra parte le brindamos la posibilidad de que puedan publicar sus productos para otros usuarios.
+
 
 > #### 2. Audiencia Objetiva Comprador
 
-> *Padres de familia:*
--  este segmento es uno de los mas importantes porque buscan en Bikes-master, los padres y madres comprarle a sus hijos una bicicleta o accesorios, este grupo esta formado en personas de 20 a 50 años. con nivel de ingresos medio-alto.
+> *Familias:*
+Creemos que este grupo objetivo es importante y de nuestra parte nos comprometemos en poder brindar la facilidad de que encuentren lo que buscan adquirir ofreciendoles productos que sean adecuados para nuestros usuarios. 
 
-> *Jóvenes aventureros:*
+> *Aficionados y profesionales:*
 
->  - Es el segundo segmento mas importante, es un grupo de consumidores formados por jóvenes de 18 años a 45ños, que entran al ecommerce en busca de bicicleta, como accesorios y herramientas para ellos mismos, socio económico medio. Estos jóvenes son importantes porque recomiendan el sitio a otros amigos brindándonos mas clientes promedios en un futuro, atravez de las recomendaciones. 
+Este grupo es uno más importantes ya que la demanda de bicicletas de media y alta gama crece gradualemente y es por eso que tenemos secciones dedicadas para poder ofrecer productos que cumplan con los criterios de nuestros usuarios. Podria conciderarse que este grupo es en potencia nuestros principales clientes.
 
 > *Personas mayores:*
->  - Es otro segmento de nuestros clientes aunque no parezca tiene la misma relevancia que los anteriores se trata de un conjunto de clientes que tiene una edad aproximada de 45 a 60 años que acuden al sitio web en busca de herramientas o como bicicletas para ellos mismo o para algún otro integrante de su familia, nivel socio económico medio-alto.
+Es otro segmento de nuestros clientes aunque no parezca tiene la misma relevancia que los anteriores se trata de un conjunto de clientes que tiene una edad aproximada de 45 a 60 años que acuden al sitio web en busca de herramientas o como bicicletas para ellos mismo o para algún otro integrante de su familia.
 
 --------
 
@@ -66,11 +68,11 @@ Bienvenidos a Bikes-Master
 
 > **Vendedor:**
 
-> -  *Nuestro objetivos será brindarle posibilidades a nuestros vendedores para que puedan bajar los precios a sus productos, dándoles ofertas en la modalidad de pago o con envió gratis. _también ofreceremos darles puntos y posicionarlos en los inicios del sitio Web dándoles mejor visibilidad, como pondremos en plan eso: brindando algunas opciones de promociones y ellos nos dirán si les convienen o no, si ellos llegaran a estar desacuerdo nosotros por otra parte pondremos en inicio de la pagina otros artículos de ese mismo vendedor, que tengan su precio normal, para su máxima visibilidad*
+> -  *Nuestro objetivos será brindarle posibilidades a nuestros vendedores para que puedan bajar los precios a sus productos, dándoles ofertas en la modalidad de pago o con envió gratis. También ofreceremos darles puntos y posicionarlos en los inicios del sitio Web dándoles mejor visibilidad, como pondremos en plan eso: brindando algunas opciones de promociones y ellos nos dirán si les convienen o no, si ellos llegaran a estar desacuerdo nosotros por otra parte pondremos en inicio de la pagina otros artículos de ese mismo vendedor, que tengan su precio normal, para su máxima visibilidad*
 
 > ***Comprador :***
 
-> - Les daremos la posibilidad de conseguir puntos cada que realicen una compra, los cuales podrá usarlos en algún producto de su interés que quiera reducir el precio. -también tendrán la posibilidad de cuotas sin interés, dependiendo del articulo o tarjeta brindaremos descuento. _le ofreceremos envíos gratis. _buscaremos también implementar hasta un 15% de descuento a quien comparta a mas de 7 personas el ecommerce. Buscando agrandar el negocio.
+> - Les daremos la posibilidad de conseguir puntos cada que realicen una compra, los cuales podrá usarlos en algún producto de su interés que quiera reducir el precio. -también tendrán la posibilidad de cuotas sin interés, dependiendo del articulo o tarjeta brindaremos descuento. Le ofreceremos envíos gratis. Buscaremos también implementar hasta un 15% de descuento a quien comparta a mas de 7 personas el ecommerce. Buscando agrandar el negocio.
 
 ------
 
