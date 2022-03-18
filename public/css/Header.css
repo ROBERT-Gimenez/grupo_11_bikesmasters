@@ -66,6 +66,7 @@ form{
 .logo{
     width: 12rem;
     margin: -9rem 2rem -6.8rem 10px;
+    vertical-align: baseline;
    
 }
 @keyframes menu-out{
