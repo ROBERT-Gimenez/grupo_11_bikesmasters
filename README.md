@@ -88,3 +88,12 @@ Bienvenidos a Bikes-Master
 >- *Lo usamos como guia inicial por el mismo hecho de que es un ecommerce exclusivo a la venta de bicicletas, dandonos una idea de como debia estar distribuida nuestro Ecommerce*
 
 -----
+### El tablero de trabajo
+---
+*** Elegimos Trello porque es una herramienta muy flexible que permite dar seguimiento a todo tipo de proyectos o procesos. Les dejamos un tablero de muestra:***    
+
+> ***《grupo-11》:***  [Trello](http://https://trello.com/b/MxYWjp0i/%E3%80%8Agrupo-11%E3%80%8B-c13 "Trello")
+----
+
+
+
