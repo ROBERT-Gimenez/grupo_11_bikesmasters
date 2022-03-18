@@ -46,6 +46,7 @@ main section a {
 
 main section article {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     background-color: white;
     margin-bottom: 1rem;
@@ -126,7 +127,7 @@ main section.categorias div.img-link span a {
 
 /* TABLET */
 
-@media (min-width: 760px) {
+@media (min-width: 700px) {
     main div.banner {
         display: flex;
         width: 100%;
@@ -176,6 +177,11 @@ main section.categorias div.img-link span a {
         margin-bottom: 0px;
     }
 
+    main section article div.img-producto .image-container {
+        width: 100%;
+        height: 100%;
+    }
+
     main section article div.img-producto {
         height: 300px;
     }
@@ -195,6 +201,11 @@ main section.categorias div.img-link span a {
 @media (min-width: 1024px) {
     main section article {
         width: 20%;
+        transition: all 0.5s ease-out;
+    }
+
+    main section article:hover {
+        box-shadow: 1px 1px 10px rgba( 0, 0, 0, 0.8);
     }
 
     main section.categorias div.img-link {
