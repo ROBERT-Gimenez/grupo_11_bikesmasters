@@ -90,7 +90,7 @@ Bienvenidos a Bikes-Master
 -----
 ### El tablero de trabajo
 ---
-*** Elegimos Trello porque es una herramienta muy flexible que permite dar seguimiento a todo tipo de proyectos o procesos. Les dejamos nuestro tablero de Trello:***    
+> ***Elegimos Trello porque es una herramienta muy flexible que permite dar seguimiento a todo tipo de proyectos o procesos. Les dejamos nuestro tablero de Trello:***
 
 > ***《grupo-11》:*** [Trello](https://trello.com/b/MxYWjp0i "Trello")
 ----
