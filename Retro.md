@@ -1,4 +1,4 @@
-La retrospectiva
+la retrospectiva
 ---------
 > **La retrospectiva se centra en mejorar como equipo. Aqui nosotros les compartimos nuestra retrospectiva**.
 
@@ -12,15 +12,15 @@ La retrospectiva
 |  Organizarnos en la cosa tecinica |
 |compàrtir pantalla en zoom |
 ------
-|  Continuar haciendo. ||Hacer más.   |
-| :------------ || :------------ |
-| Organización y compromiso  ||Actualizar trello   |
-| Compañerismo ||Respetar mas las dailys   |
- | Mantener la comunicación  ||trabajar en equipo en visual estudio |
- |Reportar los inconvenientes   || |
-| Reuniones dailys  || |
-----------
-|  Hacer menos. |  | Dejar de hacer.  |
-| :------------ | | :------------ |
-|  Reuniones largas | |  Dejar de agregar trabajos sin haber terminado otras tareas pendientes |
+|Continuar haciendo.  |  Hacer más. |
+| ------------ | ------------ |
+|  Organización y compromiso |  Actualizar trello |
+| Compañerismo | Respetar mas las dailys   |
+|   Mantener la comunicación |  Continuar trabajando visual studio |
+| Reportar los inconvenientes  |   |
+| Reuniones dailys  |   |
+-------
+| Hacer menos.  | Dejar de hacer. |
+| ------------ | ------------ |
+|   Reuniones largas |Dejar de agregar trabajos sin haber terminado otras tareas pendientes |
 --------
