@@ -283,6 +283,10 @@ main{
      margin-top: 1rem;
      
  }
+ main div.box1{
+     gap: 2rem;
+     padding: 1rem;
+}
 
  main  div h4.producto_venta{
      color: #000;
@@ -445,12 +449,13 @@ margin-top: 1rem;
 }
 @media (min-width:700px){
     main div.box1{
+        gap:2rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
     div.carousel#carouselExampleSlidesOnly{
-        max-width: 50%;
+        width: 40%;
     }
     div.carousel-inner{
         width: 100%;
@@ -464,5 +469,6 @@ margin-top: 1rem;
     margin-left: 0.3rem;
     padding: 2rem;
     border-radius: 10px;
+    width: 40%;
     }
 }
