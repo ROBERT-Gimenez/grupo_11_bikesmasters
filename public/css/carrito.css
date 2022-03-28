@@ -6,9 +6,13 @@ body{
 * {
     margin: 0;
     padding: 0;
- background-color: rgb(240, 233, 233);
- 
-  
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+:root {
+    --naranja: #FF2E00;
+    --negro: #1B1717;
 }
 i {
     margin-right: 10px;
@@ -61,4 +65,17 @@ button:focus,
 }
 .img-prdct img{
     width: 100%;
+    
+}
+
+ .botones{
+    margin-right: 10px;
+    border: none;
+    border-radius: 1rem;
+    height: 2.5rem;
+    text-transform: uppercase;
+    width: 10rem;
+    cursor: pointer;
+    margin: 0.2rem auto 0;
+    
 }
