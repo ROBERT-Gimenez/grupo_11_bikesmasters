@@ -22,6 +22,16 @@ div.botones,
 img.carrito{
 display:none;
 }
+div.logo_container{
+    height: 4rem;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+img.logo{
+    margin-right: 2.5rem;
+}
 button.carrito{
     display: none;
 }
@@ -62,12 +72,6 @@ form{
     background-color: #ae7662;
     cursor: pointer;
     border-radius: 50%;
-}
-.logo{
-    width: 12rem;
-    margin: -9rem 2rem -6.8rem 10px;
-    vertical-align: baseline;
-   
 }
 @keyframes menu-out{
     0%{
@@ -168,6 +172,52 @@ header nav input{
         align-items: flex-end;
         height: 3rem;
     }
+    header nav.nav_cuenta ul.acceso{
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        background: none;
+        border: none;
+        bottom: 2rem;
+        gap: 1rem;
+    }
+    header nav.nav_cuenta label svg{
+        width: 1.5rem;
+    }
+    header nav.nav_cuenta label.cuenta{
+    min-width: 2.5rem;
+    margin: auto;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    font-weight: 900;
+    color: black;
+    cursor: pointer;
+    } 
+    header nav.nav_cuenta {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    header nav input:checked ~ ul{
+        display: flex;
+        flex-direction: row;
+    }
+    header nav.nav_cuenta input:checked ~ ul{
+        margin-top: -1rem;
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+        animation-name: menu-in;
+        animation-duration: 0.6s;
+        gap: 1rem;
+        background: none;
+        border: none;   
+    }
     header nav{
         display: flex;
         animation: none;
@@ -188,7 +238,7 @@ header nav input{
     header nav ul li {
         line-height: 24px;
         border-bottom: none;
-        outline-style: inset;
+        outline-style: none;
         width: 9.2rem;
         font-weight: bold
     }
@@ -237,8 +287,8 @@ header nav input{
         width: 1.5rem;
         height: 1.5rem;
             
-        }
-        div button.carrito {
+    }
+    div button.carrito {
         display: flex;
         margin-right: 1.2rem;
         background-color: lightgray;
@@ -254,6 +304,13 @@ header nav input{
     div button.inicio a:hover{
         color:white
     }
+    div button.registrar a,
+    div button.inicio a{
+        color: black;
+        font-size: 13px;
+        text-transform: none;
+        width: 100%;
+    }
     div button.registrar:hover{
         background-color: #ff4500;
         color: white;
@@ -261,10 +318,13 @@ header nav input{
     div button.registrar a:hover{
         color: white;
     }
-    .logo{
-        padding-bottom: 3.8rem;
-        width: 14rem;
-        margin: -9rem -2rem -9.4rem 10px;
+    div.botones button.carrito a {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    img.logo{
+        margin-right: 0;
     }
 }
 @media (min-width:988px){

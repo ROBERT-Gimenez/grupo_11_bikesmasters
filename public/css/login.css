@@ -3,12 +3,6 @@
     margin: 0;
     padding: 0;  
   }
-  img{
-    width: 18rem;
-    position: relative;
-    top: 5rem;
-    padding-right: 18px;
-  }
   
   body.forms {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -19,6 +13,7 @@
       padding: 0 1rem;
       background: linear-gradient(grey , white);
       margin: 0 auto;
+      flex-direction: column;
   }
   body.forms a{
     color: blue;
@@ -81,6 +76,19 @@
   body.forms form label{
     font-size: 0.8rem;
   }
+  div.logo_container{
+    width: 20rem;
+    display: flex;
+    margin-right: 3rem;
+    align-items: center;
+    justify-content: center;
+  }
+  div.logo_container a {
+    width: 100%;
+  }
+  img.logo{
+    width: 100%;
+  }
   
   /* Botons Styles */
   
@@ -120,12 +128,6 @@ form div.btn-container{
 }
 section.login {
     max-width: 375px;
-} 
-.logo {
-    position: absolute;
-    top: -9rem;
-    margin: auto;
-    text-align: center;
 }
 div.google{
     display: flex;
