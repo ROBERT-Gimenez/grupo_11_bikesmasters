@@ -11,13 +11,14 @@
 :root {
     --naranja: #FF2E00;
     --negro: #1B1717;
+    --fondo: #f7f4f2;
 }
 
 
 /* MAIN */
 
 main {
-    background-color: #f7f4f2;
+    background-color: var(--fondo);
 }
 
 main.home a {

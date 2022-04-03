@@ -133,7 +133,6 @@ div select#cantidad_1{
         width: 50%;
         height: 2rem;
     }
-}
  div h2{
     
      color: black;
@@ -264,7 +263,7 @@ main div button.mas_vendido{
        height: 2rem; }
       
    div select#cantidad_1{ 
-    backgrond-color: #F7F5F2;
+    background-color: #F7F5F2;
     color: #000;
     width: 50%;
     height: 2rem;
@@ -276,4 +275,4 @@ img.card-img-top{
 div.card{
     height: 38rem;
 }
- 
+}

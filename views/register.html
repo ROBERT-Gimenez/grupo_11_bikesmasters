@@ -1,44 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/login.css">
-    <title>Registro</title>
+     <!-- Font awesome -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+     <title>Bikes Masters</title>
+     <!-- Footer script -->
+     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+     <script src="https://kit.fontawesome.com/adc0842e66.js" crossorigin="anonymous"></script>
+     <!-- Stylesheet -->
+     <link rel="stylesheet" href="/css/footer.css">
+     <link rel="stylesheet" href="/css/register.css">
+
 </head>
-<body class="forms">
+<body>
+    <header>
+        <div class="contenedor_header">
+            <div class="logo_container">
+               <a href="/"><img src="/images/logo-2.svg" alt="logo" class="logo"></a> 
+            </div>
+
+            <div class="buscador">
+                <form action="/search" method="GET" class="search-form">
+                    <input type="text" name="keywords" placeholder="Buscar productos" class="search-form_input">
+                    <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="botones">
+                <button class="carrito" ><a href="productCard"><img src="/images/carrito.svg" alt="carrito" class="carrito"></a></button>
+                <nav class="nav_cuenta">
+                    <input type="checkbox" id="cuenta" class="botton">
+                    <label class="cuenta" for="cuenta"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"/></svg></label>
+                        <ul class="acceso">
+                    <button class="inicio"><a href="login">Iniciar Sesion</a></button>
+                    <button class="registrar"><a href="register">Registrarse</a> </button>
+                        </ul>
+            </div>   
+        </div>
+                   
+        <nav>
+            <input type="checkbox" id="menu" class="botton">
+            <label for="menu"><i class="fas fa-bars"></i>  </label>
+            <ul>
+                <li id="app_nav"><a href="register">Registrarse</a></li>
+                <li id="app_nav"><a href="login">Cuenta</a></li>
+                <li id="app_nav"><a href="productCard">Carrito</a></li>
+                <li><a href="/">Accesorios</a></li>
+                <li><a href="/">Bicicletas</a></li>
+                <li><a href="/">Fitnes</a></li>
+                <li><a href="/">Indumentaria</a></li>
+                <li><a href="/">Repuestos</a></li>
+                <li><a href="/">Nosotros</a></li>
+                <li><a href="/">Consejos</a></li>
+               
+            </ul>
+        </nav>
+    </header>
     <main>
-        <section class="form-container login">
-            <h2>Registrarse</h2>
-            <form action="" method="">
-                    <div class="input-container">
-                        <label for="nombre">Nombre y apellido</label>
-                        <input type="text" name="nombre" class="input-style"placeholder="Ingrese su nombre y apellido">
+        <div class="register">
+            <div id="head-logo">
+                <div class="logo-img">
+                    <img src="/images/logo-2.svg" alt="Logo Bikesmasters">
+                </div>
+            </div>
+            <form action="" method="" class="form-register">
+                    <div class="register-input">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" class="input-style"placeholder="Ingrese su nombre">
                     </div>
-                    <div class="input-container">
-                        <label for="tel">Celular</label>
+                    <div class="register-input">
+                        <label for="nombre">Apellido</label>
+                        <input type="text" name="Apellido" class="input-style"placeholder="Ingrese su apellido">
+                    </div>
+                    <div class="register-input">
+                        <label for="tel">Número de celular</label>
                         <input type="num" name="tel" class="input-style"placeholder="Ingrese su número">
                     </div>
-                    <div class="input-container">
+                    <div class="register-input">
                         <label for="email">Correo electronico</label>
                         <input type="email" name="email" class="input-style"placeholder="Ingrese su mail">
                     </div>
-                    <div class="input-container">
+                    <div class="register-input">
                         <label for="pass">Ingrese una contraseña</label>
                         <input type="password" name="pass" class="input-style">
                     </div>
-                    <div class="input-container">
+                    <div class="register-input">
                         <label for="pass">Confirme su contraseña</label>
                         <input type="password" name="pass" class="input-style">
                     </div>
-                    <div class="btn-container">
-                        <button type="submit" class="btn btn-submit">Registrarme</button>
-                        <span><a href="login">Ya tengo cuenta</a></span>
-                        <span>Acepto términos y condiciones<input type="checkbox" name="terms"></span>
-                    </div>
             </form>
-        </section>
+            <div class="btn_register">
+                <span class="terminos">Acepto términos y condiciones<input type="checkbox" name="terms"></span>
+                 <button type="submit" class="btn-submit_register">Registrarme</button>
+                 <span><a href="login.html">Ya tengo cuenta</a></span>
+            </div>
+        </div>
     </main>
+    <footer>
+      
+        <ul class="social_icon">
+            <li><a href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-icon.com></a></li>
+            <li><a href="https://twitter.com/?lang=es"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a href="https://www.instagram.com/?hl=es-la"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li><a href="https://www.youtube.com/"><ion-icon name="logo-youtube"></ion-icon></a></li>
+
+        </ul>
+        <ul class="menu">
+            <li><a href="https://www.mercadopago.com.ar/">MercadoPago</a></li>
+            <li><a href="https://www.masterconsultas.com.ar/"> Master Card</a></li>
+            <li><a href="https://www.visa.com.ar/">Visa</a></li>
+            <li><a href="https://www.paypal.com/">PayPal</a></li>
+            <li><a href="https://www.e-pagofacil.com/">PagoFacil</a></li>
+        </ul>
+        <p>Comision 13 - Grupo 11 - &#169; Derechos Reservados.</p>
+    </footer>
 </body>
 </html>
