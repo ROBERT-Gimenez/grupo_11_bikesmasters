@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/BrianFloresOk/grupo_11_bikesmasters#readme",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.3"
   }
 }
