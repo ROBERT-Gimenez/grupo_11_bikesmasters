@@ -11,7 +11,7 @@ la retrospectiva
 | Entregar un dia antes Los Sprint  |
 |  Organizarnos en la cosa tecinica |
 |compàrtir pantalla en zoom |
-------
+
 |Continuar haciendo.  |  Hacer más. |
 | ------------ | ------------ |
 |  Organización y compromiso |  Actualizar trello |
@@ -19,7 +19,7 @@ la retrospectiva
 |   Mantener la comunicación |  Continuar trabajando visual studio |
 | Reportar los inconvenientes  |   |
 | Reuniones dailys  |   |
--------
+
 | Hacer menos.  | Dejar de hacer. |
 | ------------ | ------------ |
 |   Reuniones largas |Dejar de agregar trabajos sin haber terminado otras tareas pendientes |
