@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/carrito.css">
+    <link rel="stylesheet" href="/js/carrito.js">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script src="https://kit.fontawesome.com/adc0842e66.js" crossorigin="anonymous"></script>
+
+    <title>Tienda</title>
+</head>
+
+<body>
+      
+
+    <div class="container-fluid mt-5">
+        <h1 class="mb-5 text-center">CARRITO DE COMPRAS</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="table-responsive">
+                    <table id="myTable" class="table">
+                        <thead>
+                            <tr>
+                                <th>PRODUCTO</th>
+                                <th>NOMBRE</th>
+                                <th>CANTIDAD</th>
+                                <th>PRECIO $</th>
+                                <th class="text-right">
+                                    <span id="amount" class="amount">TOTAL</span>
+                                    
+                                </th>
+                                
+                            </tr>
+                            
+                        </thead>
+                        
+                     <tbody>
+                         
+                         <tr>
+                             <td>
+                                 <div class="product-img">
+                                     <div class="img-prdct">
+                                         <img src="images/Bici-niño-1.png" alt="">
+
+                                     </div>
+                                 </div>
+                             </td>
+                             <td>
+                                 <p>BICICLETA INFANTIL</p>
+                             </td>
+                             <td>
+                                 <div class="button-container">
+                                     <button class="cart-qty-plus"
+                                     type="button" value="+">+</button>
+                                     <input type="text" name="qty"
+                                     min="0" class="qty form-control" value="0" />
+                                     <button class="cart-qty-minus" type="button" value="-"
+                                     >-</button>
+                                 </div>
+                             </td>
+                             <td>
+                                 <input type="text" value="24499" class="price form-control" disabled>
+                             </td>
+                             <td align="right">$ <span id="amount" class="amount">0</span>
+
+                             </td>
+                         </tr>
+                         <tr>
+                            <td>
+                                <div class="product-img">
+                                    <div class="img-prdct">
+                                        <img src="images/Kit-bici-1.png" alt="">
+
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p>KIT REPARACION</p>
+                            </td>
+                            <td>
+                                <div class="button-container">
+                                    <button class="cart-qty-plus"
+                                    type="button" value="+">+</button>
+                                    <input type="text" name="qty"
+                                    min="0" class="qty form-control" value="0" />
+                                    <button class="cart-qty-minus" type="button" value="-"
+                                    >-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="text" value="5400" class="price form-control" disabled>
+                            </td>
+                            <td align="right">$ <span id="amount" class="amount">0</span>
+
+                            </td>
+                        </tr>
+                     </tbody>
+                     <tfoot>
+                         <tr>
+                             <td colspan="4"></td>
+                             <td align="right">
+                                 <strong>TOTAL= $ <span id="total" class="total"></span>
+                                    
+                                </strong>
+                             </td>
+                         </tr>
+                     </tfoot>
+                    </table>
+
+                </div>
+                <button class="item-button btn btn-primary addToCart">FINALIZAR COMPRA</button>
+                <button class="item-button btn btn-primary addToCart"> VOLVER AL INICIO</button>
+            </div>
+
+        </div> 
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.sj"></script>
+    <script src="js/carrito.js"></script>
+</body>
+
+
+
+</html>
