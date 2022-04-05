@@ -6,3 +6,5 @@ router.get('/Login', (req, res) => res.sendFile(path.join(__dirname, '/views/Log
 router.get('/register', (req, res) => res.sendFile(path.join(__dirname, '/views/register.ejs/')))
 router.get('/productCard', (req, res) => res.sendFile(path.join(__dirname, '/views/productCard.ejs/')))
 router.get('/detalle', (req, res) => res.sendFile(path.join(__dirname, '/views/detalle.ejs/')))
+
+module.exports = router
