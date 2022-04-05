@@ -2,7 +2,7 @@
   "name": "grupo_11_bikesmasters",
   "version": "1.0.0",
   "description": "** Bienvenidos a Bikes-Master\r **",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
