@@ -4,7 +4,8 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f7f4f2;
+    /* background-color: #f7f4f2; */
+    background-image: url('/images/fondo-formularios.png');
     font-family: 'Nunito Sans', sans-serif;
 }
 
@@ -14,9 +15,9 @@ a {
 
 .register {
     margin: 1rem auto 2rem auto;
-    background-color: white;
-    border-radius: 12px;
-    border: thin solid lightgray;
+    background-color: rgba(255, 255, 255, 0.226);
+    border-radius: 20px;
+    /* border: thin solid lightgray; */
 }
 
 .register #head-logo {
@@ -38,7 +39,7 @@ a {
 
 .register .form-register {
     padding: 20px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.226);
     margin: 1rem;
 }
 
