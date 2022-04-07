@@ -1,4 +1,5 @@
 @import url('Header.css');
+@import url('footer.css');
 
 body {
     margin: 0;
@@ -15,7 +16,7 @@ a {
 
 .register {
     margin: 1rem auto 2rem auto;
-    background-color: rgba(255, 255, 255, 0.226);
+    /* background-color: rgba(255, 255, 255, 0.226); */
     border-radius: 20px;
     /* border: thin solid lightgray; */
 }
@@ -39,7 +40,7 @@ a {
 
 .register .form-register {
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.226);
+    background-color: rgb(251 251 251 / 10%);
     margin: 1rem;
 }
 
@@ -85,6 +86,7 @@ a {
 }
 
 .btn_register span {
+    color: #b1acac;
     display: flex;
     justify-content: center;
     margin: 0.5rem 0;

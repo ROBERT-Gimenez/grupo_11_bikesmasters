@@ -1,0 +1,42 @@
+/* * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} */
+caption {
+    font-size: 1.2rem;
+    font-weight: bolder;
+    margin: 1rem;
+}
+
+table {
+    table-layout: fixed;
+    width: 80vw;
+    border-collapse: collapse;
+    border: 3px solid gray;
+    margin: 0 auto;
+}
+
+thead {
+    width: 100%;
+    background-color: rgba(3, 11, 78, 0.811);
+}
+
+thead th{
+    width: fit-content;
+    color: white;
+}
+
+th, td {
+    padding: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: rgb(191, 236, 244);
+}
+
+tbody tr:nth-child(even) {
+    border: thin solid lightgray;
+}

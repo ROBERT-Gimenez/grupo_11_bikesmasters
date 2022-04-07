@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include('../partials/headRegister') %> 
+
+<body>
+
+    <%- include('../partials/header')  %> 
+
+    <main>
+        <div class="register">
+            <div id="head-logo">
+                <div class="logo-img">
+                    <img src="/images/logo-2.svg" alt="Logo Bikesmasters">
+                </div>
+            </div>
+            <form action="" method="" class="form-register">
+                    <div class="register-input">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" class="input-style"placeholder="Ingrese su nombre">
+                    </div>
+                    <div class="register-input">
+                        <label for="nombre">Apellido</label>
+                        <input type="text" name="Apellido" class="input-style"placeholder="Ingrese su apellido">
+                    </div>
+                    <div class="register-input">
+                        <label for="tel">Número de celular</label>
+                        <input type="num" name="tel" class="input-style"placeholder="Ingrese su número">
+                    </div>
+                    <div class="register-input">
+                        <label for="email">Correo electronico</label>
+                        <input type="email" name="email" class="input-style"placeholder="Ingrese su mail">
+                    </div>
+                    <div class="register-input">
+                        <label for="pass">Ingrese una contraseña</label>
+                        <input type="password" name="pass" class="input-style">
+                    </div>
+                    <div class="register-input">
+                        <label for="pass">Confirme su contraseña</label>
+                        <input type="password" name="pass" class="input-style">
+                    </div>
+            </form>
+            <div class="btn_register">
+                <span class="terminos">Acepto términos y condiciones<input type="checkbox" name="terms"></span>
+                 <button type="submit" class="btn-submit_register">Registrarme</button>
+                 <span><a href="login.html">Ya tengo cuenta</a></span>
+            </div>
+        </div>
+    </main>
+
+    <%- include('../partials/footer') %> 
+
+</body>
+</html>
