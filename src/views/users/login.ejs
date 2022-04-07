@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Footer scripts -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://kit.fontawesome.com/adc0842e66.js" crossorigin="anonymous"></script>
     <title>Login</title>
     <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/Header.css">
+    <link rel="stylesheet" href="/css/footer.css">
     
 </head>
+
+    <%- include('../partials/header')  %> 
+
 <body class="forms">
     <div class="logo_container">
         <a href="/"><img src="/images/logo-2.svg" alt="logo" class="logo"></a>
@@ -38,11 +47,13 @@
                 <div class="btn-container">
                     <button type="submit" class="btn btn-submit">iniciar sesion</button>
                 </div>
-                <span><a href="register">No tengo cuenta</a></span>
+                <span><a href="registrarse">No tengo cuenta</a></span>
         </form>
     
 
     </section>
+
+    <%- include('../partials/footer') %> 
     
 </body>
 </html>

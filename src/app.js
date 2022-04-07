@@ -12,12 +12,12 @@ app.use(express.static(path.join(__dirname, '../public')))
 
 /* routes */
 const indexRouter = require('./routes/indexRouter');
-const userRouter = require('./routes/userRouter')
 const productRouter = require('./routes/productRouter')
+const userRouter = require('./routes/userRouter')
 
 
 app.use ('/', indexRouter);
-app.use('/users', userRouter)
+app.use('/carrito', userRouter) 
 app.use('/detalle', productRouter)
 
 
