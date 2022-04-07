@@ -1,3 +1,4 @@
+
 *{
     box-sizing: border-box;
     margin: 0px;
@@ -31,7 +32,7 @@ div.logo_container{
     align-items: stretch;
 }
 img.logo{
-    margin-right: 2.5rem;
+    margin-right: 2rem;
 }
 button.carrito{
     display: none;

@@ -1,22 +1,29 @@
+@import url('Header.css');
+@import url('footer.css');
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;  
   }
+  header{
+    width: 100%;
+  }
   
   body.forms {
+      gap: 2rem;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 0 1rem;
-      background: linear-gradient(grey , white);
       margin: 0 auto;
       flex-direction: column;
+      margin: 0;
+      padding: 0;
+      background-image: url('/images/fondo-formularios.png');
+      font-family: 'Nunito Sans', sans-serif;
   }
   body.forms a{
-    color: blue;
     font-size: 0.8rem;
     text-decoration: none;
   }
@@ -35,7 +42,7 @@
   body.forms section.form-container{
     border-radius: 10px;
     padding: 1rem;
-    background: linear-gradient(lightgrey ,white );
+    background-color: rgb(251 251 251 / 10%);
     width: 100%;
     border: solid 3px rgb(230, 93, 2 ,0.6) ;
     box-shadow: 2px 2px 9px 4px black;
@@ -76,18 +83,13 @@
   body.forms form label{
     font-size: 0.8rem;
   }
-  div.logo_container{
+  div.logo-img{
     width: 20rem;
     display: flex;
     margin-right: 3rem;
     align-items: center;
     justify-content: center;
-  }
-  div.logo_container a {
-    width: 100%;
-  }
-  img.logo{
-    width: 100%;
+    margin-right: 2rem;
   }
   
   /* Botons Styles */
@@ -121,6 +123,9 @@
     margin-bottom: 1rem;
     align-items: center;
     
+}
+section.form-container.login a{
+  color: blue;
 }
 form div.btn-container{
     flex-direction: column-reverse;
