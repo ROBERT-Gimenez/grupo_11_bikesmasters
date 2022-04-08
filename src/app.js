@@ -21,6 +21,7 @@ app.use ('/', indexRouter);
 app.use('/carrito', userRouter) 
 app.use('/detalle', productRouter)
 app.use('/admin', adminRouter)
+app.use('/admin/adproduct', adminRouter)
 
 
 

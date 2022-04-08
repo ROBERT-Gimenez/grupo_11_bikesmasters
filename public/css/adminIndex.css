@@ -4,6 +4,17 @@
     box-sizing: border-box;
     font-family: 'Nunito Sans', sans-serif;
 }
+body {
+    background-color: none;
+    background-image: none;
+}
+h2.titulo{
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+form{
+    border:2px solid lightgrey;
+}
 
 header {
     display: flex;

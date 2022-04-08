@@ -83,6 +83,7 @@ a {
     border-radius: 8px;
     width: 50%;
     margin: 1rem auto;
+    cursor: pointer;
 }
 
 .btn_register span {
