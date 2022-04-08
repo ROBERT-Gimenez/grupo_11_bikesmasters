@@ -44,7 +44,7 @@
     padding: 1rem;
     background-color: rgb(251 251 251 / 10%);
     width: 100%;
-    border: solid 3px rgb(230, 93, 2 ,0.6) ;
+    /* border: solid 3px rgb(230, 93, 2 ,0.6) ; */
     box-shadow: 2px 2px 9px 4px black;
   }
   body.forms form {
@@ -90,6 +90,10 @@
     align-items: center;
     justify-content: center;
     margin-right: 2rem;
+  }
+  img.google-logo{
+    height: 1.4rem;
+    padding-top: 4px;
   }
   
   /* Botons Styles */
@@ -153,9 +157,12 @@ div.google button{
     cursor: pointer;
     box-shadow: 2px 2px 12px 2px ;
     text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 div.google button:hover{
-  color: rgb(2, 2, 2);
+  color: white;
   background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgb(74, 77, 245) 50%);
   font-weight: bold;
   transition: all 0.5 ease;
