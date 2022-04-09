@@ -92,6 +92,14 @@ a {
     justify-content: center;
     margin: 0.5rem 0;
 }
+span.admin{
+    padding: 10px;
+    border-radius: 8px;
+    background-color: black;
+    width: 20%;
+    margin: 0 auto;
+
+}
 
 /* MEDIA QUERIES */
 
