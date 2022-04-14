@@ -15,87 +15,19 @@
             <h3>Ofertas</h3>
         </div>
         <section>
-            <article>
+            <% products.forEach(product => { %>
+			 
+                <article>
                 <div class="img-producto">
-                    <a href="/detalle" class="image-container"><img src="/images/BIci-Coluer-Limbo-296.jpg" alt="Couler Limbo"></a>
-                    <p class="sale-off">13% Off</p>
+                    <a href="/detalle/<%- product.id  %>" class="image-container"><img src="/images/<%- product.image  %>" alt="<%- product.name  %>"></a>                   
+                    <p class="sale-off"><%- product.discount !== 0 ? `${product.discount} % 0FF` : ""  %></p>
                 </div>
                 <div class="product-description">
-                    <p class="precio">$126.600</p>
-                    <p>Bicicleta Coluer Limbo 296 2022</p>
+                    <p class="precio">$<%- toThousand(product.price - product.price * product.discount /100)  %></p>
+                    <p><%- product.name %> </p>
                 </div>
-            </article>
-            <article>
-                <div class="img-producto">
-                    <a href="/detalle" class="image-container"><img src="/images/Bici-MTB-1.jpg" alt="Bicicleta Mountainbike"></a>                   
-                    <p class="sale-off">15% Off</p>
-                </div>
-                <div class="product-description">
-                    <p class="precio">$92.497</p>
-                    <p>Bicicleta Mtb Vairo Xr 3.5 R29 Bloqueo Disco</p>
-                </div>
-            </article>
-            <article>
-                <div class="img-producto">
-                    <a href="/detalle" class="image-container"><img src="/images/BIci-MTB-2.jpg" alt="Bicicleta Mountainbike"></a>                   
-                    <p class="sale-off">10% Off</p>
-                </div>
-                <div class="product-description">
-                    <p class="precio">$51.999</p>
-                    <p>Mountain bike Olmo Wish 265 18" 21v con cambios Shimano Tourney TY 300 y Shimano TZ-31</p>
-                </div>
-            </article>
-            <article>
-                <div class="img-producto">
-                    <a href="/detalle" class="image-container"><img src="/images/Bici-paseo-dama-1.jpg" alt="Bicicleta de paseo"></a>                    
-                    <p class="sale-off">10% Off</p>
-                </div>
-                <div class="product-description">
-                    <p class="precio">$35.999</p>
-                    <p>Bicicleta paseo femenina Futura Country R26 frenos v-brakes con pie de apoyo</p>
-                </div>
-            </article>
-            <article>
-                <div class="img-producto">
-                    <a href="/detalle" class="image-container"><img src="/images/Bici-niño-1.png" alt="Bicicleta niño"></a>                    
-                    <p class="sale-off">12% Off</p>
-                </div>
-                <div class="product-description">
-                    <p class="precio">$24499</p>
-                    <p>Bicicleta infantil SLP Max frenos v-brakes con ruedas de entrenamiento</p>
-                </div>
-            </article>
-            <article>
-                <div class="img-producto">
-                    <a href="/detalle" class="image-container"><img src="/images/Kit-bici-1.png" alt="Kit bicicleta"></a>
-                    <p class="sale-off">5% Off</p>
-                </div>
-                <div class="product-description">
-                    <p class="precio">$13.499</p>
-                    <p>Kit Transmision Bicicleta Mtb Shimano Mountain 21v 3x7</p>
-                </div>
-            </article>
-            <article>
-                <div class="img-producto">
-                    <a href="detalle" class="image-container"><img src="/images/Kit-bici-2.png" alt="Kit bicicleta"></a>
-                    <p class="sale-off">10% Off</p>
-                </div>
-                <div class="product-description">
-                    <p class="precio">$1.899</p>
-                    <p>Kit Reparacion Bicicleta Bici Parche Solución Llaves Estuche</p>
-                </div>
-            </article>
-            <article>
-                <div class="img-producto">
-                    <a href="detalle" class="image-container"><img src="/images/Kit-bici-2.png" alt="Kit bicicleta"></a>                   
-                    <p class="sale-off">10% Off</p>
-                </div>
-                <div class="product-description">
-                    <p class="precio">$1.899</p>
-                    <p>Kit Reparacion Bicicleta Bici Parche Solución Llaves Estuche</p>
-                </div>
-            </article>
-        </section>
+                </article> 
+            <% }) %></section>
         <div class="titulo-seccion">
             <h3>Productos destacados</h3>
         </div>

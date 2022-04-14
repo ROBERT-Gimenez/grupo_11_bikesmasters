@@ -97,7 +97,7 @@ span.admin{
     padding: 10px;
     border-radius: 8px;
     background-color: black;
-    width: 20%;
+    width: 40%;
     margin: 0 auto;
 
 }
@@ -109,6 +109,7 @@ textarea {
     text-align: justify;
     padding: 5px;
     font-size: 1rem;
+    height: 2.5rem;
 }
 
 textarea:focus {
@@ -163,11 +164,22 @@ textarea:focus {
         justify-content: center;
         padding: 30px;
     }
+    form.form-register div.btn_register{
+        min-width: 5rem;
+    }
+    .register .form-register .register-input input {
+        font-size: 100%;
+    }
+    .register .btn_register .btn-submit_register {
+        width: 100%;
+    }
 
     .register .form-register .register-input {
         width: 45%;
     }
-
+    span.admin{
+        width: 100%;
+    }
     .register .btn_register .btn-submit_register:hover {
         box-shadow: 0px 0px 2px 2px rgba(162, 160, 158, 0.621);
         transition: all 0.5s ease-out;

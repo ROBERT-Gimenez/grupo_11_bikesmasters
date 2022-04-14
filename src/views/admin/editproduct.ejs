@@ -21,31 +21,31 @@
 
     <main>
         <div class="register">
-            <h2 class="titulo">Editar Producto</h2>            
-            <form action="" method="" class="form-register">
+            <h2 class="titulo">Editar Producto:<%= product.name  %></h2>            
+            <form action="/admin/editproduct/<%= product.id %>?_method=PUT" method="POST" class="form-register">
                     <div class="register-input">
-                        <label for="nombre">Nombre de producto</label>
-                        <input type="text" name="nombre" class="input-style"placeholder="Ingrese nombre de producto" value="Bicicleta R29">
+                        <label for="name">Nombre de producto</label>
+                        <input type="name" name="name" class="input-style"placeholder="Ingrese nombre de producto" value="<%= product.name  %>">
                     </div>
                     <div class="register-input">
-                        <label for="marca">Marca</label>
-                        <input type="text" name="marca" class="input-style"placeholder="Ingrese marca" value="Olmo">
+                        <label for="marca">marca</label>
+                        <input type="marca" name="marca" class="input-style"placeholder="Ingrese marca" value="<%= product.marca  %>">
                     </div>
                     <div class="register-input">
-                        <label for="precio">Precio</label>
-                        <input type="num" name="precio" class="input-style"placeholder="Ingrese precio" value="$56.000">
+                        <label for="price">Precio</label>
+                        <input type="price" name="price" class="input-style"placeholder="Ingrese precio" value="<%= product.price  %>">
                     </div>
                     <div class="register-input">
-                        <label for="modelo">Modelo</label>
-                        <input type="email" name="modelo" class="input-style"placeholder="Ingrese Modelo" value="MTB">
+                        <label for="stock">Stock</label>
+                        <input type="stock" name="stock" class="input-style"placeholder="Cantidad de stock" value="<%= product.stock  %>">
                     </div>
                     <div class="register-input">
-                        <label for="descuento">Descuento</label>
-                        <input type="text" name="descuento" class="input-style" value="5%">
+                        <label for="discount">Descuento</label>
+                        <input type="discount" name="discount" class="input-style" value="<%= product.discount  %>">
                     </div>
                     <div class="register-input">
-                        <label for="color">Colores</label>
-                        <input type="tex" name="color" class="input-style" value="Negro-Naranja">
+                        <label for="categoryId">category</label>
+                        <input type="text" name="categoryId" class="input-style" value="<%= product.description  %>">
                     </div>
                     <div class="register-input">
                         <label for="file">subir archivo</label>
@@ -54,13 +54,14 @@
                     </div>
                     <div class="register-input">
                         <label for="description">Detalles</label>
-                        <textarea name="description" id="" cols="30" rows="3">La mejor bicicleta del condado</textarea>
+                        <textarea type="description" name="description" id="" cols="30" rows="3"><%= product.description  %></textarea>
                     </div>
-            </form>
+           
             <div class="btn_register">
                  <button type="submit" class="btn-submit_register">Guardar Cambios</button>
                  <span class="admin"><a href="/admin">Admin</a></span>
             </div>
+             </form>
         </div>
     </main>
     <footer> 

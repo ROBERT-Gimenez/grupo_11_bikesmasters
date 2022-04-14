@@ -37,49 +37,30 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Bicicleta R29</td>
-                    <td>Venzo</td>
-                    <td>Bicicletas</td>
-                    <td>$35.000</td>
-                    <td>Alto</td>
-                    <td>5%</td>
-                    <td>imagen.jpg</td>
+                <% products.forEach(product => { %>
+                  <tr>
+                    <th scope="row"><%- product.id %></th>
+                    <td><%- product.name %></td>
+                    <td><%- product.marca %></td>
+                    <td><%- product.categoryId %></td>
+                    <td><%- product.price %></td>
+                    <td><%- product.stock %></td>
+                    <td><%- product.discount %></td>
+                    <td><%- product.image %></td>
+                    
                     <td>
-                        <a href="/admin/editproduct"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a href="/"><i class="fa-regular fa-trash-can"></i></a>
+                      <a href="/admin/editproduct/<%= product.id  %>" class="btn btn-success">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                      </a>
+                      <form action="/admin/<%- product.id %>?_method=DELETE" method="post">
+                        <button class="btn btn-danger" type="submit">
+                          <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                      </form>
                     </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Inflador de mano</td>
-                    <td>Patito</td>
-                    <td>Accesorios</td>
-                    <td>$1.500</td>
-                    <td>Medio</td>
-                    <td>N/A</td>
-                    <td>Sin imagen disponible</td>
-                    <td>
-                        <a href="/admin/editproduct"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a href="/"><i class="fa-regular fa-trash-can"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Inflador de mano</td>
-                    <td>Patito</td>
-                    <td>Accesorios</td>
-                    <td>$1.500</td>
-                    <td>Medio</td>
-                    <td>N/A</td>
-                    <td>Sin imagen disponible</td>
-                    <td>
-                        <a href="/admin/editproduct"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a href="/"><i class="fa-regular fa-trash-can"></i></a>
-                    </td>
-                </tr>
-            </tbody>
+                  </tr>
+                <% }) %>  
+              </tbody>
         </table>
     </main>
 

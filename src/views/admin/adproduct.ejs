@@ -22,30 +22,30 @@
     <main>
         <div class="register">
             <h2 class="titulo">Agregar Producto</h2>            
-            <form action="" method="" class="form-register">
+            <form action="/admin/adproduct" method="POST"  class="form-register">
                     <div class="register-input">
-                        <label for="nombre">Nombre de producto</label>
-                        <input type="text" name="nombre" class="input-style"placeholder="Ingrese nombre de producto">
+                        <label for="name">Nombre de producto</label>
+                        <input type="name" name="name" class="input-style"placeholder="Ingrese nombre de producto">
                     </div>
                     <div class="register-input">
                         <label for="marca">Marca</label>
-                        <input type="text" name="marca" class="input-style"placeholder="Ingrese marca">
+                        <input type="marca" name="marca" id="marca" class="input-style"placeholder="Ingrese marca">
                     </div>
                     <div class="register-input">
-                        <label for="precio">Precio</label>
-                        <input type="num" name="precio" class="input-style"placeholder="Ingrese precio">
+                        <label for="price">price</label>
+                        <input type="price" name="price" id="price" class="input-style"placeholder="Ingrese precio">
                     </div>
                     <div class="register-input">
-                        <label for="modelo">Modelo</label>
-                        <input type="email" name="modelo" class="input-style"placeholder="Ingrese Modelo">
+                        <label for="stock">Stock</label>
+                        <input type="stock" name="stock" id="stock" class="input-style"placeholder="cantidad de stock">
                     </div>
                     <div class="register-input">
-                        <label for="descuento">Descuento</label>
-                        <input type="text" name="descuento" class="input-style">
+                        <label for="discount">Descuento</label>
+                        <input type="discount" name="discount" id="discount" class="input-style">
                     </div>
                     <div class="register-input">
-                        <label for="color">Colores</label>
-                        <input type="tex" name="color" class="input-style">
+                        <label for="categoryId">category</label>
+                        <input type="text" name="categoryId" class="input-style" >
                     </div>
                     <div class="register-input">
                         <label for="file">subir archivo</label>
@@ -54,13 +54,15 @@
                     </div>
                     <div class="register-input">
                         <label for="description">Detalles</label>
-                        <textarea name="description" id="" cols="30" rows="3"></textarea>
+                        <textarea type="description" name="description" id="description" cols="30" rows="3"></textarea>
+                    </div> 
+                    <div class="btn_register">
+                       <button type="submit" class="btn-submit_register">Agregar</button>
+                         <span class="admin"><a href="/admin">Admin</a></span>
                     </div>
-            </form>
-            <div class="btn_register">
-                 <button type="submit" class="btn-submit_register">Agregar</button>
-                 <span class="admin"><a href="/admin">Admin</a></span>
-            </div>
+                </form>
+             
+                     
         </div>
     </main>
     <footer> 
