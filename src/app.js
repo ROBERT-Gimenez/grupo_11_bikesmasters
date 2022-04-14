@@ -24,7 +24,7 @@ const adminRouter = require('./routes/admin/adminRouter');
 
 app.use ('/', indexRouter);
 app.use('/carrito', userRouter) ;
-app.use('/detalle/:id', productRouter);
+app.use('/detalle', productRouter);
 app.use('/admin', adminRouter);
 app.use('/detalle', productRouter);
 

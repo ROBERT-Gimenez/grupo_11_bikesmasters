@@ -12,7 +12,7 @@
     <div class="box_division">
         
                 <p class="cantidad_vendida">Nuevo | 1500 vendidos</p>
-                <h4 class="producto_venta">nombre</h4>
+                <h4 class="producto_venta"><%= product.name %> </h4>
                 <button class="mas_vendido">Mas vendido</button>
                 <span class="numero_1">stock</span>
       </div>
@@ -103,18 +103,18 @@
 <section class="dos_caja">
   <h2>productos destacados:</h2>
   <section>
-    <% products.forEach(product => { %>
+    <% destacado.forEach(product => { %>
 
-        <article>
+       <article>
         <div class="img-producto">
-            <a href="/detalle/<%- product.id  %>" class="image-container"><img src="/images/<%- product.image  %>" alt="<%- product.name  %>"></a>                   
-            <p class="sale-off"><%- product.discount !== 0 ? `${product.discount} % 0FF` : ""  %></p>
+            <a href="/detalle/<%= product.id  %>" class="image-container"><img src="/images/<%= product.image  %>" alt="<%= product.name  %>"></a>                   
+            <p class="sale-off"><%= product.discount !== 0 ? `${product.discount} % 0FF` : ""  %></p>
         </div>
         <div class="product-description">
             <p class="precio">$<%- toThousand(product.price - product.price * product.discount /100)  %></p>
-            <p><%- product.name %> </p>
+            <p><%= product.name %> </p>
         </div>
-        </article> 
+        </article>
     <% }) %></section>
 
     </div>

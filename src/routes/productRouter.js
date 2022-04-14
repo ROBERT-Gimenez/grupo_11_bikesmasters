@@ -3,7 +3,7 @@ const router = express.Router();
 const productController = require('../controllers/productController');
 
 /*** GET ONE PRODUCT ***/ 
-router.get('/detalle/:id', productController.detalle); 
+router.get('/:id', productController.detalle); 
 
 
 /*** CREATE ONE PRODUCT ***/ 

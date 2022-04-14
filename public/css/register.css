@@ -167,11 +167,9 @@ textarea:focus {
     form.form-register div.btn_register{
         min-width: 5rem;
     }
+    
     .register .form-register .register-input input {
         font-size: 100%;
-    }
-    .register .btn_register .btn-submit_register {
-        width: 100%;
     }
 
     .register .form-register .register-input {
