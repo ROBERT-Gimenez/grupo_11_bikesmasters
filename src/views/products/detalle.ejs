@@ -102,12 +102,12 @@
 
 <section class="dos_caja">
   <h2>productos destacados:</h2>
-  <section>
+  <section class="destacados">
     <% destacado.forEach(product => { %>
 
        <article>
         <div class="img-producto">
-            <a href="/detalle/<%= product.id  %>" class="image-container"><img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>"></a>                   
+            <a href="/detalle/<%= product.id  %>" class="image"><img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>"></a>                   
             <p class="sale-off"><%= product.discount !== 0 ? `${product.discount} % 0FF` : ""  %></p>
         </div>
         <div class="product-description">
@@ -131,4 +131,5 @@
     <%- include('../partials/footer') %> 
 
 </body>
+
 </html>
