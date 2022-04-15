@@ -1,50 +1,66 @@
-@import url('Header.css');
-@import url('footer.css');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
 
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image: url('/images/fondo-formularios.png');
     font-family: 'Nunito Sans', sans-serif;
 }
 
-a#link {
-    text-transform: none;
-    color: wheat;
-}
-
-.register {
-    margin: 1rem auto 2rem auto;
-    border-radius: 20px;
-}
-
-.register #head-logo {
+header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-}
-
-.register #head-logo .logo-img{
     height: 100px;
-    width: 200px;
+    width: 100%;
+    border-bottom: thin solid lightgrey;
 }
 
-.register #head-logo .logo-img img {
+header .div-logo {
+    width: 170px;
+    height: 100%;
+}
+
+header div img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
+header .div-titulo {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2rem;
+}
+
+h2.titulo {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.register {
+    margin: 1rem auto 2rem auto;
+    border-radius: 20px;
+    border: thin solid lightgray
+}
+
+
 .register .form-register {
     padding: 20px;
-    background-color: rgb(251 251 251 / 10%);
     margin: 1rem;
 }
 
 .register .form-register .register-input {
     display: flex;
     flex-direction: column;
+    margin: 1rem 0px;
 }
 
 .register .form-register .register-input label {
@@ -68,6 +84,21 @@ a#link {
     opacity: 0.5;
 }
 
+
+textarea {
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0px 0px 5px 1px rgb(255 196 0);
+    text-align: justify;
+    padding: 5px;
+    font-size: 1rem;
+    height: 10rem;
+}
+
+textarea:focus {
+    outline: none;
+}
+
 .btn_register {
     display: flex;
     flex-direction: column;
@@ -79,16 +110,29 @@ a#link {
     padding: 10px;
     border: none;
     border-radius: 8px;
-    width: 50%;
+    width: 120px;
     margin: 1rem auto;
     cursor: pointer;
+    font-size: 1rem;
 }
 
-.btn_register span {
-    color: #b1acac;
+span.admin{
+    border-radius: 8px;
+    background-color: black;
+    width: 120px;
+    height: 2.5rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+span.admin a.admin {
     display: flex;
+    width: 100%;
+    height: 100%;
     justify-content: center;
-    margin: 0.5rem 0;
+    align-items: center;
+    text-decoration: none;
+    color: whitesmoke;
 }
 
 /* MEDIA QUERIES */
@@ -96,15 +140,14 @@ a#link {
 /* Tablet */
 
 @media (min-width: 768px) {
+
     .register {
         width: 60%;
         margin: 3rem auto 2rem auto;
     }
 
     .register .form-register{
-        width: 75%;
         margin: 0 auto;
-        border-radius: 20px;
     }
 
     .register .form-register .register-input {
@@ -118,7 +161,18 @@ a#link {
     .register .btn_register .btn-submit_register {
         padding: 10px;
         font-size: 1.2rem;
-        width: 40%;
+        /* width: 40%; */
+    }
+
+    span.admin a.admin {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: whitesmoke;
+        font-size: 1.2rem;
     }
 }
 
@@ -131,33 +185,47 @@ a#link {
         font-size: 2rem;
     }
 
+    .register {
+        width: 80%;
+    }
+
     .register .form-register {
         flex-wrap: wrap;
         width: 80%;
         display: flex;
-        gap: 2rem;
-        justify-content: center;
-        padding: 30px;
-    }
-    form.form-register div.btn_register{
-        min-width: 5rem;
+        justify-content: space-between;
+        padding: 30px 0px;
     }
     
-    .register .form-register .register-input input {
-        font-size: 100%;
+    form.form-register div.btn_register{
+        width: 80%;
+        margin: 3rem auto 1rem;
     }
-
+    
     .register .form-register .register-input {
         width: 45%;
     }
-    span.admin{
-        width: 100%;
-    }
+
     .register .btn_register .btn-submit_register:hover {
         box-shadow: 0px 0px 2px 2px rgba(162, 160, 158, 0.621);
         transition: all 0.5s ease-out;
+    }
+
+    span.admin {
+        padding: 10px;
+        border-radius: 8px;
+        background-color: black;
+        /* width: 40%; */
+        margin: 0 auto;
+        text-align: center;
     }
     
 }
 
 /* Fin desktop *
+
+
+
+/* /////////////////////////////// */
+
+

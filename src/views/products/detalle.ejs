@@ -22,13 +22,13 @@
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="/images/<%= product.image  %>" class="d-block w-100" alt="...">
+                <img src="/images/products/<%= product.image  %>" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/images/<%= product.image  %>" class="d-block w-100" alt="...">
+                <img src="/images/products/<%= product.image  %>" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/images/<%= product.image  %>" class="d-block w-100" alt="...">
+                <img src="/images/products/<%= product.image  %>" class="d-block w-100" alt="...">
               </div>
             </div>
           </div>
@@ -107,7 +107,7 @@
 
        <article>
         <div class="img-producto">
-            <a href="/detalle/<%= product.id  %>" class="image-container"><img src="/images/<%= product.image  %>" alt="<%= product.name  %>"></a>                   
+            <a href="/detalle/<%= product.id  %>" class="image-container"><img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>"></a>                   
             <p class="sale-off"><%= product.discount !== 0 ? `${product.discount} % 0FF` : ""  %></p>
         </div>
         <div class="product-description">

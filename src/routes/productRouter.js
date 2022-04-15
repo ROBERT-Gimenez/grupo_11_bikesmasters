@@ -2,12 +2,13 @@ const express = require('express');
 const router = express.Router();
 const productController = require('../controllers/productController');
 
+
 /*** GET ONE PRODUCT ***/ 
 router.get('/:id', productController.detalle); 
 
 
 /*** CREATE ONE PRODUCT ***/ 
-router.get('/create/', productController.create); 
+router.get('/create', productController.create); 
 router.post('/', productController.store); 
 
 /*** EDIT ONE PRODUCT ***/ 

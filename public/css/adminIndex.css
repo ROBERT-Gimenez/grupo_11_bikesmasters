@@ -4,14 +4,7 @@
     box-sizing: border-box;
     font-family: 'Nunito Sans', sans-serif;
 }
-body {
-    background-color: none;
-    background-image: none;
-}
-h2.titulo{
-    margin: 0 auto 2rem;
-    text-align: center;
-}
+
 a{
     color: white;
     text-decoration: none;
@@ -19,11 +12,25 @@ a{
     width: 100%;
     text-align: center;
 }
+
+i#edit {
+    color: cornflowerblue;
+}
+
+button.erase {
+    border: none;
+    margin: 10px auto;
+    text-align: center;
+    background: none;
+    cursor: pointer;
+}
+
+button.erase i#trash {
+    color: tomato
+}
+
 th#add{
     background-color: #FF2E00;;
-}
-form{
-    border:2px solid lightgrey;
 }
 
 header {

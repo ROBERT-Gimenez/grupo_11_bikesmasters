@@ -57,7 +57,7 @@ main section article div.img-producto {
     height: 60%;
 }
 
-main section article div.img-producto a.image-container {
+main section article div.img-producto a.image {
     display: flex;
     height: 100%;
     width: 100%;
