@@ -11,7 +11,7 @@ module.exports = {
     list: (req, res) => {
         res.render('admin/adminIndex', {
             titulo: "Listado de productos",
-            products: products
+            products
         })
     },
     /* Envia la vista de formulario de creación de producto */
@@ -64,7 +64,7 @@ module.exports = {
         /* 3 - Mostrar el producto en la vista */
         res.render('admin/editproduct', {
             titulo: "Edición",
-            product:product
+            product
         })
     },
     /* Recibe los datos actualizados del form de edición */

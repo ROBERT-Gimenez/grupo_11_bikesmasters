@@ -39,14 +39,14 @@
             <tbody>
                 <% products.forEach(product => { %>
                   <tr>
-                    <th scope="row"><%- product.id %></th>
-                    <td><%- product.name %></td>
-                    <td><%- product.marca %></td>
-                    <td><%- product.categoryId %></td>
-                    <td><%- product.price %></td>
-                    <td><%- product.stock %></td>
-                    <td><%- product.discount %></td>
-                    <td><%- product.image %></td>
+                    <th scope="row"><%= product.id %></th>
+                    <td><%= product.name %></td>
+                    <td><%= product.marca %></td>
+                    <td><%= product.categoryId %></td>
+                    <td><%= product.price %></td>
+                    <td><%= product.stock %></td>
+                    <td><%= product.discount %></td>
+                    <td><%= product.image %></td>
                     
                     <td>
                       <a href="/admin/editproduct/<%= product.id  %>" class="btn btn-success">

@@ -21,7 +21,7 @@
     <main>
         <h2 class="titulo">Editar: <%= product.name %> </h2>            
         <div class="register">
-            <form action="/admin/editproduct/<%= product.id %>?_method=PUT" method="POST" class="form-register" enctype="multipart/form-data">
+            <form action="/admin/editProduct/<%= product.id %>?_method=PUT" method="POST" class="form-register">
                     <div class="register-input">
                         <label for="name">Nombre de producto</label>
                         <input type="text" name="name" class="input-style"placeholder="Ingrese nombre de producto" value="<%= product.name %>">

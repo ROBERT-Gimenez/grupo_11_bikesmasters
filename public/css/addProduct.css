@@ -161,7 +161,7 @@ span.admin a.admin {
     .register .btn_register .btn-submit_register {
         padding: 10px;
         font-size: 1.2rem;
-        /* width: 40%; */
+        width: 40%;
     }
 
     span.admin a.admin {
@@ -215,7 +215,7 @@ span.admin a.admin {
         padding: 10px;
         border-radius: 8px;
         background-color: black;
-        /* width: 40%; */
+        width: 40%;
         margin: 0 auto;
         text-align: center;
     }

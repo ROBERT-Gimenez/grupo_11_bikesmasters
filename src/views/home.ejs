@@ -19,10 +19,16 @@
                 <article>
                 <div class="img-producto">
                     <a href="/detalle/<%- product.id  %>" class="image"><img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>"></a>                   
-                    <p class="sale-off"><%- product.discount !== 0 ? `${product.discount} % 0FF` : ""  %></p>
+                    <% if (product.discount > 0) { %>
+                        <p class="sale-off"><%= product.discount + '% 0FF'%></p>
+                    <% } %>
                 </div>
                 <div class="product-description">
-                    <p class="precio">$<%- toThousand(product.price - product.price * product.discount /100)  %></p>
+                    <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
+                        <% if (product.discount > 0) {%> 
+                        <span class="precio">$<%= toThousand(product.price)%></span>
+                        <% } %> 
+                    </p>
                     <p><%- product.name %> </p>
                 </div>
                 </article> 
@@ -36,10 +42,16 @@
                 <article>
                 <div class="img-producto">
                     <a href="/detalle/<%- product.id  %>" class="image"><img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>"></a>                   
-                    <p class="sale-off"><%- product.discount !== 0 ? `${product.discount} % 0FF` : ""  %></p>
+                    <% if (product.discount > 0) { %>
+                        <p class="sale-off"><%= product.discount + '% 0FF'%></p>
+                    <% } %>
                 </div>
                 <div class="product-description">
-                    <p class="precio">$<%- toThousand(product.price - product.price * product.discount /100)  %></p>
+                    <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
+                        <% if (product.discount > 0) {%> 
+                        <span class="precio">$<%= toThousand(product.price)%></span>
+                        <% } %> 
+                    </p>
                     <p><%- product.name %> </p>
                 </div>
                 </article> 

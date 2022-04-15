@@ -92,9 +92,17 @@ main section article p.sale-off {
     padding: 5px;
 }
 
-main section article p.precio {
+main section article p.precio-discount {
     font-weight: 900;
     font-size: 1.5rem;
+}
+
+main section article p.precio-discount .precio{
+    font-weight: thin;
+    font-size: 0.9rem;
+    text-decoration: line-through;
+    color: rgb(187, 26, 26);
+    margin-left: 6px;
 }
 
 /* Section Categorias */
