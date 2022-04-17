@@ -1,5 +1,6 @@
-@import url(Header.css);
-@import url(footer.css);
+@import url('Header.css');
+@import url('footer.css');
+@import url('carrusel.css');
 
 * {
     margin: 0;

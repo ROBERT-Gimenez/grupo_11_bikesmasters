@@ -25,12 +25,15 @@ module.exports = {
                 }
             }
             );
-            res.render ('',{
-                searchResult ,
+            res.render ('products/searchResults',{
+                titulo: 'Bikesmasters',
+                css: 'home.css',
+                resultado: searchResult ,
                 keyword: req.query.keywords,
                 toThousand
-            }
-            )},
+            })
+    },
+
     login: (req, res) => {
         res.render('users/login', {
             titulo: "Login",

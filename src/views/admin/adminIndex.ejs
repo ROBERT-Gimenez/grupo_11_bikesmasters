@@ -6,17 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/adminIndex.css">
+    <link rel="stylesheet" href="/css/footer.css">
     <title>Administrador</title>
 </head>
 <body>
-<header>
-    <div class="div-logo">
-        <img src="/images/logo-2.svg" alt="logo-Bikes">
-    </div>
-    <div class="div-titulo">
-        <h2>Administrador</h2>
-    </div>
-</header>
+
+  <%- include('../partials/admin/headerAdmin') %> 
 
     <main>
 
@@ -64,8 +59,7 @@
         </table>
     </main>
 
-    <footer>
-        <div><p>Copyright-2022 Bikesmasters</p></div>
-    </footer>
+    <%- include('../partials/admin/footerAdmin')  %> 
+
 </body>
 </html>
