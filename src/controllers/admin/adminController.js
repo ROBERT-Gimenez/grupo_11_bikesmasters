@@ -31,9 +31,8 @@ module.exports = {
         });
 
         let newProduct = {
-          //   ...req.body, 
             id: lastId + 1,
-            image: req.file ? req.file.filename : "default-image.png",
+            image: req.file ? req.file.filename : "products/product-default-2.png",
             name: req.body.name,
             price: req.body.price,
             marca: req.body.marca,
