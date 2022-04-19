@@ -71,10 +71,16 @@ button.carrito{
     right: -1px;
     height: 1.9rem;
     width: 1.9rem;
-    background-color: #ae7662;
+    background-color: white;
     cursor: pointer;
     border-radius: 50%;
+    border: none;
 }
+
+.search-form_button i {
+    color: lightgray;
+}
+
 @keyframes menu-out{
     0%{
         left: 0;
@@ -129,7 +135,7 @@ nav a{
     color: white;
 }
 nav a:hover{
-    background-color: #ff4500;
+    background-color: #FF2E00;
     
   }
   header nav label {
@@ -160,7 +166,7 @@ button.carrito {
     display: none;
 }
 header nav label:hover {
-    background-color: #e23f0e;
+    background-color: #FF2E00;
 }
 header nav input{
     display: none; 
@@ -186,8 +192,8 @@ header nav input{
         animation-name: menu-out;
         animation-duration: 0.6s;
     }
-    header nav.nav_cuenta label svg{
-        width: 1.5rem;
+    header nav.nav_cuenta label img{
+        width: 100%;
     }
     header nav.nav_cuenta label.cuenta{
     min-width: 2.5rem;
