@@ -40,6 +40,11 @@ module.exports = {
             css: 'login.css'
         })
     },
+
+    update: {
+        //Completar lógica para guardar los datos
+    },
+
     register: (req, res) => {
         res.render('users/register', {
             titulo: "Registrarse"

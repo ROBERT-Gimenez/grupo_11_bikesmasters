@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const adminController = require('../../controllers/admin/adminController');
-const uploadFile = require('../../middlewares/imageMiddleware')
+const uploadFile = require('../../middlewares/imageProductMiddleware')
 
 /* GET - Lista de productos */
 router.get('/', adminController.list);
