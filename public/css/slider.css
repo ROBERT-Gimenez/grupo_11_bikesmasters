@@ -2,13 +2,14 @@
     width: 100%;
     height: auto;
     margin: 50px auto;
-    animation: slide 16s infinite /* alternate */ ease-in-out;
+    overflow: hidden;
 }
 
 .slider ul {
     display: flex;
     padding: 0;
     width: 400%;
+    animation: slide 16s infinite alternate ease-in-out;
 }
 
 .slider li {
