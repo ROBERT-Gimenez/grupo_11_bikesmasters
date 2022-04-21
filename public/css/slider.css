@@ -9,7 +9,7 @@
     display: flex;
     padding: 0;
     width: 400%;
-    animation: slide 16s infinite alternate ease-in-out;
+    animation: slide 16s infinite /* forwards alternate */ /* ease-in-out */;
 }
 
 .slider li {
