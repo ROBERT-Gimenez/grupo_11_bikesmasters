@@ -86,25 +86,5 @@
         "stock": "Alto",
         "discount": "5",
         "categoryId": "Accesorios"
-    },
-    {
-        "id": 12,
-        "image": "product-default-4.png",
-        "name": "Sin nombre",
-        "price": "1000",
-        "marca": "Prueba",
-        "description": "Producto de prueba",
-        "stock": "",
-        "discount": ""
-    },
-    {
-        "id": 13,
-        "image": "1650371432540-product-.png",
-        "name": "piñon fijo",
-        "price": "1800",
-        "marca": "Alacran",
-        "description": "para mayor velocidad en su andar",
-        "stock": "23",
-        "discount": "5"
     }
 ]

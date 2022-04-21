@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Bicicletas"
+    },
+    {
+        "id": 2,
+        "name": "Kids"
+    },
+    {
+        "id": 3,
+        "name": "Repuestos"
+    },
+    {
+        "id": 4,
+        "name": "Accesorios"
+    },
+    {
+        "id": 5,
+        "name": "Indumentaria"
+    }
+]
