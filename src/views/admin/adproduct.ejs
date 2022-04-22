@@ -35,26 +35,35 @@
                     </div>
                     <div class="register-input">
                         <label for="stock">Stock</label>
-                        <input type="text" name="stock" id="stock" class="input-style"placeholder="cantidad de stock">
+                        <input type="number" name="stock" id="stock" class="input-style"placeholder="cantidad de stock">
                     </div>
                     <div class="register-input">
                         <label for="discount">Descuento</label>
                         <input type="number" name="discount" id="discount" class="input-style">
                     </div>
                     <div class="register-input">
-                        <label for="category">Categoria</label>
-                        <select name="category" id="select" class="input-style">
-                            <option value="">Eleji una categoría</option>
-                            <option value="">Bicicletas</option>
-                            <option value="">Accesorios</option>
-                            <option value="">Herramientas</option>
-                            <option value="">Indumentaria</option>
-                            <option value="">Repuestos</option>
+                        <label for="categoryId">Categoria</label>
+                        <select name="categoryId" id="select" class="input-style">
+                            <option value="" selected hidden>Elija una categoría</option>
+                            <option value="1">Bicicletas</option>
+                            <option value="2">Kids</option>
+                            <option value="3">Repuestos</option>
+                            <option value="4">Accesorios</option>
+                            <option value="5">Indumentaria</option>
+                            <option value="6">Herramientas</option>
                         </select>
                     </div>
                     <div class="register-input">
                         <label for="image">Subir imagen</label>
                         <input type="file" name="image">
+                    </div>
+                    <div class="register-input">
+                        <label for="condition">Condicion de producto</label>
+                        <select name="condition" id="select" class="input-style">
+                            <option value="" selected hidden>Elija una categoría</option>
+                            <option value="in-sale">Oferta</option>
+                            <option value="featured">Destacado</option>
+                        </select>
                     </div>
                     <div class="register-input">
                         <label for="description">Detalles</label>

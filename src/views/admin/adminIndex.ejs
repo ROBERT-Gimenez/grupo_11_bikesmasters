@@ -40,7 +40,7 @@
                     <td><%= product.categoryId %></td>
                     <td><%= product.price %></td>
                     <td><%= product.stock %></td>
-                    <td><%= product.discount %></td>
+                    <td><%- product.discount === ""? product.discount = 0 + "%" :`${product.discount}%`%></td>
                     <td><%= product.image %></td>
                     
                     <td>

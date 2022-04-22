@@ -1,22 +1,26 @@
 [
     {
         "id": 1,
-        "name": "Bicicletas"
+        "name": "bicicletas"
     },
     {
         "id": 2,
-        "name": "Kids"
+        "name": "kids"
     },
     {
         "id": 3,
-        "name": "Repuestos"
+        "name": "repuestos"
     },
     {
         "id": 4,
-        "name": "Accesorios"
+        "name": "accesorios"
     },
     {
         "id": 5,
-        "name": "Indumentaria"
+        "name": "indumentaria"
+    },
+    {
+        "id": 6,
+        "name": "herramientas"
     }
 ]

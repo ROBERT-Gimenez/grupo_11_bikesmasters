@@ -7,55 +7,65 @@
     <%- include ('partials/header') %> 
     
     <main class="home">
-<!--         <div class="banner">
-            <img src="/images/Banner-1.png" alt="banner">
-            <button class="ver-mas"><a href="/">Ver más</a></button>
-        </div> -->
+
         <%- include('partials/slider') %> 
+
         <div class="titulo-seccion">  
             <h3>Ofertas</h3>
         </div>
         <section>
-            <% products.forEach(product => { %>			 
-                <article>
-                <div class="img-producto">
-                    <a href="/detalle/<%- product.id  %>" class="image"><img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>"></a>                   
-                    <% if (product.discount > 0) { %>
-                        <p class="sale-off"><%= product.discount + '% 0FF'%></p>
-                    <% } %>
-                </div>
-                <div class="product-description">
-                    <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
-                        <% if (product.discount > 0) {%> 
-                        <span class="precio">$<%= toThousand(product.price)%></span>
-                        <% } %> 
-                    </p>
-                    <p><%- product.name %> </p>
-                </div>
-                </article> 
+            <% products.forEach(product=> { %>
+                <% if (product.condition ==="in-sale" ) { %>
+                    <article>
+                        <div class="img-producto">
+                            <a href="/detalle/<%- product.id  %>" class="image">
+                                <img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>">
+                            </a>
+                            <% if (product.discount> 0) { %>
+                                <p class="sale-off">
+                                    <%= product.discount + '% 0FF' %>
+                                </p>
+                            <% } %>
+                        </div>
+                        <div class="product-description">
+                            <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
+                                <% if (product.discount> 0) {%>
+                                    <span class="precio">$<%= toThousand(product.price)%></span>
+                                <% } %>
+                            </p>
+                            <p><%- product.name %></p>
+                        </div>
+                    </article>
+                <% } %>
             <% }) %>
         </section>
         <div class="titulo-seccion">
             <h3>Productos destacados</h3>
         </div>
         <section>
-            <% products.forEach(product => { %>			 
-                <article>
-                <div class="img-producto">
-                    <a href="/detalle/<%- product.id  %>" class="image"><img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>"></a>                   
-                    <% if (product.discount > 0) { %>
-                        <p class="sale-off"><%= product.discount + '% 0FF'%></p>
-                    <% } %>
-                </div>
-                <div class="product-description">
-                    <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
-                        <% if (product.discount > 0) {%> 
-                        <span class="precio">$<%= toThousand(product.price)%></span>
-                        <% } %> 
-                    </p>
-                    <p><%- product.name %> </p>
-                </div>
-                </article> 
+            <% products.forEach(product=> { %>
+                <% if (product.condition ==="featured" ) { %>
+                    <article>
+                        <div class="img-producto">
+                            <a href="/detalle/<%- product.id  %>" class="image">
+                                <img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>">
+                            </a>
+                            <% if (product.discount> 0) { %>
+                                <p class="sale-off">
+                                    <%= product.discount + '% 0FF' %>
+                                </p>
+                            <% } %>
+                        </div>
+                        <div class="product-description">
+                            <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
+                                <% if (product.discount> 0) {%>
+                                    <span class="precio">$<%= toThousand(product.price)%></span>
+                                <% } %>
+                            </p>
+                            <p><%- product.name %></p>
+                        </div>
+                    </article>
+                <% } %>
             <% }) %>
         </section>
         <div class="titulo-seccion">
