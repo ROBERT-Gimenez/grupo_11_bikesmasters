@@ -127,7 +127,7 @@
         "marca": "Shellmets",
         "description": "Casco unisex varios colores\r\nDiseño y seguridad es una de nuestros compromisos con nuestros clientes, es por eso que desde Shellmets presentamos el casco SM1. Confort, seguridad y agradable diseño moderno un producto pensado para uso semi-profesional o cotidiano.",
         "stock": "20",
-        "discount": "",
+        "discount": "0%",
         "categoryId": "4",
         "condition": "featured"
     },
@@ -151,7 +151,7 @@
         "marca": "Patito",
         "description": "Inflador manual con accionamiento a pedal con medidor de presión.\r\nIncluye funda para ser transportado.",
         "stock": "20",
-        "discount": "",
+        "discount": "0%",
         "categoryId": "6",
         "condition": "featured"
     },
@@ -163,7 +163,7 @@
         "marca": "Shimano",
         "description": "Kit Transmision Bicicleta Mtb Shimano Mountain 21v 3x7",
         "stock": "10",
-        "discount": "",
+        "discount": "0%",
         "categoryId": "3",
         "condition": "featured"
     },

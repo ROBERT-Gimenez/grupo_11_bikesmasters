@@ -32,14 +32,14 @@ module.exports = {
 
         let newProduct = {
             id: lastId + 1,
-            image: req.file ? req.file.filename : "products/product-default-4.png",
+            image: req.file ? req.file.filename : "product-default-4.png",
             name: req.body.name,
-            price: req.body.price,
+            price: +req.body.price,
             marca: req.body.marca,
             description: req.body.description,
-            stock: req.body.stock,
-            discount: req.body.discount,
-            categoryId: req.body.categoryId,
+            stock: +req.body.stock,
+            discount: +req.body.discount,
+            categoryId: +req.body.categoryId,
             condition: req.body.condition
         }
         
