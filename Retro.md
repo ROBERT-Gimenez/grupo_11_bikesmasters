@@ -45,3 +45,28 @@ la retrospectiva
 |   no usar tanto bootstrap | reuniones largas| 
 
 ------------
+
+# Retroespectiva Sprint nº3
+
+| Comenzar a  hacer |
+| ------------ |
+| mejorar la proligidad en el codigo |
+|  hacer mejoras en la pagina|
+|  intentar usar ramas |
+
+
+| continuar haciendo  |  hacer más |
+| ------------ | ------------ |
+| avisarnos actualizaciones en trello | realizar las preguntas de las dailys  |
+| compañerismo  | usar mas comentarios en el codigo  |
+| comunicacion |   |
+| reportar inconvenientes  |   |
+
+
+| hacer menos  | dejar de hacer  |
+| ------------ | ------------ |
+| Dejar de posponer correciones  | reuniones largas |
+
+
+------
+
