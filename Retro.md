@@ -48,6 +48,8 @@ la retrospectiva
 
 # Retroespectiva Sprint nº3
 
+**La retrospectiva se centra en mejorar como equipo. Aqui nosotros les compartimos nuestra retrospectiva**.
+
 | Comenzar a  hacer |
 | ------------ |
 | mejorar la proligidad en el codigo |
