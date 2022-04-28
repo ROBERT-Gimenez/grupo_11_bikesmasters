@@ -90,11 +90,16 @@ a#link {
     cursor: pointer;
 }
 
-.btn_register span {
-    color: #b1acac;
+small.text-danger {
+    color: #fa0909;
     display: flex;
-    justify-content: center;
     margin: 0.5rem 0;
+}
+span.login {
+    color: #3b07f5;
+    display: flex;
+    margin: 0.5rem 0;
+    justify-content: center;
 }
 
 /* MEDIA QUERIES */

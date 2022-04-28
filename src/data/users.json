@@ -14,7 +14,7 @@
         "name": "Janice",
         "apellido": "Wootton",
         "email": "jwootton1@oaic.gov.au",
-        "password": "",
+        "password": "123456789",
         "category": "comprador",
         "shopName": "",
         "shopId": null
@@ -84,9 +84,19 @@
         "name": "Katti",
         "apellido": "Maes",
         "email": "kmaes8@deviantart.com",
-        "password": "",
+        "password": "12345678",
         "category": "comprador",
         "shopName": "",
         "shopId": null
+    },
+    {
+        "id": 10,
+        "name": "robert",
+        "apellido": "gimenez",
+        "num": "1132905942",
+        "email": "robertgim37@gmail.com",
+        "password": "123456789",
+        "avatar": "default-image.png",
+        "rol": "USER"
     }
 ]

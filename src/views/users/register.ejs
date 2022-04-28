@@ -15,37 +15,59 @@
                 </div> -->
                 <h2>Registrate</h2>
             </div>
-            <form action="/registrarse" method="POST" class="form-register" enctype="multipart/form-data">
+            <form action="/registrarse" method="POST" class="form-register" >
                     <div class="register-input">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" name="nombre" class="input-style" placeholder="Ingrese su nombre">
+                        <label for="name">Nombre</label>
+                        <input type="text" name="name" id="name" class="input-style" placeholder="Ingrese su nombre">
+                        <% if (locals.errors && errors.name) { %>
+                         <small class="text-danger"><%= errors.name.msg %></small>
+                        <% } %> 
                     </div>
                     <div class="register-input">
-                        <label for="nombre">Apellido</label>
-                        <input type="text" name="Apellido" class="input-style" placeholder="Ingrese su apellido">
+                        <label for="apellido">Apellido</label>
+                        <input type="name" name="apellido" id="apellido" class="input-style" placeholder="Ingrese su apellido">
+                        <% if (locals.errors && errors.name) { %>
+                            <small class="text-danger"><%= errors.name.msg %></small>
+                           <% } %> 
                     </div>
                     <div class="register-input">
-                        <label for="tel">Número de celular</label>
-                        <input type="num" name="tel" class="input-style" placeholder="Ingrese su número">
+                        <label for="num">Número de celular</label>
+                        <input type="num" name="num" id="num" class="input-style" placeholder="Ingrese su número">
+                        <% if (locals.errors && errors.num) { %>
+                            <small class="text-danger"><%= errors.num.msg %></small>
+                           <% } %> 
                     </div>
                     <div class="register-input">
                         <label for="email">Correo electronico</label>
-                        <input type="email" name="email" class="input-style" placeholder="Ingrese su mail">
+                        <input type="email" name="email" id="email" class="input-style" placeholder="Ingrese su mail">
+                        <% if (locals.errors && errors.email) { %>
+                            <small class="text-danger"><%= errors.email.msg %></small>
+                           <% } %> 
                     </div>
                     <div class="register-input">
-                        <label for="pass">Ingrese una contraseña</label>
-                        <input type="password" name="pass" class="input-style">
+                        <label for="password">Ingrese una contraseña</label>
+                        <input type="password" name="password" id="password" class="input-style">
+                        <% if (locals.errors && errors.password) { %>
+                            <small class="text-danger"><%= errors.password.msg %></small>
+                           <% } %> 
                     </div>
                     <div class="register-input">
-                        <label for="pass">Confirme su contraseña</label>
-                        <input type="password" name="pass" class="input-style">
+                        <label for="password2">Confirme su contraseña</label>
+                        <input type="password" name="password2" id="password2" class="input-style">
+                        <% if (locals.errors && errors.password2) { %>
+                            <small class="text-danger"><%= errors.password2.msg %></small>
+                           <% } %> 
                     </div>
-            </form>
+            
             <div class="btn_register">
-                <span class="terminos">Acepto términos y condiciones<input type="checkbox" name="terms"></span>
+                <span class="terminos">Acepto términos y condiciones<input type="checkbox" name="terms" id="terms"></span>
+                <% if (locals.errors && errors.terms) { %>
+                    <small class="text-danger"><%= errors.terms.msg %></small>
+                <% } %>
                  <button type="submit" class="btn-submit_register">Registrarme</button>
-                 <span><a id="link" href="/login">Ya tengo cuenta</a></span>
+                 <span class="login"><a id="link" href="/login">Ya tengo cuenta</a></span>
             </div>
+        </form>
         </div>
     </main>
 

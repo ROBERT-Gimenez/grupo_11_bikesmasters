@@ -21,17 +21,21 @@
     <section class="form-container login">
         <h2>Login</h2>
         <hr>
-        <form action="" method="">
+        <form action="/login" method="POST">
             <div class="google">
                 <button class="boton-google">Iniciar sesión con Google <span><img class="google-logo" src="/images/icons8-logo-de-google.svg" alt="google.img" ></span></button>
             </div>
             <div class="input-container">
-                <input type="email" class="input-style" name="email" placeholder="Ingrese su email">
-                <span class="error-message">Debe ingresar su email</span>
+                <input type="email" class="input-style" name="email" id="email  " placeholder="Ingrese su email">
+                <% if (locals.errors && errors.custom) { %>
+                    <small class="text-danger"><%= errors.custom.msg %></small>
+                <% } %>
             </div>
             <div class="input-container">
-                <input type="password" class="input-style" name="pass" placeholder="Ingrese una contraseña">
-                <span class="error-message">Debe ingresar su contraseña</span>
+                <input type="password" class="input-style" name="password" id="password" placeholder="Ingrese una contraseña">
+                <% if (locals.errors && errors.password) { %>
+                    <small class="text-danger"><%= errors.password.msg %></small>
+                <% } %>
             </div>
             <div class="input_check-container">
                 <span><a href="register.html">¿Olvidaste la contraseña?Click aqui </a></span>

@@ -5,6 +5,10 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+const {users , writeUsers}=require('../data');
+const { validationResult } = require('express-validator');
+
+
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const removeAccents = (str) => {return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");}
 
@@ -37,7 +41,8 @@ module.exports = {
     login: (req, res) => {
         res.render('users/login', {
             titulo: "Login",
-            css: 'login.css'
+            css: 'login.css',
+            session:req.session
         })
     },
 
@@ -47,7 +52,8 @@ module.exports = {
 
     register: (req, res) => {
         res.render('users/register', {
-            titulo: "Registrarse"
+            titulo: "Registrarse",
+            session: req.session
         })
     },
 }

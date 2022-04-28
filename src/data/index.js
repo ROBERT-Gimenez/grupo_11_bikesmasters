@@ -9,18 +9,17 @@ module.exports = {
     getCategories: JSON.parse(fs.readFileSync(path.join(__dirname, "/categories.json"), "utf-8")),
     writeCategories: (data) => {
         fs.writeFileSync(path.join(__dirname, "/categories.json"), JSON.stringify(data));
-    }
-    /* ,
-    getCategories: JSON.parse(fs.readFileSync(path.join(__dirname, "/categories.json"), "utf-8")),
+    },
+    
+   /*  getCategories: JSON.parse(fs.readFileSync(path.join(__dirname, "/categories.json"), "utf-8")),
     writeCategories: (data) => {
         fs.writeFileSync(path.join(__dirname, "/categories.json"), JSON.stringify(data));
     },
     getProjects: JSON.parse(fs.readFileSync(path.join(__dirname, "/projects.json"), "utf-8")),
     writeProjects: (data) => {
-        fs.writeFileSync(path.join(__dirname, "/projects.json"), JSON.stringify(data));
-    },
-    getUsers: JSON.parse(fs.readFileSync(path.join(__dirname, "/users.json"), "utf-8")),
+        fs.writeFileSync(path.join(__dirname, "/projects.json"), JSON.stringify(data)); */
+    users: JSON.parse(fs.readFileSync(path.join(__dirname, "/users.json"), "utf-8")),
     writeUsers: (data) => {
         fs.writeFileSync(path.join(__dirname, "/users.json"), JSON.stringify(data));
-    }, */
+    },  
      }
