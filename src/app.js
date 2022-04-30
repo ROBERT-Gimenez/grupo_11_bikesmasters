@@ -19,16 +19,16 @@ app.use(express.json());
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 app.use(bodyParser.json()) 
 /* session */
+
+app.use(cookieParser());
+app.use(cookieSession);
 app.set('trust proxy', 1);
 app.use(session({
     secret:"formar",
-    resave: false,
+    resave: true,
     saveUninitialized: true,
     cookie: {}
 }));
-app.use(cookieParser());
-app.use(cookieSession);
-
 
 /* routes */
 const indexRouter = require('./routes/indexRouter');

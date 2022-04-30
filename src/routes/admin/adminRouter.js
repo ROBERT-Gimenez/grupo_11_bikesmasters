@@ -2,11 +2,14 @@ const express = require('express');
 const router = express.Router();
 const adminController = require('../../controllers/admin/adminController');
 const uploadFile = require('../../middlewares/imageProductMiddleware');
+const Checkin =require('../../middlewares/Checkin');
+const userSessionCheck = require('../../middlewares/UsersessionCheck');
+
 
 /* GET - Lista de productos */
-router.get('/', adminController.list);
+router.get('/', userSessionCheck,adminController.list);
 /* GET - Agregar producto */
-router.get('/adproduct', adminController.productAdd);
+router.get('/adproduct', userSessionCheck ,adminController.productAdd);
 /* POST - Crea un producto en la DB */
 router.post('/adproduct', uploadFile.single('image'),adminController.productCreate);
 /* GET - Editar producto */
