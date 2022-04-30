@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-[{"id":1,"name":"Alon","apellido":"Johnsee","email":"ajohnsee0@godaddy.com","password":"","category":"vendedor","shopName":"mammoth","shopId":1},{"id":2,"name":"Janice","apellido":"Wootton","email":"jwootton1@oaic.gov.au","password":"123456789","category":"comprador","shopName":"","shopId":null},{"id":3,"name":"Dionis","apellido":"Merigot","email":"dmerigot2@altervista.org","password":"","category":"comprador","shopName":"","shopId":null},{"id":4,"name":"Ilysa","apellido":"Salliere","email":"isalliere3@domainmarket.com","password":"","category":"vendedor","shopName":"shimano","shopId":2},{"id":5,"name":"Merwyn","apellido":"Shorto","email":"mshorto4@auda.org.au","password":"","category":"comprador","shopName":"","shopId":null},{"id":6,"name":"Dorotea","apellido":"Denslow","email":"ddenslow5@imageshack.us","password":"","category":"vendedor","shopName":"el antiguo","shopId":null},{"id":7,"name":"Maure","apellido":"Stollenwerck","email":"mstollenwerck6@jugem.jp","password":"","category":"comprador","shopName":"","shopId":null},{"id":8,"name":"Kevina","apellido":"Buckel","email":"kbuckel7@t-online.de","password":"","category":"comprador","shopName":"","shopId":null},{"id":9,"name":"Katti","apellido":"Maes","email":"kmaes8@deviantart.com","password":"12345678","category":"comprador","shopName":"","shopId":null},{"id":10,"name":"robert","apellido":"gimenez","num":"1132905942","email":"robertgim37@gmail.com","password":"123456789","avatar":"default-image.png","rol":"USER"},{"id":11,"name":"pepito","apellido":"madagascar","num":"1141801032","email":"mail@mail2.com","password":"88888888","avatar":"default-image.png","rol":"USER"}]
-=======
+
 [
     {
         "id": 1,
@@ -113,4 +111,4 @@
         "rol": "USER"
     }
 ]
->>>>>>> 1e0d717a63222fc15bc758082597a7f97bc1033c
+

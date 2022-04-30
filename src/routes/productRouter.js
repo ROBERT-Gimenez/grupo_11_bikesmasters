@@ -3,9 +3,9 @@ const router = express.Router();
 const productController = require('../controllers/productController');
 const userSessionCheck = require('../middlewares/UsersessionCheck');
 
-
 /*** GET ONE PRODUCT ***/ 
-router.get('/:id',userSessionCheck, productController.detalle); 
+router.get('/:id', productController.detalle); 
+
 
 
 /* /*** CREATE ONE PRODUCT ***/ 

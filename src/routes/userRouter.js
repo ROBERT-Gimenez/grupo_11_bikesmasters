@@ -4,6 +4,7 @@ const userController = require('../controllers/userController')
 const userSessionCheck = require('../middlewares/UsersessionCheck');
 
 /* GEt - Carrito */
-router.get('/',userSessionCheck, userController.carrito)
+router.get('/', userController.carrito)
+router.get('/detalle/carrito', userController.carrito)
 
 module.exports = router
