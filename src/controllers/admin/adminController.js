@@ -1,17 +1,16 @@
 const fs = require('fs');
 const path = require('path');
+const {products, writeProducts, categories, writeCategories, users, writeUsers} = require('../../data/index');
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-let productsFilePath = path.join(__dirname, '../../data/products.json');
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
- const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
- const writeProducts = (data) =>  fs.writeFileSync(productsFilePath, JSON.stringify(data), 'utf-8');
 module.exports = {
     /* Envia la vista de listado de productos */
     list: (req, res) => {
         res.render('admin/adminIndex', {
             titulo: "Listado de productos",
-            products
+            products,
+            toThousand,
+            categories
         })
     },
     /* Envia la vista de formulario de creación de producto */
@@ -114,16 +113,3 @@ module.exports = {
 
     },
 }
-
-/* module.exports = {
-    list: (req, res) => {
-        res.render('admin/adminIndex')
-    },
-    listproduct: (req, res) => {
-        res.render('admin/adproduct')
-    },
-    editproduct: (req, res) => {
-        res.render('admin/editproduct')
-    },
-
-} */

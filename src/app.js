@@ -48,4 +48,4 @@ app.use('/admin', adminRouter);
 app.listen(PORT, () => console.log( `Servidor levantado en el puerto ${PORT}
 http://localhost:${PORT}`))
 
-module.exports = app;
+/* module.exports = app; */

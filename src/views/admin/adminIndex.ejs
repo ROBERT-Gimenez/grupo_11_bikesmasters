@@ -37,8 +37,9 @@
                     <th scope="row"><%= product.id %></th>
                     <td><%= product.name %></td>
                     <td><%= product.marca %></td>
-                    <td><%= product.categoryId %></td>
-                    <td><%= product.price %></td>
+                    <% let categoryName = categories.find(category => category.id === product.categoryId)%>
+                    <td><%= categoryName.name%></td>
+                    <td>$<%- toThousand(product.price) %></td>
                     <td><%= product.stock %></td>
                     <td><%- product.discount === ""? product.discount = 0 + "%" :`${product.discount}%`%></td>
                     <td><%= product.image %></td>
@@ -47,7 +48,7 @@
                       <a href="/admin/editproduct/<%= product.id  %>" class="btn btn-success">
                         <i id="edit" class="fa-solid fa-pen-to-square"></i>
                       </a>
-                      <form action="/admin/<%- product.id %>?_method=DELETE" method="post">
+                      <form action="/admin/<%= product.id %>?_method=DELETE" method="post">
                         <button class="erase" type="submit">
                           <i id="trash" class="fa-solid fa-trash-can"></i>
                         </button>
