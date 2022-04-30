@@ -1,5 +1,5 @@
 const { check, body } = require('express-validator');
-const req = require('express/lib/request');
+/* const req = require('express/lib/request'); */
 const {users} = require('../data');
 
 let validateLogin = [

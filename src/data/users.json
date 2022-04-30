@@ -98,5 +98,15 @@
         "password": "123456789",
         "avatar": "default-image.png",
         "rol": "USER"
+    },
+    {
+        "id": 11,
+        "name": "Brian",
+        "apellido": "Flores",
+        "num": "111111111",
+        "email": "brian@mail.com",
+        "password": "12345678",
+        "avatar": "default-image.png",
+        "rol": "USER"
     }
 ]
