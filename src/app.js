@@ -5,7 +5,7 @@ const process = require('process');
 require('dotenv').config();
 const PORT = process.env.PORT || 3500;
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const cookieSession = require('./middlewares/cookieSession');
@@ -27,7 +27,7 @@ app.use(session({
     cookie: {}
 }));
 app.use(cookieParser());
-app.use(cookieSession)
+app.use(cookieSession);
 
 
 /* routes */

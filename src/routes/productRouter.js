@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const productController = require('../controllers/productController');
+const userSessionCheck = require('../middlewares/UsersessionCheck');
 
 
 /*** GET ONE PRODUCT ***/ 
-router.get('/:id', productController.detalle); 
+router.get('/:id',userSessionCheck, productController.detalle); 
 
 
 /* /*** CREATE ONE PRODUCT ***/ 

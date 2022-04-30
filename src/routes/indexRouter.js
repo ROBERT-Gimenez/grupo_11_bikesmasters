@@ -11,9 +11,9 @@ const Checkin =require('../middlewares/Checkin');
 
 /* GET - Index */
 router.get('/', indexController.index);
-router.get('/login', indexController.login);
+router.get('/login',Checkin, indexController.login);
 router.post('/login', LoginValidator, userconroller.processLogin);
-router.get('/registrarse', indexController.register);
+router.get('/registrarse',Checkin, indexController.register);
 router.post('/registrarse', RegisterValidator,userconroller.processRegister);
 //router.post('/registrarse', imProfile, indexController.update); * Ruta para cargar los datos a DB
 router.get('/search', indexController.search);
