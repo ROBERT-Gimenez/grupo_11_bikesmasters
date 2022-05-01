@@ -9,6 +9,7 @@ const bodyParser = require('body-parser')
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const cookieSession = require('./middlewares/cookieSession');
+const adminSession = require('./middlewares/adminSession');
 
 /* Views config */
 app.set('view engine', 'ejs');
@@ -28,6 +29,7 @@ app.use(session({
 }));
 app.use(cookieParser());
 app.use(cookieSession)
+
 
 
 /* routes */
