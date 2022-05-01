@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const productController = require('../controllers/productController');
 const userSessionCheck = require('../middlewares/UsersessionCheck');
+const adminSession = require('../middlewares/adminSession');
 
 /*** GET ONE PRODUCT ***/ 
 router.get('/:id', productController.detalle); 

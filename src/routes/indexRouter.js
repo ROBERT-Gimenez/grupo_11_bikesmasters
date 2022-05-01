@@ -5,6 +5,7 @@ const indexController = require('../controllers/indexController');
 const RegisterValidator = require('../validations/Registervalidation');
 const LoginValidator = require('../validations/Loginvalidator');
 const userSessionCheck = require('../middlewares/UsersessionCheck');
+const adminSession = require('../middlewares/adminSession');
 const Checkin =require('../middlewares/Checkin');
 // * Llamado de middleware para imagen de perfil de usuario *"
 //const imgProfile = require('../middlewares/imageProfileMiddleware')
