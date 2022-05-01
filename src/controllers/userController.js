@@ -1,6 +1,6 @@
 const path =require('path');
 const fs =require('fs');
-const { users ,writeUsers}=require('../data/index');
+const {users ,writeUsers}=require('../data/index');
 /* let userFilePath = path.join(__dirname, '../data/users.json');
 let users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8')); */
 /* const writeUsers = (data) =>  fs.writeFileSync(userFilePath, JSON.stringify(data), 'utf-8'); */
