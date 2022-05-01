@@ -17,5 +17,6 @@ router.get('/registrarse',Checkin, indexController.register);
 router.post('/registrarse', RegisterValidator,userconroller.processRegister);
 //router.post('/registrarse', imProfile, indexController.update); * Ruta para cargar los datos a DB
 router.get('/search', indexController.search);
+router.get('/logout', userconroller.logout);
 
 module.exports = router

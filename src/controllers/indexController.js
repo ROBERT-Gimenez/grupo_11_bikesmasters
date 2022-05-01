@@ -18,7 +18,9 @@ module.exports = {
         res.render('home' ,{
             css:'home.css',
 			products,	
-			toThousand}
+			toThousand,
+            session:req.session
+        }
         )
     },
     search: (req, res) => {
