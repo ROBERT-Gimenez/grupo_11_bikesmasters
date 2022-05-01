@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "bicicletas"
+        "name": "Bicicletas"
     },
     {
         "id": 2,
@@ -9,18 +9,18 @@
     },
     {
         "id": 3,
-        "name": "repuestos"
+        "name": "Repuestos"
     },
     {
         "id": 4,
-        "name": "accesorios"
+        "name": "Accesorios"
     },
     {
         "id": 5,
-        "name": "indumentaria"
+        "name": "Indumentaria"
     },
     {
         "id": 6,
-        "name": "herramientas"
+        "name": "Herramientas"
     }
 ]

@@ -1,6 +1,7 @@
-const fs = require('fs');
 const path = require('path');
-const {products} = require('../data/index')
+const fs = require('fs');
+const {products} = require('../data/index');
+const categorias = require('../data/categories')
 
 /* let productsFilePath = path.join(__dirname, '../data/products.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); */
@@ -14,8 +15,29 @@ module.exports = {
 		res.render('products/detalle',{
 		product,
 		toThousand,
-		destacado: products
+		destacado: products,
+		session:req.session
 		})
+	
+	},
+	Category: (req, res) => {
+		let namecategori = categorias.find(categori => categori.id === +req.params.id)
+		let Categori = [];
+            products.forEach(product => {
+                if(product.categoryId === +req.params.id){
+                    Categori.push(product)
+                }
+            }
+            );
+            res.render ('products/Categorias',{
+                titulo: 'Bikesmasters',
+                css: 'home.css',
+                Categori: Categori ,
+                toThousand,
+                session:req.session,
+				namecategori
+
+            })
 	
 	}
 }

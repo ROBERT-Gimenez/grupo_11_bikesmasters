@@ -1,6 +1,6 @@
 
 const Checkin = (req, res, next) => {
-    if(req.session.users){
+    if(req.session.user){
        return res.redirect('/')
     }
     next()
