@@ -36,7 +36,8 @@ module.exports = {
                 css: 'home.css',
                 resultado: searchResult ,
                 keyword: req.query.keywords,
-                toThousand
+                toThousand,
+                session:req.session
             })
     },
 

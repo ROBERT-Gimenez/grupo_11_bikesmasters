@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../partials/head') %> 
+
+<body>
+    <%- include('../partials/header') %> 
+    
+    <main class="home">
+        <div class="titulo-seccion">  
+            <h3><%= namecategori.name  %> </h3>
+        </div>
+        <section>
+            <% Categori.forEach(product => { %>			 
+                <article>
+                <div class="img-producto">
+                    <a href="/detalle/<%- product.id  %>" class="image"><img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>"></a>                   
+                    <% if (product.discount > 0) { %>
+                        <p class="sale-off"><%= product.discount + '% 0FF'%></p>
+                    <% } %>
+                </div>
+                <div class="product-description">
+                    <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
+                        <% if (product.discount > 0) {%> 
+                        <span class="precio">$<%= toThousand(product.price)%></span>
+                        <% } %> 
+                    </p>
+                    <p><%- product.name %> </p>
+                </div>
+                </article> 
+            <% }) %>
+        </section>
+        </body>
+    </html>

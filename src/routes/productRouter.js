@@ -5,6 +5,7 @@ const userSessionCheck = require('../middlewares/UsersessionCheck');
 
 /*** GET ONE PRODUCT ***/ 
 router.get('/:id', productController.detalle); 
+router.get('/categori/:id', productController.Category); 
 
 
 
