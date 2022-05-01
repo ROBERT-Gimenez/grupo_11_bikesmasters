@@ -24,8 +24,8 @@
                             <button class="inicio"><a href="/">Perfil</a></button>
                             <button class="registrar"><a href="/logout">Cerrar Session</a></button>
                         <% }else{ %> 
-                            <button class="inicio"><a href="login">Iniciar Sesion</a></button>
-                            <button class="registrar"><a href="registrarse">Registrarse</a> </button>
+                            <button class="inicio"><a href="/login">Iniciar Sesion</a></button>
+                            <button class="registrar"><a href="/registrarse">Registrarse</a> </button>
                             <% } %> 
                         
                     </ul>
@@ -42,7 +42,7 @@
             <li id="app_nav"><a href="/logout">Cerrar Sesion</a></li>
             <li id="app_nav"><a href="carrito">Carrito</a></li>
             <% }else{ %> 
-            <li id="app_nav"><a href="login">Iniciar session</a></li>
+            <li id="app_nav"><a href="/login">Iniciar session</a></li>
             <% } %> 
             <li><a href="/detalle/categori/4">Accesorios</a></li>
             <li><a href="/detalle/categori/1">Bicicletas</a></li>
