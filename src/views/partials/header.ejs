@@ -18,7 +18,11 @@
             
             <nav class="nav_cuenta">
                 <input type="checkbox" id="cuenta" class="botton">
-                <label class="cuenta" for="cuenta"><img src="/images/profile/user-default.png" alt=""></label>
+                <% if (typeof session.user != "undefined") { %>
+                <label class="cuenta" for="cuenta" style="box-shadow:1px 1px 5px 4px green;"><img src="/images/profile/user-default.png" alt=""></label>
+                <% }else{ %> 
+                    <label class="cuenta" for="cuenta"><img src="/images/profile/user-default.png" alt=""></label>
+                    <% } %>
                     <ul class="acceso">
                         <% if (typeof session.user != "undefined") { %>
                             <button class="inicio"><a href="/">Perfil</a></button>
