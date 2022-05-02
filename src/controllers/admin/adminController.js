@@ -74,11 +74,11 @@ module.exports = {
         products.forEach(product => {
             if(product.id === idProduct){
                 product.name = req.body.name
-                product.price = req.body.price
-                product.discount = req.body.discount
-                product.categoryId = req.body.categoryId
-                product.projectId = req.body.projectId
-                product.stock = req.body.stock
+                product.price = +req.body.price
+                product.discount = +req.body.discount
+                product.categoryId = +req.body.categoryId
+                product.projectId = +req.body.projectId
+                product.stock = +req.body.stock
                 product.description = req.body.description
                 product.marca = req.body.marca
             }
@@ -88,7 +88,8 @@ module.exports = {
         writeProducts(products);
 
         /* 4 - Respuesta */
-        res.redirect('/admin');
+        res.redirect('/admin')
+
     },
     /* Recibe la info del producto a eliminar */
     productDelete: (req, res) => {
