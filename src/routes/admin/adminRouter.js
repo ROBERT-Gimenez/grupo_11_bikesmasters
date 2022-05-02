@@ -5,12 +5,15 @@ const uploadFile = require('../../middlewares/imageProductMiddleware');
 const Checkin =require('../../middlewares/Checkin');
 const userSessionCheck = require('../../middlewares/UsersessionCheck');
 const adminSession = require('../../middlewares/adminSession');
+const productController = require('../../controllers/productController');
 
 
 /* GET - Lista de productos */
 router.get('/', userSessionCheck,adminController.list);
 /*GET -admision de personas */
 router.get('/',adminSession,adminController.list)
+ /*  GET categorias */
+router.get('/categoria/:id',adminSession,productController.Categoryadmin)
 /* GET - Agregar producto */
 router.get('/adproduct', userSessionCheck ,adminController.productAdd);
 /* POST - Crea un producto en la DB */
