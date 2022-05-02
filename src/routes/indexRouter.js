@@ -20,4 +20,7 @@ router.post('/registrarse', RegisterValidator,userconroller.processRegister);
 router.get('/search', indexController.search);
 router.get('/logout', userconroller.logout);
 
+/* RUTA DE PRUEBA-BRIAN!!!! Ignorar! */
+router.get('/usuario', userconroller.usuario);
+
 module.exports = router

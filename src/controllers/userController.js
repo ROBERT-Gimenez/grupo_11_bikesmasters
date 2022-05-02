@@ -94,6 +94,12 @@ module.exports = {
         }
 
         res.redirect('/')
+    },
+
+    usuario: (req, res) => {
+        res.render('users/userProfile', {
+            session: req.session
+        })
     }
 
 }

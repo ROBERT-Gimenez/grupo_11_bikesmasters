@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../css/userProfile.css">
+    <link rel="stylesheet" href="../../../css/Header.css">
+    <link rel="stylesheet" href="../../../css/footer.css">
+</head>
+<body>
+
+    <%- include('../partials/header') %> 
+    
+    <main>
+        <article class="user-profile">
+                <div class="image-profile">
+                    <img src="../../../images/profile/user-default.png" alt="">
+                </div>
+            <div class="detail">
+                <div class="edit-button">
+                    <button><a href="/">Editar perfil</a></button>
+                </div>
+                <ul class="user-detail">
+                    <li>Nombre: Fulanito</li>
+                    <li>Email: fulanito@mail.com</li>
+                    <li>Dirección: Calle falsa 123</li>
+                    <li>Celular: 1515151515</li>
+                </ul>
+            </div>
+        </article>
+        <div class="user-products">
+            <h2>Productos comprados</h2>
+            <div class="recent-product">
+                <div class="image-product">
+                    <img src="../../../images/products/product-default-4.png" alt="">
+                </div>
+                <div class="product-detail">
+                    <p>Nombre: Frenos</p>
+                    <p>Precio: $$$$$$</p>
+                    <p>Detalle: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, reiciendis!</p>
+                </div>
+            </div>
+            <div class="recent-product">
+                <div class="image-product">
+                    <img src="../../../images/products/product-default-4.png" alt="">
+                </div>
+                <div class="product-detail">
+                    <p>Nombre: Frenos</p>
+                    <p>Precio: $$$$$$</p>
+                    <p>Detalle: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, reiciendis!</p>
+                </div>
+            </div>
+            <div class="recent-product">
+                <div class="image-product">
+                    <img src="../../../images/products/casco.jpg" alt="">
+                </div>
+                <div class="product-detail">
+                    <p>Nombre: Frenos</p>
+                    <p>Precio: $$$$$$</p>
+                    <p>Detalle: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, reiciendis!</p>
+                </div>
+            </div>
+            <div class="recent-product">
+                <div class="image-product">
+                    <img src="../../../images/products/product-default-4.png" alt="">
+                </div>
+                <div class="product-detail">
+                    <p>Nombre: Frenos</p>
+                    <p>Precio: $$$$$$</p>
+                    <p>Detalle: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, reiciendis!</p>
+                </div>
+            </div>
+        </div>
+    </main> 
+
+    <%- include('../partials/footer') %> 
+</body>
+</html>
