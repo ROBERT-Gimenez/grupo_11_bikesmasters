@@ -21,14 +21,14 @@
     <main>
         <h2 class="titulo">Editar: <%= product.name %> </h2>            
         <div class="register">
-            <form action="/admin/adproduct/<%= product.id%>?_method:PUT" method="POST" class="form-register" enctype="multipart/form-data">
+            <form action="/admin/editProduct/<%= product.id %>?_method=PUT" method="POST" class="form-register">
                     <div class="register-input">
                         <label for="name">Nombre de producto</label>
-                        <input type="text" name="name" class="input-style" placeholder="Ingrese nombre de producto" value="<%= product.name %>">
+                        <input type="text" name="name" class="input-style"placeholder="Ingrese nombre de producto" value="<%= product.name %>">
                     </div>
                     <div class="register-input">
                         <label for="marca">Marca</label>
-                        <input type="text" name="marca" id="marca" class="input-style" placeholder="Ingrese marca" value="<%= product.marca %>">
+                        <input type="text" name="marca" id="marca" class="input-style"placeholder="Ingrese marca" value="<%= product.marca %>">
                     </div>
                     <div class="register-input">
                         <label for="price">Precio</label>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="register-input">
                         <label for="stock">Stock</label>
-                        <input type="number" name="stock" id="stock" class="input-style" placeholder="cantidad de stock" value="<%= product.stock %>">
+                        <input type="text" name="stock" id="stock" class="input-style" placeholder="cantidad de stock" value="<%= product.stock %>">
                     </div>
                     <div class="register-input">
                         <label for="discount">Descuento</label>
@@ -44,39 +44,21 @@
                     </div>
                     <div class="register-input">
                         <label for="categoryId">Categoria</label>
-                        <select name="categoryId" id="select" class="input-style">
-                            <option value="" selected hidden>Elija una categoría</option>
-                            <option value="1">Bicicletas</option>
-                            <option value="2">Kids</option>
-                            <option value="3">Repuestos</option>
-                            <option value="4">Accesorios</option>
-                            <option value="5">Indumentaria</option>
-                            <option value="6">Herramientas</option>
-                        </select>
+                        <input type="text" name="categoryId" class="input-style" value="<%= product.categoryId %>">
                     </div>
                     <div class="register-input">
                         <label for="image">Subir imagen</label>
-                        <input type="file" name="image">
-                    </div>
-                    <div class="register-input">
-                        <label for="condition">Condicion de producto</label>
-                        <select name="condition" id="select" class="input-style">
-                            <option value="" selected hidden>Elija una categoría</option>
-                            <option value="in-sale">Oferta</option>
-                            <option value="featured">Destacado</option>
-                        </select>
+                        <input type="file" name="image" value="<%= product.image %>">
                     </div>
                     <div class="register-input">
                         <label for="description">Detalles</label>
-                        <textarea type="description" name="description" id="description" cols="30" rows="3"><%= product.description %>"</textarea>
+                        <textarea type="description" name="description" id="description" cols="30" rows="3"><%= product.description %></textarea>
                     </div> 
-                    <div class="btn_register">
-                       <button type="submit" class="btn-submit_register">Agregar</button>
-                        <span class="admin"><a class="admin" href="/admin">Volver</a></span>
-                    </div>
-                </form>
-             
-                     
+            <div class="btn_register">
+                 <button type="submit" class="btn-submit_register">Guardar Cambios</button>
+                 <span class="admin"><a class="admin" href="/admin">Volver</a></span>
+            </div>
+             </form>
         </div>
     </main>
     <footer> 
