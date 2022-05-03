@@ -11,7 +11,7 @@
             </form>
         </div>
         <div class="botones">
-            <% if (typeof session.user != "undefined") { %>
+            <% if (typeof session.user != "undefined" && session.user.rol === 'ADMIN') { %>
             <button class="carrito" ><a href="carrito"><img src="/images/carrito.svg" alt="carrito" class="carrito"></a></button>
             <button class="carrito" ><a href="/admin">Admin</a></button>
             <% } %> 

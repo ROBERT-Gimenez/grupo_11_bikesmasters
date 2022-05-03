@@ -16,7 +16,7 @@ module.exports = {
     /* Envia la vista de formulario de creación de producto */
     productAdd: (req, res) => {
         res.render('admin/adproduct', {
-            titulo: "Agregar producto"
+            titulo: "Agregar producto",
         })
     },
     /* Recibe los datos del form de creación y guarda el producto en la DB */

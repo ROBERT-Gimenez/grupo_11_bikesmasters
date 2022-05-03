@@ -9,17 +9,17 @@ const productController = require('../../controllers/productController');
 
 
 /* GET - Lista de productos */
-router.get('/', userSessionCheck,adminController.list);
+router.get('/', userSessionCheck, adminSession, adminController.list);
 /*GET -admision de personas */
-router.get('/',adminSession,adminController.list)
+/* router.get('/', adminSession, adminController.list) */
  /*  GET categorias */
-router.get('/categoria/:id',adminSession,productController.Categoryadmin)
+router.get('/categoria/:id', userSessionCheck, adminSession, productController.Categoryadmin)
 /* GET - Agregar producto */
-router.get('/adproduct', userSessionCheck ,adminController.productAdd);
+router.get('/adproduct', userSessionCheck, adminSession, adminController.productAdd);
 /* POST - Crea un producto en la DB */
-router.post('/adproduct', uploadFile.single('image'),adminController.productCreate);
+router.post('/adproduct', uploadFile.single('image'), adminController.productCreate);
 /* GET - Editar producto */
-router.get('/editproduct/:id', adminController.productEdit);
+router.get('/editproduct/:id', userSessionCheck, adminSession, adminController.productEdit);
 /* PUT - Actualiza producto en la DB */
 router.put('/editproduct/:id', adminController.productUpdate);
 
