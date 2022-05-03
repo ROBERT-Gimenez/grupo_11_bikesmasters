@@ -96,8 +96,11 @@ module.exports = {
         res.redirect('/')
     },
 
-    usuario: (req, res) => {
+    userProfile: (req, res) => {
+        let userId = +req.params.id;
+        let user = users.find(user => userId === user.id)
         res.render('users/userProfile', {
+            user,
             session: req.session
         })
     }

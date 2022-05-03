@@ -25,7 +25,7 @@
                     <% } %>
                     <ul class="acceso">
                         <% if (typeof session.user != "undefined") { %>
-                            <button class="inicio"><a href="/">Perfil</a></button>
+                            <button class="inicio"><a href="/usuario/<%= session.user.id %>">Perfil</a></button>
                             <button class="registrar"><a href="/logout">Cerrar Session</a></button>
                         <% }else{ %> 
                             <button class="inicio"><a href="/login">Iniciar Sesion</a></button>
