@@ -14,13 +14,15 @@ const imgProfile = require('../middlewares/imageProfileMiddleware')
 router.get('/', indexController.index);
 router.get('/login',checkin, indexController.login);
 router.post('/login', loginValidator, usercontroller.processLogin);
-router.get('/registrarse',checkin, indexController.register);
-router.post('/registrarse', registerValidator, imgProfile.single(), usercontroller.processRegister);
+router.get('/registrarse', checkin, indexController.register);
+router.post('/registrarse', registerValidator, usercontroller.processRegister);
 /* router.post('/registrarse', imgProfile, indexController.update); */
 router.get('/search', indexController.search);
 router.get('/logout', usercontroller.logout);
 
 /* RUTA DE PRUEBA-BRIAN!!!! Ignorar! */
 router.get('/usuario/:id', usercontroller.userProfile);
+router.get('/usuario/edit/:id', usercontroller.editProfile);
+router.put('/usuario/:id', imgProfile.single(), usercontroller.userUpdate);
 
 module.exports = router

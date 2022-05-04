@@ -103,6 +103,31 @@ module.exports = {
             user,
             session: req.session
         })
+    },
+
+    editProfile: (req, res) => {
+        let userId = +req.params.id;
+        let user = users.find(user => user.id === userId)
+        res.render('users/editProfile', {
+            user,
+            session: req.session
+        })
+    },
+
+    userUpdate: (req, res) => {
+        let userId = +req.params.id;
+        users.forEach(user => {
+            if(user.id === userId){
+                user.name = req.body.name,
+                user.num = +req.boy.num,
+                user.avatar = req.file ? req.file.filename : 'user-default.png',
+                user.direction = req.body.direction
+            }
+        })
+        writeUsers(users);
+        res.redirect('/usuario/:id', {
+            session: req.session
+        })
     }
 
 }
