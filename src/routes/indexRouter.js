@@ -23,6 +23,6 @@ router.get('/logout', usercontroller.logout);
 /* RUTA DE PRUEBA-BRIAN!!!! Ignorar! */
 router.get('/usuario/:id', usercontroller.userProfile);
 router.get('/usuario/edit/:id', usercontroller.editProfile);
-router.put('/usuario/:id', imgProfile.single(), usercontroller.userUpdate);
+router.put('/usuario/:id', imgProfile.single('avatar'), usercontroller.userUpdate);
 
 module.exports = router

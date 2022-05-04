@@ -19,7 +19,7 @@
             <nav class="nav_cuenta">
                 <input type="checkbox" id="cuenta" class="botton">
                 <% if (typeof session.user != "undefined") { %>
-                <label class="cuenta" for="cuenta" style="box-shadow:1px 1px 5px 4px green;"><img src="/images/profile/user-default.png" alt=""></label>
+                <label class="cuenta" for="cuenta" style="box-shadow:1px 1px 5px 4px green;"><img src="/images/profile/<%= session.user.avatar %> " alt=""></label>
                 <% }else{ %> 
                     <label class="cuenta" for="cuenta"><img src="/images/profile/user-default.png" alt=""></label>
                     <% } %>

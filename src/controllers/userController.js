@@ -119,15 +119,13 @@ module.exports = {
         users.forEach(user => {
             if(user.id === userId){
                 user.name = req.body.name,
-                user.num = +req.boy.num,
+                user.num = +req.body.num,
                 user.avatar = req.file ? req.file.filename : 'user-default.png',
                 user.direction = req.body.direction
             }
         })
         writeUsers(users);
-        res.redirect('/usuario/:id', {
-            session: req.session
-        })
+        res.redirect('/usuario/:id')
     }
 
 }
