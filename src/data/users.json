@@ -2,7 +2,6 @@
     {
         "id": 1,
         "name": "Alon",
-        "apellido": "Johnsee",
         "email": "ajohnsee0@godaddy.com",
         "password": "",
         "category": "vendedor",
@@ -12,7 +11,6 @@
     {
         "id": 2,
         "name": "Janice",
-        "apellido": "Wootton",
         "email": "jwootton1@oaic.gov.au",
         "password": "123456789",
         "category": "comprador",
@@ -22,7 +20,6 @@
     {
         "id": 3,
         "name": "Dionis",
-        "apellido": "Merigot",
         "email": "dmerigot2@altervista.org",
         "password": "",
         "category": "comprador",
@@ -32,7 +29,6 @@
     {
         "id": 4,
         "name": "Ilysa",
-        "apellido": "Salliere",
         "email": "isalliere3@domainmarket.com",
         "password": "",
         "category": "vendedor",
@@ -42,7 +38,6 @@
     {
         "id": 5,
         "name": "Merwyn",
-        "apellido": "Shorto",
         "email": "mshorto4@auda.org.au",
         "password": "",
         "category": "comprador",
@@ -52,7 +47,6 @@
     {
         "id": 6,
         "name": "Dorotea",
-        "apellido": "Denslow",
         "email": "ddenslow5@imageshack.us",
         "password": "",
         "category": "vendedor",
@@ -62,7 +56,6 @@
     {
         "id": 7,
         "name": "Maure",
-        "apellido": "Stollenwerck",
         "email": "mstollenwerck6@jugem.jp",
         "password": "",
         "category": "comprador",
@@ -72,7 +65,6 @@
     {
         "id": 8,
         "name": "Kevina",
-        "apellido": "Buckel",
         "email": "kbuckel7@t-online.de",
         "password": "",
         "category": "comprador",
@@ -82,7 +74,6 @@
     {
         "id": 9,
         "name": "Katti",
-        "apellido": "Maes",
         "email": "kmaes8@deviantart.com",
         "password": "12345678",
         "category": "comprador",
@@ -92,8 +83,7 @@
     {
         "id": 10,
         "name": "robert",
-        "apellido": "gimenez",
-        "num": "1132905942",
+        "telefono": "1132905942",
         "email": "robertgim37@gmail.com",
         "password": "123456789",
         "avatar": "default-image.png",
@@ -102,8 +92,7 @@
     {
         "id": 11,
         "name": "Brian",
-        "apellido": "Flores",
-        "num": 111111111,
+        "telefono": 111111111,
         "email": "brian@mail.com",
         "password": "12345678",
         "avatar": "1651701487349-profile.png",
@@ -113,8 +102,7 @@
     {
         "id": 12,
         "name": "Fulano",
-        "apellido": "Mengano",
-        "num": "1515151515",
+        "telefono": "1515151515",
         "email": "user@mail.com",
         "password": "12345678",
         "avatar": "user-default.png",

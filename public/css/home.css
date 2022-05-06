@@ -25,7 +25,6 @@ main {
 main.home a {
     text-transform: capitalize;
     text-decoration: none;
-/*     color: rgb(255, 255, 255); */
 }
 
 main div.banner {
@@ -203,6 +202,7 @@ main section.categorias div.img-link span a {
     main section article {
         width: 40%;
         margin-bottom: 0px;
+        box-shadow: 1px 2px 9px rgb(0 0 0 / 80%);
     }
 
     main section article p {
@@ -229,7 +229,7 @@ main section.categorias div.img-link span a {
     }
 
     main section article:hover {
-        box-shadow: 1px 1px 10px rgba( 0, 0, 0, 0.8);
+        box-shadow: 1px 2px 10px rgba(255, 98, 1, 0.9);
     }
 
     main section.categorias div.img-link {
