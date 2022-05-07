@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../css/userProfile.css">
+    <link rel="stylesheet" href="../../../css/Header.css">
+    <link rel="stylesheet" href="../../../css/footer.css">
+    <link rel="stylesheet" href="../../../css/register.css">
+</head>
+<body>
+
+    <%- include('../partials/header') %> 
+    
+    <main>
+        <form class="form-register" action="/usuario/<%= user.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+            <div class="register-input">
+                <label for="name">Nombre</label>
+                <input type="text" name="name" id="name" class="input-style" placeholder="Ingrese su nombre" value="<%= user.name %>">
+            </div>
+            <div class="register-input">
+                <label for="num">Número de celular</label>
+                <input type="num" name="telefono" id="telefono" class="input-style" placeholder="Ingrese su número" value="<%= user.num %>">
+            </div>
+            <div class="register-input">
+                <label for="direction">Ingrese su direccion</label>
+                <input type="text" name="direction" id="direction" class="input-style" placeholder="Ingrese una dirección" value="<%= (locals.user && user.direction)? user.direction : "" %>">
+            </div>
+            <div class="register-input">
+                <label for="avatar">Seleccione imagen de perfil</label>
+                <input type="file" name="avatar">
+            </div>
+            <div class="edit-button">
+                <button type="submit">Guardar cambios</button>
+            </div>
+        </form>
+    </main> 
+
+    <%- include('../partials/footer') %> 
+</body>
+</html>

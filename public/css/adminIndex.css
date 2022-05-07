@@ -71,7 +71,9 @@ table {
     table-layout: fixed;
     width: 80vw;
     border-collapse: collapse;
-    border: 3px solid gray;
+    border-right: 3px solid gray;
+    border-bottom: 3px solid gray;
+    border-left: 3px solid gray;
     margin: 50px auto 0px;
 }
 
@@ -84,6 +86,8 @@ caption {
 thead {
     width: 100%;
     background-color: #1B1717 ;
+    position: sticky;
+    top: 0;
 }
 
 thead th{
@@ -126,4 +130,98 @@ footer p {
     padding: 5px;
     color: whitesmoke;
 }
+/* boton categoti */
+nav{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+nav ul {
+    position: relative;
+    top: 1rem;
+    left: 0;
+    width: 7rem;
+    background-color: #1b1717;
+    z-index: 10;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    animation-name: menu-out;
+    animation-duration: 0.5s;
+    list-style: none;
+    transition:opacity 0.5s ease;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    width: auto;
+    text-align: center;
+    text-transform: uppercase;
+}
+nav a{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    color: rgb(255, 251, 251);
+}
+nav a:hover{
+    background-color: #FF2E00;
+    
+  }
+nav label {
+    width: 7rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+    border-radius: 3px;
+    font-weight: 900;
+    color: black;
+    cursor: pointer;
+    margin-top: 1rem;
+}  
 
+nav ul {
+    position: absolute;
+    top: 10rem;
+    display: none;
+}
+nav label:hover {
+    background-color: #FF2E00;
+}
+ nav input{
+    display: none; 
+}
+@keyframes menu-out{
+    0%{
+        left: 0;
+        opacity: 1;
+    }
+    100%{
+        left: -100%;
+        opacity: 0;
+    }
+}
+@keyframes menu-in{
+    0%{
+        left: -100%;
+        opacity: 0;
+    }
+    100%{
+        left: 0;
+        opacity: 1;
+    }
+}
+nav input:checked ~ ul{
+    display: grid;
+    flex-direction: column;
+    opacity: 1;
+    animation-name: menu-in;
+    animation-duration: 0.5s;
+ 
+}

@@ -194,6 +194,7 @@ header nav input{
     }
     header nav.nav_cuenta label img{
         width: 100%;
+        border-radius: 50%;
     }
     header nav.nav_cuenta label.cuenta{
     min-width: 2.5rem;

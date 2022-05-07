@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const {products} = require('../data/index');
+const {products , categories} = require('../data/index');
 const categorias = require('../data/categories')
 
 /* let productsFilePath = path.join(__dirname, '../data/products.json');
@@ -36,6 +36,27 @@ module.exports = {
                 toThousand,
                 session:req.session,
 				namecategori
+
+            })
+	
+	},
+	Categoryadmin: (req, res) => {
+		let namecategori = categorias.find(categori => categori.id === +req.params.id)
+		let Categori = [];
+            products.forEach(product => {
+                if(product.categoryId === +req.params.id){
+                    Categori.push(product)
+                }
+            }
+            );
+            res.render ('Admin/Categoriadmin',{
+                titulo: 'Bikesmasters',
+                css: 'home.css',
+                Categori: Categori ,
+                toThousand,
+                session:req.session,
+				namecategori,
+				categories
 
             })
 	

@@ -12,8 +12,13 @@
   },
   "author": "bikes_master",
   "license": "ISC",
+<<<<<<< HEAD
   "nodemonConfig":{
     "ignore":"./src/data/*.json"
+=======
+  "nodemonConfig": {
+    "ignore": "src/data/*.json"
+>>>>>>> 1d9e94355b26e5665869a270a37b6ff6ff10c691
   },
   "bugs": {
     "url": "https://github.com/BrianFloresOk/grupo_11_bikesmasters/issues"

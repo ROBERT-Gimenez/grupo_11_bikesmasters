@@ -1,9 +1,4 @@
-const path =require('path');
-const fs =require('fs');
-const {users ,writeUsers}=require('../data/index');
-/* let userFilePath = path.join(__dirname, '../data/users.json');
-let users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8')); */
-/* const writeUsers = (data) =>  fs.writeFileSync(userFilePath, JSON.stringify(data), 'utf-8'); */
+const {users ,writeUsers} = require('../data/index');
 const { validationResult } = require('express-validator');
 
 
@@ -64,18 +59,13 @@ module.exports = {
             let newUser = {
                 id: lastId + 1,
                 name: req.body.name,
-                apellido:req.body.apellido,
-                num:req.body.num,
                 email: req.body.email,
                 password: req.body.password,
                 avatar: req.file ? req.file.filename : "default-image.png",
                 rol: "USER"
             }
-            //Guardar el nuevo usuario en el array de usuarios
             users.push(newUser)
-            //Escribir el JSON de usuarios con el array actual
             writeUsers(users)
-            //Devolver respuesta (redirección)
             res.redirect('/login')
         }else{
             //Código para mostrar errores
@@ -94,6 +84,38 @@ module.exports = {
         }
 
         res.redirect('/')
+    },
+
+    userProfile: (req, res) => {
+        let userId = +req.params.id;
+        let user = users.find(user => userId === user.id)
+        res.render('users/userProfile', {
+            user,
+            session: req.session
+        })
+    },
+
+    editProfile: (req, res) => {
+        let userId = +req.params.id;
+        let user = users.find(user => user.id === userId)
+        res.render('users/editProfile', {
+            user,
+            session: req.session
+        })
+    },
+
+    userUpdate: (req, res) => {
+        let userId = +req.params.id;
+        users.forEach(user => {
+            if(user.id === userId){
+                user.name = req.body.name,
+                user.telefono = +req.body.telefono,
+                user.avatar = req.file ? req.file.filename : 'user-default.png',
+                user.direction = req.body.direction
+            }
+        })
+        writeUsers(users);
+        res.redirect('/usuario/:id')
     }
 
 }
