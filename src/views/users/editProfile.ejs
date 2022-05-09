@@ -22,36 +22,36 @@
                 <input type="text" name="name" id="name" class="input-style" placeholder="Ingrese su nombre" value="<%= user.name %>">
             </div>
             <div class="register-input">
-                <label for="name">Nombre de usuario</label>
-                <input type="text" name="nickname" id="name" class="input-style" placeholder="Ingrese un nombre de usuario" value="<%= (locals.session && session.user)? session.user.nickname : ""%>">
+                <label for="nickname">Nombre de usuario</label>
+                <input type="text" name="nickname" id="nickname" class="input-style" placeholder="Ingrese un nombre de usuario" value="<%= (locals.user && user.nickname)? user.nickname : ""%>">
             </div>
             <div class="register-input">
-                <label for="num">Número de celular</label>
-                <input type="num" name="telefono" id="telefono" class="input-style" placeholder="Ingrese su número" value="<%= user.num %>">
+                <label for="telefono">Número de celular</label>
+                <input type="number" name="telefono" id="telefono" class="input-style" placeholder="Ingrese su número" value="<%= user.telefono %>">
             </div>
             <div class="register-input">
-                <label for="direction">Provincia</label>
-                <input type="text" name="direction" id="direction" class="input-style" placeholder="Ingrese su provincia" value="<%= (locals.user && user.direction)? user.direction : "" %>">
+                <label for="province">Provincia</label>
+                <input type="text" name="province" id="province" class="input-style" placeholder="Ingrese su provincia" value="<%= (locals.user && user.direction)? user.province : "" %>">
             </div>
             <div class="register-input">
-                <label for="direction">Localidad</label>
-                <input type="text" name="direction" id="direction" class="input-style" placeholder="Ingrese su localidad" value="<%= (locals.user && user.direction)? user.direction : "" %>">
+                <label for="localidad">Localidad</label>
+                <input type="text" name="localidad" id="localidad" class="input-style" placeholder="Ingrese su localidad" value="<%= (locals.user && user.localidad)? user.localidad : "" %>">
             </div>
             <div class="register-input">
-                <label for="direction">Ciudad</label>
-                <input type="text" name="direction" id="direction" class="input-style" placeholder="Ingrese su ciudad" value="<%= (locals.user && user.direction)? user.direction : "" %>">
+                <label for="city">Ciudad</label>
+                <input type="text" name="city" id="city" class="input-style" placeholder="Ingrese su ciudad" value="<%= (locals.user && user.city)? user.city : "" %>">
             </div>
             <div class="register-input">
                 <label for="direction">Ingrese su direccion</label>
                 <input type="text" name="direction" id="direction" class="input-style" placeholder="Ingrese una dirección" value="<%= (locals.user && user.direction)? user.direction : "" %>">
             </div>
             <div class="register-input">
-                <label for="direction">Código postal</label>
-                <input type="text" name="direction" id="direction" class="input-style" placeholder="Código postal" value="<%= (locals.user && user.direction)? user.direction : "" %>">
+                <label for="postal">Código postal</label>
+                <input type="number" name="postal" id="postal" class="input-style" placeholder="Código postal" value="<%= (locals.user && user.postal)? user.postal : "" %>">
             </div>
             <div class="register-input">
                 <label for="avatar">Seleccione imagen de perfil</label>
-                <input type="file" name="avatar">
+                <input type="file" name="avatar" value="">
             </div>
             <div class="btn_register">
                 <button class="btn-submit_register" type="submit">Guardar cambios</button>

@@ -16,22 +16,23 @@
     <main>
         <article class="user-profile">
                 <div class="image-profile">
-                    <img src="../../../images/profile/<%= user.avatar %>" alt="Foto de perfil">
+                    <img src="../../../images/profile/<%= session.user.avatar %>" alt="Foto de perfil">
                 </div>
             <div class="detail">
                 <div class="edit-button">
-                    <button class="button"><a href="/usuario/edit/<%= user.id %> ">Editar perfil</a></button>
+                    <button class="button"><a href="/usuario/edit/<%= session.user.id %> ">Editar perfil</a></button>
                 </div>
                 <ul class="user-detail">
-                    <li>Nombre: <%= user.name %> </li>
-                    <li>Email: <%= user.email %> </li>
-                    <li>Dirección: <%= locals.user && user.direcction? user.direccion : "Agregue una dirección"%> </li>
-                    <li>Celular: <%= user.telefono %> </li>
+                    <li>Usuario: <%= session.user.nickname %> </li>
+                    <li>Nombre: <%= session.user.name %> </li>
+                    <li>Email: <%= session.user.email %> </li>
+                    <li>Dirección: <%= (locals.user && user.direction)? user.direction : "Agregue una dirección"%> </li>
+                    <li>Celular: <%= (locals.user && user.telefono)? user.telefono : "Agregue un teléfono" %> </li>
                 </ul>
             </div>
         </article>
         <div class="user-products">
-            <h2>Productos comprados</h2>
+            <h2>Mis productos</h2>
             <div class="recent-product">
                 <div class="image-product">
                     <img src="../../../images/products/product-default-4.png" alt="">

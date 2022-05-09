@@ -1,7 +1,4 @@
-const {users , writeUsers, products} = require('../data/index');
-const { validationResult } = require('express-validator');
-
-
+const {products} = require('../data/index')
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const removeAccents = (str) => {return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");}
 
@@ -41,11 +38,6 @@ module.exports = {
             session:req.session
         })
     },
-
-    update: {
-        //Completar lógica para guardar los datos
-    },
-
     register: (req, res) => {
         res.render('users/register', {
             titulo: "Registrarse",

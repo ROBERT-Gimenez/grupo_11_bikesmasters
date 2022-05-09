@@ -1,20 +1,13 @@
 const {check , body } = require('express-validator');
-const req = require('express/lib/request');
 const users = require('../data/users.json')
 
 let Registervalidation=[
     check("name")
-    .notEmpty().withMessage('ingrese un nombre').bail()
-    .isLength({min:3}).withMessage('nombre no valido'),
-    check("apellido")
-    .notEmpty().withMessage('ingrese un nombre').bail()
-    .isLength({min:3}).withMessage('nombre no valido'),
-    check("num")
-    .notEmpty().withMessage('ingrese su numero de telefono').bail()
-    .isLength({min:9}).withMessage('ingrese un numero valido'),
+    .notEmpty().withMessage('Ingrese un nombre').bail()
+    .isLength({min:3, max:50}).withMessage('Nombre no válido'),
     check("email")
-    .notEmpty().withMessage('El Email es requerido').bail()
-    .isEmail().withMessage('Ingrese un Email valido'),
+    .notEmpty().withMessage('El email es requerido').bail()
+    .isEmail().withMessage('Ingrese un email valido'),
     body("email").custom((value)=>{
         let user = users.find(user => user.email === value);
         if(user){
@@ -22,19 +15,19 @@ let Registervalidation=[
         }else{
             return true;
         }
-    }).withMessage('Email ya Registrado'),
+    }).withMessage('El email ya está registrado'),
     check("password")
-    .notEmpty().withMessage('ingrese la contraseña')
-    .isLength({min:8}).withMessage('la contraseña debe tener al menos 8 caracteres'),
+    .notEmpty().withMessage('Ingrese una contraseña')
+    .isLength({min:8}).withMessage('La contraseña debe tener al menos 8 caracteres'),
     check("password2")
-    .notEmpty().withMessage('ingrese nuevamente la contraseña anterior'),
+    .notEmpty().withMessage('Ingrese nuevamente la contraseña'),
     body("password2").custom((value ,{req})=>{
         if(value!==req.body.password){
             return false
         }else{
             return true;
         }
-    }).withMessage('las contraseñas no coinciden'),
+    }).withMessage('Las contraseñas no coinciden'),
     check("terms")
     .isString("on").withMessage('Debes aceptar los terminos y condiciones')
 ]

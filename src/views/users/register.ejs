@@ -15,14 +15,14 @@
             <form action="/registrarse" method="POST" class="form-register">
                 <div class="register-input">
                     <label for="name">Nombre y Apellido</label>
-                    <input type="text" name="name" id="name" class="input-style" placeholder="Ingrese su nombre y apellido">
+                    <input type="text" name="name" id="name" class="input-style" placeholder="Ingrese su nombre y apellido" value="<%= (locals.old && old.name)? old.name : "" %>">
                     <small class="text-danger">
                         <%= (locals.errors && errors.name)? errors.name.msg : "" %>
                     </small>
                 </div>
                 <div class="register-input">
-                    <label for="email">Correo electronico</label>
-                    <input type="email" name="email" id="email" class="input-style" placeholder="Ingrese su mail">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" name="email" id="email" class="input-style" placeholder="Ingrese su email">
                     <small class="text-danger">
                         <%= (locals.errors && errors.email)? errors.email.msg : "" %>
                     </small>

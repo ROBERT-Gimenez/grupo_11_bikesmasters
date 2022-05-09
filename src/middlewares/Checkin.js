@@ -1,8 +1,8 @@
-const Checkin = (req, res, next) => {
+const checkin = (req, res, next) => {
     if(req.session.user){
        return res.redirect('/')
     }
     next()
 };
 
-module.exports = Checkin;
+module.exports = checkin;

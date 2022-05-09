@@ -13,7 +13,7 @@ module.exports = {
         
         if(errors.isEmpty()){
             //Levantar sesión
-            let user = users.find(user => user.email === req.body.email);
+            let user = users.find(user => req.body.email === (user.email || user.nickname));
 
             req.session.user = {
                 id: user.id,
@@ -72,7 +72,8 @@ module.exports = {
             res.render('users/register', {
                 titulo: "Registro",
                 errors: errors.mapped(),
-                session: req.session
+                session: req.session,
+                old: req.body
             })
         }
     },
@@ -110,8 +111,13 @@ module.exports = {
             if(user.id === userId){
                 user.name = req.body.name,
                 user.telefono = +req.body.telefono,
-                user.avatar = req.file ? req.file.filename : 'user-default.png',
-                user.direction = req.body.direction
+                user.avatar = req.file ? req.file.filename : user.avatar,
+                user.direction = req.body.direction,
+                user.nickname = req.body.nickname,
+                user.city = req.body.city,
+                user.localidad = req.body.localidad,
+                user.postal = +req.body.postal,
+                user.province = req.body.province
             }
         })
         writeUsers(users);
