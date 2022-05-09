@@ -27,7 +27,6 @@ module.exports = {
                 resultado: searchResult ,
                 keyword: req.query.keywords,
                 toThousand,
-                session:req.session
             })
     },
 

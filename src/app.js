@@ -10,33 +10,33 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const cookieSession = require('./middlewares/cookieSession');
 
-
-/* Views config */
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, "views"));
-app.use(express.static(path.join(__dirname, '../public')));
-app.use(express.urlencoded({extended: false}));
-app.use(express.json());
-app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
-app.use(bodyParser.json()) 
-/* session */
-
-app.use(cookieParser());
-app.use(cookieSession);
-app.set('trust proxy', 1);
-app.use(session({
-    secret:"formar",
-    resave: true,
-    saveUninitialized: true,
-    cookie: {}
-}));
-
-
 /* routes */
 const indexRouter = require('./routes/indexRouter');
 const productRouter = require('./routes/productRouter');
 const userRouter = require('./routes/userRouter');
 const adminRouter = require('./routes/admin/adminRouter');
+
+/* Views config */
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, "views"));
+
+/* Middlewares */
+app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
+app.use(methodOverride('_method'));
+app.use(bodyParser.json()) 
+
+/* session */
+/* app.set('trust proxy', 1); */
+app.use(session({
+    secret:"las bicis son lo mas!!",
+    resave: false,
+    saveUninitialized: true,
+    cookie: {}
+}));
+app.use(cookieParser());
+app.use(cookieSession);
 
 
 app.use ('/', indexRouter);

@@ -13,7 +13,7 @@ module.exports = {
         
         if(errors.isEmpty()){
             //Levantar sesión
-            let user = users.find(user => req.body.email === (user.email || user.nickname));
+            let user = users.find(user => req.body.email === user.email);
 
             req.session.user = {
                 id: user.id,
@@ -39,7 +39,6 @@ module.exports = {
             
             res.render('users/login', {
                 titulo: "Login",
-                css: "userForms.css",
                 errors: errors.mapped(),
                 session: req.session
             })
