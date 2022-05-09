@@ -1,6 +1,7 @@
 @import url('Header.css');
 @import url('footer.css');
 @import url('slider.css');
+@import url('variables.css');
 
 * {
     margin: 0;
@@ -8,13 +9,6 @@
     box-sizing: border-box;
     font-family: 'Nunito Sans', sans-serif;
 }
-
-:root {
-    --naranja: #FF2E00;
-    --negro: #1B1717;
-    --fondo: #f7f4f2;
-}
-
 
 /* MAIN */
 
@@ -101,7 +95,7 @@ main section article p.precio-discount .precio{
     font-weight: thin;
     font-size: 0.9rem;
     text-decoration: line-through;
-    color: rgb(187, 26, 26);
+    color: var(--oferta);
     margin-left: 6px;
 }
 

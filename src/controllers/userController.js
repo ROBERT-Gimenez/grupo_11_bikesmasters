@@ -61,7 +61,7 @@ module.exports = {
                 name: req.body.name,
                 email: req.body.email,
                 password: req.body.password,
-                avatar: req.file ? req.file.filename : "default-image.png",
+                avatar: req.file ? req.file.filename : "user-default.png",
                 rol: "USER"
             }
             users.push(newUser)

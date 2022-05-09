@@ -12,35 +12,46 @@
             <div id="head-logo">
                 <h2>Registrate</h2>
             </div>
-            <form action="/registrarse" method="POST" class="form-register" >
-                    <div class="register-input">
-                        <label for="name">Nombre y Apellido</label>
-                        <input type="text" name="name" id="name" class="input-style" placeholder="Ingrese su nombre y apellido">
-                        <small class="text-danger"><%= (locals.errors && errors.name)? errors.name.msg : "" %></small>
-                    </div>
-                    <div class="register-input">
-                        <label for="email">Correo electronico</label>
-                        <input type="email" name="email" id="email" class="input-style" placeholder="Ingrese su mail">
-                        <small class="text-danger"><%= (locals.errors && errors.email)? errors.email.msg : "" %></small>
-                    </div>
-                    <div class="register-input">
-                        <label for="password">Ingrese una contraseña</label>
-                        <input type="password" name="password" id="password" class="input-style">
-                        <small class="text-danger"><%= (locals.errors && errors.password)? errors.password.msg : "" %></small>
-                    </div>
-                    <div class="register-input">
-                        <label for="password2">Confirme su contraseña</label>
-                        <input type="password" name="password2" id="password2" class="input-style">
-                        <small class="text-danger"><%= (locals.errors && errors.name)? errors.name.msg : "" %></small>
-                    </div>
-            
-                    <div class="btn_register">
-                    <span class="terminos">Acepto términos y condiciones <input type="checkbox" name="terms" id="terms"></span>
-                    <small class="text-danger" id="terms"><%= (locals.errors && errors.terms)? errors.terms.msg: "" %></small>
+            <form action="/registrarse" method="POST" class="form-register">
+                <div class="register-input">
+                    <label for="name">Nombre y Apellido</label>
+                    <input type="text" name="name" id="name" class="input-style" placeholder="Ingrese su nombre y apellido">
+                    <small class="text-danger">
+                        <%= (locals.errors && errors.name)? errors.name.msg : "" %>
+                    </small>
+                </div>
+                <div class="register-input">
+                    <label for="email">Correo electronico</label>
+                    <input type="email" name="email" id="email" class="input-style" placeholder="Ingrese su mail">
+                    <small class="text-danger">
+                        <%= (locals.errors && errors.email)? errors.email.msg : "" %>
+                    </small>
+                </div>
+                <div class="register-input">
+                    <label for="password">Ingrese una contraseña</label>
+                    <input type="password" name="password" id="password" class="input-style">
+                    <small class="text-danger">
+                        <%= (locals.errors && errors.password)? errors.password.msg : "" %>
+                    </small>
+                </div>
+                <div class="register-input">
+                    <label for="password2">Confirme su contraseña</label>
+                    <input type="password" name="password2" id="password2" class="input-style">
+                    <small class="text-danger">
+                        <%= (locals.errors && errors.name)? errors.name.msg : "" %>
+                    </small>
+                </div>
+    
+                <div class="btn_register">
+                    <span class="terminos">Acepto términos y condiciones <input type="checkbox" name="terms"
+                            id="terms"></span>
+                    <small class="text-danger" id="terms">
+                        <%= (locals.errors && errors.terms)? errors.terms.msg: "" %>
+                    </small>
                     <button type="submit" class="btn-submit_register">Registrarme</button>
                     <span class="login"><a id="link" href="/login">Ya tengo cuenta</a></span>
-            </div>
-        </form>
+                </div>
+            </form>
         </div>
     </main>
 

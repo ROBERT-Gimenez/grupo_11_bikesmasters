@@ -1,11 +1,7 @@
-/* * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-} */
+@import url('variables.css');
 
 a {
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
@@ -49,7 +45,10 @@ main .detail .edit-button {
 
 main .detail .edit-button button {
     height: 1.5rem;
-    width: 6rem;
+    background-color: var(--naranja);
+    border-radius: 8px;
+    padding: 15px;
+    border-style: none;
 }
 
 main .detail .edit-button a {
@@ -58,14 +57,21 @@ main .detail .edit-button a {
     align-items: center;
     height: 100%;
     width: 100%;
+    color: white;
 }
 
 main .user-products {
     padding: 10px;
+    background-color: var(--fondo);
 }
 
 main .user-products h2 {
     margin: 5px 0px 25px 10px;
+}
+
+main .recent-product {
+    background-color: white;
+    margin: 10px 0px;
 }
 
 main .recent-product .image-product {
@@ -133,6 +139,10 @@ main .recent-product .product-detail p{
 
     main .detail .user-detail li{
         margin: 10px 0px;
+    }
+
+    main .user-products h2 {
+        margin: 25px 0px 25px 10px;
     }
 
     main .user-products .recent-product {
