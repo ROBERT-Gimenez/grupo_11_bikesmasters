@@ -23,7 +23,7 @@ module.exports = {
                 rol: user.rol
             }
 
-            if(req.body.remember){
+            if(req.body.recordar){
                 const TIME_IN_MILISECONDS = 60000;
                 res.cookie('Bikemastercookie', req.session.user, {
                     expires: new Date(Date.now() + TIME_IN_MILISECONDS),
