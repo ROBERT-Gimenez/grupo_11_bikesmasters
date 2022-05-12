@@ -1,17 +1,4 @@
-
-*{
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Nunito Sans', sans-serif;
-}
-/* body{
-    font-size:10px ;
-    min-height: 100vh;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 300;
-} */
+@import url('variables.css');
 a{
     text-decoration: none;
     color: black;
@@ -135,7 +122,7 @@ nav a{
     color: white;
 }
 nav a:hover{
-    background-color: #FF2E00;
+    background-color: var(--naranja);
     
   }
   header nav label {
@@ -166,7 +153,7 @@ button.carrito {
     display: none;
 }
 header nav label:hover {
-    background-color: #FF2E00;
+    background-color: var(--naranja);
 }
 header nav input{
     display: none; 
@@ -283,7 +270,7 @@ header nav input{
         transition: all 0.3s ease-in;
         }
         button:hover {
-            background-color: #ff4500;
+            background-color: var(--naranja);
             color: #fff;
         }
     div.botones {
@@ -307,7 +294,7 @@ header nav input{
         
     }
     div button.carrito:hover {
-        background-color: #ff4500;
+        background-color: var(--naranja);
     }
     div button.inicio:hover{
         background-color: rgba(0, 0, 0, 0.562);
@@ -324,7 +311,7 @@ header nav input{
         width: 100%;
     }
     div button.registrar:hover{
-        background-color: #ff4500;
+        background-color: var(--naranja);
         color: white;
     }
     div button.registrar a:hover{

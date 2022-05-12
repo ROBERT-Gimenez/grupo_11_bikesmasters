@@ -7,6 +7,7 @@ module.exports = {
     index: (req, res)=> {
         res.render('home' ,{
             css:'home.css',
+            titulo: 'Bikesmasters',
 			products,	
 			toThousand,
             session:req.session
@@ -40,6 +41,7 @@ module.exports = {
     register: (req, res) => {
         res.render('users/register', {
             titulo: "Registrarse",
+            css: 'register.css',
             session: req.session
         })
     },
