@@ -5,7 +5,8 @@ const { validationResult } = require('express-validator');
 module.exports = {
     carrito: (req, res) => {
         res.render('products/productCard', {
-            titulo: "Carrito de compras"
+            titulo: "Carrito de compras",
+            css: 'carrito.css'
         })
     },
     processLogin: (req, res) => {
@@ -39,6 +40,7 @@ module.exports = {
             
             res.render('users/login', {
                 titulo: "Login",
+                css: 'login.css',
                 errors: errors.mapped(),
                 session: req.session
             })
@@ -70,6 +72,7 @@ module.exports = {
             //Código para mostrar errores
             res.render('users/register', {
                 titulo: "Registro",
+                css: 'register.css',
                 errors: errors.mapped(),
                 session: req.session,
                 old: req.body
@@ -90,6 +93,8 @@ module.exports = {
         let userId = +req.params.id;
         let user = users.find(user => userId === user.id)
         res.render('users/userProfile', {
+            titulo: 'Mi perfil',
+            css: 'userProfile.css',
             user,
             session: req.session
         })
@@ -99,6 +104,8 @@ module.exports = {
         let userId = +req.params.id;
         let user = users.find(user => user.id === userId)
         res.render('users/editProfile', {
+            titulo: 'Editar perfil',
+            css: 'register.css',
             user,
             session: req.session
         })

@@ -1,17 +1,3 @@
-/* *{
-    margin: 0;
-    padding: 0;
-    font-size: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    
-}
-body{
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    min-height: 100vh;
-    background: #333;
-} */
 footer{
     position: relative;
     width: 100%;
@@ -44,7 +30,7 @@ footer .menu li a
 
 {
     font-size: 2em;
-    color:orangered;
+    color:var(--naranja);
     margin: 0 15px;
     display: inline-block;
     transition: 0.5s;      
@@ -57,7 +43,7 @@ footer .social_icon li a:hover{
 }
 footer .menu li a {
     font-size: 1.2em;
-    color: orangered;
+    color: var(--naranja);
     margin: 0 10px;
     display: inline-block;
     text-decoration: none;
@@ -67,7 +53,7 @@ footer .menu li a:hover {
 opacity: 1;
 }
 footer p {
-    color: orangered;
+    color: var(--naranja);
     text-align: center;
     margin-top: 15px;
     margin-bottom: 10px;
