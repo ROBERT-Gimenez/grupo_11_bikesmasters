@@ -7,7 +7,7 @@ let validateLogin = [
         .isEmail().withMessage("Ingrese un email válido"),
     body("custom").custom((value, { req })=>{
         let user = users.find(user => user.email === req.body.email);
-        if(bcrypt.compareSync(user.password===req.body.password )){
+        if(bcrypt.compareSync(user.password,req.body.password )){
             return true;
         }
         return false;
