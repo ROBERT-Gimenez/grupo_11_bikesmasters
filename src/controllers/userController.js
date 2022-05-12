@@ -1,6 +1,6 @@
 const {users ,writeUsers} = require('../data/index');
 const { validationResult } = require('express-validator');
-
+let bcrypt =require('bcryptjs');
 
 module.exports = {
     carrito: (req, res) => {
@@ -59,7 +59,7 @@ module.exports = {
                 id: lastId + 1,
                 name: req.body.name,
                 email: req.body.email,
-                password: req.body.password,
+                password:bcrypt.hashSync( req.body.password,10),
                 avatar: req.file ? req.file.filename : "user-default.png",
                 rol: "USER"
             }
