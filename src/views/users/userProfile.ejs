@@ -17,7 +17,7 @@
                     <button class="button"><a href="/usuario/edit/<%= session.user.id %> ">Editar perfil</a></button>
                 </div>
                 <ul class="user-detail">
-                    <li>Usuario: <%= session.user.nickname %> </li>
+                    <li>Usuario: <%= user.nickname %> </li>
                     <li>Nombre: <%= session.user.name %> </li>
                     <li>Email: <%= session.user.email %> </li>
                     <li>Dirección: <%= (locals.user && user.direction)? user.direction : "Agregue una dirección"%> </li>

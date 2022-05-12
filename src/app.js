@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const cookieSession = require('./middlewares/cookieSession');
+const bcrypt = require('bcryptjs')
 
 /* routes */
 const indexRouter = require('./routes/indexRouter');
@@ -26,6 +27,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(bodyParser.json()) 
+app.set(bcrypt)
 
 /* session */
 /* app.set('trust proxy', 1); */
