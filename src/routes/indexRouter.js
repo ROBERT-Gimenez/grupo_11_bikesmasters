@@ -8,6 +8,7 @@ const userSessionCheck = require('../middlewares/userSessionCheck');
 const checkin =require('../middlewares/checkin');
 const imgProfile = require('../middlewares/imageProfileMiddleware')
 
+
 /* GET - Index */
 router.get('/', indexController.index);
 /* GET - Login usuario */

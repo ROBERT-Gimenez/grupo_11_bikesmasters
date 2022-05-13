@@ -29,10 +29,13 @@
                     <li>Dirección: <%= (locals.user && user.direction)? user.direction : "Agregue una dirección"%> </li>
                     <li>Celular: <%= (locals.user && user.telefono)? user.telefono : "Agregue un teléfono" %> </li>
                 </ul>
+                <div class="edit-button">
+                    <button class="button"><a href="/admin/usuarioadmin">Quiero Vender</a></button>
+                </div>
             </div>
         </article>
         <div class="user-products">
-            <h2>Mis productos</h2>
+            <h2>Mis Compras</h2>
             <div class="recent-product">
                 <div class="image-product">
                     <img src="../../../images/products/product-default-4.png" alt="">

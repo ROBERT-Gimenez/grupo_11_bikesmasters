@@ -9,6 +9,7 @@ module.exports = {
         res.render('admin/adminIndex', {
             titulo: "Listado de productos",
             products,
+            session:req.session,
             toThousand,
             categories
         })
@@ -113,4 +114,20 @@ module.exports = {
     productSearch: (req, res) => {
 
     },
+    UserAdmin:(req , res , next) =>{
+        if(req.session.user){
+            let user = users.find(user => user.id === +req.params.id);
+            let adminuser = req.session.user.rol = 'ADMIN';
+            writeUsers(users);
+    
+                res.render('admin/adminIndex', {
+                    products,
+                    user,
+                    toThousand,
+                    categories,
+                    session: req.session,
+                    adminuser
+       
+    })}}
+
 }

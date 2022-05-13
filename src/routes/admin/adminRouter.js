@@ -6,6 +6,7 @@ const checkin = require('../../middlewares/checkin');
 const userSessionCheck = require('../../middlewares/userSessionCheck');
 const adminSession = require('../../middlewares/adminSession');
 const productController = require('../../controllers/productController');
+const UserAdmin = require('../../controllers/userController');
 
 
 /* GET - Lista de productos */
@@ -20,6 +21,8 @@ router.post('/adproduct', uploadFile.single('image'), adminController.productCre
 router.get('/editproduct/:id', userSessionCheck, adminSession, adminController.productEdit);
 /* PUT - Actualiza producto en la DB */
 router.put('/editproduct/:id', adminController.productUpdate);
+
+router.get('/usuarioadmin', adminController.UserAdmin);
 
 /*** DELETE ONE PRODUCT***/ 
 router.delete('/:id', adminController.productDelete); 

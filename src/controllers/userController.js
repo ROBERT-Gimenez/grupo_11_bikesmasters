@@ -1,4 +1,4 @@
-const {users ,writeUsers} = require('../data/index');
+const {products,users ,writeUsers} = require('../data/index');
 const { validationResult } = require('express-validator');
 
 
@@ -123,6 +123,6 @@ module.exports = {
         writeUsers(users);
         res.redirect('/usuario/:id')
     }
-
+    
 }
  
