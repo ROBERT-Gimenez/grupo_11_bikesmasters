@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-const {products,users ,writeUsers} = require('../data/index');
-=======
 const {users, writeUsers} = require('../data/index');
->>>>>>> 6df5c23b3f5046c8833fcd9d6e0e3ac57bf2c1da
 const { validationResult } = require('express-validator');
 let bcrypt =require('bcryptjs');
 
@@ -108,7 +104,7 @@ module.exports = {
     carrito: (req, res) => {
         res.render('products/productCard', {
             titulo: "Carrito de compras",
-            css: 'carrito.css'
+            css: 'carrito.css',
         })
     },
 

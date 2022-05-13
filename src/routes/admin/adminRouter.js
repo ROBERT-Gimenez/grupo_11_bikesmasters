@@ -11,11 +11,9 @@ const UserAdmin = require('../../controllers/userController');
 
 router.get('/', userSessionCheck, adminSession, adminController.list);
 
-<<<<<<< HEAD
 router.get('/usuarioadmin', adminController.UserAdmin);
 
 /*** DELETE ONE PRODUCT***/ 
-=======
 router.get('/categoria/:id', userSessionCheck, adminSession, productController.Categoryadmin)
 
 router.get('/producto/agregar', userSessionCheck, adminSession, adminController.productAdd);
@@ -24,7 +22,6 @@ router.post('/producto/agregar', uploadFile.single('image'), adminController.pro
 router.get('/producto/editar/:id', userSessionCheck, adminSession, adminController.productEdit);
 router.put('/producto/editar/:id', adminController.productUpdate);
 
->>>>>>> 6df5c23b3f5046c8833fcd9d6e0e3ac57bf2c1da
 router.delete('/:id', adminController.productDelete); 
 
 module.exports = router;
