@@ -1,14 +1,16 @@
-const {users ,writeUsers} = require('../data/index');
+const {users, writeUsers} = require('../data/index');
 const { validationResult } = require('express-validator');
 let bcrypt =require('bcryptjs');
 
 module.exports = {
-    carrito: (req, res) => {
-        res.render('products/productCard', {
-            titulo: "Carrito de compras",
-            css: 'carrito.css'
+    login: (req, res) => {
+        res.render('users/login', {
+            titulo: "Login",
+            css: 'login.css',
+            session:req.session
         })
     },
+
     processLogin: (req, res) => {
         let errors = validationResult(req);
         
@@ -46,6 +48,25 @@ module.exports = {
             })
         }
     },
+
+    logout: (req, res) => {
+        req.session.destroy();
+
+        if(req.cookies.Bikemastercookie){
+            res.cookie('Bikemastercookie', "", { maxAge: -1 })
+        }
+
+        res.redirect('/')
+    },
+
+    register: (req, res) => {
+        res.render('users/register', {
+            titulo: "Registrarse",
+            css: 'register.css',
+            session: req.session
+        })
+    },
+
     processRegister: (req, res) => {
         let errors = validationResult(req);
         
@@ -79,14 +100,12 @@ module.exports = {
             })
         }
     },
-    logout: (req, res) => {
-        req.session.destroy();
 
-        if(req.cookies.Bikemastercookie){
-            res.cookie('Bikemastercookie', "", { maxAge: -1 })
-        }
-
-        res.redirect('/')
+    carrito: (req, res) => {
+        res.render('products/productCard', {
+            titulo: "Carrito de compras",
+            css: 'carrito.css'
+        })
     },
 
     userProfile: (req, res) => {
@@ -127,7 +146,7 @@ module.exports = {
             }
         })
         writeUsers(users);
-        res.redirect('/usuario/:id')
+        res.redirect('/usuario/perfil/' + userId )
     }
 
 }

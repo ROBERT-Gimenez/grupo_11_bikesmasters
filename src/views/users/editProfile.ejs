@@ -14,7 +14,7 @@
         <div id="head-logo">
             <h2>Edicion de perfil: <%= session.user.name %> </h2>
         </div>
-        <form class="form-register" action="/usuario/<%= user.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+        <form class="form-register" action="/usuario/perfil/<%= user.id %>?_method=PUT" method="post" enctype="multipart/form-data">
             <div class="register-input">
                 <label for="name">Nombre y apellido</label>
                 <input type="text" name="name" id="name" class="input-style" placeholder="Ingrese su nombre" value="<%= user.name %>">

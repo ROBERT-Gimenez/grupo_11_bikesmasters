@@ -1,10 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const {products, writeProducts, categories, writeCategories, users, writeUsers} = require('../../data/index');
+const {products, writeProducts, categories} = require('../../data/index');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
-    /* Envia la vista de listado de productos */
     list: (req, res) => {
         res.render('admin/adminIndex', {
             titulo: "Listado de productos",

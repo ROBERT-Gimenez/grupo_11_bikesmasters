@@ -75,7 +75,7 @@
         
 
         <div>
-          <button class="ahora_comprar"><a href="carrito">Comprar ahora</a></button>
+          <button class="ahora_comprar"><a href="/usuario/carrito">Comprar ahora</a></button>
             <button class="boton_agregaralcarrito">Agregar al carrito</button>
             
             
@@ -107,7 +107,7 @@
 
        <article>
         <div class="img-producto">
-            <a href="/detalle/<%= product.id  %>" class="image"><img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>"></a>                   
+            <a href="/producto/detalle/<%= product.id  %>" class="image"><img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>"></a>                   
             <p class="sale-off"><%= product.discount !== 0 ? `${product.discount} % 0FF` : ""  %></p>
         </div>
         <div class="product-description">

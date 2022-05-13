@@ -12,7 +12,7 @@
             <div id="head-logo">
                 <h2>Registrate</h2>
             </div>
-            <form action="/registrarse" method="POST" class="form-register">
+            <form action="/usuariol/registrarse" method="POST" class="form-register">
                 <div class="register-input">
                     <label for="name">Nombre y Apellido</label>
                     <input type="text" name="name" id="name" class="input-style" placeholder="Ingrese su nombre y apellido" value="<%= (locals.old && old.name)? old.name : "" %>">
@@ -49,7 +49,7 @@
                         <%= (locals.errors && errors.terms)? errors.terms.msg: "" %>
                     </small>
                     <button type="submit" class="btn-submit_register">Registrarme</button>
-                    <span class="login"><a id="link" href="/login">Ya tengo cuenta</a></span>
+                    <span class="login"><a id="link" href="/usuario/login">Ya tengo cuenta</a></span>
                 </div>
             </form>
         </div>

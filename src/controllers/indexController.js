@@ -28,21 +28,7 @@ module.exports = {
                 resultado: searchResult ,
                 keyword: req.query.keywords,
                 toThousand,
+                session: req.session
             })
-    },
-
-    login: (req, res) => {
-        res.render('users/login', {
-            titulo: "Login",
-            css: 'login.css',
-            session:req.session
-        })
-    },
-    register: (req, res) => {
-        res.render('users/register', {
-            titulo: "Registrarse",
-            css: 'register.css',
-            session: req.session
-        })
-    },
+    }
 }

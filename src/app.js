@@ -42,8 +42,8 @@ app.use(cookieSession);
 
 
 app.use ('/', indexRouter);
-app.use('/carrito', userRouter) ;
-app.use('/detalle', productRouter);
+app.use('/usuario', userRouter) ;
+app.use('/producto', productRouter);
 app.use('/admin', adminRouter);
 
 

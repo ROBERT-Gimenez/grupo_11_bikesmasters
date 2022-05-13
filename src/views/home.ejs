@@ -18,7 +18,7 @@
                 <% if (product.condition ==="in-sale" ) { %>
                     <article>
                         <div class="img-producto">
-                            <a href="/detalle/<%- product.id  %>" class="image">
+                            <a href="/producto/detalle/<%- product.id  %>" class="image">
                                 <img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>">
                             </a>
                             <% if (product.discount> 0) { %>
@@ -47,7 +47,7 @@
                 <% if (product.condition ==="featured" ) { %>
                     <article>
                         <div class="img-producto">
-                            <a href="/detalle/<%- product.id  %>" class="image">
+                            <a href="/producto/detalle/<%- product.id  %>" class="image">
                                 <img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>">
                             </a>
                             <% if (product.discount> 0) { %>

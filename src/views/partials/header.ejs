@@ -12,7 +12,7 @@
         </div>
         <div class="botones">
             <% if (typeof session.user != "undefined" && session.user.rol === 'ADMIN') { %>
-            <button class="carrito" ><a href="carrito"><img src="/images/carrito.svg" alt="carrito" class="carrito"></a></button>
+            <button class="carrito" ><a href="/usuario/carrito"><img src="/images/carrito.svg" alt="carrito" class="carrito"></a></button>
             <button class="carrito" ><a href="/admin">Admin</a></button>
             <% } %> 
             
@@ -25,11 +25,11 @@
                     <% } %>
                     <ul class="acceso">
                         <% if (typeof session.user != "undefined") { %>
-                            <button class="inicio"><a href="/usuario/<%= session.user.id %>">Perfil</a></button>
-                            <button class="registrar"><a href="/logout">Cerrar Session</a></button>
+                            <button class="inicio"><a href="/usuario/perfil/<%= session.user.id %>">Perfil</a></button>
+                            <button class="registrar"><a href="/usuario/logout">Cerrar Session</a></button>
                         <% }else{ %> 
-                            <button class="inicio"><a href="/login">Iniciar Sesion</a></button>
-                            <button class="registrar"><a href="/registrarse">Registrarse</a> </button>
+                            <button class="inicio"><a href="/usuario/login">Iniciar Sesion</a></button>
+                            <button class="registrar"><a href="/usuario/registrarse">Registrarse</a> </button>
                             <% } %> 
                         
                     </ul>
@@ -42,17 +42,17 @@
         <label for="menu"><i class="fas fa-bars"></i>  </label>
         <ul>
             <% if (typeof session.user != "undefined") { %>
-            <li id="app_nav"><a href="/">Perfil</a></li>
-            <li id="app_nav"><a href="/logout">Cerrar Sesion</a></li>
-            <li id="app_nav"><a href="carrito">Carrito</a></li>
+            <li id="app_nav"><a href="/usuario/perfil/<%= session.user.id %>">Perfil</a></li>
+            <li id="app_nav"><a href="/usuario/logout">Cerrar Sesion</a></li>
+            <li id="app_nav"><a href="usuario/carrito">Carrito</a></li>
             <% }else{ %> 
-            <li id="app_nav"><a href="/login">Iniciar session</a></li>
+            <li id="app_nav"><a href="/usuario/login">Iniciar session</a></li>
             <% } %> 
-            <li><a href="/detalle/categori/4">Accesorios</a></li>
-            <li><a href="/detalle/categori/1">Bicicletas</a></li>
-            <li><a href="/detalle/categori/6">Herramientas</a></li>
-            <li><a href="/detalle/categori/5">Indumentaria</a></li>
-            <li><a href="/detalle/categori/3">Repuestos</a></li>
+            <li><a href="/producto/categoria/4">Accesorios</a></li>
+            <li><a href="/producto/categoria/1">Bicicletas</a></li>
+            <li><a href="/producto/categoria/6">Herramientas</a></li>
+            <li><a href="/producto/categoria/5">Indumentaria</a></li>
+            <li><a href="/producto/categoria/3">Repuestos</a></li>
             <li><a href="/">Nosotros</a></li>
             <li><a href="/">Consejos</a></li>
            

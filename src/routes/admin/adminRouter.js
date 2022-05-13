@@ -8,20 +8,16 @@ const adminSession = require('../../middlewares/adminSession');
 const productController = require('../../controllers/productController');
 
 
-/* GET - Lista de productos */
 router.get('/', userSessionCheck, adminSession, adminController.list);
- /*  GET categorias */
-router.get('/categoria/:id', userSessionCheck, adminSession, productController.Categoryadmin)
-/* GET - Agregar producto */
-router.get('/adproduct', userSessionCheck, adminSession, adminController.productAdd);
-/* POST - Crea un producto en la DB */
-router.post('/adproduct', uploadFile.single('image'), adminController.productCreate);
-/* GET - Editar producto */
-router.get('/editproduct/:id', userSessionCheck, adminSession, adminController.productEdit);
-/* PUT - Actualiza producto en la DB */
-router.put('/editproduct/:id', adminController.productUpdate);
 
-/*** DELETE ONE PRODUCT***/ 
+router.get('/categoria/:id', userSessionCheck, adminSession, productController.Categoryadmin)
+
+router.get('/producto/agregar', userSessionCheck, adminSession, adminController.productAdd);
+router.post('/producto/agregar', uploadFile.single('image'), adminController.productCreate);
+
+router.get('/producto/editar/:id', userSessionCheck, adminSession, adminController.productEdit);
+router.put('/producto/editar/:id', adminController.productUpdate);
+
 router.delete('/:id', adminController.productDelete); 
 
 module.exports = router;

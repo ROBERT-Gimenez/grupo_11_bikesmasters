@@ -39,7 +39,7 @@
                     <th scope="col">Stock</th>
                     <th scope="col">Descuento</th>
                     <th scope="col">Imagen</th>
-                    <th id="add"><a href="/admin/adproduct">Agregar Producto</a></th>
+                    <th id="add"><a href="/admin/producto/agregar">Agregar Producto</a></th>
                 </tr>
             </thead>
             <tbody>
@@ -56,7 +56,7 @@
                     <td><%= product.image %></td>
                     
                     <td>
-                      <a href="/admin/editproduct/<%= product.id  %>" class="btn btn-success">
+                      <a href="/admin/producto/editar/<%= product.id  %>" class="btn btn-success">
                         <i id="edit" class="fa-solid fa-pen-to-square"></i>
                       </a>
                       <form action="/admin/<%= product.id %>?_method=DELETE" method="post">

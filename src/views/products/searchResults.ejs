@@ -22,7 +22,7 @@
             <% resultado.forEach(product => { %>			 
                 <article>
                 <div class="img-producto">
-                    <a href="/detalle/<%- product.id  %>" class="image"><img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>"></a>                   
+                    <a href="/producto/detalle/<%- product.id  %>" class="image"><img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>"></a>                   
                     <% if (product.discount > 0) { %>
                         <p class="sale-off"><%= product.discount + '% 0FF'%></p>
                     <% } %>
