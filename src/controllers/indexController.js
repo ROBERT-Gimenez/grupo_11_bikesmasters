@@ -7,6 +7,7 @@ module.exports = {
     index: (req, res)=> {
         res.render('home' ,{
             css:'home.css',
+            titulo: 'Bikesmasters',
 			products,	
 			toThousand,
             session:req.session
@@ -27,21 +28,7 @@ module.exports = {
                 resultado: searchResult ,
                 keyword: req.query.keywords,
                 toThousand,
-                session:req.session
+                session: req.session
             })
-    },
-
-    login: (req, res) => {
-        res.render('users/login', {
-            titulo: "Login",
-            css: 'login.css',
-            session:req.session
-        })
-    },
-    register: (req, res) => {
-        res.render('users/register', {
-            titulo: "Registrarse",
-            session: req.session
-        })
-    },
+    }
 }

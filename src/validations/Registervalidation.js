@@ -1,7 +1,7 @@
 const {check , body } = require('express-validator');
 const users = require('../data/users.json')
 
-let Registervalidation=[
+let registerValidation=[
     check("name")
     .notEmpty().withMessage('Ingrese un nombre').bail()
     .isLength({min:3, max:50}).withMessage('Nombre no válido'),
@@ -32,4 +32,4 @@ let Registervalidation=[
     .isString("on").withMessage('Debes aceptar los terminos y condiciones')
 ]
 
-module.exports = Registervalidation;
+module.exports = registerValidation;

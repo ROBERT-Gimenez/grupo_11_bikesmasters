@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../../css/userProfile.css">
-    <link rel="stylesheet" href="../../../css/Header.css">
-    <link rel="stylesheet" href="../../../css/footer.css">
-</head>
+
+    <%- include('../partials/head') %> 
+    
 <body>
 
     <%- include('../partials/header') %> 
@@ -20,10 +14,10 @@
                 </div>
             <div class="detail">
                 <div class="edit-button">
-                    <button class="button"><a href="/usuario/edit/<%= session.user.id %> ">Editar perfil</a></button>
+                    <button class="button"><a href="/usuario/perfil/editar/<%= session.user.id %> ">Editar perfil</a></button>
                 </div>
                 <ul class="user-detail">
-                    <li>Usuario: <%= session.user.nickname %> </li>
+                    <li>Usuario: <%= user.nickname %> </li>
                     <li>Nombre: <%= session.user.name %> </li>
                     <li>Email: <%= session.user.email %> </li>
                     <li>Dirección: <%= (locals.user && user.direction)? user.direction : "Agregue una dirección"%> </li>

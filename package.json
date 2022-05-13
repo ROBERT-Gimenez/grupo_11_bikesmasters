@@ -12,14 +12,16 @@
   },
   "author": "bikes_master",
   "license": "ISC",
-  "nodemonConfig":{
-    "ignore":"./src/data/*.json"
+  "nodemonConfig": {
+    "ignore": "./src/data/*.json"
   },
   "bugs": {
     "url": "https://github.com/BrianFloresOk/grupo_11_bikesmasters/issues"
   },
   "homepage": "https://github.com/BrianFloresOk/grupo_11_bikesmasters#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parse": "^0.4.0",
     "cookie-parser": "^1.4.6",
     "cookies-parser": "^1.2.0",
     "dotenv": "^16.0.0",

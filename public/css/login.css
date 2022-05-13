@@ -1,12 +1,4 @@
-@import url('Header.css');
-@import url('footer.css');
-
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;  
-  }
-  header{
+ header{
     width: 100%;
   }
   

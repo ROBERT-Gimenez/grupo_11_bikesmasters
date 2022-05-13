@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edicion de perfil</title>
-    <link rel="stylesheet" href="../../../css/register.css">
+
+    <%- include('../partials/head') %> 
+    
 </head>
 <body>
 
@@ -16,7 +14,11 @@
         <div id="head-logo">
             <h2>Edicion de perfil: <%= session.user.name %> </h2>
         </div>
+<<<<<<< HEAD
         <form class="form-register" action="/usuario/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+=======
+        <form class="form-register" action="/usuario/perfil/<%= user.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+>>>>>>> 6df5c23b3f5046c8833fcd9d6e0e3ac57bf2c1da
             <div class="register-input">
                 <label for="name">Nombre y apellido</label>
                 <input type="text" name="name" id="name" class="input-style" placeholder="Ingrese su nombre" value="<%= user.name %>">

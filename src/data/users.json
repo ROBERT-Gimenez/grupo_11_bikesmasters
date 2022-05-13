@@ -1,1 +1,79 @@
+<<<<<<< HEAD
 [{"id":1,"name":"Alon","apellido":"Johnsee","email":"ajohnsee0@godaddy.com","password":"","category":"vendedor","shopName":"mammoth","shopId":1},{"id":2,"name":"Janice","apellido":"Wootton","email":"jwootton1@oaic.gov.au","password":"123456789","category":"comprador","shopName":"","shopId":null},{"id":3,"name":"Dionis","apellido":"Merigot","email":"dmerigot2@altervista.org","password":"","category":"comprador","shopName":"","shopId":null},{"id":4,"name":"Ilysa","apellido":"Salliere","email":"isalliere3@domainmarket.com","password":"","category":"vendedor","shopName":"shimano","shopId":2},{"id":5,"name":"Merwyn","apellido":"Shorto","email":"mshorto4@auda.org.au","password":"","category":"comprador","shopName":"","shopId":null},{"id":6,"name":"Dorotea","apellido":"Denslow","email":"ddenslow5@imageshack.us","password":"","category":"vendedor","shopName":"el antiguo","shopId":null},{"id":7,"name":"Maure","apellido":"Stollenwerck","email":"mstollenwerck6@jugem.jp","password":"","category":"comprador","shopName":"","shopId":null},{"id":8,"name":"Kevina","apellido":"Buckel","email":"kbuckel7@t-online.de","password":"","category":"comprador","shopName":"","shopId":null},{"id":9,"name":"Katti","apellido":"Maes","email":"kmaes8@deviantart.com","password":"12345678","category":"comprador","shopName":"","shopId":null},{"id":10,"name":"Robert","apellido":"gimenez","num":"1132905942","email":"robertgim37@gmail.com","password":"123456789","avatar":"1652410230790-profile.jpg","rol":"USER","telefono":1141402166,"direction":"calle falsa 123","nickname":"robert","city":"buenos aires","localidad":"caballito","postal":1407,"province":"capital"},{"id":11,"name":"Brian Flores","nickname":"AdminBrian","email":"brian@mail.com","password":"12345678","avatar":"1651701487349-profile.png","rol":"ADMIN","telefono":15151515,"direction":"Calle Falsa 123","city":"Capital Federal","localidad":"CABA","postal":123,"province":"Buenos Aires"},{"id":12,"name":"carlos","apellido":"moreno sanabria","num":"1127696195","email":"carlos_morenosanabria@hotmail.com","password":"carlos1977","avatar":"user-default.png","rol":"USER"},{"id":13,"name":"carlos","apellido":"moreno","num":"1127696195","email":"carlosmorenosanabria77@gmail.com","password":"patoba78","avatar":"user-default.png","rol":"USER"}]
+=======
+[
+    {
+        "id": 10,
+        "name": "robert",
+        "apellido": "gimenez",
+        "num": "1132905942",
+        "email": "robertgim37@gmail.com",
+        "password": "123456789",
+        "avatar": "user-default.png",
+        "rol": "USER"
+    },
+    {
+        "id": 14,
+        "name": "carlos totin",
+        "email": "carlosTotin@gmail.com",
+        "password": "$2a$10$ZA70c.hnPL4mZaAKaHXz6.asmrf9UR8H7.QaqFUP8U.LxXnG6xXTq",
+        "avatar": "user-default.png",
+        "rol": "USER"
+    },
+    {
+        "id": 15,
+        "name": "carlos moreno",
+        "email": "carlosmoreno@gmail.com",
+        "password": "$2a$10$fRRVJ/IJNdVNruo0PXRT0O4od4fCqBk4oEIiEvzdfIWfTt1Dj.1N6",
+        "avatar": "user-default.png",
+        "rol": "USER"
+    },
+    {
+        "id": 16,
+        "name": "PEDRO LORENZO",
+        "email": "pedrolorenzo@gmail.com",
+        "password": "$2a$10$F/GxQl5RZ9aRTCWDk/tfTe2RlSx0p.0xHtiDyZecR15is2zrVnba6",
+        "avatar": "user-default.png",
+        "rol": "USER"
+    },
+    {
+        "id": 17,
+        "name": "juan ramirez",
+        "email": "juanramirez@gmail.com",
+        "password": "$2a$10$t8cN01IcB9gwEXbNNDodnuBYtuXt0R7.ux5oGKCF0x2xuL.EEP7T6",
+        "avatar": "user-default.png",
+        "rol": "USER"
+    },
+    {
+        "id": 18,
+        "name": "carlos moreno",
+        "email": "carlosmoreno123@gmail.com",
+        "password": "$2a$10$o9jB4ob.0VV2XG/8RupdBeqbBa1iWlLpMM01NpTh1yE7CRC1vhyqq",
+        "avatar": "user-default.png",
+        "rol": "USER"
+    },
+    {
+        "id": 19,
+        "name": "juan escaloni",
+        "email": "juanescaloni@gmail.com",
+        "password": "$2a$10$mZy2k1yMqBtZRcQiQr/JwuS1ASBcSs7XKmzObqYZkv60Ghjf1MC86",
+        "avatar": "user-default.png",
+        "rol": "USER"
+    },
+    {
+        "id": 20,
+        "name": "Brian Flores",
+        "email": "brian@mail.com",
+        "password": "$2a$10$vdG6EJEdPkNvJw5EaaUtYuStYTsnqw9gJK/Wud0L4E2dgdcIbfWX.",
+        "avatar": "1651701487349-profile.png",
+        "rol": "ADMIN",
+        "telefono": 1515151515,
+        "direction": "Calle falsa 123",
+        "nickname": "BrianAdminOk",
+        "city": "Capital Federal",
+        "localidad": "Capital Federal",
+        "postal": 123,
+        "province": "Buenos Aires"
+    }
+]
+>>>>>>> 6df5c23b3f5046c8833fcd9d6e0e3ac57bf2c1da

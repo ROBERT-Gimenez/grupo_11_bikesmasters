@@ -1,19 +1,26 @@
+<<<<<<< HEAD
 const {products,users ,writeUsers} = require('../data/index');
+=======
+const {users, writeUsers} = require('../data/index');
+>>>>>>> 6df5c23b3f5046c8833fcd9d6e0e3ac57bf2c1da
 const { validationResult } = require('express-validator');
-
+let bcrypt =require('bcryptjs');
 
 module.exports = {
-    carrito: (req, res) => {
-        res.render('products/productCard', {
-            titulo: "Carrito de compras"
+    login: (req, res) => {
+        res.render('users/login', {
+            titulo: "Login",
+            css: 'login.css',
+            session:req.session
         })
     },
+
     processLogin: (req, res) => {
         let errors = validationResult(req);
         
         if(errors.isEmpty()){
             //Levantar sesión
-            let user = users.find(user => req.body.email === (user.email || user.nickname));
+            let user = users.find(user => req.body.email === user.email);
 
             req.session.user = {
                 id: user.id,
@@ -23,7 +30,7 @@ module.exports = {
                 rol: user.rol
             }
 
-            if(req.body.remember){
+            if(req.body.recordar){
                 const TIME_IN_MILISECONDS = 60000;
                 res.cookie('Bikemastercookie', req.session.user, {
                     expires: new Date(Date.now() + TIME_IN_MILISECONDS),
@@ -39,12 +46,31 @@ module.exports = {
             
             res.render('users/login', {
                 titulo: "Login",
-                css: "userForms.css",
+                css: 'login.css',
                 errors: errors.mapped(),
                 session: req.session
             })
         }
     },
+
+    logout: (req, res) => {
+        req.session.destroy();
+
+        if(req.cookies.Bikemastercookie){
+            res.cookie('Bikemastercookie', "", { maxAge: -1 })
+        }
+
+        res.redirect('/')
+    },
+
+    register: (req, res) => {
+        res.render('users/register', {
+            titulo: "Registrarse",
+            css: 'register.css',
+            session: req.session
+        })
+    },
+
     processRegister: (req, res) => {
         let errors = validationResult(req);
         
@@ -60,7 +86,7 @@ module.exports = {
                 id: lastId + 1,
                 name: req.body.name,
                 email: req.body.email,
-                password: req.body.password,
+                password:bcrypt.hashSync( req.body.password,10),
                 avatar: req.file ? req.file.filename : "user-default.png",
                 rol: "USER"
             }
@@ -71,26 +97,27 @@ module.exports = {
             //Código para mostrar errores
             res.render('users/register', {
                 titulo: "Registro",
+                css: 'register.css',
                 errors: errors.mapped(),
                 session: req.session,
                 old: req.body
             })
         }
     },
-    logout: (req, res) => {
-        req.session.destroy();
 
-        if(req.cookies.Bikemastercookie){
-            res.cookie('Bikemastercookie', "", { maxAge: -1 })
-        }
-
-        res.redirect('/')
+    carrito: (req, res) => {
+        res.render('products/productCard', {
+            titulo: "Carrito de compras",
+            css: 'carrito.css'
+        })
     },
 
     userProfile: (req, res) => {
         let userId = +req.params.id;
         let user = users.find(user => userId === user.id)
         res.render('users/userProfile', {
+            titulo: 'Mi perfil',
+            css: 'userProfile.css',
             user,
             session: req.session
         })
@@ -100,6 +127,8 @@ module.exports = {
         let userId = +req.params.id;
         let user = users.find(user => user.id === userId)
         res.render('users/editProfile', {
+            titulo: 'Editar perfil',
+            css: 'register.css',
             user,
             session: req.session
         })
@@ -121,7 +150,7 @@ module.exports = {
             }
         })
         writeUsers(users);
-        res.redirect('/usuario/:id')
+        res.redirect('/usuario/perfil/' + userId )
     }
     
 }
