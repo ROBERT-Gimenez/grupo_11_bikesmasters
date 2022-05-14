@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+section.Presentacion{
+        padding: 2rem;
+        text-align: justify;
+        border: 5px solid orangered;
+        border-radius: 20px;
+}
+section.Presentacion h1{
+    text-align: center;
+    text-decoration: underline;
+
+}
+section.grupo h2 {
+    text-align: center;
+    text-decoration: underline;
+
+}
+section.grupo{
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+    border: 5px solid rgb(126, 125, 125);
+    border-radius: 20px;
+    -webkit-user-modify: read-write-plaintext-only;
+    -webkit-text-stroke-width: thin;
+
+}

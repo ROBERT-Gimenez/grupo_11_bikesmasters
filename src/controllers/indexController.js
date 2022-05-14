@@ -30,5 +30,14 @@ module.exports = {
                 toThousand,
                 session: req.session
             })
-    }
-}
+    },
+    Nosotros: (req, res)=> {
+        res.render('admin/Nosotros' ,{
+            css:'home.css',
+            titulo: 'Bikesmasters',
+			products,	
+			toThousand,
+            session:req.session
+        }
+        )
+    }}
