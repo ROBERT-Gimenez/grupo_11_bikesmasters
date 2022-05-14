@@ -72,3 +72,27 @@ la retrospectiva
 
 ------
 
+# Retroespectiva Sprint Nº4
+
+**La retrospectiva se centra en mejorar como equipo. Aqui nosotros les compartimos nuestra retrospectiva**.
+
+| Comenzar a  hacer |
+| ------------ |
+| Intentar usar ramas |
+| Armar estructura D.E.R |
+| Practicar MySQL |
+
+
+| Continuar haciendo  |  Hacer más |
+| ------------ | ------------ |
+| Mejorar la interfaz UX/UI |
+| Avisarnos actualizaciones en trello | Realizar las preguntas de las dailys  |
+| Compañerismo  | Crear mas vistas relacionadas al proyecto  |
+| Comunicacion |   |
+| Reportar inconvenientes  |   |
+
+
+| Hacer menos  | Dejar de hacer  |
+| ------------ | ------------ |
+| Dejar de posponer correciones  | Reuniones largas |
+
