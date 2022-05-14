@@ -1,4 +1,4 @@
-const {products, writeProducts, categories} = require('../../data/index');
+const {products,users, writeProducts,writeUsers, categories} = require('../../data/index');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {

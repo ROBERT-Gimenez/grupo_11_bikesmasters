@@ -88,7 +88,7 @@ module.exports = {
             }
             users.push(newUser)
             writeUsers(users)
-            res.redirect('/login')
+            res.redirect('/usuario/login')
         }else{
             //Código para mostrar errores
             res.render('users/register', {
