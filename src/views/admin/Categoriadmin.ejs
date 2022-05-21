@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/css/adminIndex.css">
-    <link rel="stylesheet" href="/css/footer.css">
-    <title>Administrador</title>
-</head>
+
+  <%- include('../partials/admin/headAdmin') %> 
+  
 <body>
 
   <%- include('../partials/admin/headerAdmin') %> 
@@ -40,7 +34,7 @@
                     <th scope="col">Stock</th>
                     <th scope="col">Descuento</th>
                     <th scope="col">Imagen</th>
-                    <th id="add"><a href="/admin/adproduct">Agregar Producto</a></th>
+                    <th id="add"><a href="/admin/producto/agregar">Agregar Producto</a></th>
                 </tr>
             </thead>
             <tbody>
@@ -57,7 +51,7 @@
                     <td><%= product.image %></td>
                     
                     <td>
-                      <a href="/admin/editproduct/<%= product.id  %>" class="btn btn-success">
+                      <a href="/admin/producto/editar/<%= product.id  %>" class="btn btn-success">
                         <i id="edit" class="fa-solid fa-pen-to-square"></i>
                       </a>
                       <form action="/admin/<%= product.id %>?_method=DELETE" method="post">

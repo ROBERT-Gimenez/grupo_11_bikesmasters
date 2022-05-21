@@ -11,7 +11,7 @@ const UserAdmin = require('../../controllers/userController');
 
 router.get('/', userSessionCheck, adminSession, adminController.list);
 
-router.get('/usuarioadmin', adminController.UserAdmin);
+router.get('/usuarioadmin', adminController.userAdmin);
 
 /*** DELETE ONE PRODUCT***/ 
 router.get('/categoria/:id', userSessionCheck, adminSession, productController.Categoryadmin)

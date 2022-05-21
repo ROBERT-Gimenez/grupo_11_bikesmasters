@@ -1,4 +1,4 @@
-const {products,users, writeProducts,writeUsers, categories} = require('../../data/index');
+const {products, users, writeProducts, writeUsers, categories} = require('../../data/index');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
@@ -8,16 +8,21 @@ module.exports = {
             products,
             session:req.session,
             toThousand,
-            categories
+            categories,
+            css: 'adminIndex.css'
         })
     },
-    /* Envia la vista de formulario de creación de producto */
+
     productAdd: (req, res) => {
         res.render('admin/adproduct', {
             titulo: "Agregar producto",
+            categories,
+            old: req.body,
+            css: 'addProduct.css',
+            session:req.session,
         })
     },
-    /* Recibe los datos del form de creación y guarda el producto en la DB */
+    
     productCreate: (req, res) => {
         /* 1 - Crear el objeto producto */
         let lastId = 0;
@@ -37,31 +42,25 @@ module.exports = {
             stock: +req.body.stock,
             discount: +req.body.discount,
             categoryId: +req.body.categoryId,
-            condition: req.body.condition
+            condition: req.body.condition,
         }
         
-        // Paso 2 - Guardar el nuevo producto en el array de usuarios
-
         products.push(newProduct)
-
-       // Paso 3 - Escribir el JSON de productos con el array actual
-
-       writeProducts(products)
-
-       // Paso 4 - Devolver respuesta (redirección)
-
-       res.redirect('/admin')
+        writeProducts(products)
+        res.redirect('/admin')
     },
-    /* Envia la vista de form de edición de producto */
+    
     productEdit: (req, res) => {
-        /* 1 - Obtener el id del producto */
-        let idProduct = +req.params.id;
-        /* 2 - Buscar el producto a editar */
+        
+        let idProduct = +req.params.id;        
         let product = products.find(product => product.id === idProduct)
-        /* 3 - Mostrar el producto en la vista */
+
         res.render('admin/editproduct', {
-            titulo: "Edición",
-            product
+            product,
+            categories,
+            old: req.body,
+            css: 'addProduct.css',
+            session:req.session
         })
     },
     /* Recibe los datos actualizados del form de edición */
@@ -79,13 +78,11 @@ module.exports = {
                 product.stock = +req.body.stock
                 product.description = req.body.description
                 product.marca = req.body.marca
+                product.image = req.file? req.file.filename : product.image 
             }
         })
 
-        /* 3 - Guardar los cambios */
         writeProducts(products);
-
-        /* 4 - Respuesta */
         res.redirect('/admin')
 
     },
@@ -111,7 +108,7 @@ module.exports = {
     productSearch: (req, res) => {
 
     },
-    UserAdmin:(req , res , next) =>{
+    userAdmin:(req , res , next) =>{
         if(req.session.user){
             let user = users.find(user => user.id === +req.params.id);
             let adminuser = req.session.user.rol = 'ADMIN';

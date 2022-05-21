@@ -1,27 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/addProduct.css">
-    <link rel="stylesheet" href="/css/footer.css">
-</head>
+
+    <%- include('../partials/admin/headAdmin') %> 
+
 <body>
-    <header>
-        <div class="div-logo">
-            <img src="/images/logo-2.svg" alt="logo-Bikes">
-        </div>
-        <div class="div-titulo">
-            <h2>Administrador</h2>
-        </div>
-    </header>
+    
+    <%- include('../partials/admin/headerAdmin')  %> 
 
     <main>
         <h2 class="titulo">Editar: <%= product.name %> </h2>            
         <div class="register">
-            <form action="/admin/editar/producto/<%= product.id %>?_method=PUT" method="POST" class="form-register">
+            <form action="/admin/producto/editar/<%= product.id %>?_method=PUT" method="POST" class="form-register">
                     <div class="register-input">
                         <label for="name">Nombre de producto</label>
                         <input type="text" name="name" class="input-style"placeholder="Ingrese nombre de producto" value="<%= product.name %>">
@@ -44,11 +33,24 @@
                     </div>
                     <div class="register-input">
                         <label for="categoryId">Categoria</label>
-                        <input type="text" name="categoryId" class="input-style" value="<%= product.categoryId %>">
+                        <select name="categoryId" id="select" class="input-style">
+                            <option value="selected" selected hidden>Elija una categoría</option>
+                            <% categories.forEach(category => { %>
+                                <option value="<%= category.id %>"><%= category.name %></option>
+                            <% }) %> 
+                        </select>
                     </div>
                     <div class="register-input">
                         <label for="image">Subir imagen</label>
                         <input type="file" name="image" value="<%= product.image %>">
+                    </div>
+                    <div class="register-input">
+                        <label for="condition">Condicion de producto</label>
+                        <select name="condition" id="select" class="input-style">
+                            <option value="" selected hidden>Elija una categoría</option>
+                            <option value="in-sale">Oferta</option>
+                            <option value="featured">Destacado</option>
+                        </select>
                     </div>
                     <div class="register-input">
                         <label for="description">Detalles</label>

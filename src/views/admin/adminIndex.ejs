@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/css/adminIndex.css">
-    <link rel="stylesheet" href="/css/footer.css">
-    <title>Administrador</title>
-</head>
+  <%- include('../partials/admin/headAdmin') %> 
 <body>
 
   <%- include('../partials/admin/headerAdmin') %> 
@@ -48,8 +40,10 @@
                     <th scope="row"><%= product.id %></th>
                     <td><%= product.name %></td>
                     <td><%= product.marca %></td>
-                    <% let categoryName = categories.find(category => category.id === product.categoryId)%>
-                    <td><%= categoryName.name%></td>
+                    <% categories.forEach(category => { %> 
+                    <% if (category.id === product.categoryId) { %>
+                      <td><%= category.name%></td>
+                    <% }})%>
                     <td>$<%- toThousand(product.price) %></td>
                     <td><%= product.stock %></td>
                     <td><%- product.discount === ""? product.discount = 0 + "%" :`${product.discount}%`%></td>
