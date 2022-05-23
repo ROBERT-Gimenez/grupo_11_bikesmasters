@@ -2,5 +2,12 @@
     --naranja: #FF2E00;
     --negro: #1B1717;
     --fondo: #f7f4f2;
-    --oferta: rgb(187, 26, 26);
+    --oferta: rgb(178, 6, 0);
+    --boton: #00092C;
 }
+
+/* Fuentes disponibles para usar */
+/* font-family: 'Anton', sans-serif;
+font-family: 'Bebas Neue', cursive;
+font-family: 'Nunito Sans', sans-serif;
+font-family: 'Roboto', sans-serif; */

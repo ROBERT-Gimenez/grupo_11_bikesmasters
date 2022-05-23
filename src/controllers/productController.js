@@ -6,11 +6,13 @@ module.exports = {
 	// Detail - Detail from one product
 	detalle: (req, res) => {
 		let product = products.find(product => product.id === +req.params.id);
-		res.render('products/detalle',{
-		product,
-		toThousand,
-		destacado: products,
-		session:req.session
+		res.render('products/productDetail',{
+            titulo: "Detalle",
+            css: 'productDetail.css',
+            product,
+            toThousand,
+            destacado: products,
+            session:req.session
 		})
 	
 	},
