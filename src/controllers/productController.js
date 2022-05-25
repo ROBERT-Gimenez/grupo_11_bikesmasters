@@ -47,7 +47,7 @@ module.exports = {
             );
             res.render ('Admin/Categoriadmin',{
                 titulo: 'Bikesmasters',
-                css: 'home.css',
+                css: 'adminIndex.css',
                 Categori: Categori ,
                 toThousand,
                 session:req.session,

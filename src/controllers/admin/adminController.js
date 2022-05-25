@@ -9,7 +9,7 @@ module.exports = {
             session:req.session,
             toThousand,
             categories,
-            css: 'adminIndex.css'
+            css:'adminIndex.css'
         })
     },
 
@@ -120,7 +120,8 @@ module.exports = {
                     toThousand,
                     categories,
                     session: req.session,
-                    adminuser
+                    adminuser,
+                    css:'adminIndex.css'
        
     })}}
 
