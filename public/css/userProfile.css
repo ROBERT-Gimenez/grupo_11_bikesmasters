@@ -135,10 +135,19 @@ main .recent-product .product-detail p{
 @media (min-width: 1024px) {
     main {
         display: flex;
+        width: 100%;
+    }
+
+    main .user-profile {
+        width: 30%;
     }
 
     main .detail .user-detail li{
         margin: 10px 0px;
+    }
+
+    main .user-products {
+        width: 70%;
     }
 
     main .user-products h2 {
@@ -149,9 +158,17 @@ main .recent-product .product-detail p{
         margin: 15px 5px;
         border: thin solid;
         display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-evenly;
     }
 
     main .recent-product .image-product {
         margin: 0 auto;
+        width: 25%;
+    }
+
+    main .recent-product .product-detail {
+        width: 75%;
     }
 }
