@@ -1,5 +1,6 @@
 const {products , categories} = require('../data/index');
-const categorias = require('../data/categories')
+const categorias = require('../data/categories');
+const db = require ('../database/models');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {

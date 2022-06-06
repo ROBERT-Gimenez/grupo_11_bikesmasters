@@ -3,7 +3,7 @@ let alias = "Compra";
 let cols ={
     id: {
         type: DataTypes.INTEGER(11),
-        primarykey: true,
+        primaryKey: true,
         autoIncrement: true,
         allowNull: false,
     },
@@ -30,5 +30,14 @@ let config ={
 }
 
 const Compra = sequelize.define(alias, cols, config);
+
+Compra.associate = (models) =>{
+    Compra.belongsTo(models.Carrito,{
+        as:"carrito",
+        foreignKey:"id"
+    })
+}
+
+
 return Compra;
 }

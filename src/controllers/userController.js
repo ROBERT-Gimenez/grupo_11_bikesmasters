@@ -1,5 +1,6 @@
 const {users, writeUsers} = require('../data/index');
 const { validationResult } = require('express-validator');
+const db = require ('../database/models');
 let bcrypt =require('bcryptjs');
 
 module.exports = {

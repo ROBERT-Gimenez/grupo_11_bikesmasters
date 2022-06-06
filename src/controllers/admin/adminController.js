@@ -1,6 +1,6 @@
 const {products, users, writeProducts, writeUsers, categories} = require('../../data/index');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
+const db = require ("../../database/models");
 module.exports = {
     list: (req, res) => {
         res.render('admin/adminIndex', {
