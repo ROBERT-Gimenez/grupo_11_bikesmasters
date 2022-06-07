@@ -1,1 +1,106 @@
-[{"id":10,"name":"robert","apellido":"gimenez","num":"1132905942","email":"robertgim37@gmail.com","password":"123456789","avatar":"user-default.png","rol":"USER"},{"id":14,"name":"carlos totin","email":"carlosTotin@gmail.com","password":"$2a$10$ZA70c.hnPL4mZaAKaHXz6.asmrf9UR8H7.QaqFUP8U.LxXnG6xXTq","avatar":"user-default.png","rol":"USER"},{"id":15,"name":"carlos moreno","email":"carlosmoreno@gmail.com","password":"$2a$10$fRRVJ/IJNdVNruo0PXRT0O4od4fCqBk4oEIiEvzdfIWfTt1Dj.1N6","avatar":"user-default.png","rol":"USER"},{"id":16,"name":"PEDRO LORENZO","email":"pedrolorenzo@gmail.com","password":"$2a$10$F/GxQl5RZ9aRTCWDk/tfTe2RlSx0p.0xHtiDyZecR15is2zrVnba6","avatar":"user-default.png","rol":"USER"},{"id":17,"name":"juan ramirez","email":"juanramirez@gmail.com","password":"$2a$10$t8cN01IcB9gwEXbNNDodnuBYtuXt0R7.ux5oGKCF0x2xuL.EEP7T6","avatar":"user-default.png","rol":"USER"},{"id":18,"name":"carlos moreno","email":"carlosmoreno123@gmail.com","password":"$2a$10$o9jB4ob.0VV2XG/8RupdBeqbBa1iWlLpMM01NpTh1yE7CRC1vhyqq","avatar":"user-default.png","rol":"USER"},{"id":19,"name":"juan escaloni","email":"juanescaloni@gmail.com","password":"$2a$10$mZy2k1yMqBtZRcQiQr/JwuS1ASBcSs7XKmzObqYZkv60Ghjf1MC86","avatar":"user-default.png","rol":"USER"},{"id":20,"name":"Brian Flores","email":"brian@mail.com","password":"$2a$10$vdG6EJEdPkNvJw5EaaUtYuStYTsnqw9gJK/Wud0L4E2dgdcIbfWX.","avatar":"1651701487349-profile.png","rol":"ADMIN","telefono":1515151515,"direction":"Calle falsa 123","nickname":"BrianAdminOk","city":"Capital Federal","localidad":"Capital Federal","postal":123,"province":"Buenos Aires"},{"id":21,"name":"holas","email":"holas@gmail.com","password":"$2a$10$Rp1anHsIuS0WKhjzgsLpf.qGItHSqAg7MhU2dl1nuGtVqIBjfn4xC","avatar":"user-default.png","rol":"USER"},{"id":22,"name":"miguel","email":"holas2@gmail.com","password":"$2a$10$iiEkxjtpbExzMNlxVw8zkOaggYM4IGCIoTYqm0tqRFFK0rf3vbZR6","avatar":"1652492046418-profile.jpg","rol":"USER","telefono":0,"direction":"","nickname":"","city":"","localidad":"","postal":0,"province":""},{"id":23,"name":"roberto","email":"lalalala2@gmail.com","password":"$2a$10$WxBGEIaPzS05v.4uZ9lwFeKhG3ZkLOEu86vuWPHQeDz8Il.BxMtCi","avatar":"user-default.png","rol":"USER"}]
+[
+    {
+        "id": 10,
+        "name": "robert",
+        "apellido": "gimenez",
+        "num": "1132905942",
+        "email": "robertgim37@gmail.com",
+        "password": "123456789",
+        "avatar": "user-default.png",
+        "rol": "USER"
+    },
+    {
+        "id": 14,
+        "name": "carlos totin",
+        "email": "carlosTotin@gmail.com",
+        "password": "$2a$10$ZA70c.hnPL4mZaAKaHXz6.asmrf9UR8H7.QaqFUP8U.LxXnG6xXTq",
+        "avatar": "user-default.png",
+        "rol": "USER"
+    },
+    {
+        "id": 15,
+        "name": "carlos moreno",
+        "email": "carlosmoreno@gmail.com",
+        "password": "$2a$10$fRRVJ/IJNdVNruo0PXRT0O4od4fCqBk4oEIiEvzdfIWfTt1Dj.1N6",
+        "avatar": "user-default.png",
+        "rol": "USER"
+    },
+    {
+        "id": 16,
+        "name": "PEDRO LORENZO",
+        "email": "pedrolorenzo@gmail.com",
+        "password": "$2a$10$F/GxQl5RZ9aRTCWDk/tfTe2RlSx0p.0xHtiDyZecR15is2zrVnba6",
+        "avatar": "user-default.png",
+        "rol": "USER"
+    },
+    {
+        "id": 17,
+        "name": "juan ramirez",
+        "email": "juanramirez@gmail.com",
+        "password": "$2a$10$t8cN01IcB9gwEXbNNDodnuBYtuXt0R7.ux5oGKCF0x2xuL.EEP7T6",
+        "avatar": "user-default.png",
+        "rol": "USER"
+    },
+    {
+        "id": 18,
+        "name": "carlos moreno",
+        "email": "carlosmoreno123@gmail.com",
+        "password": "$2a$10$o9jB4ob.0VV2XG/8RupdBeqbBa1iWlLpMM01NpTh1yE7CRC1vhyqq",
+        "avatar": "user-default.png",
+        "rol": "USER"
+    },
+    {
+        "id": 19,
+        "name": "juan escaloni",
+        "email": "juanescaloni@gmail.com",
+        "password": "$2a$10$mZy2k1yMqBtZRcQiQr/JwuS1ASBcSs7XKmzObqYZkv60Ghjf1MC86",
+        "avatar": "user-default.png",
+        "rol": "USER"
+    },
+    {
+        "id": 20,
+        "name": "Brian Flores",
+        "email": "brian@mail.com",
+        "password": "$2a$10$vdG6EJEdPkNvJw5EaaUtYuStYTsnqw9gJK/Wud0L4E2dgdcIbfWX.",
+        "avatar": "1651701487349-profile.png",
+        "rol": "ADMIN",
+        "telefono": 1515151515,
+        "direction": "Calle falsa 123",
+        "nickname": "BrianAdminOk",
+        "city": "Capital Federal",
+        "localidad": "Capital Federal",
+        "postal": 123,
+        "province": "Buenos Aires"
+    },
+    {
+        "id": 21,
+        "name": "holas",
+        "email": "holas@gmail.com",
+        "password": "$2a$10$Rp1anHsIuS0WKhjzgsLpf.qGItHSqAg7MhU2dl1nuGtVqIBjfn4xC",
+        "avatar": "user-default.png",
+        "rol": "USER"
+    },
+    {
+        "id": 22,
+        "name": "miguel",
+        "email": "holas2@gmail.com",
+        "password": "$2a$10$iiEkxjtpbExzMNlxVw8zkOaggYM4IGCIoTYqm0tqRFFK0rf3vbZR6",
+        "avatar": "1652492046418-profile.jpg",
+        "rol": "USER",
+        "telefono": 0,
+        "direction": "",
+        "nickname": "",
+        "city": "",
+        "localidad": "",
+        "postal": 0,
+        "province": ""
+    },
+    {
+        "id": 23,
+        "name": "roberto",
+        "email": "lalalala2@gmail.com",
+        "password": "$2a$10$WxBGEIaPzS05v.4uZ9lwFeKhG3ZkLOEu86vuWPHQeDz8Il.BxMtCi",
+        "avatar": "user-default.png",
+        "rol": "USER"
+    }
+]
