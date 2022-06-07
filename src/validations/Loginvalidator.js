@@ -18,7 +18,6 @@ let validateLogin = [
             return Promise.reject("Email o contraseña incorrecto")
         })
 
-
     }),
     check("password")
         .notEmpty().withMessage("Contraseña Invalida"),
