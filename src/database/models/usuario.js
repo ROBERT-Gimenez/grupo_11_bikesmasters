@@ -12,6 +12,15 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(60),
             allowNull: false,
         },
+        product_id:{
+            type:dataTypes.INTEGER(11),
+            
+        },
+        direccion_id:{
+            type:dataTypes.INTEGER(11),
+            
+        },
+
         rol_id: {
             type: dataTypes.INTEGER(11),
             allowNull: false,
@@ -37,8 +46,8 @@ module.exports = (sequelize, dataTypes) => {
     const Usuario = sequelize.define(alias, cols, config);
 
     Usuario.associate = (models) => {
-        Usuario.belongsTo(models.user_rol, {
-            as: "user_rol",
+        Usuario.belongsTo(models.UserRol, {
+            as: "UserRol",
             foreignKey: "rol_id"
         })
         

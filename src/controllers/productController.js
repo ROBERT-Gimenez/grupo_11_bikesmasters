@@ -1,19 +1,25 @@
-const {products , categories} = require('../data/index');
+/* const {products , categories} = require('../data/index');*/
 const categorias = require('../data/categories')
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const db =require('../database/models');
 
 module.exports = {
 	// Detail - Detail from one product
 	detalle: (req, res) => {
-		let product = products.find(product => product.id === +req.params.id);
-		res.render('products/productDetail',{
+/* 		let product = products.find(product => product.id === +req.params.id);
+ */		
+        db.Producto.findByPk(+req.params.id)
+        .then((product) => {
+           res.render('products/productDetail',{
             titulo: "Detalle",
             css: 'productDetail.css',
             product,
             toThousand,
-            destacado: products,
             session:req.session
-		})
+		})  
+        })
+        .catch((error)=> res.send(error))
+       
 	
 	},
 	Category: (req, res) => {

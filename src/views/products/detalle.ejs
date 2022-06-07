@@ -103,22 +103,8 @@
 <section class="dos_caja">
   <h2>productos destacados:</h2>
   <section class="destacados">
-    <% destacado.forEach(product => { %>
 
-       <article>
-        <div class="img-producto">
-            <a href="/producto/detalle/<%= product.id  %>" class="image"><img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>"></a>                   
-            <p class="sale-off"><%= product.discount !== 0 ? `${product.discount} % 0FF` : ""  %></p>
-        </div>
-        <div class="product-description">
-            <p class="precio">$<%- toThousand(product.price - product.price * product.discount /100)  %></p>
-            <p><%= product.name %> </p>
-        </div>
-        </article>
-    <% }) %></section>
 
-    </div>
-  </div>
 </section>
 
 

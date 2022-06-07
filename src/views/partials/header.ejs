@@ -12,14 +12,15 @@
         </div>
         <div class="botones">
             <% if (typeof session.user != "undefined" && session.user.rol === 'ADMIN') { %>
-            <button class="carrito" ><a href="/usuario/carrito"><img src="/images/carrito.svg" alt="carrito" class="carrito"></a></button>
             <button class="carrito" ><a href="/admin">Admin</a></button>
             <% } %> 
-            
+            <button class="carrito" ><a href="/usuario/carrito"><img src="/images/carrito.svg" alt="carrito" class="carrito"></a></button>
+
             <nav class="nav_cuenta">
                 <input type="checkbox" id="cuenta" class="botton">
                 <% if (typeof session.user != "undefined") { %>
-                <label class="cuenta" for="cuenta" style="box-shadow:1px 1px 5px 4px green;"><img src="/images/profile/<%= session.user.avatar %> " alt=""></label>
+                <div class="inline"></div>
+                <label class="cuenta" for="cuenta" style="border:1px solid green;"><img src="/images/profile/<%= session.user.avatar %> " alt=""></label>
                 <% }else{ %> 
                     <label class="cuenta" for="cuenta"><img src="/images/profile/user-default.png" alt=""></label>
                     <% } %>

@@ -1,6 +1,7 @@
-const {users, writeUsers} = require('../data/index');
-const { validationResult } = require('express-validator');
+/* const {users, writeUsers} = require('../data/index');
+ */const { validationResult } = require('express-validator');
 let bcrypt =require('bcryptjs');
+const db =require('../database/models');
 
 module.exports = {
     login: (req, res) => {
@@ -16,16 +17,19 @@ module.exports = {
         
         if(errors.isEmpty()){
             //Levantar sesión
-            let user = users.find(user => req.body.email === user.email);
-
+/*             let user = users.find(user => req.body.email === user.email);
+ */
+            db.Usuario.findOne({
+                where:{ email:req.body.email}
+            }).then((user)=>{
             req.session.user = {
                 id: user.id,
                 name: user.name,
                 avatar: user.avatar,
                 email: user.email,
-                rol: user.rol
-            }
-
+                rol: user.rol_id
+            } 
+            
             if(req.body.recordar){
                 const TIME_IN_MILISECONDS = 60000;
                 res.cookie('Bikemastercookie', req.session.user, {
@@ -38,9 +42,10 @@ module.exports = {
             res.locals.user = req.session.user
 
             res.redirect('/')
+        }).catch(( error )=> {console.log(error)})
         }else{
             
-            res.render('users/login', {
+            res.render('users/login' , {
                 titulo: "Login",
                 css: 'login.css',
                 errors: errors.mapped(),
@@ -72,7 +77,16 @@ module.exports = {
         
       
         if(errors.isEmpty()){
-            let lastId = 0;
+            db.Usuario.create({
+                name:req.body.name,
+                email : req.body.email,
+                rol_id:1,
+                password: bcrypt.hashSync(req.body.password , 10),
+                avatar: req.file ? req.file.filename : "user-default.png"
+            })
+            .then((usuario) => { res.redirect('/usuario/login')})
+            .catch((error)=> {res.send(error)})
+            /* let lastId = 0;
             users.forEach(user => {
                 if(user.id > lastId){
                     lastId = user.id
@@ -87,8 +101,8 @@ module.exports = {
                 rol: "USER"
             }
             users.push(newUser)
-            writeUsers(users)
-            res.redirect('/usuario/login')
+            writeUsers(users) */
+            
         }else{
             //Código para mostrar errores
             res.render('users/register', {
@@ -109,14 +123,19 @@ module.exports = {
     },
 
     userProfile: (req, res) => {
-        let userId = +req.params.id;
-        let user = users.find(user => userId === user.id)
+/*         let userId = +req.params.id;
+        let user = users.find(user => userId === user.id) */
+        db.User.findOne({
+            where:{
+                id:req.session.usuario.id
+            }
+        }).then((user)=> {
         res.render('users/userProfile', {
             titulo: 'Mi perfil',
             css: 'userProfile.css',
             user,
             session: req.session
-        })
+        })})
     },
 
     editProfile: (req, res) => {

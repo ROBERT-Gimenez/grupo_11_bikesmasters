@@ -14,8 +14,8 @@
             <h3>Ofertas</h3>
         </div>
         <section>
-            <% products.forEach(product=> { %>
-                <% if (product.condition ==="in-sale" ) { %>
+            <% product.forEach(product=> { %>
+                <% if (product.discount > 1 ) { %>
                     <article>
                         <div class="img-producto">
                             <a href="/producto/detalle/<%= product.id  %>" class="image">
@@ -29,7 +29,7 @@
                         </div>
                         <div class="product-description">
                             <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
-                                <% if (product.discount> 0) {%>
+                                <% if (product.discount > 0) {%>
                                     <span class="precio">$<%= toThousand(product.price)%></span>
                                 <% } %>
                             </p>
@@ -43,8 +43,8 @@
             <h3>Productos destacados</h3>
         </div>
         <section>
-            <% products.forEach(product=> { %>
-                <% if (product.condition ==="featured" ) { %>
+            <% product.forEach(product=> { %>
+                <% if (product.discount == 0 ) { %>
                     <article>
                         <div class="img-producto">
                             <a href="/producto/detalle/<%- product.id  %>" class="image">
