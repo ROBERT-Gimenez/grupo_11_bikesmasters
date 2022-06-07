@@ -11,7 +11,7 @@ let validateLogin = [
        /*  let user = users.find(user => user.email === req.body.email); */
     return db.Usuario.findOne({where:{email:req.body.email}})
         .then(( user ) => {
-            if(!bcrypt.compareSync(req.body.password, user.password)){
+            if(bcrypt.compareSync(req.body.password, user.password)){
                 return Promise.reject()
             }
         }).catch((error) => {
