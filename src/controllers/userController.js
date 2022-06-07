@@ -123,13 +123,10 @@ module.exports = {
     },
 
     userProfile: (req, res) => {
-/*         let userId = +req.params.id;
-        let user = users.find(user => userId === user.id) */
-        db.User.findOne({
-            where:{
-                id:req.session.usuario.id
-            }
-        }).then((user)=> {
+        let userId = req.session.user.id;
+
+        db.Usuario.findByPk(userId)
+        .then((user)=> {
         res.render('users/userProfile', {
             titulo: 'Mi perfil',
             css: 'userProfile.css',
@@ -139,18 +136,26 @@ module.exports = {
     },
 
     editProfile: (req, res) => {
-        let userId = +req.params.id;
-        let user = users.find(user => user.id === userId)
-        res.render('users/editProfile', {
-            titulo: 'Editar perfil',
-            css: 'register.css',
-            user,
-            session: req.session
+        let userId = req.session.user.id;
+        db.Usuario.findByPk(userId)
+        .then((user) => {
+            res.render('users/editProfile', {
+                titulo: 'Editar perfil',
+                css: 'register.css',
+                user,
+                session: req.session
+            })
         })
+        .catch((error) => res.send(error))
     },
 
     userUpdate: (req, res) => {
-        let userId = +req.params.id;
+        let userId = req.session.user.id
+        db.Usuario.update({
+
+        }, {
+            
+        })
         users.forEach(user => {
             if(user.id === userId){
                 user.name = req.body.name,
