@@ -12,15 +12,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(60),
             allowNull: false,
         },
-        product_id:{
-            type:dataTypes.INTEGER(11),
-            
-        },
         direccion_id:{
             type:dataTypes.INTEGER(11),
-            
+            allowNull: true
         },
-
         rol_id: {
             type: dataTypes.INTEGER(11),
             allowNull: false,
@@ -30,11 +25,16 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
         },
         password: {
-            type: dataTypes.STRING(20),
+            type: dataTypes.STRING(40),
             allowNull: false,
         },
         avatar: {
             type: dataTypes.STRING(100),
+            allowNull: true
+        },
+        telefono: {
+            type: dataTypes.INTEGER(20),
+            allowNull: true
         }
     };
 
@@ -47,10 +47,27 @@ module.exports = (sequelize, dataTypes) => {
 
     Usuario.associate = (models) => {
         Usuario.belongsTo(models.UserRol, {
-            as: "UserRol",
+            as: "userRol",
             foreignKey: "rol_id"
         })
         
+        Usuario.belongsTo(models.Direccion, {
+            as: "direccion",
+            foreignKey: "direccion_id"
+        })
+
+        Usuario.belongsToMany(models.Producto, {
+            as: "misProductos",
+            through: "carrito",
+            foreignKey: "usuario_id",
+            otherKey: "product_id",
+            timestamps: false
+        })
+
+        Usuario.hasMany(models.Producto, {
+            as: "productos",
+            foreignKey: "user_id"
+        })
     };
 
     return Usuario;

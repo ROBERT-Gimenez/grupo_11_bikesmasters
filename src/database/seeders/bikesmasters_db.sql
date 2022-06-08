@@ -165,8 +165,8 @@ CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(60) NOT NULL,
   `email` varchar(60) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `telefono` int(11) DEFAULT NULL,
+  `password` varchar(40) NOT NULL,
+  `telefono` int(20) DEFAULT NULL,
   `direccion_id` int(11) DEFAULT NULL,
   `avatar` varchar(100) DEFAULT NULL,
   `rol_id` int(11) NOT NULL,
@@ -201,4 +201,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-07 22:52:34
+-- Dump completed on 2022-06-07 23:01:42
