@@ -17,14 +17,13 @@ module.exports = (sequelize , dataTypes) => {
      let config = {
             tableName:"user_rol",
             timestamps:false ,
-            
      }
 
      const UserRol = sequelize.define(alias , colds , config);
 
      UserRol.associate = (models) => {
         UserRol.hasMany(models.Usuario , {
-            as:"Usuarios",
+            as:"usuarios",
             foreignKey:"rol_id"
         })
      }

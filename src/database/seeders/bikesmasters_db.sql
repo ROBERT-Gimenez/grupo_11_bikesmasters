@@ -108,9 +108,9 @@ CREATE TABLE `productos` (
   `categoryid` int(11) NOT NULL,
   `description` text NOT NULL,
   `marca` varchar(60) DEFAULT NULL,
-  `discount` tinyint(4) NOT NULL,
+  `discount` int(5) NOT NULL,
   `stock` int(11) NOT NULL,
-  `image` varchar(100) DEFAULT NULL,
+  `image` varchar(100) NOT NULL,
   `price` decimal(10,0) NOT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
@@ -201,4 +201,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-07 23:01:42
+-- Dump completed on 2022-06-07 23:28:35
