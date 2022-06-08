@@ -7,8 +7,7 @@ module.exports = {
         db.Producto.findAll()
         .then((products) => {
         db.Categoria.findAll()
-        .then((categories)=>{
-            
+        .then((categories) => {
             res.render('admin/adminIndex', {
                 titulo: "Listado de productos",
                 products,
@@ -45,12 +44,12 @@ module.exports = {
         /* 1 - Crear el objeto producto */
         let errors = validationResult(req);
         if(errors.isEmpty()){
-        db.Categoria.findAll({where:{id:req.body.categoryId}})
-        .then((categori)=> {
-            const {name , description , marca , discount , stock , image , price ,categoryId} = req.body;
+        db.Categoria.findOne({where:{id:req.body.categoryId}})
+        .then(()=> {
+            const {name , description , marca , discount , stock , image , price ,categoryid} = req.body;
             return db.Producto.create({
                 name , description , marca , discount , stock , image , price,
-                categoryid: categoryId
+                categoryid
                 
             }).then(() => {
                 
@@ -89,22 +88,53 @@ module.exports = {
     productEdit: (req, res) => {
         
         let idProduct = +req.params.id;        
-        let product = products.find(product => product.id === idProduct)
+/*         let product = products.find(product => product.id === idProduct)
+ */
+        db.Categoria.findAll()
+        .then((categories)=>{
+            
+            return db.Producto.findByPk(idProduct)
+            .then((product)=>{
 
-        res.render('admin/editproduct', {
+            res.render('admin/editproduct', {
             product,
             categories,
             old: req.body,
             css: 'addProduct.css',
-            session:req.session
+            session:req.session  
+            })
+        })
+       
         })
     },
     /* Recibe los datos actualizados del form de edición */
     productUpdate: (req, res) => {
+        let errors = validationResult(req);
         /* 1 - Obtener el id del producto */
-        let idProduct = +req.params.id;
-        /* 2 - Buscar el producto a editar y modificar el producto */
-        products.forEach(product => {
+        
+        if(errors.isEmpty()){
+            db.Categoria.findOne({where:{id:+req.params.id}})
+            .then(()=>{
+            db.Producto.update({
+              ...req.body,
+            },{ where: { id: req.params.id,}
+            }).then(() => {
+              res.redirect('/admin')
+            }).catch(error => console.log(error))
+            }) 
+          }else{
+            let idProduct = +req.params.id;
+            db.Producto.findByPk(idProduct)
+            .then(product => {
+              res.render('admin/editproduct', {
+                product,
+                errors: errors.mapped(),
+                old: req.body
+              })
+            })
+            .catch(error => console.log(error))
+          }
+        /* products.forEach(product => {
             if(product.id === idProduct){
                 product.name = req.body.name
                 product.price = +req.body.price
@@ -118,27 +148,23 @@ module.exports = {
             }
         })
 
-        writeProducts(products);
-        res.redirect('/admin')
+        writeProducts(products); */
 
     },
     /* Recibe la info del producto a eliminar */
     productDelete: (req, res) => {
-        /* 1 - Obtener el id del producto a eliminar */
-        let idProducto = +req.params.id;
-        /* 2 - Buscar el producto dentro del array y eliminarlo */
-        products.forEach(product => {
-            if(product.id === idProducto){
-                //Obtener la ubicación (índice) del producto a eliminar
-                let productToDeleteIndex = products.indexOf(product);
-                //Elimino el producto del array
-                products.splice(productToDeleteIndex, 1)
-            }
+        let ProductoId = +req.params.id;
+
+        db.Producto.destroy({
+        where: { id: ProductoId },
+        }).then((result) => {
+        if (result) {
+        res.redirect("/admin");
+        } else {
+        res.send("Ups algo rompí");
+        }
         })
-        /* 3 - Sobreescribir el json */
-        writeProducts(products);
-        /* 4 - Enviar respuesta  */
-        res.redirect('/admin')
+        .catch((error) => res.send(error));
     },
     /* Recibe los datos del producto a buscar */
     productSearch: (req, res) => {

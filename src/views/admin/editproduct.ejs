@@ -32,11 +32,11 @@
                         <input type="number" name="discount" id="discount" class="input-style" value="<%= product.discount %>">
                     </div>
                     <div class="register-input">
-                        <label for="categoryId">Categoria</label>
-                        <select name="categoryId" id="select" class="input-style">
-                            <option value="selected" selected hidden>Elija una categoría</option>
+                        <label for="categoryid">Categoria</label>
+                        <select name="categoryid" id="select" class="input-style">
+                            <option value="<%= product.categoryid %> " selected hidden>Elija una categoría</option>
                             <% categories.forEach(category => { %>
-                                <option value="<%= category.id %>"><%= category.name %></option>
+                                <option value="<%= category.id %> "><%= category.nombre %></option>
                             <% }) %> 
                         </select>
                     </div>

@@ -40,8 +40,8 @@
                     <th scope="row"><%= product.id %></th>
                     <td><%= product.name %></td>
                     <td><%= product.marca %></td>
-          
-                    <td><%= product.categoryid%></td>
+                    <% let categoryName = categories.find(category => category.id === product.categoryid)%>
+                    <td><%= categoryName.nombre%></td>
                     <td>$<%- toThousand(product.price) %></td>
                     <td><%= product.stock %></td>
                     <td><%- product.discount === ""? product.discount = 0 + "%" :`${product.discount}%`%></td>
