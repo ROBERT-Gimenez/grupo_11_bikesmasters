@@ -23,7 +23,7 @@
 
 
         <table>
-            <caption>Lista general de <%= namecategori.name %> </caption>
+            <caption>Lista general de <%= categoria.nombre %> </caption>
             <thead>
                 <tr>
                     <th scope="col">ID</th>
@@ -38,13 +38,13 @@
                 </tr>
             </thead>
             <tbody>
-                <% Categori.forEach(product => { %>
+                <% product.forEach(product => { %>
                   <tr>
                     <th scope="row"><%= product.id %></th>
                     <td><%= product.name %></td>
                     <td><%= product.marca %></td>
-                    <% let categoryName = categories.find(category => category.id === product.categoryId)%>
-                    <td><%= categoryName.name%></td>
+                    <% let categoryName = categoria%>
+                    <td><%= categoryName.nombre%></td>
                     <td>$<%- toThousand(product.price) %></td>
                     <td><%= product.stock %></td>
                     <td><%- product.discount === ""? product.discount = 0 + "%" :`${product.discount}%`%></td>

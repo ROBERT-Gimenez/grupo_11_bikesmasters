@@ -8,10 +8,10 @@
     
     <main class="home">
         <div class="titulo-seccion">  
-            <h3><%= namecategori.name  %></h3>
+            <h3><%= categoria.nombre  %></h3>
         </div>
         <section>
-            <% Categori.forEach(product => { %>			 
+            <% product.forEach(product => { %>			 
                 <article>
                 <div class="img-producto">
                     <a href="/producto/detalle/<%- product.id  %>" class="image"><img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>"></a>                   

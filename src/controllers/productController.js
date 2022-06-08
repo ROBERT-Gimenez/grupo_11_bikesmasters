@@ -31,26 +31,42 @@ module.exports = {
                 }
             }
             );*/
-            db.categoria.findByPk(+req.params.id)
-            .then((categorias)=>{
+            
+            db.Categoria.findByPk(+req.params.id)
+            .then((categoria)=>{
+                db.Producto.findAll({where:{categoryid:categoria.id}})
+                .then((product)=>{
+
+               
                 res.render ('products/Categorias',{
                     titulo: 'Bikesmasters',
                     css: 'home.css',
-                    Categori: Categori ,
+                    categoria ,
                     toThousand,
                     session:req.session,
-                    categorias
+                    product
     
-                })
+                }) })
             })
             .catch((error)=> res.send(error))
 	
 	},
 	Categoryadmin: (req, res) => {
-        db.categoria.create({
-            nombre: req.body.nombre
-        }).then((result)=>{
-            res.redirect("productController.Categoryadmin")
+        db.Categoria.findByPk(+req.params.id)
+        .then((categoria)=>{
+            db.Producto.findAll({where:{categoryid:categoria.id}})
+            .then((product)=>{
+                 res.render ('Admin/Categoriadmin',{
+                    titulo: 'Bikesmasters',
+                    css: 'adminIndex.css',
+                    categoria,
+                    toThousand,
+                    session:req.session,
+                    product
+                    
+
+            })
+
         })
 
 		/*let namecategori = categorias.find(categori => categori.id === +req.params.id)
@@ -61,14 +77,7 @@ module.exports = {
                 }
             }
             );*/
-            res.render ('Admin/Categoriadmin',{
-                titulo: 'Bikesmasters',
-                css: 'adminIndex.css',
-                Categori: Categori ,
-                toThousand,
-                session:req.session,
-				namecategori,
-				categories
+            
 
             })
 	
