@@ -29,6 +29,7 @@ CREATE TABLE `carrito` (
   PRIMARY KEY (`id`),
   KEY `carrito_FK` (`product_id`),
   KEY `carrito_FK_2` (`usuario_id`),
+  CONSTRAINT `carrito_FK` FOREIGN KEY (`product_id`) REFERENCES `productos` (`id`),
   CONSTRAINT `carrito_FK_2` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -201,4 +202,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-07 23:28:35
+-- Dump completed on 2022-06-07 23:35:41
