@@ -45,13 +45,21 @@ module.exports = {
         /* 1 - Crear el objeto producto */
         let errors = validationResult(req);
         if(errors.isEmpty()){
-            
-        db.Producto.create({...req.body,
-             }
-            ).then(()=>{
-             res.redirect('/admin')   
+        db.Categoria.findAll({where:{id:req.body.categoryId}})
+        .then((categori)=> {
+            const {name , description , marca , discount , stock , image , price ,categoryId} = req.body;
+            return db.Producto.create({
+                name , description , marca , discount , stock , image , price,
+                categoryid: categoryId
+                
+            }).then(() => {
+                
+            res.redirect('/admin')   
             }).catch((error)=>{res.send(error)})
-            
+
+        })
+               
+                
         }
         /* let lastId = 0;
         products.forEach(product => {
