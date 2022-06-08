@@ -12,8 +12,8 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
         },
         categoryid: {
-            type: dataTypes.INTEGER(11),
-            allowNull: false,
+            type: dataTypes.INTEGER(11)
+            
         },
         description: {
             type: dataTypes.TEXT,
@@ -58,18 +58,9 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "categoryid",
         })
 
-        Producto.hasMany(models.Usuario, {
-            as: "usuario",
-            foreignKey: "user_id"
-        })
+      
 
-        Producto.belongsToMany(models.Carrito, {
-            as: "compras",
-            through: "carrito",
-            foreignKey: "product_id",
-            otherKey: "usuario_id",
-            timestamps: false
-        })
+        
     }
     return Producto;
 }

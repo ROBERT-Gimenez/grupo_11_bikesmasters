@@ -47,7 +47,7 @@ module.exports = (sequelize, dataTypes) => {
 
     Usuario.associate = (models) => {
         Usuario.belongsTo(models.UserRol, {
-            as: "userRol",
+            as: "UserRol",
             foreignKey: "rol_id"
         })
         
@@ -62,12 +62,8 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "usuario_id",
             otherKey: "product_id",
             timestamps: false
-        })
+        }) 
 
-        Usuario.hasMany(models.Producto, {
-            as: "productos",
-            foreignKey: "user_id"
-        })
     };
 
     return Usuario;

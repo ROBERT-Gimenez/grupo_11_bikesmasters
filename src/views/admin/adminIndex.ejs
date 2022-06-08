@@ -40,10 +40,8 @@
                     <th scope="row"><%= product.id %></th>
                     <td><%= product.name %></td>
                     <td><%= product.marca %></td>
-                    <% categories.forEach(category => { %> 
-                    <% if (category.id === product.categoryId) { %>
-                      <td><%= category.name%></td>
-                    <% }})%>
+          
+                    <td><%= product.categoryid%></td>
                     <td>$<%- toThousand(product.price) %></td>
                     <td><%= product.stock %></td>
                     <td><%- product.discount === ""? product.discount = 0 + "%" :`${product.discount}%`%></td>

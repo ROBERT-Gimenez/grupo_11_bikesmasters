@@ -1,31 +1,59 @@
-const {products, users, writeProducts, writeUsers, categories} = require('../../data/index');
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
+/* const {products, users, writeProducts, writeUsers, categories} = require('../../data/index');*/
+const toThousand = n => n?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const db = require('../../database/models')
+const { validationResult } = require('express-validator');
 module.exports = {
     list: (req, res) => {
-        res.render('admin/adminIndex', {
-            titulo: "Listado de productos",
-            products,
-            session:req.session,
-            toThousand,
-            categories,
-            css:'adminIndex.css'
+        db.Producto.findAll()
+        .then((products) => {
+        db.Categoria.findAll()
+        .then((categories)=>{
+            
+            res.render('admin/adminIndex', {
+                titulo: "Listado de productos",
+                products,
+                session:req.session,
+                toThousand,
+                categories,
+                css:'adminIndex.css'
+            })   
         })
+        })
+        .catch((error)=>{res.send(error)})
+        
     },
 
     productAdd: (req, res) => {
-        res.render('admin/adproduct', {
+        db.Producto.findAll()
+        .then(()=>{
+            db.Categoria.findAll()
+            .then((categories)=>{
+              res.render('admin/adproduct', {
             titulo: "Agregar producto",
             categories,
             old: req.body,
             css: 'addProduct.css',
-            session:req.session,
-        })
+            session:req.session,  
+            })
+           
+        })   
+        }).catch((error)=> {res.send(error)})
+      
     },
     
     productCreate: (req, res) => {
         /* 1 - Crear el objeto producto */
-        let lastId = 0;
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
+            
+        db.Producto.create({...req.body,
+            user_id:+req.params.id }
+            ).then(()=>{
+             res.redirect('/admin')   
+            }).catch((error)=>{res.send(error)})
+            
+        }
+        /* let lastId = 0;
         products.forEach(product => {
             if(product.id > lastId){
                 lastId = product.id;
@@ -46,8 +74,8 @@ module.exports = {
         }
         
         products.push(newProduct)
-        writeProducts(products)
-        res.redirect('/admin')
+        writeProducts(products) */
+     
     },
     
     productEdit: (req, res) => {
