@@ -46,10 +46,10 @@ module.exports = {
         if(errors.isEmpty()){
         db.Categoria.findOne({where:{id:req.body.categoryid}})
         .then(()=> {
-            const {name , description , marca , discount , stock , image , price ,categoryid} = req.body;
+            const {name , description , marca , discount , stock , price ,categoryid} = req.body;
             return db.Producto.create({
-                name , description , marca , discount , stock , image , price,
-                categoryid
+                name , description , marca , discount , stock , price, categoryid ,
+                image: req.file ? req.file.filename : "default-image.png",
                 
             }).then(() => {
                 
