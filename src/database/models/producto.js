@@ -33,7 +33,6 @@ module.exports = (sequelize, dataTypes) => {
         },
         image:{
             type:dataTypes.STRING(100),
-            allowNull: false
         },
         price: {
             type: dataTypes.DECIMAL(10.0),
@@ -41,7 +40,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         user_id: {
             type: dataTypes.INTEGER(11),
-            allowNull: false
+            
         }
     }
 
@@ -56,6 +55,10 @@ module.exports = (sequelize, dataTypes) => {
         Producto.belongsTo(models.Categoria, {
             as: "category",
             foreignKey: "categoryid",
+        })
+        Producto.belongsTo(models.Usuario, {
+            as: "Usuario",
+            foreignKey: "user_id",
         })
 
       

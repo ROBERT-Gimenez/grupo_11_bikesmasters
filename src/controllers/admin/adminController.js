@@ -47,7 +47,7 @@ module.exports = {
         if(errors.isEmpty()){
             
         db.Producto.create({...req.body,
-            user_id:+req.params.id }
+             }
             ).then(()=>{
              res.redirect('/admin')   
             }).catch((error)=>{res.send(error)})
