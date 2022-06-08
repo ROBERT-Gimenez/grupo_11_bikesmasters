@@ -44,7 +44,7 @@ module.exports = {
         /* 1 - Crear el objeto producto */
         let errors = validationResult(req);
         if(errors.isEmpty()){
-        db.Categoria.findOne({where:{id:req.body.categoryId}})
+        db.Categoria.findOne({where:{id:req.body.categoryid}})
         .then(()=> {
             const {name , description , marca , discount , stock , image , price ,categoryid} = req.body;
             return db.Producto.create({
