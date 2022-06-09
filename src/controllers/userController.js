@@ -1,5 +1,5 @@
-/* const {users, writeUsers} = require('../data/index');
- */const { validationResult } = require('express-validator');
+/* const {users, writeUsers} = require('../data/index'); */
+const { validationResult } = require('express-validator');
 let bcrypt =require('bcryptjs');
 const db =require('../database/models');
 
@@ -99,11 +99,20 @@ module.exports = {
     },
 
     carrito: (req, res) => {
+        const userId = +req.params.id
+        db.Usuario.findOne({ where: { id: req.session.id}})
+        .then((user)=>{ 
+        db.Producto.findAll()
+        .then(()=>{
         res.render('products/productCard', {
             titulo: "Carrito de compras",
-            css: 'carrito.css',
+            css:('carrito.css','') ,
+            session: req.session,
+            user
+
         })
-    },
+    })}).catch((error)=> {res.send(error)})
+},
 
     userProfile: (req, res) => {
         let userId = req.session.user.id;

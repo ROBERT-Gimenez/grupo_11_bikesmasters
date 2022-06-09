@@ -196,6 +196,7 @@ header nav input{
         gap: 1rem;
         animation-name: menu-out;
         animation-duration: 0.6s;
+        z-index: -2;
     }
     header nav.nav_cuenta label img{
         width: 100%;
@@ -233,7 +234,8 @@ header nav input{
         animation-duration: 0.6s;
         gap: 1rem;
         background: none;
-        border: none;   
+        border: none;
+        z-index: 1;   
     }
     header nav{
         display: flex;
