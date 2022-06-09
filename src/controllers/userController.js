@@ -101,15 +101,15 @@ module.exports = {
         const userId = +req.params.id
         db.Usuario.findOne({ where: { id: req.session.id}})
         .then((user)=>{ 
-        db.Producto.findAll()
-        .then(()=>{
-        res.render('products/productCard', {
-            titulo: "Carrito de compras",
-            css:('carrito.css','') ,
-            session: req.session,
-            user
+            db.Producto.findAll()
+            .then(()=>{
+                res.render('products/productCard', {
+                titulo: "Carrito de compras",
+                css:('carrito.css','') ,
+                session: req.session,
+                user
 
-        })
+            })
     })}).catch((error)=> {res.send(error)})
 },
 
@@ -119,7 +119,7 @@ module.exports = {
         db.Usuario.findOne({where: {id:userId}})
         .then((user)=> {
             let direccionId = user.direccion_id
-            db.Direccione.findByPk(direccionId)
+            return db.Direccione.findByPk(direccionId)
                 .then((direccion) => 
                 res.render('users/userProfile', {
                     titulo: 'Mi perfil',
