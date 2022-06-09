@@ -15,7 +15,7 @@
         </div>
         <section>
             <% products.forEach(product=> { %>
-                <% if (product.discount > 1 ) { %>
+                <% if (product.discount >= 1 ) { %>
                     <article>
                         <div class="img-producto">
                             <a href="/producto/detalle/<%= product.id  %>" class="image">

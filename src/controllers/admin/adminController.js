@@ -49,7 +49,7 @@ module.exports = {
             const {name , description , marca , discount , stock , price ,categoryid} = req.body;
             return db.Producto.create({
                 name , description , marca , discount , stock , price, categoryid ,
-                image: req.file ? req.file.filename : "default-image.png",
+                image: req.file ? req.file.filename : "product-default-4.png",
                 
             }).then(() => {
                 
