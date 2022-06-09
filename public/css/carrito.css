@@ -15,9 +15,9 @@ body{
     --naranja: #FF2E00;
     --negro: #1B1717;
 }
-i {
+/* i {
     margin-right: 10px;
-}
+} */
 input:focus,
 button:focus,
 .form-control:focus{
