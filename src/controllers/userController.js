@@ -73,8 +73,7 @@ module.exports = {
 
     processRegister: (req, res) => {
         let errors = validationResult(req);
-        
-      
+             
         if(errors.isEmpty()){
             db.Usuario.create({
                 name:req.body.name,
@@ -115,18 +114,23 @@ module.exports = {
 },
 
     userProfile: (req, res) => {
-        let userId = req.session.user.id;
+        let userId = +req.session.user.id;
 
-        db.Usuario.findOne({where:{id: userId}})
+        db.Usuario.findOne({where: {id:userId}})
         .then((user)=> {
-            res.render('users/userProfile', {
-                titulo: 'Mi perfil',
-                css: 'userProfile.css',
-                user,
-                session: req.session
-            })
-        })
-        .catch((error) => console.log(error))
+            let direccionId = user.direccion_id
+            db.Direccione.findByPk(direccionId)
+                .then((direccion) => 
+                res.render('users/userProfile', {
+                    titulo: 'Mi perfil',
+                    css: 'userProfile.css',
+                    user,
+                    session: req.session,
+                    direccion
+                })
+        )})
+            .catch((error) => console.log(error))
+            
     },
 
     editProfile: (req, res) => {
@@ -155,6 +159,36 @@ module.exports = {
             })
             .then(() => res.redirect(`/usuario/perfil/:${+req.session.user.id}`))
         }
+    },
+
+    addDirection: (req, res) => {
+        let userId = req.session.user.id;
+        db.Usuario.findByPk(userId)
+        .then((user) => {
+            res.render('users/addDirection', {
+                titulo: "Agregar dirección",
+                css: "register.css",
+                session: req.session,
+                user})
+        })
+    },
+
+    loadDirection: (req, res) => {
+        db.Direccione.create({
+            direccion: req.body.direccion,
+            altura: req.body.altura,
+            codigo_postal: req.body.postal,
+            localidad: req.body.localidad,
+            pais: req.body.pais,
+            provincia: req.body.provincia
+        })
+        .then((direccion) => db.Usuario.update({
+            direccion_id: direccion.id
+        }, {
+            where: {id: req.session.user.id}
+        }))
+            .then(() => res.redirect(`/usuario/perfil/${+req.session.user.id}`))
+            .catch((error) => res.send(error))
     }
     
 }

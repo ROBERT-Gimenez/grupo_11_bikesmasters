@@ -42,7 +42,7 @@ app.use(cookieSession);
 
 
 app.use ('/', indexRouter);
-app.use('/usuario', userRouter) ;
+app.use('/usuario', userRouter);
 app.use('/producto', productRouter);
 app.use('/admin', adminRouter);
 

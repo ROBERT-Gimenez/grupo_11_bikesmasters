@@ -22,5 +22,8 @@ router.get('/perfil/:id', userSessionCheck, userController.userProfile);
 router.get('/perfil/editar/:id', userSessionCheck, userController.editProfile);
 router.put('/perfil/:id', imgProfile.single('avatar'), userController.userUpdate);
 
+router.get('/perfil/agregar/direccion/:id', userSessionCheck, userController.addDirection)
+router.post('/perfil/:id', userSessionCheck, userController.loadDirection)
+
 
 module.exports = router

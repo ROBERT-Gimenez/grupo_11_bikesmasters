@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include('../partials/head') %> 
+    
+</head>
+<body>
+
+    <%- include('../partials/header') %> 
+    
+    <main>
+        <div class="register">
+        <div id="head-logo">
+            <h2>Agregar dirección</h2>
+        </div>
+        <form class="form-register" action="/usuario/perfil/<%= session.user.id %>" method="post">
+            <div class="register-input">
+                <label for="direccion">Dirección</label>
+                <input type="text" name="direccion" id="name" class="input-style" placeholder="Ingrese su calle">
+            </div>
+            <div class="register-input">
+                <label for="altura">Altura</label>
+                <input type="number" name="altura" id="altura" class="input-style" placeholder="Ingrese la altura">
+            </div>
+            <div class="register-input">
+                <label for="postal">Código postal</label>
+                <input type="number" name="postal" id="postal" class="input-style" placeholder="Código postal">
+            </div>
+            <div class="register-input">
+                <label for="localidad">Localidad</label>
+                <input type="text" name="localidad" id="localidad" class="input-style" placeholder="Ingrese la localidad">
+            </div>
+            <div class="register-input">
+                <label for="provincia">Provincia</label>
+                <input type="text" name="provincia" id="provincia" class="input-style" placeholder="Ingrese su provincia">
+            </div>
+            <div class="register-input">
+                <label for="pais">País</label>
+                <input type="text" name="pais" id="pais" class="input-style" placeholder="Ingrese el país">
+            </div>
+            
+            <div class="btn_register">
+                <button class="btn-submit_register" type="submit">Guardar</button>
+            </div>
+        </form>
+        </div>
+    </main> 
+
+    <%- include('../partials/footer') %> 
+</body>
+</html>

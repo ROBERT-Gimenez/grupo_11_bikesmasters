@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Direccion"
+    let alias = "Direccione"
 
     let cols = {
         id: {
@@ -39,7 +39,14 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     }
 
-    const Direccion = sequelize.define(alias, cols, config)
+    const Direccione = sequelize.define(alias, cols, config)
 
-    return Direccion
+/*     Direccione.associate = (models) => {
+        Direccione.belongsTo(models.Usuario, {
+            as: "usuario",
+            foreignKey: "direccion_id"
+        })
+    } */
+
+    return Direccione
 }

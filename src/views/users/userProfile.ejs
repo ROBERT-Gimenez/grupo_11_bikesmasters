@@ -19,8 +19,19 @@
                 <ul class="user-detail">
                     <li>Nombre: <%= session.user.name %> </li>
                     <li>Email: <%= session.user.email %> </li>
-                    <li>Telefono: <%= user.telefono %> </li>
+                    <li>Telefono: <%= (user.telefono)? user.telefono : ""%> </li>
                 </ul>
+                <div>
+                    <h2>Mi dirección</h2>
+                    <ul class="user-detail">
+                        <li>Calle: <%= direccion.direccion %> </li>
+                        <li>Localidad: <%= direccion.localidad %> </li>
+                        <li>Provincia: <%= direccion.provincia %> </li>
+                    </ul>
+                    <div class="edit-button">
+                        <button class="button"><a href="/usuario/perfil/agregar/direccion/<%= session.user.id %> ">Añadir dirección</a></button>
+                    </div>
+                </div>
                 <div class="edit-button">
                     <button class="button"><a href="/admin/usuarioadmin">Quiero Vender</a></button>
                 </div>

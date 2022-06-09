@@ -1,5 +1,4 @@
-/* const {products} = require('../data/index')
- */const toThousand = n => n?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const toThousand = n => n?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const removeAccents = (str) => {return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");}
 const db = require('../database/models')
 
