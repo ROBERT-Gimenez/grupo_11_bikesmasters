@@ -137,6 +137,14 @@ main .recent-product .product-detail p{
         display: flex;
     }
 
+    main .user-profile {
+        width: 30%;
+    }
+
+    main .user-products {
+        width: 70%;
+    }
+
     main .detail .user-detail li{
         margin: 10px 0px;
     }

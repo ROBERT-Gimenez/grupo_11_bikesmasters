@@ -6,18 +6,16 @@ const db = require('../database/models')
 module.exports = {
     index: (req, res)=> {
         db.Producto.findAll()
-        .then((product)=> {
+        .then((products)=> {
           res.render('home' ,{
             css:'home.css',
             titulo: 'Bikesmasters',
-			product,	
+			products,	
 			toThousand,
-            session:req.session
-        }
-        )  
+            session: req.session
+            })  
         })
         .catch((error)=> {res.send(error)})
-        
     },
     search: (req, res) => {
         let searchResult = [];

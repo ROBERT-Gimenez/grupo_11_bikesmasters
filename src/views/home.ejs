@@ -14,7 +14,7 @@
             <h3>Ofertas</h3>
         </div>
         <section>
-            <% product.forEach(product=> { %>
+            <% products.forEach(product=> { %>
                 <% if (product.discount > 1 ) { %>
                     <article>
                         <div class="img-producto">
@@ -43,7 +43,7 @@
             <h3>Productos destacados</h3>
         </div>
         <section>
-            <% product.forEach(product=> { %>
+            <% products.forEach(product=> { %>
                 <% if (product.discount == 0 ) { %>
                     <article>
                         <div class="img-producto">

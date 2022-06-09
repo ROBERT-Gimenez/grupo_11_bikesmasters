@@ -12,7 +12,7 @@ const imgProfile = require('../middlewares/imageProfileMiddleware')
 router.get('/carrito', userSessionCheck, userController.carrito);
 
 router.get('/login', checkin, userController.login);
-router.post('/login', /* loginValidator, */ userController.processLogin);
+router.post('/login', loginValidator, userController.processLogin);
 router.get('/logout', userSessionCheck, userController.logout);
 
 router.get('/registrarse', checkin, userController.register);

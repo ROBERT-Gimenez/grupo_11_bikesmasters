@@ -20,7 +20,7 @@
                 <input type="checkbox" id="cuenta" class="botton">
                 <% if (typeof session.user != "undefined") { %>
                 <div class="inline"></div>
-                <label class="cuenta" for="cuenta" style="border:1px solid green;"><img src="/images/profile/<%= session.user.avatar %> " alt=""></label>
+                <label class="cuenta" for="cuenta" style="border:1px solid green;"><img src="/images/profile/<%= session.user.avatar%>" alt=""></label>
                 <% }else{ %> 
                     <label class="cuenta" for="cuenta"><img src="/images/profile/user-default.png" alt=""></label>
                     <% } %>
