@@ -153,11 +153,14 @@ module.exports = {
             db.Usuario.update({
                 name: req.body.name,
                 telefono: req.body.telefono,
-                avatar: req.file ? req.file.filename : req.session.user.avatar
+                avatar: req.file ? req.file.filename : req.session.user.avatar,
+
             }, {
                 where: {id: req.session.user.id}
             })
-            .then(() => res.redirect(`/usuario/perfil/:${+req.session.user.id}`))
+            .then(() => { 
+
+                res.redirect(`/usuario/perfil/:${+req.session.user.id}`,{avatar })})
         }
     },
 
