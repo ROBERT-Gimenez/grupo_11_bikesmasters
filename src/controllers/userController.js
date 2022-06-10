@@ -2,6 +2,13 @@
 const { validationResult } = require('express-validator');
 let bcrypt =require('bcryptjs');
 const db =require('../database/models');
+const session = require('express-session')
+
+/* const userSession = (session.user)
+                userSession.save(()=>{
+                userSession.reload(()=>{
+                    return userSession
+                })}) */
 
 module.exports = {
     login: (req, res) => {
@@ -159,10 +166,10 @@ module.exports = {
                 where: {id: req.session.user.id}
             })
             .then(() => { 
-
-                res.redirect(`/usuario/perfil/:${+req.session.user.id}`,{avatar })})
-        }
-    },
+                res.redirect(`/usuario/perfil/:${+req.session.user.id}`)}  
+                ).catch((error)=>{req.send(error)})
+            }
+            },
 
     addDirection: (req, res) => {
         let userId = req.session.user.id;
