@@ -189,6 +189,44 @@ module.exports = {
         }))
             .then(() => res.redirect(`/usuario/perfil/${+req.session.user.id}`))
             .catch((error) => res.send(error))
+    },
+
+    editDirection: (req, res) => {
+        let userId = req.session.user.id;
+
+        db.Usuario.findByPk(userId)
+            .then((user) => {
+                let direccionId = user.direccion_id
+                return db.Direccione.findByPk(direccionId)
+                    .then((direccion) => {
+                        res.render('users/editDirection', {
+                            direccion,
+                            css: 'register.css',
+                            session: req.session,
+                            old: req.body,
+                            titulo: "Editar direccion"
+                        })
+                    })
+            })
+    },
+
+    updateDirection: (req, res) => {
+        let userId = +req.session.user.id;
+
+        db.Usuario.findByPk(userId)
+            .then((user) => {
+                let direccionId = user.direccion_id;
+                return  db.Direccione.update({
+                        direccion: req.body.direccion,
+                        altura: req.body.altura,
+                        codigo_postal: req.body.postal,
+                        localidad: req.body.localidad,
+                        pais: req.body.pais,
+                        provincia: req.body.provincia
+                    }, {where: {id: direccionId}})
+            }).then(() => {
+                res.redirect(`/usuario/perfil/${userId}`)
+            })
     }
     
 }

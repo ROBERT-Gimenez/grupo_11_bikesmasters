@@ -17,20 +17,26 @@
                     <button class="button"><a href="/usuario/perfil/editar/<%= session.user.id %> ">Editar perfil</a></button>
                 </div>
                 <ul class="user-detail">
-                    <li>Nombre: <%= session.user.name %> </li>
-                    <li>Email: <%= session.user.email %> </li>
+                    <li>Nombre: <%= user.name %> </li>
+                    <li>Email: <%= user.email %> </li>
                     <li>Telefono: <%= (user.telefono)? user.telefono : ""%> </li>
                 </ul>
                 <div>
                     <h2>Mi dirección</h2>
                     <ul class="user-detail">
-                        <li>Calle: <%= locals && locals.direccion? direccion.direccion : "" %> </li>
+                        <li>Dirección: <%= locals && locals.direccion? `${direccion.direccion} ${direccion.altura}` : "" %></li>
                         <li>Localidad: <%= locals && locals.direccion? direccion.localidad : ""%> </li>
                         <li>Provincia: <%= locals && locals.direccion? direccion.provincia : ""%> </li>
                     </ul>
+                    <% if (locals && locals.direccion) { %> 
                     <div class="edit-button">
-                        <button class="button"><a href="/usuario/perfil/agregar/direccion/<%= session.user.id %> ">Añadir dirección</a></button>
+                        <button class="button"><a href="/usuario/perfil/editar/direccion/<%= session.user.id %> ">Editar dirección</a></button>
                     </div>
+                    <% } else { %>
+                        <div class="edit-button">
+                            <button class="button"><a href="/usuario/perfil/agregar/direccion/<%= session.user.id %> ">Añadir dirección</a></button>
+                        </div>
+                    <% } %> 
                 </div>
                 <div class="edit-button">
                     <button class="button"><a href="/admin/usuarioadmin">Quiero Vender</a></button>

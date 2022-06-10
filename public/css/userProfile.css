@@ -31,6 +31,7 @@ main .user-profile .image-profile img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    border-radius: 50%;
 }
 
 main .detail {

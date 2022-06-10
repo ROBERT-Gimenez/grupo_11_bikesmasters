@@ -1,7 +1,7 @@
-/* const {products, users, writeProducts, writeUsers, categories} = require('../../data/index');*/
 const toThousand = n => n?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const db = require('../../database/models')
 const { validationResult } = require('express-validator');
+
 module.exports = {
     list: (req, res) => {
         db.Producto.findAll()
@@ -56,40 +56,12 @@ module.exports = {
             res.redirect('/admin')   
             }).catch((error)=>{res.send(error)})
 
-        })
-               
-                
-        }
-        /* let lastId = 0;
-        products.forEach(product => {
-            if(product.id > lastId){
-                lastId = product.id;
-            }
-        });
-
-        let newProduct = {
-            id: lastId + 1,
-            image: req.file ? req.file.filename : "product-default-4.png",
-            name: req.body.name,
-            price: +req.body.price,
-            marca: req.body.marca,
-            description: req.body.description,
-            stock: +req.body.stock,
-            discount: +req.body.discount,
-            categoryId: +req.body.categoryId,
-            condition: req.body.condition,
-        }
-        
-        products.push(newProduct)
-        writeProducts(products) */
-     
+        })}
     },
     
     productEdit: (req, res) => {
         
         let idProduct = +req.params.id;        
-/*         let product = products.find(product => product.id === idProduct)
- */
         db.Categoria.findAll()
         .then((categories)=>{
             
@@ -113,10 +85,17 @@ module.exports = {
         /* 1 - Obtener el id del producto */
         
         if(errors.isEmpty()){
-            db.Categoria.findOne({where:{id:+req.params.id}})
-            .then(()=>{
-            db.Producto.update({
-              ...req.body,
+            db.Producto.findByPk(+req.params.id)
+            .then((product)=>{
+                db.Producto.update({
+                    name: req.body.name,
+                    price: req.body.price,
+                    categoryid: req.body.categoryid,
+                    description: req.body.description,
+                    marca: req.body.marca,
+                    discount: req.body.discount,
+                    stock: req.body.stock,
+                    image: req.file? req.file.filename : product.image,
             },{ where: { id: req.params.id,}
             }).then(() => {
               res.redirect('/admin')
@@ -134,22 +113,6 @@ module.exports = {
             })
             .catch(error => console.log(error))
           }
-        /* products.forEach(product => {
-            if(product.id === idProduct){
-                product.name = req.body.name
-                product.price = +req.body.price
-                product.discount = +req.body.discount
-                product.categoryId = +req.body.categoryId
-                product.projectId = +req.body.projectId
-                product.stock = +req.body.stock
-                product.description = req.body.description
-                product.marca = req.body.marca
-                product.image = req.file? req.file.filename : product.image 
-            }
-        })
-
-        writeProducts(products); */
-
     },
     /* Recibe la info del producto a eliminar */
     productDelete: (req, res) => {

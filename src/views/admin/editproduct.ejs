@@ -10,7 +10,7 @@
     <main>
         <h2 class="titulo">Editar: <%= product.name %> </h2>            
         <div class="register">
-            <form action="/admin/producto/editar/<%= product.id %>?_method=PUT" method="POST" class="form-register">
+            <form action="/admin/producto/editar/<%= product.id %>?_method=PUT" method="POST" class="form-register" enctype="multipart/form-data">
                     <div class="register-input">
                         <label for="name">Nombre de producto</label>
                         <input type="text" name="name" class="input-style"placeholder="Ingrese nombre de producto" value="<%= product.name %>">
@@ -43,14 +43,6 @@
                     <div class="register-input">
                         <label for="image">Subir imagen</label>
                         <input type="file" name="image" value="<%= product.image %>">
-                    </div>
-                    <div class="register-input">
-                        <label for="condition">Condicion de producto</label>
-                        <select name="condition" id="select" class="input-style">
-                            <option value="" selected hidden>Elija una categoría</option>
-                            <option value="in-sale">Oferta</option>
-                            <option value="featured">Destacado</option>
-                        </select>
                     </div>
                     <div class="register-input">
                         <label for="description">Detalles</label>
