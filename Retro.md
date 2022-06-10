@@ -96,3 +96,27 @@ la retrospectiva
 | ------------ | ------------ |
 | Dejar de posponer correciones  | Reuniones largas |
 
+# Retroespectiva Sprint Nº5
+
+**La retrospectiva se centra en mejorar como equipo. Aqui nosotros les compartimos nuestra retrospectiva**.
+
+| Comenzar a  hacer |
+| ------------ |
+| Leer mas las Documentaciones acerca de las librerias |
+| Practicar mas con Sequelize |
+| Mejorar la comprension de Errores |
+| Agregar Funciones mas dinamicas |
+
+| Continuar haciendo  |  Hacer más |
+| ------------ | ------------ |
+| Mejorar la interfaz UX/UI |Refactorizacion del Proyecyo
+| Compañerismo  | Uso de Sql y Sequelize |
+| Comunicacion | ser mas independientes para la solucion de errores |
+| Reportar inconvenientes  | Visualizar mejoras a largo plazo  |
+
+
+| Hacer menos  | Dejar de hacer  |
+| ------------ | ------------ |
+| Posponer Reuniones | Procastinar |
+
+
