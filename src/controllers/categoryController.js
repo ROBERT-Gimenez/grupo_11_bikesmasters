@@ -7,8 +7,8 @@ module.exports = {
 	        
             db.Categoria.findByPk(+req.params.id)
             .then((categoria)=>{
-                db.Producto.findAll({where:{categoryid:categoria.id}})
-                .then((product)=>{
+                db.Categoria.findAll({where:{categoryid:categoria.id}})
+                .then((categoria)=>{
 
                
                 res.render ('products/Categorias',{
@@ -17,7 +17,7 @@ module.exports = {
                     categoria ,
                     toThousand,
                     session:req.session,
-                    product
+                
     
                 }) })
             })
