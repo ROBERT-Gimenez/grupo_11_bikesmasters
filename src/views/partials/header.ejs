@@ -11,6 +11,7 @@
             </form>
         </div>
         <div class="botones">
+            <button class="carrito" id="darkMode" >Modo Oscuro</button>
             <% if (typeof session.user != "undefined" && session.user.rol == 2) { %>
             <button class="carrito" ><a href="/admin">Admin</a></button>
             <% } %> 
@@ -20,7 +21,7 @@
                 <input type="checkbox" id="cuenta" class="botton">
                 <% if (typeof session.user != "undefined") { %>
                 <div class="inline"></div>
-                <label class="cuenta" for="cuenta" style="border:1px solid green;"><img src="/images/profile/<%= session.user.avatar%>" alt=""></label>
+                <label class="cuenta" for="cuenta" style="border:1px solid green;"><img id="avatar" src="/images/profile/<%= session.user.avatar%>" alt=""></label>
                 <% }else{ %> 
                     <label class="cuenta" for="cuenta"><img src="/images/profile/user-default.png" alt=""></label>
                     <% } %>
@@ -59,5 +60,6 @@
            
         </ul>
     </nav>
+
 </header>
 

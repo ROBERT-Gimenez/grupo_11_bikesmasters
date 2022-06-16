@@ -11,7 +11,9 @@ body {
 
 a#link {
     text-transform: none;
-    color: wheat;
+    color: #1700ff;
+    background-color: #607d8b99;
+    border-radius: 20px;
 }
 
 .register {
@@ -68,6 +70,9 @@ a#link {
 
 span.terminos {
     text-align: center;
+    color: #1700ff;
+    background-color: #607d8b99;
+    border-radius: 20px;
 }
 
 .btn_register .btn-submit_register {
@@ -76,7 +81,7 @@ span.terminos {
     padding: 10px;
     border: none;
     border-radius: 8px;
-    width: 50%;
+    width: 100%;
     margin: 1rem auto;
     cursor: pointer;
 }
@@ -126,7 +131,7 @@ span.login {
     }
 
     .register .btn_register .btn-submit_register {
-        width: 60%;
+        width: 100%;
         padding: 10px;
         font-size: 1.2rem;
     }

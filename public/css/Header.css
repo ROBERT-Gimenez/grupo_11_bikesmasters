@@ -341,6 +341,7 @@ header nav input{
         width: 100%;
         display: flex;
         justify-content: center;
+        color: #000;
     }
     img.logo{
         margin-right: 0;
@@ -354,8 +355,19 @@ header nav input{
         width: 6rem;
     }
     div button.carrito{
-        margin-right: 6rem;
+        margin-right: 3rem;
     }
     
     
+}
+.dark-mode{
+    color: white;
+    background-color: black;
+}
+.darck-mode_card{
+    background-color: #1d1e20;
+    border-radius: 20px;
+}
+.dark-mode_letras{
+   color: white;
 }

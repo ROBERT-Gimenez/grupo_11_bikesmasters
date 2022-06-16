@@ -24,7 +24,7 @@ module.exports = {
             .catch((error)=> res.send(error))
 	
 	},
-	Categoryadmin: (req, res) => {
+	CategoryAdmin: (req, res) => {
         db.Categoria.findByPk(+req.params.id)
         .then((categoria)=>{
             db.Producto.findAll({where:{categoryid:categoria.id}})
@@ -36,14 +36,8 @@ module.exports = {
                     toThousand,
                     session:req.session,
                     product
-                    
-
-            })
-
-        })
-
-		
-            })
-	
-	}
+                    })
+                })
+                })
+	        }
 }
