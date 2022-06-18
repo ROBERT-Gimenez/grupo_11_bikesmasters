@@ -3,6 +3,8 @@ const { validationResult } = require('express-validator');
 let bcrypt =require('bcryptjs');
 const db =require('../database/models');
 const session = require('express-session')
+const fs = require('fs');
+const path = require('path');
 
 /* const userSession = (session.user)
                 userSession.save(()=>{
@@ -155,6 +157,18 @@ module.exports = {
     },
 
     userUpdate: (req, res) => {
+        if(req.file !== undefined){
+            db.Usuario.findByPk(+req.params.id)
+            .then((user)=>{
+            let {avatar} = user
+                        try{
+                            fs.unlinkSync(path.join(__dirname ,'../../public/images/profile/'+avatar))
+                        }catch(err){
+                            res.send(err)
+                        }  
+            }).catch((error)=>{ res.send(error)})
+                
+    }
         let errors = validationResult(req)
         if(errors.isEmpty()) {
             db.Usuario.update({
@@ -165,11 +179,12 @@ module.exports = {
             }, {
                 where: {id: req.session.user.id}
             })
-            .then(() => { 
-                res.redirect(`/usuario/perfil/:${+req.session.user.id}`)}  
-                ).catch((error)=>{req.send(error)})
-            }
-            },
+            .then((user) => { 
+                
+        
+                     res.redirect(`/usuario/perfil/:${+req.session.user.id}`)} 
+                ).catch((error)=>{res.send(error)})
+                }},
 
     addDirection: (req, res) => {
         let userId = req.session.user.id;
