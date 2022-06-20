@@ -16,7 +16,7 @@ const indexRouter = require('./routes/indexRouter');
 const productRouter = require('./routes/productRouter');
 const userRouter = require('./routes/userRouter');
 const adminRouter = require('./routes/admin/adminRouter');
-const categoryRouter = require('./routes/categoryRouter');
+
 /* Views config */
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, "views"));
@@ -45,7 +45,6 @@ app.use ('/', indexRouter);
 app.use('/usuario', userRouter);
 app.use('/producto', productRouter);
 app.use('/admin', adminRouter);
-app.use('/categoria', categoryRouter);
 
 
 
