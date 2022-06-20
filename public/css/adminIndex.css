@@ -66,7 +66,7 @@ header .div-titulo {
     margin-right: 2rem;
 }
 
-
+/* TABLE */
 table {
     table-layout: fixed;
     width: 80vw;
@@ -115,7 +115,27 @@ tbody tr:nth-child(even) {
     border: thin solid lightgray;
 }
 
+tbody td input {
+    border: none;
+    text-align: center;
+    background-color: initial;
+    color: black;
+}
 
+tbody td input:focus {
+    outline: none;
+}
+
+tbody td form button#ok {
+    border: none;
+    text-align: center;
+    background-color: #FF2E00;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Footer */
 footer {
     display: flex;
     justify-content: center;

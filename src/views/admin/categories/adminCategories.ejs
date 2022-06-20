@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../../partials/admin/headAdmin') %> 
+
+<body>
+    <%- include('../../partials/admin/headerAdmin') %> 
+
+    <table>
+        <caption>Lista general de categorias</caption>
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th id="add"><a href="/admin/categorias/crear">Agregar categoría</a></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% categories.forEach(category => { %>
+              <tr>
+                <th scope="row"><%= category.id %></th>
+                <td><%= category.nombre %> </td>                
+                <td>
+                  <a href="/admin/categorias/editar/<%= category.id  %>" class="btn btn-success">
+                    <i id="edit" class="fa-solid fa-pen-to-square"></i>
+                </a>
+                  <form action="/admin/categorias/eliminar/<%= category.id %>?_method=DELETE" method="post">
+                    <button class="erase" type="submit">
+                      <i id="trash" class="fa-solid fa-trash-can"></i>
+                    </button>
+                  </form>
+                </td>
+              </tr>
+            <% }) %>  
+          </tbody>
+    </table>
+    <%- include('../../partials/admin/footerAdmin') %> 
+</body>
+</html>
