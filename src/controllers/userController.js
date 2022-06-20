@@ -175,12 +175,10 @@ module.exports = {
                 name: req.body.name,
                 telefono: req.body.telefono,
                 avatar: req.file ? req.file.filename : req.session.user.avatar,
-
             }, {
                 where: {id: req.session.user.id}
             })
             .then((user) => { 
-                
         
                      res.redirect(`/usuario/perfil/:${+req.session.user.id}`)} 
                 ).catch((error)=>{res.send(error)})
