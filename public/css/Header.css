@@ -362,10 +362,10 @@ header nav input{
 }
 .dark-mode{
     color: white;
-    background-color: black;
+    background-color: #292726;
 }
 .darck-mode_card{
-    background-color: #1d1e20;
+    background-color: #303043;
     border-radius: 20px;
 }
 .dark-mode_letras{
