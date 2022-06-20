@@ -13,7 +13,7 @@ router.get('/', userSessionCheck, adminSession, adminController.list);
 /* Get admin views */
 router.get('/usuarioadmin', adminController.userAdmin);
 
-/* router.get('/categoria/:id', userSessionCheck, adminSession, categoryController.CategoryAdmin) */
+router.get('/categoria/:id', userSessionCheck, adminSession, categoryController.CategoryAdmin)
 
 /* Routes productos */
 // Vista de creacion

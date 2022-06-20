@@ -73,7 +73,8 @@ module.exports = {
             categories,
             old: req.body,
             css: 'addProduct.css',
-            session:req.session  
+            session:req.session ,
+            titulo:product.name
             })
         })
        
