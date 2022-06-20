@@ -1,5 +1,5 @@
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const { body } = require('express-validator');
+/* const { body } = require('express-validator'); */
 const db = require('../database/models')
 
 module.exports = {
@@ -10,10 +10,13 @@ module.exports = {
                 res.render('admin/categories/adminCategories',{
                     css: "adminIndex.css",
                     session: req.session,
-                    categories
+                    categories,
+                    titulo: "Lista de categorías"
                 })
             })
+            .catch((error) => res.send(error))
 	},
+
     editCategory: (req, res) => {
         db.Categoria.findAll()
             .then((categories) => {
@@ -23,13 +26,15 @@ module.exports = {
                             css: "adminIndex.css",
                             session: req.session,
                             categoryId,
-                            categories
+                            categories,
+                            titulo: "Editar categoría"
                         })
                     })
                     .catch((error) => res.send(error))
             })
             .catch((error) => res.send(error))
     },
+
     updateCategory: (req, res) => {
         db.Categoria.update({
             nombre: req.body.nombre
@@ -39,21 +44,30 @@ module.exports = {
             .then(() => res.redirect('/admin/categorias'))
             .catch((error) => res.send(error))
     },
+
     createCategory: (req, res) => {
-        
+        res.render('admin/categories/adminCreateCategory', {
+            css: "addProduct.css",
+            titulo: "Agregar categoría",
+            session: req.session
+        })
     },
 
+    uploadCategoy: (req, res) => {
+        db.Categoria.create({
+            nombre: req.body.nombre
+        })
+            .then(() => res.redirect('/admin/categorias'))
+            .catch((error) => {res.send(error)})
+    },
 
-
-
-
-
-
-
-
-
-
-
+    deleteCategory: (req, res) => {
+        db.Categoria.destroy({
+            where: {id: req.params.id}
+        })
+            .then(() => {res.redirect('/admin/categorias')})
+            .catch((error) => res.send(error))
+    },
 
 
 

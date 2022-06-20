@@ -12,7 +12,7 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Nombre</th>
-                <th id="add"><a href="/admin/categoria/agregar">Agregar categoría</a></th>
+                <th id="add"><a href="/admin/categorias/crear">Agregar categoría</a></th>
             </tr>
         </thead>
         <tbody>
@@ -21,7 +21,7 @@
                 <th scope="row"><%= category.id %></th>
                 <td>
                     <% if(locals && locals.categoryId && categoryId.id === category.id) { %> 
-                    <form action="/admin/categoria/<%= categoryId.id %>?_method=PUT" method="post">
+                    <form action="/admin/categorias/<%= categoryId.id %>?_method=PUT" method="post">
                         <input type ="text" name ="nombre" id="<%= category.id%> "value="<%= category.nombre %>" style="border-bottom: thin solid rgb(246, 87, 1);">
                         <button type="submit" id="ok">¿OK?</button>
                     </form>
@@ -30,10 +30,10 @@
                     <% } %>  
                 </td>                
                 <td>
-                  <a href="/admin/categoria/editar/<%= category.id  %>" class="btn btn-success">
+                  <a href="/admin/categorias/editar/<%= category.id  %>" class="btn btn-success">
                     <i id="edit" class="fa-solid fa-pen-to-square"></i>
                 </a>
-                  <form action="/admin/cateoria/<%= category.id %>?_method=DELETE" method="post">
+                  <form action="/admin/categorias/<%= category.id %>?_method=DELETE" method="post">
                     <button class="erase" type="submit">
                       <i id="trash" class="fa-solid fa-trash-can"></i>
                     </button>

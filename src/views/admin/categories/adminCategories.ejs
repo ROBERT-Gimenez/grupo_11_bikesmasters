@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
     <%- include('../../partials/admin/headAdmin') %> 
-</head>
+
 <body>
     <%- include('../../partials/admin/headerAdmin') %> 
 
@@ -12,7 +12,7 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Nombre</th>
-                <th id="add"><a href="/admin/categoria/agregar">Agregar categoría</a></th>
+                <th id="add"><a href="/admin/categorias/crear">Agregar categoría</a></th>
             </tr>
         </thead>
         <tbody>
@@ -21,10 +21,10 @@
                 <th scope="row"><%= category.id %></th>
                 <td><%= category.nombre %> </td>                
                 <td>
-                  <a href="/admin/categoria/editar/<%= category.id  %>" class="btn btn-success">
+                  <a href="/admin/categorias/editar/<%= category.id  %>" class="btn btn-success">
                     <i id="edit" class="fa-solid fa-pen-to-square"></i>
                 </a>
-                  <form action="/admin/cateoria/<%= category.id %>?_method=DELETE" method="post">
+                  <form action="/admin/categorias/eliminar/<%= category.id %>?_method=DELETE" method="post">
                     <button class="erase" type="submit">
                       <i id="trash" class="fa-solid fa-trash-can"></i>
                     </button>
