@@ -76,18 +76,16 @@ module.exports = {
         
         let idProduct = +req.params.id;        
         db.Categoria.findAll()
-        .then((categories)=>{
-            
+        .then((categories) => { 
             return db.Producto.findByPk(idProduct)
-            .then((product)=>{
-
-            res.render('admin/editproduct', {
-            product,
-            categories,
-            old: req.body,
-            css: 'addProduct.css',
-            session:req.session ,
-            titulo:product.name
+                    .then((product) => {
+                        res.render('admin/editproduct', {
+                            product,
+                            categories,
+                            old: req.body,
+                            css: 'addProduct.css',
+                            session: req.session ,
+                            titulo: "Edición " + product.name
             })
         })
        
@@ -96,7 +94,6 @@ module.exports = {
     /* Recibe los datos actualizados del form de edición */
     productUpdate: (req, res) => {
         let errors = validationResult(req);
-        /* 1 - Obtener el id del producto */
         
         if(errors.isEmpty()){
             db.Producto.findByPk(+req.params.id)
@@ -116,16 +113,25 @@ module.exports = {
             }).catch(error => console.log(error))
             }) 
           }else{
-            let idProduct = +req.params.id;
-            db.Producto.findByPk(idProduct)
-            .then(product => {
-              res.render('admin/editproduct', {
-                product,
-                errors: errors.mapped(),
-                old: req.body
-              })
+            let idProduct = +req.params.id;        
+            db.Categoria.findAll()
+            .then((categories) => { 
+                return db.Producto.findByPk(idProduct)
+                        .then((product) => {
+                            res.render('admin/editproduct', {
+                                product,
+                                categories,
+                                old: req.body,
+                                css: 'addProduct.css',
+                                session: req.session ,
+                                titulo: "Edición " + product.name,
+                                errors: errors.mapped()
+                })
+                })
+                .catch((error) => res.send(error))
+           
             })
-            .catch(error => console.log(error))
+            .catch((error) => res.send(error))
           }
     },
     /* Recibe la info del producto a eliminar */
