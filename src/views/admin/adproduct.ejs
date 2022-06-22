@@ -21,9 +21,6 @@
                     <div class="register-input">
                         <label for="marca">Marca</label>
                         <input type="text" name="marca" id="marca" class="input-style" placeholder="Ingrese marca" value="<%= (locals.old && old.marca)? old.marca : "" %> ">
-                        <% if(locals.errors && errors.marca) { %>
-                            <small class="alert-msg"><%= errors.marca.msg %></small>
-                        <% } %>  
                     </div>
                     <div class="register-input">
                         <label for="price">Precio</label>

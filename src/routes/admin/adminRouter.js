@@ -23,7 +23,7 @@ router.post('/producto/agregar', uploadFile.single('image'), productValidator, a
 // Vista edición de producto
 router.get('/producto/editar/:id', userSessionCheck, adminSession, adminController.productEdit);
 // Carga actualizaciones
-router.put('/producto/editar/:id', uploadFile.single('image'), userSessionCheck, adminSession, adminController.productUpdate);
+router.put('/producto/editar/:id', uploadFile.single('image'), productValidator, userSessionCheck, adminSession, adminController.productUpdate);
 // Elimina producto
 router.delete('/:id', adminController.productDelete); 
 
