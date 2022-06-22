@@ -4,8 +4,8 @@ const adminController = require('../../controllers/admin/adminController');
 const uploadFile = require('../../middlewares/imageProductMiddleware');
 const userSessionCheck = require('../../middlewares/userSessionCheck');
 const adminSession = require('../../middlewares/adminSession');
-const userAdmin = require('../../controllers/userController');
 const categoryController = require('../../controllers/categoryController');
+const productValidator = require('../../validations/productValidator')
 
 
 
@@ -19,7 +19,7 @@ router.get('/categoria/:id', userSessionCheck, adminSession, categoryController.
 // Vista de creacion
 router.get('/producto/agregar', userSessionCheck, adminSession, adminController.productAdd);
 // Carga de producto
-router.post('/producto/agregar', uploadFile.single('image'), userSessionCheck, adminSession, adminController.productCreate);
+router.post('/producto/agregar', uploadFile.single('image'), productValidator, adminController.productCreate);
 // Vista edición de producto
 router.get('/producto/editar/:id', userSessionCheck, adminSession, adminController.productEdit);
 // Carga actualizaciones
@@ -37,10 +37,9 @@ router.put('/categorias/:id', userSessionCheck, adminSession, categoryController
 // Vista de creación de una categoría
 router.get('/categorias/crear', userSessionCheck, adminSession, categoryController.createCategory)
 // Crea la categoría
-router.post('/categorias/crear', userSessionCheck, adminSession, categoryController.uploadCategoy)
+router.post('/categorias/crear', categoryController.uploadCategoy)
 // Elimina categoría
 router.delete('/categorias/eliminar/:id', userSessionCheck, adminSession, categoryController.deleteCategory)
-
 
 
 

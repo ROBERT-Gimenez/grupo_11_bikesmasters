@@ -93,6 +93,7 @@ textarea {
     padding: 5px;
     font-size: 1rem;
     height: 10rem;
+    margin-bottom: 15px;
 }
 
 textarea:focus {
@@ -133,6 +134,11 @@ span.admin a.admin {
     align-items: center;
     text-decoration: none;
     color: whitesmoke;
+}
+
+.alert-msg {
+    color: tomato;
+    font-style: italic;
 }
 
 /* MEDIA QUERIES */
