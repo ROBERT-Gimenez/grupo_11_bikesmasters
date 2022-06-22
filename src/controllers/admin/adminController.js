@@ -1,6 +1,8 @@
 const toThousand = n => n?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const db = require('../../database/models')
 const { validationResult } = require('express-validator');
+const fs = require('fs');
+const path = require('path');
 
 module.exports = {
     list: (req, res) => {
@@ -93,6 +95,19 @@ module.exports = {
     },
     /* Recibe los datos actualizados del form de edición */
     productUpdate: (req, res) => {
+        if(req.file != undefined){
+            db.Producto.findByPk(+req.params.id)
+            .then((Producto)=>{
+            let image = Producto.image;
+              try{ 
+                 if(fs.existsSync(path.join(__dirname ,'../../../public/images/products/'+ image))){
+                    fs.unlinkSync(path.join(__dirname ,'../../../public/images/products/'+ image))
+                    }}catch(err){ 
+                        res.send(err)           
+                    }                              
+            }).catch((error)=>{ res.send(error)})
+                
+    }
         let errors = validationResult(req);
         
         if(errors.isEmpty()){
