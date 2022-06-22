@@ -158,10 +158,11 @@ module.exports = {
         if(req.file !== undefined){
             db.Usuario.findByPk(+req.params.id)
             .then((user)=>{
-            let {avatar} = user
-                        try{
+            let avatar = user.avatar;
+                        try{ 
+                            if(fs.existsSync(path.join(__dirname ,'../../public/images/profile/'+avatar))){
                             fs.unlinkSync(path.join(__dirname ,'../../public/images/profile/'+avatar))
-                        }catch(err){
+                        }}catch(err){
                             res.send(err)
                         }  
             }).catch((error)=>{ res.send(error)})
