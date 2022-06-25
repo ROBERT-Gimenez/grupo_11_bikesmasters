@@ -155,34 +155,67 @@ module.exports = {
     },
 
     userUpdate: (req, res) => {
-        if(req.file !== undefined){
-            db.Usuario.findByPk(+req.params.id)
-            .then((user)=>{
-            let avatar = user.avatar;
-                        try{ 
-                            if(fs.existsSync(path.join(__dirname ,'../../public/images/profile/'+avatar))){
-                            fs.unlinkSync(path.join(__dirname ,'../../public/images/profile/'+avatar))
-                        }}catch(err){
-                            res.send(err)
-                        }  
-            }).catch((error)=>{ res.send(error)})
-                
-    }
+        let userId = +req.session.user.id
         let errors = validationResult(req)
-        if(errors.isEmpty()) {
-            db.Usuario.update({
-                name: req.body.name,
-                telefono: req.body.telefono,
-                avatar: req.file ? req.file.filename : req.session.user.avatar,
-            }, {
-                where: {id: req.session.user.id}
+        db.Usuario.findByPk(userId) // Se obtiene los datos del usuario por el ID
+            .then((user) => {
+                if(errors.isEmpty()) {  // Se valida si hay errores
+                    if(req.file !== undefined) {   // Se pregunta si viene algun archivo
+                        // Acá nos aseguramos de que no se borre la imagen que se agrega por defecto cuando un nuevo usuario se registra
+                        if(fs.existsSync(path.join(__dirname, '../../public/images/profile/' + user.avatar))
+                            && user.avatar !== "user-default.png") { // Se pregunta que el archivo que viene por req.file sea diferente
+                                //Si todo está bien se borra el archivo anterior y se lo reemplaza
+                                fs.unlinkSync(path.join(__dirname, '../../public/images/profile/' + user.avatar))
+                                db.Usuario.update({
+                                    name: req.body.name,
+                                    telefono: +req.body.telefono,
+                                    avatar: req.file.filename
+                                }, {where: {id: userId}})
+                                    .then(() => res.redirect(`/usuario/perfil/${userId}`))
+                                    .catch((error) => res.send(error))
+                            } else {
+                                //Si el usuario no carga ninguna imagen y tiene la foto de perfil por defecto, no se borra. Solo actualiza
+                                db.Usuario.update({
+                                    name: req.body.name,
+                                    telefono: +req.body.telefono,
+                                    avatar: req.file.filename
+                                }, {
+                                    where: { id: userId }
+                                })
+                                    .then(() => res.redirect(`/usuario/perfil/${userId}`))
+                                    .catch((error) => res.send(error))
+                            }
+                    } else {
+                        // Si el usuario no sube ninguna foto, solo se actualizan los datos
+                        db.Usuario.update({
+                            name: req.body.name,
+                            telefono: +req.body.telefono
+                        }, {
+                            where: { id: userId }
+                        })
+                            .then(() => res.redirect(`/usuario/perfil/${userId}`))
+                            .catch((error) => res.send(error))
+                    }
+                } else {
+                    // Si hay errores se vuelve a renderizar la imagen con los errores encontrados
+                    let userId = req.session.user.id;
+                    db.Usuario.findByPk(userId)
+                    .then((user) => {
+                        res.render('users/editProfile', {
+                            titulo: 'Editar perfil',
+                            css: 'register.css',
+                            user,
+                            session: req.session,
+                            errors: errors.mapped(),
+                            old: req.body
+                        })
+                    })
+                    .catch((error) => res.send(error))
+                }
             })
-            .then((user) => { 
+            .catch((error) => res.send(error))
+    },
         
-                     res.redirect(`/usuario/perfil/:${+req.session.user.id}`)} 
-                ).catch((error)=>{res.send(error)})
-                }},
-
     addDirection: (req, res) => {
         let userId = req.session.user.id;
         db.Usuario.findByPk(userId)

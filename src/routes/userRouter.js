@@ -6,6 +6,7 @@ const loginValidator = require('../validations/Loginvalidator');
 const userSessionCheck = require('../middlewares/userSessionCheck');
 const checkin = require('../middlewares/checkin');
 const imgProfile = require('../middlewares/imageProfileMiddleware')
+const userEditValidator = require('../validations/userEditValidator')
 
 
 
@@ -20,7 +21,7 @@ router.post('/registrarse', registerValidator, userController.processRegister);
 
 router.get('/perfil/:id', userSessionCheck, userController.userProfile);
 router.get('/perfil/editar/:id', userSessionCheck, userController.editProfile);
-router.put('/perfil/:id', imgProfile.single('avatar'), userController.userUpdate);
+router.put('/perfil/:id', imgProfile.single('avatar'), userEditValidator, userController.userUpdate);
 
 router.get('/perfil/agregar/direccion/:id', userSessionCheck, userController.addDirection)
 router.post('/perfil/:id', userSessionCheck, userController.loadDirection)

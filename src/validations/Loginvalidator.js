@@ -9,7 +9,7 @@ let validateLogin = [
     check("password")
             .notEmpty().withMessage("Ingrese una contraseña")
             .isLength({min: 8}),
-    body("custom").custom((value, { req }) => {
+    body("email").custom((value, { req }) => {
         return db.Usuario.findOne({
             where:
                 {email: req.body.email}

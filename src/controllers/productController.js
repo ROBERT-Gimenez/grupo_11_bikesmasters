@@ -1,5 +1,3 @@
-/* const {products , categories} = require('../data/index');*/
-/*const categorias = require('../data/categories')*/
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const db =require('../database/models');
 
@@ -23,21 +21,11 @@ module.exports = {
 	
 	},
 	Category: (req, res) => {
-		/*let namecategori = categorias.find(categori => categori.id === +req.params.id)
-		let Categori = [];
-            products.forEach(product => {
-                if(product.categoryId === +req.params.id){
-                    Categori.push(product)
-                }
-            }
-            );*/
-            
             db.Categoria.findByPk(+req.params.id)
             .then((categoria)=>{
                 db.Producto.findAll({where:{categoryid:categoria.id}})
                 .then((product)=>{
-
-               
+                    
                 res.render ('products/Categorias',{
                     titulo: 'Bikesmasters',
                     css: 'home.css',

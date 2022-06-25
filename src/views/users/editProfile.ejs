@@ -17,11 +17,17 @@
         <form class="form-register" action="/usuario/perfil/<%= session.user.id %>?_method=PUT" method="post" enctype="multipart/form-data">
             <div class="register-input">
                 <label for="name">Nombre y apellido</label>
-                <input type="text" name="name" id="name" class="input-style" placeholder="Ingrese su nombre" value="<%= user.name %>">
+                <input type="text" name="name" id="name" class="input-style" placeholder="Ingrese su nombre" value="<%= (locals.old && old.name)? old.name : user.name %>">
+                <% if (locals.errors && errors.name) { %>
+                    <small class="text-danger"><%= errors.name.msg %> </small>
+                <% } %>
             </div>
             <div class="register-input">
                 <label for="telefono">Número de celular</label>
-                <input type="number" name="telefono" id="telefono" class="input-style" placeholder="Ingrese su número" value="<%= user.telefono %>">
+                <input type="number" name="telefono" id="telefono" class="input-style" placeholder="Ingrese su número" value="<%= (locals.old && old.telefono)? old.telefono : user.telefono %>">
+                <% if (locals.errors && errors.telefono) { %>
+                    <small class="text-danger"><%= errors.telefono.msg %> </small>
+                <% } %>
             </div>
             <div class="register-input">
                 <label for="avatar">Seleccione imagen de perfil</label>

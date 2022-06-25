@@ -8,8 +8,8 @@ const categoryController = require('../../controllers/categoryController');
 const productValidator = require('../../validations/productValidator')
 
 
-
 router.get('/', userSessionCheck, adminSession, adminController.list);
+
 /* Get admin views */
 router.get('/usuarioadmin', adminController.userAdmin);
 

@@ -97,12 +97,13 @@ module.exports = {
     productUpdate: (req, res) => {
         if(req.file != undefined){
             db.Producto.findByPk(+req.params.id)
-            .then((Producto)=>{
-            let image = Producto.image;
-              try{ 
-                 if(fs.existsSync(path.join(__dirname ,'../../../public/images/products/'+ image))){
-                    fs.unlinkSync(path.join(__dirname ,'../../../public/images/products/'+ image))
-                    }}catch(err){ 
+                .then((Producto)=>{
+                let image = Producto.image;
+                try{ 
+                    if(fs.existsSync(path.join(__dirname ,'../../../public/images/products/'+ image))){
+                        fs.unlinkSync(path.join(__dirname ,'../../../public/images/products/'+ image))
+                    }}
+                    catch(err){ 
                         res.send(err)           
                     }                              
             }).catch((error)=>{ res.send(error)})
