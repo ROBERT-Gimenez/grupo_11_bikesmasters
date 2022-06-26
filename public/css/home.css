@@ -1,10 +1,11 @@
 @import url('slider.css');
+@import url('marcas.css');
 
 
 /* MAIN */
 
 main {
-    background-color: var(--fondo);
+    background-color: white;
 }
 
 main.home a {
