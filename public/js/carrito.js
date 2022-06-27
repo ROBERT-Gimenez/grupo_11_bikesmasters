@@ -38,3 +38,7 @@ var decrementQty = minusBtn.click(function(){
     }
     update_amounts();
 });
+let compra = document.queryselector('.compra');
+compra.addEventListerner('click', ()=>{
+    alert("GRACIAS POR SU COMPRA PRONTO RECIBIRA SU PRODUCTO!!")
+})
