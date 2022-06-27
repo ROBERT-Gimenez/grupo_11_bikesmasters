@@ -2,8 +2,22 @@
     <div class="div-logo">
         <a href="/" id="logo-link"><img src="/images/logo-2.svg" alt="logo-Bikes"></a>
     </div>
+    <nav class="menu-barr">
+        <li class="menu">Productos
+            <ul class="options show-options">
+                <li class="option-list"><a class="option-link" href="/admin">Ver lista</a></li>
+                <li class="option-list"><a class="option-link" href="/admin/producto/agregar">Agregar</a></li> 
+            </ul>
+        </li>
+        <li class="menu">Categorias
+            <ul class="options show-options">
+                <li class="option-list"><a class="option-link" href="/admin/categorias">Ver lista</a></li>
+                <li class="option-list"><a class="option-link" href="/admin/categorias/crear">Crear</a></li>
+            </ul>
+        </li>
+    </nav>
     <div class="div-titulo">
-        <h2>Administrador de <%= session.user.name  %> 
-        </h2>
+        <h3>Administrador de <%= session.user.name  %> 
+        </h3>
     </div>
 </header>
