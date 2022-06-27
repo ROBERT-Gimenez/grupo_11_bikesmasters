@@ -14,6 +14,7 @@ ul, li {
     display: flex;
     width: 200%;
     animation: slider 20s infinite ease-in-out;
+    transition: all 10s;
 }
 
 .banners .banner-list .marcas {

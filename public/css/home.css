@@ -4,6 +4,14 @@
 
 /* MAIN */
 
+main .slider {
+    display: none;
+}
+
+main .contenedor-banner{
+    display: none;
+}
+
 main {
     background-color: white;
 }
@@ -35,7 +43,7 @@ main section article {
     height: 350px;
     background-color: white;
     margin-bottom: 1rem;
-    border: thin solid rgba(167, 165, 165, 0.356);
+/*     border: thin solid rgba(167, 165, 165, 0.356); */
 }
 
 main section article div.img-producto {
@@ -132,40 +140,12 @@ main section.categorias div.img-link span a {
 /* TABLET */
 
 @media (min-width: 700px) {
-    main div.banner {
-        display: flex;
-        width: 100%;
-        margin-bottom: 1rem;
-        position: relative;
+    main .slider {
+        display: block;
     }
 
-    main div.banner .ver-mas {
-        display: flex;
-        position: absolute;
-        top: 45%;
-        right: 30px;
-        border: none;
-        border-radius: 5px;
-        background-color: var(--negro);
-        justify-content: center;
-        align-items: center;
-        width: 4.5rem;
-        height: 1.5rem;
-        padding: 2px;
-    }
-
-    main div.banner .ver-mas a {
-        width: 100%;
-        height: 100%;
-        color: white;
-        text-decoration: none;
-    }
-
-    
-    main div.banner img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
+    main .contenedor-banner {
+        display: block;
     }
 
     main div.titulo-seccion {
@@ -188,7 +168,7 @@ main section.categorias div.img-link span a {
     main section article {
         width: 40%;
         margin-bottom: 0px;
-        box-shadow: 1px 2px 9px rgb(0 0 0 / 80%);
+        /* box-shadow: 1px 2px 9px rgb(0 0 0 / 80%); */
     }
 
     main section article p {
