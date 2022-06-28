@@ -17,6 +17,10 @@ const productRouter = require('./routes/productRouter');
 const userRouter = require('./routes/userRouter');
 const adminRouter = require('./routes/admin/adminRouter');
 
+//>>API ROUTES<<//
+const apiProductRouter =require('./routes/Apis/apiProductRouter');
+
+
 /* Views config */
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, "views"));
@@ -24,7 +28,7 @@ app.set('views', path.join(__dirname, "views"));
 /* Middlewares */
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({extended: false}));
-app.use(express.json());
+
 app.use(methodOverride('_method'));
 app.use(bodyParser.json()) 
 app.set(bcrypt)
@@ -46,7 +50,11 @@ app.use('/usuario', userRouter);
 app.use('/producto', productRouter);
 app.use('/admin', adminRouter);
 
+///Ruta de APIS///
 
+app.use('/api/producto' , apiProductRouter);
+
+app.use(express.json());
 
 
 app.listen(PORT, () => console.log( `Servidor levantado en el puerto ${PORT}
