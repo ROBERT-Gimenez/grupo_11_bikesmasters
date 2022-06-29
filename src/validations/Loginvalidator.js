@@ -1,14 +1,13 @@
 const { check, body } = require('express-validator');
 const bcrypt = require("bcryptjs");
-const db =require('../database/models')
+const db = require('../database/models')
 
 let validateLogin = [
     check("email")
         .notEmpty().withMessage("El email es requerido").bail()
         .isEmail().withMessage("Ingrese un email válido"),
     check("password")
-            .notEmpty().withMessage("Ingrese una contraseña")
-            .isLength({min: 8}),
+            .notEmpty().withMessage("Ingrese una contraseña"),
     body("custom").custom((value, { req }) => {
         return db.Usuario.findOne({
             where:{
@@ -21,7 +20,7 @@ let validateLogin = [
 
     
                 if(!bcrypt.compareSync(req.body.password, user.password)){
-                    return Promise.reject()
+                    return Promise.reject("Datos erroneos, ingreselos nuevamente")
                     
                 }
             }).catch((error) => {
@@ -32,14 +31,3 @@ let validateLogin = [
 ]
 
 module.exports = validateLogin;
-
-/* const getAdminUser = data => User.findOne({ username: data.body.name }).then((res) => {
-    if (res == null) {
-     return false;
-    }
-    const pass = bcrypt.compareSync(data.body.password, res.password);
-    if (pass) {
-     return genAuthTokens(res);
-    }
-    return false;
-   }) */
