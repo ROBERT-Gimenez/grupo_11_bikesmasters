@@ -166,7 +166,7 @@ CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(60) NOT NULL,
   `email` varchar(60) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `telefono` varchar(13) DEFAULT NULL,
   `direccion_id` int(11) DEFAULT NULL,
   `avatar` varchar(100) DEFAULT NULL,
