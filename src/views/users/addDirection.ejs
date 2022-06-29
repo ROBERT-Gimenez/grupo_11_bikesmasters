@@ -3,7 +3,7 @@
 <head>
 
     <%- include('../partials/head') %> 
-    
+    <script src="../../../js/addDirectionValidation.js" defer></script>
 </head>
 <body>
 
@@ -18,26 +18,32 @@
             <div class="register-input">
                 <label for="direccion">Dirección</label>
                 <input type="text" name="direccion" id="name" class="input-style" placeholder="Ingrese su calle">
+                <small id="inputNameError"></small>
             </div>
             <div class="register-input">
                 <label for="altura">Altura</label>
                 <input type="number" name="altura" id="altura" class="input-style" placeholder="Ingrese la altura">
+                <small id="inputAlturaError"></small>
             </div>
             <div class="register-input">
                 <label for="postal">Código postal</label>
                 <input type="number" name="postal" id="postal" class="input-style" placeholder="Código postal">
+                <small id="inputPostalError"></small>
             </div>
             <div class="register-input">
                 <label for="localidad">Localidad</label>
                 <input type="text" name="localidad" id="localidad" class="input-style" placeholder="Ingrese la localidad">
+                <small id="inputLocalidadError"></small>
             </div>
             <div class="register-input">
                 <label for="provincia">Provincia</label>
                 <input type="text" name="provincia" id="provincia" class="input-style" placeholder="Ingrese su provincia">
+                <small id="inputProvinciaError"></small>
             </div>
             <div class="register-input">
                 <label for="pais">País</label>
                 <input type="text" name="pais" id="pais" class="input-style" placeholder="Ingrese el país">
+                <small id="inputPaisError"></small>
             </div>
             
             <div class="btn_register">
