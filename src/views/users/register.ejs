@@ -2,7 +2,7 @@
 <html lang="es">
 
     <%- include('../partials/head') %> 
-
+    <script src="../../../js/registerValidation.js" defer></script>
 <body>
 
     <%- include('../partials/header')  %> 
@@ -12,32 +12,32 @@
             <div id="head-logo">
                 <h2>Registrate</h2>
             </div>
-            <form action="/usuario/registrarse" method="POST" class="form-register">
+            <form id="form" action="/usuario/registrarse" method="POST" class="form-register">
                 <div class="register-input">
                     <label for="name">Nombre y Apellido</label>
                     <input type="text" name="name" id="name" class="input-style" placeholder="Ingrese su nombre y apellido" value="<%= (locals.old && old.name)? old.name : "" %>">
-                    <small class="text-danger">
+                    <small class="text-danger" id="nameError">
                         <%= (locals.errors && errors.name)? errors.name.msg : "" %>
                     </small>
                 </div>
                 <div class="register-input">
                     <label for="email">Correo electrónico</label>
                     <input type="email" name="email" id="email" class="input-style" placeholder="Ingrese su email">
-                    <small class="text-danger">
+                    <small class="text-danger" id="emailError">
                         <%= (locals.errors && errors.email)? errors.email.msg : "" %>
                     </small>
                 </div>
                 <div class="register-input">
                     <label for="password">Ingrese una contraseña</label>
                     <input type="password" name="password" id="password" class="input-style">
-                    <small class="text-danger">
+                    <small class="text-danger" id="passwordError">
                         <%= (locals.errors && errors.password)? errors.password.msg : "" %>
                     </small>
                 </div>
                 <div class="register-input">
                     <label for="password2">Confirme su contraseña</label>
                     <input type="password" name="password2" id="password2" class="input-style">
-                    <small class="text-danger">
+                    <small class="text-danger" id="password2Error">
                         <%= (locals.errors && errors.password2)? errors.password2.msg : "" %>
                     </small>
                 </div>
@@ -50,6 +50,7 @@
                     </small>
                     <button type="submit" class="btn-submit_register">Registrarme</button>
                     <span class="login"><a id="link" href="/usuario/login">Ya tengo cuenta</a></span>
+                    <small class="text-danger" id="submitError">
                 </div>
             </form>
         </div>

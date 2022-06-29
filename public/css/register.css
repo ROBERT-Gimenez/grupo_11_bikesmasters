@@ -175,4 +175,11 @@ span.login {
     
 }
 
-/* Fin desktop *
+/* Fin desktop */
+
+.valido{
+    color: green;
+}
+.invalido{
+    color: red;
+}
