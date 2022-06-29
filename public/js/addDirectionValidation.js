@@ -2,20 +2,21 @@ function qs(element) {
     return document.querySelector(element)
 }
 window.addEventListener("load",() => {
-    let $form = qs("form"),
-        $direccion = qs("#name"),
+    let $direccion = qs("#name"),
         $altura = qs("#altura"),
         $postal = qs("#postal"),
         $localidad = qs("#localidad"),
         $provincia = qs("#provincia"),
         $pais = qs("#pais"),
+        $form = qs(".form"),
         $inputNameError = qs("#inputNameError"),
         $inputAlturaError = qs("#inputAlturaError"),
         $inputPostal = qs("#inputPostalError"),
         $inputLocalidadError = qs("#inputLocalidadError"),
         $inputProvinciaError = qs("#inputProvinciaError"),
         $inputPaisError = qs("#inputPaisError"),
-        regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
+        $submitError = qs("#submitError"),
+         regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
         regExAlt = /^[0-9]{7,8}$/;
 
         $direccion.addEventListener("blur", ()=>{
@@ -47,6 +48,25 @@ window.addEventListener("load",() => {
                 $inputAlturaError.innerHTML = "";  
                 break;  
             }
+        })
+
+        $form.addEventListener("submit", function (e) {
+            e.preventDefault()
+          let elementsForm = this.elements; 
+          let errores = false;
+          for (let index = 0; index < elementsForm.length - 1; index++) {    
+            if(elementsForm[index].value ==""
+            || elementsForm[index].classList.contains("is-invalid")){
+                elementsForm[index].classList.add("is-invalid");
+                $submitError.innerHTML = "Los campos señalados son obligatorios"
+                errores = true;
+            }        
+             }
+           if(!errores){
+            alert("Direccion actualizado!")
+            $form.submit()
+           }  
+
         })
 
 })
