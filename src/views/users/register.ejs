@@ -22,14 +22,14 @@
                 </div>
                 <div class="register-input">
                     <label for="email">Correo electrónico</label>
-                    <input type="email" name="email" id="email" class="input-style" placeholder="Ingrese su email">
+                    <input type="email" name="email" id="email" class="input-style" placeholder="Ingrese su email" value="<%= (locals.old && old.email)? old.email : "" %>">
                     <small class="text-danger" id="emailError">
                         <%= (locals.errors && errors.email)? errors.email.msg : "" %>
                     </small>
                 </div>
                 <div class="register-input">
                     <label for="password">Ingrese una contraseña</label>
-                    <input type="password" name="password" id="password" class="input-style">
+                    <input type="password" name="password" id="password" class="input-style" value="<%= (locals.old && old.password)? old.password : "" %>">
                     <small class="text-danger" id="passwordError">
                         <%= (locals.errors && errors.password)? errors.password.msg : "" %>
                     </small>
@@ -50,7 +50,7 @@
                     </small>
                     <button type="submit" class="btn-submit_register">Registrarme</button>
                     <span class="login"><a id="link" href="/usuario/login">Ya tengo cuenta</a></span>
-                    <small class="text-danger" id="submitError">
+                    <span class="" id="submitError"></span>
                 </div>
             </form>
         </div>

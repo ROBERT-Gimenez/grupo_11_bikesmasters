@@ -44,6 +44,7 @@
     flex-direction: column;
     justify-content:center ;
     align-items: center;
+    height: 390px;
   }
   body.forms form .input-container,
   body.forms form .button-container{
@@ -52,11 +53,7 @@
     width: 100%;
     margin-bottom: 1rem;
   }
-  body.forms form span.error-message {
-    color: tomato;
-    font-size: 10px;
-    margin: 0 auto;
-  }
+
   body.forms form input.input-style,
   body.forms form select.input-select {
     border: none;
@@ -159,5 +156,29 @@ div.google button:hover{
   font-weight: bold;
   transition: all 0.5 ease;
 
+}
+
+/* Clase para mensajes para consumir desde el front */
+
+.error-message {
+  padding: 3px;
+  color: red;
+  font-weight: 400;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.valid-message {
+  border: 1.8px solid green;
+  border-radius: 1rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.custom-msg {
+  width: 80%;
+  padding: 10px;
+  text-align: center;
 }
 
