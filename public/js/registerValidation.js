@@ -6,12 +6,14 @@ let $email =qs('#email');
 let $password = qs('#password');
 let $password2 = qs('#password2');
 let $terms = qs('#terms');
-let $form = qs('#form');
+let $form = qs('form#form');
 let $nameError =qs('#nameError');
 let $emailError =qs('#emailError');
 let $passwordError =qs('#passwordError');
 let $password2Error =qs('#password2Error');
-let $submitError =qs('#submitError');
+let submitError =document.querySelector('#submitError')
+
+submitError.style.color="red"
 
 regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
 regExDNI = /^[0-9]{7,8}$/,
@@ -99,20 +101,27 @@ $terms.addEventListener('click', function (){
         $terms.classList.toggle('valido')
         $terms.classList.remove('invalido')
         $termsErrors.innerHTML = ""
-       
-/* >>>>>>>  PreventDefault  <<<<<<< */
-       $form.addEventListener("submit" , function(event) {
-
-        event.preventDefault()
-        let elementsForms =this.element ;
-        let errores = false ;
-      
+     
+        })
         
+/* >>>>>>>  PreventDefault  <<<<<<< */
+       $form.addEventListener("submit" , function(e) {
+    
+                    
+                });
+
+          /*   let errores = false ;
+            let elementsForms =this.element 
         for (let index = 0 ; index < elementsForms.length - 1 ; index +1)
             if(elementsForm[index].value == ""|| elementsForms[index].classList.contains("invalido"))  
              {	elementsForm[index].classList.add("invalido");
-             submitError.innerHTML = "Hay errores en el Formulario"
+             $submitError.classList.add("invalido")
+             $submitError.innerHTML = "Hay errores en el Formulario"
             errores = true;
-             }}
-             )
-            })
+            } 
+            if(errores === true)
+            event.preventDefault() */
+                
+                    
+                    
+               /*  err.classList.contains("invalido")|| */
