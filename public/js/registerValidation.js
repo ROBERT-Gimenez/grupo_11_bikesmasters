@@ -18,7 +18,7 @@ submitError.style.color="red"
 regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
 regExDNI = /^[0-9]{7,8}$/,
 regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
-regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
+regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}$/;
 
 /* >> validacion de nombre << */
 $name.addEventListener('blur' , function(e){
@@ -26,16 +26,16 @@ $name.addEventListener('blur' , function(e){
             case !$name.value.trim()||$name.value.length<4:
                 $nameError.innerHTML= "Nombre Invalido"
                 $inputLastname.classList.add("invalido")
-                breack;
+                break;
             case !regExAlpha.test($name.value):
                 $nameError.innerHTML ="Nombre Invalido , no debe poseer numeros"
                 $name.classList.add("invalido");
-                breack;
+                break;
             default :
                 $name.classList.remove("invalido");
                 $name.classList.add("valido");
                 $nameError.innerHTML =""
-                breack;
+                break;
             }
 
 })
@@ -45,16 +45,16 @@ $email.addEventListener("blur" , function(e) {
         case !$email.value.trim():
             $emailError.innerHTML= "Email Requerido";
             $email.classList.add("invalido")
-            breack;
+            break;
         case !regExEmail.test($email.value):
             $emailError.innerHTML ="Email Invalido"
             $email.classList.add("invalido");
-            breack;
+            break;
         default :
             $email.classList.remove("invalido");
             $email.classList.add("valido");
             $emailError.innerHTML =""
-            breack;
+            break;
         }
 })
 /* >> validacion de Password << */
@@ -65,7 +65,7 @@ $password.addEventListener('blur', function(){
             $password.classList.add('is-invalid')
             break;
         case !regExPass.test($password.value):
-            $passwordError.innerHTML = 'La contraseña debe tener: entre 6 y 12 caracteres, al menos una mayúscula, una minúscula y un número';
+            $passwordError.innerHTML = 'La contraseña debe tener: entre 8 y 12 caracteres, al menos una mayúscula, una minúscula y un número';
             $password.classList.add('is-invalid')
             break;    
         default:
