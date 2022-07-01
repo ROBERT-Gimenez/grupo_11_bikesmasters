@@ -182,4 +182,5 @@ span.login {
 }
 .invalido{
     color: red;
+    display: block;
 }
