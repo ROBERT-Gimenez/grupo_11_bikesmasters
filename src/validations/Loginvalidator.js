@@ -20,11 +20,11 @@ let validateLogin = [
 
     
                 if(!bcrypt.compareSync(req.body.password, user.password)){
-                    return Promise.reject("Datos erroneos, ingreselos nuevamente")
+                    return Promise.reject("Datos erróneos, ingréselos nuevamente")
                     
                 }
             }).catch((error) => {
-                return Promise.reject("Email o contraseña incorrecto")
+                return Promise.reject("Email o contraseña incorrectos")
                 
             })
     })
