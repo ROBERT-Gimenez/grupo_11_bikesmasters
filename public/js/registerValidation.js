@@ -7,7 +7,7 @@ let $password = qs('#password');
 let $password2 = qs('#password2');
 let $terms = qs('#terms');
 let form = qs('form#form');
-let submitError = qs('form#submitError');
+let submitError = qs('#submitError');
 let $nameError =qs('#nameError');
 let $emailError =qs('#emailError');
 let $passwordError =qs('#passwordError');
@@ -115,7 +115,7 @@ form.addEventListener("submit", function (event) {
         || elementsForm[i].classList.contains('invalido')) {
             elementsForm[i].classList.remove('input-style')
             elementsForm[i].classList.add('invalido')
-            submitError.innerHTML = "Complete los campos vacios"
+            submitError.innerHTML= "Complete los campos vacios"
             submitError.classList.add("invalido")
             errors = true
             console.log(elementsForm[i])
