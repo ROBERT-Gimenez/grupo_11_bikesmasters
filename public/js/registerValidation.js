@@ -6,14 +6,12 @@ let $email =qs('#email');
 let $password = qs('#password');
 let $password2 = qs('#password2');
 let $terms = qs('#terms');
-let $form = qs('form#form');
+let form = qs('form#form');
+let submitError = qs('#submitError');
 let $nameError =qs('#nameError');
 let $emailError =qs('#emailError');
 let $passwordError =qs('#passwordError');
 let $password2Error =qs('#password2Error');
-let submitError =document.querySelector('#submitError')
-
-submitError.style.color="red"
 
 regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
 regExDNI = /^[0-9]{7,8}$/,
@@ -105,23 +103,34 @@ $terms.addEventListener('click', function (){
         })
         
 /* >>>>>>>  PreventDefault  <<<<<<< */
-       $form.addEventListener("submit" , function(e) {
+form.addEventListener("submit", function (event) {
+    event.preventDefault()
+    let elementsForm = this.elements
+    console.log(elementsForm)
+    let errors = false
+
+    for (let i = 0; i < elementsForm.length - 1; i++) {
+        if(elementsForm[i].value == ""
+           && elementsForm[i].boton !== "boton"
+        || elementsForm[i].classList.contains('invalido')) {
+            elementsForm[i].classList.remove('input-style')
+            elementsForm[i].classList.add('invalido')
+            submitError.innerHTML= "Complete los campos vacios"
+            submitError.classList.add("invalido")
+            errors = true
+            console.log(elementsForm[i])
+        }
+        
+    }
+
+    if(!errors) {
+        form.submit()
+    } else {
+        alert("Se encontraron errores en el formulario")
+    }
+
+})
     
                     
-                });
-
-          /*   let errores = false ;
-            let elementsForms =this.element 
-        for (let index = 0 ; index < elementsForms.length - 1 ; index +1)
-            if(elementsForm[index].value == ""|| elementsForms[index].classList.contains("invalido"))  
-             {	elementsForm[index].classList.add("invalido");
-             $submitError.classList.add("invalido")
-             $submitError.innerHTML = "Hay errores en el Formulario"
-            errores = true;
-            } 
-            if(errores === true)
-            event.preventDefault() */
-                
-                    
-                    
-               /*  err.classList.contains("invalido")|| */
+             
+        

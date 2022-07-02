@@ -232,6 +232,13 @@ span.admin a.admin {
 
 
 
-/* /////////////////////////////// */
 
+/* /////////////////////////////// */
+body .invalido{
+    color: red;
+    display: block;
+}
+body .valido{
+    color: green;
+}
 

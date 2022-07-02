@@ -168,7 +168,7 @@ module.exports = {
                                 fs.unlinkSync(path.join(__dirname, '../../public/images/profile/' + user.avatar))
                                 db.Usuario.update({
                                     name: req.body.name,
-                                    telefono: +req.body.telefono,
+                                    telefono: req.body.telefono !== ""? +req.body.telefono : "",
                                     avatar: req.file.filename
                                 }, {where: {id: userId}})
                                     .then(() => res.redirect(`/usuario/perfil/${userId}`))
@@ -177,7 +177,7 @@ module.exports = {
                                 //Si el usuario no carga ninguna imagen y tiene la foto de perfil por defecto, no se borra. Solo actualiza
                                 db.Usuario.update({
                                     name: req.body.name,
-                                    telefono: +req.body.telefono,
+                                    telefono: req.body.telefono !== ""? +req.body.telefono : "",
                                     avatar: req.file.filename
                                 }, {
                                     where: { id: userId }
@@ -189,7 +189,7 @@ module.exports = {
                         // Si el usuario no sube ninguna foto, solo se actualizan los datos
                         db.Usuario.update({
                             name: req.body.name,
-                            telefono: +req.body.telefono
+                            telefono: req.body.telefono !== ""? +req.body.telefono : ""
                         }, {
                             where: { id: userId }
                         })
