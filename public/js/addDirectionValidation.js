@@ -8,7 +8,7 @@ window.addEventListener("load",() => {
         $localidad = qs("#localidad"),
         $provincia = qs("#provincia"),
         $pais = qs("#pais"),
-        $form = qs(".form"),
+        $form = qs("#form"),
         $inputNameError = qs("#inputNameError"),
         $inputAlturaError = qs("#inputAlturaError"),
         $inputPostalError = qs("#inputPostalError"),
@@ -24,7 +24,19 @@ window.addEventListener("load",() => {
     .then((data)=>{ 
         let Provincias = data.provincias;
         for (let index = 0; index <Provincias.length; index++) {
-            $provincia.innerHTML += `<option value="${Provincias[index].id}">${Provincias[index].nombre}</option>`
+            $pais.innerHTML += `<option value="${Provincias[index].id}">${Provincias[index].nombre}</option>`
+            }
+        
+    })
+    .catch((error)=> console.log(error))
+
+            /*SELECCION DE PAIS*/
+    fetch("https://apis.datos.gob.ar/georef/api/paises")
+    .then((response)=>response.json())
+    .then((data)=>{ 
+        let Pais = data.paises;
+        for (let index = 0; index <Pais.length; index++) {
+            $pais.innerHTML += `<option value="${Pais[index].id}">${Pais[index].nombre}</option>`
             }
         
     })

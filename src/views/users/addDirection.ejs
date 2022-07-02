@@ -3,7 +3,7 @@
 <head>
 
     <%- include('../partials/head') %> 
-    <script src="../../../js/addDirectionValidation.js" defer></script>
+    <script src="/public/js/addDirectionValidation.js" defer></script>
 </head>
 <body>
 
@@ -14,7 +14,7 @@
         <div id="head-logo">
             <h2>Agregar dirección</h2>
         </div>
-        <form class="form-register" action="/usuario/perfil/<%= session.user.id %>" method="post">
+        <form class="form-register" id="form" action="/usuario/perfil/<%= session.user.id %>" method="post">
             <div class="register-input">
                 <label for="direccion">Dirección</label>
                 <input type="text" name="direccion" id="name" class="input-style" placeholder="Ingrese su calle">
