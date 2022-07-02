@@ -11,6 +11,7 @@ let stock =qs("input#stock");
 let description =qs("#description");
 let select =qs("#select");
 let form =qs(".form-register");
+let FormError =qs("#FormError");
 let productError =qs("#nameError");
 let marcaError =qs("#marcaError");
 let priceError =qs("#priceError");
@@ -153,21 +154,33 @@ let errors ;
 
         //>>>>>>>>>>>>> submit <<<<<<<<<<<<<//
           
- form.addEventListener('submit' ,function(e) {
-    e.preventDefault();
-	 if(errors == true){
-        alert("Verifique los datos")
-     }else{
-        form.submit()
-    }
-    });
-    });
+        form.addEventListener("submit", function (event) {
+            event.preventDefault()
+            let elementsForm = this.elements
+            console.log(elementsForm)
+            let errors = false
+    
+            for (let i = 0; i < elementsForm.length - 1; i++) {
+                if(elementsForm[i].value == ""
+                && elementsForm[i].boton !== "boton"
+                || elementsForm[i].classList.contains('invalido')) {
+                    elementsForm[i].classList.remove('input-style')
+                    elementsForm[i].classList.add('invalido')
+                    FormError.innerHTML = "Complete los campos vacios"
+                    FormError.classList.add("invalido")
+                    errors = true
+                    console.log(elementsForm[i])
+                }
+                
+            }
+    
+            if(!errors) {
+                form.submit()
+            } else {
+                alert("Se encontraron errores en el formulario")
+            }
+    
+        })
     
 	
 	
-	/* for (let index = 0 ; index < elementsForm.length -1 ; index ++ ) {
-		if(elementsForm[index].value == ""|| elementsForm[index].classList.contains("invalido"))  //omite el input de apellido// => //para omitir la validacion en el input de imagenes = elementsFORM[INDEX].type !== "file" //
-	     {	elementsForm[index].classList.add("invalido");
-		alert("Hay errores en el Formulario") 
-		errores = true;
-}else{form.submit()}} */ 
