@@ -46,7 +46,7 @@ a#link {
     color: white;
 }
 
-.register .form-register .register-input input {
+.register .form-register .register-input .input-style {
     height: 2.5rem;
     border: none;
     box-shadow: 0px 0px 2px 1px rgb(255, 196, 0);
@@ -55,11 +55,11 @@ a#link {
     margin-bottom: 1rem;
 }
 
-.register .form-register .register-input input:focus {
+.register .form-register .register-input .input-style {
     outline: none;
 }
 
-.register .form-register .register-input input::placeholder {
+.register .form-register .register-input .input-style::placeholder {
     opacity: 0.5;
 }
 
@@ -70,8 +70,8 @@ a#link {
 
 span.terminos {
     text-align: center;
-    color: #1700ff;
-    background-color: #607d8b99;
+   /*  color: #1700ff; */
+   /*  background-color: #607d8b99; */
     border-radius: 20px;
 }
 
@@ -88,8 +88,10 @@ span.terminos {
 
 small.text-danger {
     color: #fa0909;
-    margin: 0.5rem 0 1rem;
+    margin: 0 0 1rem;
     height: 20px;
+    font-style: italic;
+    letter-spacing: 1px;
 }
 
 small#terms {
@@ -99,7 +101,56 @@ small#terms {
 span.login {
     margin: 0.5rem auto;
 }
+/* Estilos vista de previa de avatar */
 
+div.load-image {
+    height: 300px;
+    text-align: center;
+    margin: 20px auto 35px;
+}
+
+div.user-image {
+    height: 200px;
+    width: 200px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+div.user-image > img {
+    width: 100%; 
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* Fin estilos de vista previa de avatar */
+
+
+/* Estilo de input de archivos */
+
+.avatar-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.avatar-input label {
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.avatar-input input {
+    height: 2.5rem;
+    border: none;
+/*     box-shadow: 0px 0px 2px 1px rgb(255 196 0); */
+    border-radius: 8px;
+    padding: 5px 10px;
+    margin-bottom: 1rem;
+}
+
+/* Fin estilo de input de archivos */
+
+
+/* ************************************************************* */
 /* MEDIA QUERIES */
 
 /* Tablet */
@@ -135,6 +186,41 @@ span.login {
         padding: 10px;
         font-size: 1.2rem;
     }
+    /* Estilos vista de previa de avatar */
+
+    div.user-image {
+        height: 200px;
+        width: 200px;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        background-color: white;
+    }
+    
+    div.load-image {
+        height: 300px;
+        text-align: center;
+        margin: 20px auto 35px;
+    }
+    /* Fin estilos de vista previa de avatar */
+
+    .avatar-input {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .avatar-input label {
+        margin-bottom: 1rem;
+        color: white;
+    }
+    
+    .avatar-input input {
+        height: 2.5rem;
+        border: none;
+    /*     box-shadow: 0px 0px 2px 1px rgb(255 196 0); */
+        border-radius: 8px;
+        padding: 5px 10px;
+        margin-bottom: 1rem;
+    }
 }
 
 /* Fin Tablet */
@@ -148,7 +234,7 @@ span.login {
 
     .register .form-register {
         flex-wrap: wrap;
-        width: 80%;
+        /* width: 80%; */
         display: flex;
         gap: 2rem;
         justify-content: center;
@@ -183,4 +269,16 @@ span.login {
 .invalido{
     color: red;
     display: block;
+}
+
+.error-input {
+    height: 2.5rem;
+    border: none;
+    box-shadow: 0px 0px 2px 1px rgb(237, 0, 0);
+    border-radius: 8px;
+    padding: 5px 10px;
+    margin-bottom: 1rem;
+}
+.error-input:focus {
+    outline: rgb(237, 0, 0);
 }
