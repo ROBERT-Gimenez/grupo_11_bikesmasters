@@ -7,6 +7,7 @@ let $password = qs('#password');
 let $password2 = qs('#password2');
 let $terms = qs('#terms');
 let $termsError = qs('#termsError');
+let spanTerm = qs('span.terminos')
 let form = qs('form#form');
 let submitError = qs('#submitError');
 let $nameError =qs('#nameError');
@@ -23,7 +24,7 @@ regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}$/;
 $name.addEventListener('blur' , function(e){
         switch (true) { 
             case !$name.value.trim()||$name.value.length<4:
-                $nameError.innerHTML= "Nombre Invalido"
+                $nameError.innerHTML= "Se requiere un Nombre valido"
                 $inputLastname.classList.add("invalido")
                 break;
             case !regExAlpha.test($name.value):
@@ -94,7 +95,15 @@ $password2.addEventListener('blur', function(){
 })
 
 /* >> Terminos y Condiciones << */
-
+spanTerm.addEventListener('mouseover', function (){
+    if(!$terms.classList.contains('valido')){
+        $terms.classList.add('invalido')
+        $termsError.innerHTML = "Acepata Los Terminos?"
+    }else{
+        $terms.classList.remove('invalido')
+        $termsError.innerHTML = ""
+    }
+})
 $terms.addEventListener('click', function (){
         $terms.value = "on"
         $terms.classList.toggle('valido')
@@ -102,6 +111,10 @@ $terms.addEventListener('click', function (){
         $termsError.innerHTML = ""
      
         })
+       
+
+
+
         
 /* >>>>>>>  PreventDefault  <<<<<<< */
 form.addEventListener("submit", function (event) {
@@ -114,12 +127,14 @@ form.addEventListener("submit", function (event) {
         if(elementsForm[i].value == ""
            && elementsForm[i].boton !== "boton"
         || elementsForm[i].classList.contains('invalido')) {
-            elementsForm[i].classList.remove('input-style')
+            elementsForm[i].style.boxShadow= "0px 0px 2px 2px rgb(255 0 0)"
             elementsForm[i].classList.add('invalido')
-            submitError.innerHTML= "Complete los campos vacios"
+            submitError.innerHTML= "Verifique los Datos"
             submitError.classList.add("invalido")
             errors = true
             console.log(elementsForm[i])
+        }else{elementsForm[i].style.boxShadow = "none"
+
         }
         
     }
@@ -127,7 +142,9 @@ form.addEventListener("submit", function (event) {
     if(!errors) {
         form.submit()
     } else {
-        alert("Se encontraron errores en el formulario")
+        alert("Error , Verifique los Datos Nuevamente")
+        form.style.border= "4px red solid"
+
     }
 
 })

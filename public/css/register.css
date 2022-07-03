@@ -70,9 +70,12 @@ a#link {
 
 span.terminos {
     text-align: center;
-   /*  color: #1700ff; */
-   /*  background-color: #607d8b99; */
-    border-radius: 20px;
+    justify-content: center;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    color: #1000ff;
+    border-radius: 10px;
 }
 
 .btn_register .btn-submit_register {
@@ -90,7 +93,9 @@ small.text-danger {
     color: #fa0909;
     margin: 0 0 1rem;
     height: 20px;
+    text-align: center;
     font-style: italic;
+    font-size: medium;
     letter-spacing: 1px;
 }
 
