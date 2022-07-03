@@ -38,6 +38,7 @@ main .filters_routes ul li a{
 main section.product_shown .product_image{
     width: 100%;
     margin-bottom: 10px;
+    padding: 10px;
 }
 
 main section.product_shown .product_image .image {
@@ -70,9 +71,13 @@ main section.product_shown .product_image img {
 
 /* Detalles de envio y vendedor */
 
-.order_detail,
+.order_detail {
+    padding: 10px;
+}
+
 .details {
     padding: 10px;
+    height: 200px;
 }
 
 .order_detail .name {
@@ -263,6 +268,8 @@ main section.product_shown .product_image img {
     main .details {
         width: 60%;
         padding: 40px;
+        border: thin solid lightgray;
+        height: 450px;
     }
 
     main .details .name {

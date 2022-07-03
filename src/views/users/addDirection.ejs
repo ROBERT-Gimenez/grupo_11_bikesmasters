@@ -3,7 +3,7 @@
 <head>
 
     <%- include('../partials/head') %> 
-    <script src="../../../js/addDirectionValidation.js" defer></script>
+    <script src="../../../public/js/addDirectionValidation.js" defer></script>
 </head>
 <body>
 
@@ -14,7 +14,7 @@
         <div id="head-logo">
             <h2>Agregar dirección</h2>
         </div>
-        <form class="form-register" action="/usuario/perfil/<%= session.user.id %>" method="post">
+        <form class="form-register" id="form" action="/usuario/perfil/<%= session.user.id %>" method="post">
             <div class="register-input">
                 <label for="direccion">Dirección</label>
                 <input type="text" name="direccion" id="name" class="input-style" placeholder="Ingrese su calle">
@@ -33,17 +33,14 @@
             <div class="register-input">
                 <label for="localidad">Localidad</label>
                 <input type="text" name="localidad" id="localidad" class="input-style" placeholder="Ingrese la localidad">
-                <small class="text-danger" id="inputLocalidadError"></small>
             </div>
             <div class="register-input">
                 <label for="provincia">Provincia</label>
-                <input type="text" name="provincia" id="provincia" class="input-style" placeholder="Ingrese su provincia">
-                <small class="text-danger" id="inputProvinciaError"></small>
+                <input type="text" name="provincia" id="provincia" class="input-style" placeholder="Ingrese su provincia"> 
             </div>
             <div class="register-input">
                 <label for="pais">País</label>
-                <input type="text" name="pais" id="pais" class="input-style" placeholder="Ingrese el país">
-                <small class="text-danger" id="inputPaisError"></small>
+                <input type="text" name="pais" id="pais" class="input-style" placeholder="Ingrese el país">    
             </div>
             
             <div class="btn_register">
@@ -55,5 +52,7 @@
     </main> 
 
     <%- include('../partials/footer') %> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="http://momentjs.com/downloads/moment.min.js"></script>
 </body>
 </html>

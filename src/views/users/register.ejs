@@ -43,9 +43,8 @@
                 </div>
     
                 <div class="btn_register">
-                    <span class="terminos">Acepto términos y condiciones <input type="checkbox" name="terms"
-                            id="terms"></span>
-                    <small class="text-danger" id="terms">
+                    <span class="terminos">Acepto términos y condiciones <input type="checkbox" name="terms" id="terms"></span>
+                    <small class="text-danger" id="termsError">
                         <%= (locals.errors && errors.terms)? errors.terms.msg: "" %>
                     </small>
                     <button type="submit" class="btn-submit_register">Registrarme</button>

@@ -148,7 +148,24 @@ div.user-image > img {
 }
 
 /* Fin estilo de input de archivos */
+span.admin{
+    border-radius: 8px;
+    background-color: black;
+    width: 120px;
+    height: 2.5rem;
+    margin: 0 auto;
+    text-align: center;
+}
 
+span.admin a.admin {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: whitesmoke;
+}
 
 /* ************************************************************* */
 /* MEDIA QUERIES */
@@ -220,6 +237,17 @@ div.user-image > img {
         border-radius: 8px;
         padding: 5px 10px;
         margin-bottom: 1rem;
+    }
+
+    span.admin a.admin {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: whitesmoke;
+        font-size: 1.2rem;
     }
 }
 

@@ -12,9 +12,6 @@ window.addEventListener('load', () => {
     $avatarError = qs('#avatarError'),
     error;
 
-    console.log($inputAvatar)
-    console.log($avatarPreview)
-
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/
 
 
@@ -94,11 +91,5 @@ window.addEventListener('load', () => {
             }
         }
     })
-
-
-
-
-
-
 
 })
