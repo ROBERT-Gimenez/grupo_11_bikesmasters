@@ -49,20 +49,14 @@ botondark.addEventListener('click' , function(){
 
          }
 
-   /*  if(body.className ==='dark-mode'){
-        botondark.textContent = "Modo Normal";
-        
-        
-    }else{
-        botondark.textContent = "Modo Oscuro"
-        localStorage.removeItem('modo-oscuro')
-    } */
+  //>>>>>>>>Vista Edit Perfil<<<<<<<<<<<<<//
+  //AL TENER UN ELEMENTO QUE NO SE REPITE EN OTRAS VISTAS SE COLOCA A LO ULTIMO//
     botondark.addEventListener('click' , () =>{
         divProfile.classList.toggle('div-profile'); 
 
     })
-    divProfile.classList.toggle('div-profile'); 
-   
 
-/* articles.forEach(article => {
-    article.classList.toggle('darck-mode_card')}); */
+    if(localStorage.getItem('dark-mode')==='true'){
+        divProfile.classList.add('div-profile')
+    }
+
