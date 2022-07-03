@@ -31,10 +31,10 @@ window.addEventListener("load",() => {
     .catch((error)=> console.log(error))
 
             /*SELECCION DE PAIS*/
-    fetch("https://apis.datos.gob.ar/georef/api/paises")
+    fetch('https://countries-cities.p.rapidapi.com/location/country/list')
     .then((response)=>response.json())
     .then((data)=>{ 
-        let Pais = data.paises;
+        let Pais = data.country;
         for (let index = 0; index <Pais.length; index++) {
             $pais.innerHTML += `<option value="${Pais[index].id}">${Pais[index].nombre}</option>`
             }
@@ -42,7 +42,7 @@ window.addEventListener("load",() => {
     })
     .catch((error)=> console.log(error))
 
-
+    
     /*SELECCION DE LOCALIDADES */
 $provincia.addEventListener("change", (event)=>{
     let idProvincia = event.target.value;
