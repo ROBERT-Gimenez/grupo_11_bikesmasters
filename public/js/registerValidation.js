@@ -6,6 +6,7 @@ let $email =qs('#email');
 let $password = qs('#password');
 let $password2 = qs('#password2');
 let $terms = qs('#terms');
+let $termsError = qs('#termsError');
 let form = qs('form#form');
 let submitError = qs('#submitError');
 let $nameError =qs('#nameError');
@@ -98,7 +99,7 @@ $terms.addEventListener('click', function (){
         $terms.value = "on"
         $terms.classList.toggle('valido')
         $terms.classList.remove('invalido')
-        $termsErrors.innerHTML = ""
+        $termsError.innerHTML = ""
      
         })
         

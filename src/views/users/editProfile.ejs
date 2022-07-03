@@ -35,6 +35,7 @@
             </div>
             <div class="btn_register">
                 <button class="btn-submit_register" type="submit">Guardar cambios</button>
+                <span class="admin"><a class="admin" href="/usuario/perfil/<%= session.user.id %> ">Volver</a></span>
             </div>
         </form>
         </div>
@@ -42,6 +43,6 @@
 
     <%- include('../partials/footer') %>
 
-    <script src="../../../js/editProfile.js"></script>
+    <script src="../../../js/editProfileValidation.js" defer></script>
 </body>
 </html>
