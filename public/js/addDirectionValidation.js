@@ -7,6 +7,8 @@ window.addEventListener("load",() => {
         $postal = qs("#postal"),
         $localidad = qs("#localidad"),
         $provincia = qs("#provincia"),
+        $telefono = qs ("#telefono"),
+        $errorTelefono = ("#errorTelefono"),
         $pais = qs("#pais"),
         $form = qs("#form"),
         $inputNameError = qs("#inputNameError"),
@@ -107,6 +109,25 @@ $provincia.addEventListener("change", (event)=>{
                 $altura.classList.remove("is-invalid");
                 $altura.classList.add("is-valid");
                 $inputPostalError.innerHTML = "";  
+                break;  
+            }
+        })
+
+        /*VALIDACION DE TELEFONO */
+        $telefono.addEventListener("blur",()=>{
+            switch(true){
+                case !$telefono.value.trim():
+                    $errorTelefono.innerHTML = "Ingrese su Codigo Postal"
+                $telefono.classList.add("is-invalid");
+                break;
+                case !regExAlt.test($telefono.value):
+                    $errorTelefono.innerHTML = "Debe ingresar una numeración"
+                    $telefono.classList.add("is-invalid");
+                break;
+            default:
+                $altura.classList.remove("is-invalid");
+                $altura.classList.add("is-valid");
+                $errorTelefono.innerHTML = "";  
                 break;  
             }
         })
