@@ -7,11 +7,11 @@ const { Op } = require("sequelize");
 
 module.exports = {
     list: (req, res) => {
-        db.Producto.findAll({inculde:['category']})
+        db.Producto.findAll(
+            {include: ['category']}
+            )
         .then((products) => {
-        
 
-            
             let respuesta = {
                 meta: {
                     status : 200,

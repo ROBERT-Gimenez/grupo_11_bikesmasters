@@ -91,6 +91,25 @@
 
     </main>
 
+    <section class="slider">
+        <!-- contenedor de los sliders -->
+        <div class="slider_container container">
+            <i class="fa-solid fa-arrow-left slider_arrow" id="before"></i>
+
+            <!-- Seccion que contiene las imagenes -->
+            <section class="slider_body slider_body-show" data-id="1">
+                <picture id="figure"><img class= "slider-img" src="../../../images/products/<%= product.image %> " alt=""></picture>
+            </section>
+            <!-- Fin de seccion -->
+
+            <i class="fa-solid fa-arrow-right slider_arrow" id="next"></i>
+        </div>
+    </section>
+
+
+
     <%-include ('../partials/footer') %>
+    <script src="../../../js/productSlider.js"></script>
+
 </body>
 </html>
