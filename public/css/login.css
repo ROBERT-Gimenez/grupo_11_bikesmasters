@@ -1,22 +1,21 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;  
+ header{
+    width: 100%;
   }
   
   body.forms {
+      gap: 2rem;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 0 1rem;
-      background: linear-gradient(grey , white);
       margin: 0 auto;
       flex-direction: column;
+      margin: 0;
+      padding: 0;
+      background-image: url('/images/fondo-formularios.png');
+      font-family: 'Nunito Sans', sans-serif;
   }
   body.forms a{
-    color: blue;
     font-size: 0.8rem;
     text-decoration: none;
   }
@@ -35,9 +34,9 @@
   body.forms section.form-container{
     border-radius: 10px;
     padding: 1rem;
-    background: linear-gradient(lightgrey ,white );
+    background-color: rgb(251 251 251 / 10%);
     width: 100%;
-    border: solid 3px rgb(230, 93, 2 ,0.6) ;
+    /* border: solid 3px rgb(230, 93, 2 ,0.6) ; */
     box-shadow: 2px 2px 9px 4px black;
   }
   body.forms form {
@@ -45,6 +44,7 @@
     flex-direction: column;
     justify-content:center ;
     align-items: center;
+    height: 390px;
   }
   body.forms form .input-container,
   body.forms form .button-container{
@@ -53,11 +53,7 @@
     width: 100%;
     margin-bottom: 1rem;
   }
-  body.forms form span.error-message {
-    color: tomato;
-    font-size: 10px;
-    margin: 0 auto;
-  }
+
   body.forms form input.input-style,
   body.forms form select.input-select {
     border: none;
@@ -76,18 +72,17 @@
   body.forms form label{
     font-size: 0.8rem;
   }
-  div.logo_container{
+  div.logo-img{
     width: 20rem;
     display: flex;
     margin-right: 3rem;
     align-items: center;
     justify-content: center;
+    margin-right: 2rem;
   }
-  div.logo_container a {
-    width: 100%;
-  }
-  img.logo{
-    width: 100%;
+  img.google-logo{
+    height: 1.4rem;
+    padding-top: 4px;
   }
   
   /* Botons Styles */
@@ -122,6 +117,9 @@
     align-items: center;
     
 }
+section.form-container.login a{
+  color: blue;
+}
 form div.btn-container{
     flex-direction: column-reverse;
     display: flex;
@@ -148,12 +146,48 @@ div.google button{
     cursor: pointer;
     box-shadow: 2px 2px 12px 2px ;
     text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 div.google button:hover{
-  color: rgb(2, 2, 2);
+  color: white;
   background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgb(74, 77, 245) 50%);
   font-weight: bold;
   transition: all 0.5 ease;
 
 }
 
+/* Clase para mensajes para consumir desde el front */
+
+.error-message {
+  padding: 3px;
+  color: red;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+
+.valid-message {
+  border: 1.8px solid green;
+  border-radius: 1rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.custom-msg {
+  width: 80%;
+  padding: 10px;
+  text-align: center;
+}
+
+.error-view {
+  border: 1.8px solid red;
+  border-radius: 1rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  margin-bottom: 0.2rem;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/admin/headAdmin') %> 
+<body>
+
+  <%- include('../partials/admin/headerAdmin') %> 
+
+    <main>
+      <nav id="category">
+        <input type="checkbox" id="menu" class="botton">
+        <label for="menu">Categorias</i></label>
+        <ul>
+            <li><a href="/Admin/categoria/4">Accesorios</a></li>
+            <li><a href="/Admin/categoria/1">Bicicletas</a></li>
+            <li><a href="/Admin/categoria/6">Herramientas</a></li>
+            <li><a href="/Admin/categoria/5">Indumentaria</a></li>
+            <li><a href="/Admin/categoria/3">Repuestos</a></li>
+        </ul>
+    </nav>
+
+
+        <table>
+            <caption>Lista general de productos</caption>
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Descuento</th>
+                    <th scope="col">Imagen</th>
+                    <th id="add"><a href="/admin/producto/agregar">Agregar Producto</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% products.forEach(product => { %>
+                  <tr>
+                    <th scope="row"><%= product.id %></th>
+                    <td><%= product.name %></td>
+                    <td><%= product.marca %></td>
+                    <% let categoryName = categories.find(category => category.id === product.categoryid)%>
+                    <td><%= categoryName.nombre%></td>
+                    <td>$<%- toThousand(product.price) %></td>
+                    <td><%= product.stock %></td>
+                    <td><%- product.discount === ""? product.discount = 0 + "%" :`${product.discount}%`%></td>
+                    <td><%= product.image %></td>
+                    
+                    <td>
+                      <a href="/admin/producto/editar/<%= product.id  %>" class="btn btn-success">
+                        <i id="edit" class="fa-solid fa-pen-to-square"></i>
+                      </a>
+                      <form action="/admin/<%= product.id %>?_method=DELETE" method="post">
+                        <button class="erase" type="submit">
+                          <i id="trash" class="fa-solid fa-trash-can"></i>
+                        </button>
+                      </form>
+                    </td>
+                  </tr>
+                <% }) %>  
+              </tbody>
+        </table>
+    </main>
+
+    <%- include('../partials/admin/footerAdmin')  %> 
+
+</body>
+</html>

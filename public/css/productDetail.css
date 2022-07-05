@@ -1,0 +1,288 @@
+a {
+    text-decoration: none;
+}
+
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin: 10px auto;
+}
+
+/* Lista de rutas */
+
+main .filters_routes {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    width: 80%;
+    padding: 10px;
+}
+
+main .filters_routes ul {
+    display: flex;
+    width: 100%;
+    flex: 1 0 auto;
+}
+
+main .filters_routes ul li a{
+    color: rgb(88, 86, 86);
+}
+
+/* Fin lista de rutas */
+
+/* Imagen de producto */
+
+main section.product_shown .product_image{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+main section.product_shown .product_image .image {
+    width: 100%;
+    position: relative;
+}
+
+main section.product_shown .product_image .discount {
+    border-radius: 4px;
+    background-color: var(--oferta);
+    padding: 5px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: white;
+    height: 35px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main section.product_shown .product_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Fin imagen de producto */
+
+/* Detalles de envio y vendedor */
+
+.order_detail {
+    padding: 10px;
+}
+
+.details {
+    padding: 10px;
+    height: 200px;
+}
+
+.order_detail .name {
+    padding: 5px 0px;
+}
+
+.order_detail .name h3 {
+    font-size: 1.8rem;
+}
+
+.order_detail .name strong{
+    color: gray;
+}
+
+.price {
+    font-size: 1.5rem;
+    margin: 7px 0px;
+}
+
+.order_detail .price small {
+    text-decoration: line-through;
+    color: var(--oferta);
+}
+
+.data, .seller {
+    border-bottom: thin solid lightslategray;
+    margin-bottom: 10px;
+}
+
+.data .data_send {
+    display: flex;
+    width: 100%;
+}
+
+.data .data_send i, 
+.data .data_send p {
+    margin-right: 10px;
+    color: green;
+}
+
+.data .name {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+.data .pedido {
+    width: 100%;
+    margin: 10px 0px;
+}
+
+.data .pedido form {
+    width: 100%;
+}
+
+.data .pedido form .amount{
+    padding: 5px 0px;
+    height: 45px;
+}
+
+/* Select */
+
+.data .pedido form .amount .cantidad {
+    margin: 2px 5px 2px 0px;
+    font-size: 1rem;
+}
+
+.data .pedido form .amount select {
+    border: none;
+    padding: 3px;
+    font-size: 1rem;
+}
+
+.data .pedido form .amount select:hover{
+    border-bottom: thin solid #FF5F00;
+}
+
+/* Botones */
+
+.data .pedido form .buttons {
+    text-align: center;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.data .pedido form .buttons .submit {
+    margin: 2px auto;
+}
+
+.data .pedido form .buttons .submit button{
+    background-color: var(--boton);
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 60%;
+}
+.data .pedido form .buttons .submit button:hover {
+    cursor: pointer;
+}
+
+
+/* fin botones */
+
+.seller .seller_direction {
+    margin: 5px 0px;
+}
+
+.seller .name_article {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.seller .seller_direction p {
+    font-weight: 600;
+}
+
+/* Fin de detalles de envio y vendedor*/
+
+/* Detalle producto */
+
+.details .name_article {
+    font-size: 1.2rem;
+    margin: 5px 0px;
+    text-decoration: underline;
+}
+
+/* ************************************** */
+
+/* MEDIA QUERIES */
+
+/* Tablet */
+
+@media(min-width: 768px) {
+    main .filters_routes {
+        width: 50%;
+    }
+    
+    main .filters_routes ul {
+        display: flex;
+        width: 100%;
+    }
+
+    main section.product_shown .product_image {
+        display: flex;
+        justify-content: center;
+    }
+
+    main section.product_shown .product_image .image {
+        height: 50%;
+        width: 50%;
+        padding: 10px;
+    }
+
+    main section.product_shown .product_image .discount {
+        width: fit-content;
+        height: 50px;
+    }
+
+    main section.product_shown .product_image .discount h4{
+        font-size: 1.5rem;
+    }
+}
+
+/* FIN Tablet */
+
+/* Descktop */
+@media(min-width: 1024px) {
+    main section.product_shown {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    main section.product_shown .product_image {
+        width: 60%;
+    }
+
+    main section.product_shown .product_image .image {
+        height: 70%;
+        width: 80%;
+    }
+
+    main section.product_shown .order_detail {
+        width: 40%;
+    }
+
+    main .details {
+        width: 60%;
+        padding: 40px;
+        border: thin solid lightgray;
+        height: 450px;
+    }
+
+    main .details .name {
+        margin-bottom: 15px;
+    }
+
+    main .details .name_article {
+        font-size: 1.8rem;
+        font-weight: 800;
+    }
+
+    main .details .description p {
+        font-size: 1.2rem;
+        font-family: 'Roboto', sans-serif;
+    }
+}

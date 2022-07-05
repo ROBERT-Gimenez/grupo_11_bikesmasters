@@ -38,3 +38,23 @@ var decrementQty = minusBtn.click(function(){
     }
     update_amounts();
 });
+
+let button = document.querySelector(".compra");
+button.onclick = function() {
+  alert("GRACIAS POR SU COMPRA PRONTO RECIBIRAS TU PRODUCTO!");
+}
+let volve = document.querySelector(".volver");
+volve.onclick = function() {
+  confirm ("ESTAS SEGURO QUE QUIERES VOLVER AL INCIO!");
+}
+let elimina = document.querySelector(".eliminar");
+elimina.onclick = function() {
+  confirm ("ESTAS A PUNTO DE CANCELAR LA COMPRA ¿ESTAS SEGURO?");
+}
+window.addEventListener("load", () => {
+    //if (localStorage.setItem("nombreUsuario" == null)){//
+    let nombre = prompt ("INGRESA TU NOMBRE")
+    document.querySelector(".bienvenida").innerHTML = "HOLA COMO ESTAS " +  nombre;
+    localStorage.setItem("nombreUsuario", nombre);
+   // }
+})

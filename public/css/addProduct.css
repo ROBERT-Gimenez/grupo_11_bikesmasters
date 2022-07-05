@@ -1,0 +1,244 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    border-bottom: thin solid lightgrey;
+}
+
+header .div-logo {
+    width: 170px;
+    height: 100%;
+}
+
+header div img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+header .div-titulo {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2rem;
+}
+
+h2.titulo {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.register {
+    margin: 1rem auto 2rem auto;
+    border-radius: 20px;
+    border: thin solid lightgray
+}
+
+
+.register .form-register {
+    padding: 20px;
+    margin: 1rem;
+}
+
+.register .form-register .register-input {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0px;
+}
+
+.register .form-register .register-input label {
+    margin-bottom: 1rem;
+}
+
+.register .form-register .register-input .input-style {
+    height: 2.5rem;
+    border: none;
+    box-shadow: 0px 0px 2px 1px rgb(255, 196, 0);
+    border-radius: 8px;
+    padding: 5px 10px;
+    margin-bottom: 1rem;
+}
+
+.register .form-register .register-input .input-style:focus {
+    outline: none;
+}
+
+.register .form-register .register-input .input-style::placeholder {
+    opacity: 0.5;
+}
+
+
+textarea {
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0px 0px 5px 1px rgb(255 196 0);
+    text-align: justify;
+    padding: 5px;
+    font-size: 1rem;
+    height: 10rem;
+    margin-bottom: 15px;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.btn_register {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn_register .btn-submit_register {
+    background-color: #ff4500;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    width: 120px;
+    margin: 1rem auto;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+span.admin{
+    border-radius: 8px;
+    background-color: black;
+    width: 120px;
+    height: 2.5rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+span.admin a.admin {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.alert-msg {
+    color: tomato;
+    font-style: italic;
+}
+
+/* MEDIA QUERIES */
+
+/* Tablet */
+
+@media (min-width: 768px) {
+
+    .register {
+        width: 60%;
+        margin: 3rem auto 2rem auto;
+    }
+
+    .register .form-register{
+        margin: 0 auto;
+    }
+
+    .register .form-register .register-input {
+        font-size: 1.2rem;
+    }
+
+    .register .form-register .register-input input-style {
+        font-size: 1rem;
+    }
+
+    .register .btn_register .btn-submit_register {
+        padding: 10px;
+        font-size: 1.2rem;
+        width: 40%;
+    }
+
+    span.admin a.admin {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: whitesmoke;
+        font-size: 1.2rem;
+    }
+}
+
+/* Fin Tablet */
+
+/* Desktop */
+
+@media (min-width: 1024px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .register {
+        width: 80%;
+    }
+
+    .register .form-register {
+        flex-wrap: wrap;
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 0px;
+    }
+    
+    form.form-register div.btn_register{
+        width: 80%;
+        margin: 3rem auto 1rem;
+    }
+    
+    .register .form-register .register-input {
+        width: 45%;
+    }
+
+    .register .btn_register .btn-submit_register:hover {
+        box-shadow: 0px 0px 2px 2px rgba(162, 160, 158, 0.621);
+        transition: all 0.5s ease-out;
+    }
+
+    span.admin {
+        padding: 10px;
+        border-radius: 8px;
+        background-color: black;
+        width: 40%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+}
+
+/* Fin desktop *
+
+
+
+
+/* /////////////////////////////// */
+body .invalido{
+    color: red;
+    display: block;
+}
+body .valido{
+    color: green;
+}
+

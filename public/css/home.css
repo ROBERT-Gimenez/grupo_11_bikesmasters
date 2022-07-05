@@ -1,30 +1,24 @@
-@import url(Header.css);
-@import url(footer.css);
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Nunito Sans', sans-serif;
-}
-
-:root {
-    --naranja: #FF2E00;
-    --negro: #1B1717;
-    --fondo: #f7f4f2;
-}
+@import url('slider.css');
+@import url('marcas.css');
 
 
 /* MAIN */
 
+main .slider {
+    display: none;
+}
+
+main .contenedor-banner{
+    display: none;
+}
+
 main {
-    background-color: var(--fondo);
+    background-color: white;
 }
 
 main.home a {
     text-transform: capitalize;
     text-decoration: none;
-/*     color: rgb(255, 255, 255); */
 }
 
 main div.banner {
@@ -49,7 +43,7 @@ main section article {
     height: 350px;
     background-color: white;
     margin-bottom: 1rem;
-    border: thin solid rgba(167, 165, 165, 0.356);
+/*     border: thin solid rgba(167, 165, 165, 0.356); */
 }
 
 main section article div.img-producto {
@@ -57,7 +51,7 @@ main section article div.img-producto {
     height: 60%;
 }
 
-main section article div.img-producto a.image-container {
+main section article div.img-producto a.image {
     display: flex;
     height: 100%;
     width: 100%;
@@ -92,9 +86,17 @@ main section article p.sale-off {
     padding: 5px;
 }
 
-main section article p.precio {
+main section article p.precio-discount {
     font-weight: 900;
     font-size: 1.5rem;
+}
+
+main section article p.precio-discount .precio{
+    font-weight: thin;
+    font-size: 0.9rem;
+    text-decoration: line-through;
+    color: var(--oferta);
+    margin-left: 6px;
 }
 
 /* Section Categorias */
@@ -103,30 +105,13 @@ main section.categorias div.img-link {
     display: flex;
     width: 100%;
     margin: 10px 0px;
-    object-fit: contain;
     height: 300px;
-    justify-content: center;
-    align-items: center;
+    position: relative;
 }
 
-main section.categorias .cat1 {
-    background-image: url('/images/Bicicletas.png');
-}
-
-main section.categorias .cat2 {
-    background-image: url('/images/Kids.png');
-}
-
-main section.categorias .cat3 {
-    background-image: url('/images/Repuestos.png');
-}
-
-main section.categorias .cat4 {
-    background-image: url('/images/Accesorios.png');
-}
-
-main section.categorias .cat5 {
-    background-image: url('/images/Indumentaria.png');
+main section.categorias div.img-link img {
+    width: 100%;
+    height: 100%;
 }
 
 main section.categorias div.img-link span {
@@ -134,6 +119,9 @@ main section.categorias div.img-link span {
     height: 2.5rem;
     border-radius: 8px;
     width: 80%;
+    position: absolute;
+    top: 45%;
+    left: 10%;
 }
 
 main section.categorias div.img-link span a {
@@ -152,40 +140,12 @@ main section.categorias div.img-link span a {
 /* TABLET */
 
 @media (min-width: 700px) {
-    main div.banner {
-        display: flex;
-        width: 100%;
-        margin-bottom: 1rem;
-        position: relative;
+    main .slider {
+        display: block;
     }
 
-    main div.banner .ver-mas {
-        display: flex;
-        position: absolute;
-        top: 45%;
-        right: 30px;
-        border: none;
-        border-radius: 5px;
-        background-color: var(--negro);
-        justify-content: center;
-        align-items: center;
-        width: 4.5rem;
-        height: 1.5rem;
-        padding: 2px;
-    }
-
-    main div.banner .ver-mas a {
-        width: 100%;
-        height: 100%;
-        color: white;
-        text-decoration: none;
-    }
-
-    
-    main div.banner img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
+    main .contenedor-banner {
+        display: block;
     }
 
     main div.titulo-seccion {
@@ -208,6 +168,7 @@ main section.categorias div.img-link span a {
     main section article {
         width: 40%;
         margin-bottom: 0px;
+        /* box-shadow: 1px 2px 9px rgb(0 0 0 / 80%); */
     }
 
     main section article p {
@@ -234,7 +195,7 @@ main section.categorias div.img-link span a {
     }
 
     main section article:hover {
-        box-shadow: 1px 1px 10px rgba( 0, 0, 0, 0.8);
+        box-shadow: 1px 2px 10px rgba(255, 98, 1, 0.9);
     }
 
     main section.categorias div.img-link {

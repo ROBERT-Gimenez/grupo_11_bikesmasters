@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include ('partials/head') %> 
+    <script src="/js/index.js" defer></script>
+<body>
+    <%- include ('partials/header') %> 
+    
+    <main class="home">
+
+        <%- include('partials/slider') %> 
+
+        <%- include('partials/bannerMarcas') %> 
+
+        <div class="titulo-seccion">  
+            <h3>Ofertas</h3>
+        </div>
+        <section>
+            <% products.forEach(product=> { %>
+                <% if (product.discount >= 1 ) { %>
+                    <article>
+                        <div class="img-producto">
+                            <a href="/producto/detalle/<%= product.id  %>" class="image">
+                                <img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>">
+                            </a>
+                            <% if (product.discount> 0) { %>
+                                <p class="sale-off">
+                                    <%= product.discount + '% 0FF' %>
+                                </p>
+                            <% } %>
+                        </div>
+                        <div class="product-description">
+                            <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
+                                <% if (product.discount > 0) {%>
+                                    <span class="precio">$<%= toThousand(product.price)%></span>
+                                <% } %>
+                            </p>
+                            <p><%- product.name %></p>
+                        </div>
+                    </article>
+                <% } %>
+            <% }) %>
+        </section>
+        <div class="titulo-seccion">
+            <h3>Productos destacados</h3>
+        </div>
+        <section>
+            <% products.forEach(product=> { %>
+                <% if (product.discount == 0 ) { %>
+                    <article>
+                        <div class="img-producto">
+                            <a href="/producto/detalle/<%- product.id  %>" class="image">
+                                <img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>">
+                            </a>
+                            <% if (product.discount> 0) { %>
+                                <p class="sale-off">
+                                    <%= product.discount + '% 0FF' %>
+                                </p>
+                            <% } %>
+                        </div>
+                        <div class="product-description">
+                            <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
+                                <% if (product.discount> 0) {%>
+                                    <span class="precio">$<%= toThousand(product.price)%></span>
+                                <% } %>
+                            </p>
+                            <p><%- product.name %></p>
+                        </div>
+                    </article>
+                <% } %>
+            <% }) %>
+        </section>
+
+        <div class="titulo-seccion">
+            <h3>Categorias populares</h3>
+        </div>
+        <section class="categorias">
+            <div class="img-link">
+                <img src="/images/Bicicletas.png" alt="Categotia bicicletas">
+                <span><a href="/">Bicicletas</a></span>
+            </div>
+            <div class="img-link">
+                <img src="/images/Kids.png" alt="Categoria Kids">
+                <span><a href="/">Kids</a></span>
+            </div>
+            <div class="img-link">
+                <img src="/images/Repuestos.png" alt="Categoria repuestos">
+                <span><a href="/">Repuestos</a></span>
+            </div>
+            <div class="img-link">
+                <img src="/images/Accesorios.png" alt="Categoria accesorios">
+                <span><a href="/">Accesorios</a></span>
+            </div>
+            <div class="img-link">
+                <img src="/images/Indumentaria.png" alt="Categoria indumentaria">
+                <span><a href="/">Indumentaria</a></span>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <%- include ('partials/footer') %> 
+    
+</body>
+</html>

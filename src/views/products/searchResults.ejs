@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include ('../partials/head') %> 
+
+<body>
+
+    <%- include ('../partials/header') %> 
+
+    <main class="home">
+
+        <%- include('../partials/slider')  %> 
+
+        <div class="titulo-seccion">  
+            <h3>Resultados de: <%- keyword %> </h3>
+        </div>
+        <section>
+
+            <% if (resultado.length > 0) { %>
+             
+
+            <% resultado.forEach(product => { %>			 
+                <article>
+                <div class="img-producto">
+                    <a href="/producto/detalle/<%- product.id  %>" class="image"><img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>"></a>                   
+                    <% if (product.discount > 0) { %>
+                        <p class="sale-off"><%= product.discount + '% 0FF'%></p>
+                    <% } %>
+                </div>
+                <div class="product-description">
+                    <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
+                        <% if (product.discount > 0) {%> 
+                        <span class="precio">$<%= toThousand(product.price)%></span>
+                        <% } %> 
+                    </p>
+                    <p><%- product.name %> </p>
+                </div>
+                </article> 
+            <% }) %>
+
+            <% } else { %>
+
+                <div class="titulo-seccion">  
+                    <h3>No se encontraron productos </h3>
+                </div>
+
+             <% } %> 
+        </section>
+    
+        <%- include('../partials/footer')  %> 
+
+</body>
+</html>

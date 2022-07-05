@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include('../partials/head') %> 
+    <script src="../../../js/addDirectionValidation.js" defer></script>
+</head>
+<body>
+
+    <%- include('../partials/header') %> 
+    
+    <main>
+        <div class="register">
+        <div id="head-logo">
+            <h2>Editar dirección</h2>
+        </div>
+        <form class="form-register" action="/usuario/perfil/editar/<%= session.user.id %>?_method=PUT" method="post">
+            <div class="register-input">
+                <label for="direccion">Dirección</label>
+                <input type="text" name="direccion" id="name" class="input-style" placeholder="Ingrese su calle" value="<%= direccion.direccion %>">
+            </div>
+            <div class="register-input">
+                <label for="altura">Altura</label>
+                <input type="number" name="altura" id="altura" class="input-style" placeholder="Ingrese la altura" value="<%= direccion.altura %>">
+            </div>
+            <div class="register-input">
+                <label for="postal">Código postal</label>
+                <input type="number" name="postal" id="postal" class="input-style" placeholder="Código postal" value="<%= direccion.codigo_postal %>">
+            </div>
+            <div class="register-input">
+                <label for="localidad">Localidad</label>
+                <input type="text" name="localidad" id="localidad" class="input-style" placeholder="Ingrese la localidad" value="<%= direccion.localidad %>">
+            </div>
+            <div class="register-input">
+                <label for="provincia">Provincia</label>
+                <input type="text" name="provincia" id="provincia" class="input-style" placeholder="Ingrese su provincia" value="<%= direccion.provincia %>">
+            </div>
+            <div class="register-input">
+                <label for="pais">País</label>
+                <input type="text" name="pais" id="pais" class="input-style" placeholder="Ingrese el país" value="<%= direccion.pais %>">
+            </div>
+            
+            <div class="btn_register">
+                <button class="btn-submit_register" type="submit">Guardar</button>
+            </div>
+        </form>
+        </div>
+    </main> 
+
+    <%- include('../partials/footer') %> 
+    <script src="../../../js/addDirectionValidation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="http://momentjs.com/downloads/moment.min.js"></script>
+    <
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../partials/head') %> 
+    
+<body>
+
+    <%- include('../partials/header') %> 
+    
+    <main>
+        <article class="user-profile">
+                <div class="image-profile">
+                    <img src="../../../images/profile/<%= user.avatar %>" alt="Foto de perfil">
+                </div>
+            <div class="detail">
+                <div class="edit-button">
+                    <button class="button"><a href="/usuario/perfil/editar/<%= session.user.id %> ">Editar perfil</a></button>
+                </div>
+                <ul class="user-detail">
+                    <li>Nombre: <%= user.name %> </li>
+                    <li>Email: <%= user.email %> </li>
+                    <li>Telefono: <%= (user.telefono)? user.telefono : ""%> </li>
+                </ul>
+                <div>
+                    <h2>Mi dirección</h2>
+                    <ul class="user-detail">
+                        <li>Dirección: <%= locals && locals.direccion? `${direccion.direccion} ${direccion.altura}` : "" %></li>
+                        <li>Localidad: <%= locals && locals.direccion? direccion.localidad : ""%> </li>
+                        <li>Provincia: <%= locals && locals.direccion? direccion.provincia : ""%> </li>
+                    </ul>
+                    <% if (locals && locals.direccion) { %> 
+                    <div class="edit-button">
+                        <button class="button"><a href="/usuario/perfil/editar/direccion/<%= session.user.id %> ">Editar dirección</a></button>
+                    </div>
+                    <% } else { %>
+                        <div class="edit-button">
+                            <button class="button"><a href="/usuario/perfil/agregar/direccion/<%= session.user.id %> ">Añadir dirección</a></button>
+                        </div>
+                    <% } %> 
+                </div>
+                <!-- <div class="edit-button">
+                    <button class="button"><a href="/admin/usuarioadmin">Quiero Vender</a></button>
+                </div> -->
+            </div>
+        </article>
+        <div class="user-products" id="div-profile">
+            <h2>Mis Compras</h2>
+            <div class="recent-product">
+                <div class="image-product">
+                    <img src="../../../images/products/product-default-4.png" alt="">
+                </div>
+                <div class="product-detail">
+                    <p>Nombre: Frenos</p>
+                    <p>Precio: $$$$$$</p>
+                    <p>Detalle: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, reiciendis!</p>
+                </div>
+            </div>
+            <div class="recent-product">
+                <div class="image-product">
+                    <img src="../../../images/products/product-default-4.png" alt="">
+                </div>
+                <div class="product-detail">
+                    <p>Nombre: Frenos</p>
+                    <p>Precio: $$$$$$</p>
+                    <p>Detalle: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, reiciendis!</p>
+                </div>
+            </div>
+            <div class="recent-product">
+                <div class="image-product">
+                    <img src="../../../images/products/casco.jpg" alt="">
+                </div>
+                <div class="product-detail">
+                    <p>Nombre: Frenos</p>
+                    <p>Precio: $$$$$$</p>
+                    <p>Detalle: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, reiciendis!</p>
+                </div>
+            </div>
+            <div class="recent-product">
+                <div class="image-product">
+                    <img src="../../../images/products/product-default-4.png" alt="">
+                </div>
+                <div class="product-detail">
+                    <p>Nombre: Frenos</p>
+                    <p>Precio: $$$$$$</p>
+                    <p>Detalle: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, reiciendis!</p>
+                </div>
+            </div>
+        </div>
+    </main> 
+
+    <%- include('../partials/footer') %> 
+   
+</body>
+</html>

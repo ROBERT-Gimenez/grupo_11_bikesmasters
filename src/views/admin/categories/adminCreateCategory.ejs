@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../../partials/admin/headAdmin') %> 
+
+<body>
+
+    <%- include('../../partials/admin/headerAdmin') %> 
+
+    <main>
+        <h2 class="titulo">Crear categoría</h2>            
+        <div class="register">
+            <form action="/admin/categorias/crear" method="POST" class="form-register">
+                    <div class="register-input">
+                        <label for="name">Nombre de categoría</label>
+                        <input type="text" name="nombre" class="input-style" placeholder="Ingrese nombre de categoría">
+                    </div>
+                    <div class="btn_register">
+                       <button type="submit" class="btn-submit_register">Crear</button>
+                        <span class="admin"><a class="admin" href="/admin">Volver</a></span>
+                    </div>
+            </form>
+             
+                     
+        </div>
+    </main>
+
+    <%- include('../../partials/admin/footerAdmin') %> 
+
+</body>
+</html>

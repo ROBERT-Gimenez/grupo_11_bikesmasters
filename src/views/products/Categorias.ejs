@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../partials/head') %> 
+
+<body>
+    <%- include('../partials/header') %> 
+    
+    <main class="home">
+        <div id="titulo" class="titulo-seccion">  
+            <h3><%= categoria.nombre  %></h3>
+            <small id="tituloError"></small>
+        </div>
+        <section>
+            <% product.forEach(product => { %>			 
+                <article>
+                <div  id="imgProducto" class="img-producto">
+                    <a href="/producto/detalle/<%- product.id  %>" class="image"><img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>"></a>                   
+                    <% if (product.discount > 0) { %>
+                        <p class="sale-off"><%= product.discount + '% 0FF'%></p>
+                    <% } %>
+                    <small id="imgProductoError" ></small>
+                </div>
+                <div id="precio" class="product-description">
+                    <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
+                        <% if (product.discount > 0) {%> 
+                        <span class="precio">$<%= toThousand(product.price)%></span>
+                        <% } %> 
+                    </p>
+                    <p><%- product.name %> </p>
+                    <small id="precioError"></small>
+                </div>
+                </article> 
+            <% }) %>
+        </section>
+        <script src="../../../../public/js/categoriaValidation.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        <script src="http://momentjs.com/downloads/moment.min.js"></script>    
+    </body>
+        
+    </html>
+
+    <script src="/js/index.js"></script>

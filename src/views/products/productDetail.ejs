@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../partials/head')  %> 
+
+<body>
+    
+    <%- include('../partials/header') %> 
+
+    <main>
+        <div class="product_card">
+            <div class="filters_routes">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">/ Filtro 1</a></li>
+                    <li><a href="#">/ Filtro 2</a></li>
+                </ul>
+            </div>
+            <section class="product_shown">
+                <div class="product_image">
+                    <div class="image">
+                        <img src="/images/products/<%= product.image %> " alt="Imagen de producto">
+                        <% if(product.discount > 0) { %> 
+                        <div class="discount">
+                            <h4><%= product.discount %>% OFF</h4>
+                        </div>
+                        <% } %> 
+                    </div>
+                </div>
+                <div class="order_detail">
+                    <div class="name"><strong><%= product.marca %> </strong></div>
+                    <div class="name"><h3><%= product.name %> </h3></div>
+                    <div class="name price">
+                        <span>$<%- toThousand(product.price - product.price * product.discount /100) %></span>
+                        <% if (product.discount > 0) { %>
+                        <small>$<%- toThousand(product.price) %></small>
+                        <% } %> 
+                    </div>
+                    <div class="data">
+                        <div class="data_send">
+                            <i class="fa-solid fa-truck-fast"></i>
+                            <p>Envio GRATIS</p>
+                        </div>
+                        <div class="data_send">
+                            <p>Si compra antes del 12/12/12</p>
+                        </div>
+                        <div class="name">Stock disponible</div>
+                        <div class="pedido">
+                            <form action="/" method="">
+                                <div class="amount">
+                                    <label class="cantidad" for="amount">Cantidad</label>
+                                    <select class="cantidad" name="amount" id="">
+                                        <% for (let i= 1; i <= product.stock; i++) { %> 
+                                        <option value="<%= i %>"><%= i %> </option>
+                                        <% } %> 
+                                    </select>
+                                    <span class="cantidad"><%= product.stock %> Disponibles</span>
+                                </div>
+                                <div class="buttons">
+                                    <div class="submit">
+                                        <button type="submit">Comprar ahora</button>
+                                    </div>
+                                    <div class="submit">
+                                        <button type="submit">Agregar al carrito</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="seller">
+                        <div class="name"><h4 class="name_article">Información del vendedor</h4></div>
+                        <div class="seller_direction">
+                            <p>Vendido por: </p>
+                            <span class="direction">La cueva de Alibaba</span>
+                        </div>
+                        <div class="seller_direction">
+                            <p>Ubicación</p>
+                            <small class="direction">Retiro - CABA - Buenos Aires</small>
+                        </div>
+                    </div>
+                </div>
+    
+            </section>
+            <div class="details">
+                <div class="name"><h4 class="name_article">Detalles de producto</h4></div>
+                <div class="description">
+                    <p><%= product.description %> </p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <section class="slider">
+        <!-- contenedor de los sliders -->
+        <div class="slider_container container">
+            <i class="fa-solid fa-arrow-left slider_arrow" id="before"></i>
+
+            <!-- Seccion que contiene las imagenes -->
+            <section class="slider_body slider_body-show" data-id="1">
+                <picture id="figure"><img class= "slider-img" src="../../../images/products/<%= product.image %> " alt=""></picture>
+            </section>
+            <!-- Fin de seccion -->
+
+            <i class="fa-solid fa-arrow-right slider_arrow" id="next"></i>
+        </div>
+    </section>
+
+
+
+    <%-include ('../partials/footer') %>
+    <script src="../../../js/productSlider.js"></script>
+
+</body>
+</html>

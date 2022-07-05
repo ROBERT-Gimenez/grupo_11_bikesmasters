@@ -1,22 +1,11 @@
-*{
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Nunito Sans', sans-serif;
-}
-/* body{
-    font-size:10px ;
-    min-height: 100vh;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 300;
-} */
+@import url('variables.css');
 a{
     text-decoration: none;
     color: black;
     text-transform: uppercase;
 }
 header{
+    
     background-color: white;
 }
 div.botones,
@@ -31,7 +20,23 @@ div.logo_container{
     align-items: stretch;
 }
 img.logo{
-    margin-right: 2.5rem;
+    margin-right: 2rem;
+}
+.inline{
+    position: fixed;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #20fb03;
+    animation: pulse 1500ms infinite;
+}
+@keyframes pulse {
+    0% {
+        box-shadow: #20fb03 0 0 0 0;
+    }
+    75%{
+        box-shadow: #ff69b400 0 0 0 16px;
+    }
 }
 button.carrito{
     display: none;
@@ -70,10 +75,16 @@ button.carrito{
     right: -1px;
     height: 1.9rem;
     width: 1.9rem;
-    background-color: #ae7662;
+    background-color: white;
     cursor: pointer;
     border-radius: 50%;
+    border: none;
 }
+
+.search-form_button i {
+    color: lightgray;
+}
+
 @keyframes menu-out{
     0%{
         left: 0;
@@ -116,6 +127,7 @@ header nav ul {
     padding: 0;
 }
 nav ul li {
+    
     width: auto;
     text-align: center;
     text-transform: uppercase;
@@ -128,7 +140,7 @@ nav a{
     color: white;
 }
 nav a:hover{
-    background-color: #ff4500;
+    background-color: var(--naranja);
     
   }
   header nav label {
@@ -159,7 +171,7 @@ button.carrito {
     display: none;
 }
 header nav label:hover {
-    background-color: #e23f0e;
+    background-color: var(--naranja);
 }
 header nav input{
     display: none; 
@@ -184,9 +196,11 @@ header nav input{
         gap: 1rem;
         animation-name: menu-out;
         animation-duration: 0.6s;
+        z-index: -2;
     }
-    header nav.nav_cuenta label svg{
-        width: 1.5rem;
+    header nav.nav_cuenta label img{
+        width: 100%;
+        border-radius: 50%;
     }
     header nav.nav_cuenta label.cuenta{
     min-width: 2.5rem;
@@ -220,7 +234,8 @@ header nav input{
         animation-duration: 0.6s;
         gap: 1rem;
         background: none;
-        border: none;   
+        border: none;
+        z-index: 1;   
     }
     header nav{
         display: flex;
@@ -275,7 +290,7 @@ header nav input{
         transition: all 0.3s ease-in;
         }
         button:hover {
-            background-color: #ff4500;
+            background-color: var(--naranja);
             color: #fff;
         }
     div.botones {
@@ -299,7 +314,7 @@ header nav input{
         
     }
     div button.carrito:hover {
-        background-color: #ff4500;
+        background-color: var(--naranja);
     }
     div button.inicio:hover{
         background-color: rgba(0, 0, 0, 0.562);
@@ -316,7 +331,7 @@ header nav input{
         width: 100%;
     }
     div button.registrar:hover{
-        background-color: #ff4500;
+        background-color: var(--naranja);
         color: white;
     }
     div button.registrar a:hover{
@@ -326,6 +341,7 @@ header nav input{
         width: 100%;
         display: flex;
         justify-content: center;
+        color: #000;
     }
     img.logo{
         margin-right: 0;
@@ -339,8 +355,19 @@ header nav input{
         width: 6rem;
     }
     div button.carrito{
-        margin-right: 6rem;
+        margin-right: 3rem;
     }
     
     
+}
+.dark-mode{
+    color: white;
+    background-color: #292726;
+}
+.darck-mode_card{
+    background-color: #303043;
+    border-radius: 20px;
+}
+.dark-mode_letras{
+   color: white;
 }

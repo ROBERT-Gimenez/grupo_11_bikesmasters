@@ -1,45 +1,38 @@
-@import url('Header.css');
-
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* background-color: #f7f4f2; */
     background-image: url('/images/fondo-formularios.png');
     font-family: 'Nunito Sans', sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-a {
+a#link {
     text-transform: none;
+    color: #1700ff;
+    background-color: #607d8b99;
+    border-radius: 20px;
 }
 
 .register {
     margin: 1rem auto 2rem auto;
-    background-color: rgba(255, 255, 255, 0.226);
     border-radius: 20px;
-    /* border: thin solid lightgray; */
 }
 
 .register #head-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    color: whitesmoke;
 }
 
-.register #head-logo .logo-img{
-    height: 100px;
-    width: 200px;
-}
-
-.register #head-logo .logo-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.register #head-logo h2 {
+    padding: 10px;
 }
 
 .register .form-register {
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.226);
+    background-color: rgb(251 251 251 / 10%);
     margin: 1rem;
 }
 
@@ -50,9 +43,10 @@ a {
 
 .register .form-register .register-input label {
     margin-bottom: 1rem;
+    color: white;
 }
 
-.register .form-register .register-input input {
+.register .form-register .register-input .input-style {
     height: 2.5rem;
     border: none;
     box-shadow: 0px 0px 2px 1px rgb(255, 196, 0);
@@ -61,11 +55,11 @@ a {
     margin-bottom: 1rem;
 }
 
-.register .form-register .register-input input:focus {
+.register .form-register .register-input .input-style {
     outline: none;
 }
 
-.register .form-register .register-input input::placeholder {
+.register .form-register .register-input .input-style::placeholder {
     opacity: 0.5;
 }
 
@@ -74,27 +68,122 @@ a {
     flex-direction: column;
 }
 
+span.terminos {
+    text-align: center;
+    justify-content: center;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    color: #1000ff;
+    border-radius: 10px;
+}
+
 .btn_register .btn-submit_register {
-    background-color: #ff4500;
+    background-color: var(--naranja);
     color: white;
     padding: 10px;
     border: none;
     border-radius: 8px;
-    width: 50%;
+    width: 100%;
     margin: 1rem auto;
+    cursor: pointer;
 }
 
-.btn_register span {
+small.text-danger {
+    color: #fa0909;
+    margin: 0 0 1rem;
+    height: 20px;
+    text-align: center;
+    font-style: italic;
+    font-size: medium;
+    letter-spacing: 1px;
+}
+
+small#terms {
+    text-align: center;
+}
+
+span.login {
+    margin: 0.5rem auto;
+}
+/* Estilos vista de previa de avatar */
+
+div.load-image {
+    height: 300px;
+    text-align: center;
+    margin: 20px auto 35px;
+}
+
+div.user-image {
+    height: 200px;
+    width: 200px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+div.user-image > img {
+    width: 100%; 
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* Fin estilos de vista previa de avatar */
+
+
+/* Estilo de input de archivos */
+
+.avatar-input {
     display: flex;
-    justify-content: center;
-    margin: 0.5rem 0;
+    flex-direction: column;
 }
 
+.avatar-input label {
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.avatar-input input {
+    height: 2.5rem;
+    border: none;
+/*     box-shadow: 0px 0px 2px 1px rgb(255 196 0); */
+    border-radius: 8px;
+    padding: 5px 10px;
+    margin-bottom: 1rem;
+}
+
+/* Fin estilo de input de archivos */
+span.admin{
+    border-radius: 8px;
+    background-color: black;
+    width: 120px;
+    height: 2.5rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+span.admin a.admin {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+/* ************************************************************* */
 /* MEDIA QUERIES */
 
 /* Tablet */
 
 @media (min-width: 768px) {
+    .register #head-logo {
+        margin: 30px auto;
+        width: 75%;
+        border-bottom: thin solid whitesmoke;
+    }
+    
     .register {
         width: 60%;
         margin: 3rem auto 2rem auto;
@@ -115,9 +204,55 @@ a {
     }
 
     .register .btn_register .btn-submit_register {
+        width: 100%;
         padding: 10px;
         font-size: 1.2rem;
-        width: 40%;
+    }
+    /* Estilos vista de previa de avatar */
+
+    div.user-image {
+        height: 200px;
+        width: 200px;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        background-color: white;
+    }
+    
+    div.load-image {
+        height: 300px;
+        text-align: center;
+        margin: 20px auto 35px;
+    }
+    /* Fin estilos de vista previa de avatar */
+
+    .avatar-input {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .avatar-input label {
+        margin-bottom: 1rem;
+        color: white;
+    }
+    
+    .avatar-input input {
+        height: 2.5rem;
+        border: none;
+    /*     box-shadow: 0px 0px 2px 1px rgb(255 196 0); */
+        border-radius: 8px;
+        padding: 5px 10px;
+        margin-bottom: 1rem;
+    }
+
+    span.admin a.admin {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: whitesmoke;
+        font-size: 1.2rem;
     }
 }
 
@@ -132,17 +267,26 @@ a {
 
     .register .form-register {
         flex-wrap: wrap;
-        width: 80%;
+        /* width: 80%; */
         display: flex;
         gap: 2rem;
         justify-content: center;
         padding: 30px;
     }
+    form.form-register div.btn_register{
+        min-width: 5rem;
+    }
+    
+    .register .form-register .register-input input {
+        font-size: 100%;
+    }
 
     .register .form-register .register-input {
         width: 45%;
     }
-
+    span.admin{
+        width: 100%;
+    }
     .register .btn_register .btn-submit_register:hover {
         box-shadow: 0px 0px 2px 2px rgba(162, 160, 158, 0.621);
         transition: all 0.5s ease-out;
@@ -150,4 +294,24 @@ a {
     
 }
 
-/* Fin desktop *
+/* Fin desktop */
+
+.valido{
+    color: green;
+}
+.invalido{
+    color: red;
+    display: block;
+}
+
+.error-input {
+    height: 2.5rem;
+    border: none;
+    box-shadow: 0px 0px 2px 1px rgb(237, 0, 0);
+    border-radius: 8px;
+    padding: 5px 10px;
+    margin-bottom: 1rem;
+}
+.error-input:focus {
+    outline: rgb(237, 0, 0);
+}

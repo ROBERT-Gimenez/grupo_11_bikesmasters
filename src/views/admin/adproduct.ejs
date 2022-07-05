@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../partials/admin/headAdmin') %> 
+    <script src="/js/productAdValidation.js" defer></script>
+
+<body>
+
+    <%- include('../partials/admin/headerAdmin')  %> 
+
+    <main>
+        <h2 class="titulo">Agregar Producto</h2>            
+        <div class="register">
+            <form action="/admin/producto/agregar" method="POST" class="form-register" enctype="multipart/form-data">
+                    <div class="register-input">
+                        <label for="name">Nombre de producto</label>
+                        <input id="nameProduct" type="text" name="name" class="input-style" placeholder="Ingrese nombre de producto" value="<%= (locals.old && old.name)? old.name : "" %> ">
+                        <small id="nameError" class="alert-msg">
+                        <% if(locals.errors && errors.name) { %>
+                           <%= errors.name.msg %><% } %></small>
+                        
+                    </div>
+                    <div class="register-input">
+                        <label for="marca">Marca</label>
+                        <input type="text" name="marca" id="marca" class="input-style" placeholder="Ingrese marca" value="<%= (locals.old && old.marca)? old.marca : "" %> ">
+                        <small id="marcaError" class="alert-msg"></small>
+                    </div>
+                    <div class="register-input">
+                        <label for="price">Precio</label>
+                        <input type="number" name="price" id="price" class="input-style" placeholder="Ingrese precio" value="<%= (locals.old && old.price)? old.price : "" %> ">
+                        <small id="priceError" class="alert-msg"></small>
+                        <% if(locals.errors && errors.price) { %><%= errors.price.msg %><% } %>
+                        </small>
+                    </div>
+                    <div class="register-input">
+                        <label for="stock">Stock</label>
+                        <input type="number" name="stock" id="stock" class="input-style" placeholder="cantidad de stock" value="<%= (locals.old && old.stock)? old.stock : "" %>">
+                        <small id="stockError" class="alert-msg">
+                            <% if(locals.errors && errors.stock) { %><%= errors.stock.msg %><% } %>
+                        </small>
+                          
+                    </div>
+                    <div class="register-input">
+                        <label for="discount">Descuento</label>
+                        <input type="number" name="discount" id="discount" class="input-style" value="<%= (locals.old && old.discount)? old.discount : "" %>">
+                        
+                        <small id="discError" class="alert-msg">
+                                <% if(locals.errors && errors.discount) { %><%= errors.discount.msg %><% } %> 
+                        </small>
+                    </div>
+                    <div id="sinCateg" class="register-input">
+                        <label for="categoryid">Categoria</label>
+                        <select name="categoryid" id="select" class="input-style">
+                            <option  value="0" selected hidden>Elija una categoría</option>
+                            <% categories.forEach(category => { %>
+                                <option value="<%= (locals.old && old.categoryid) && old.categoryid === category.id? "selected" : category.id %>"><%= category.nombre %></option>
+                            <% }) %> 
+                        </select>
+                        
+                        <small id="catError" class="alert-msg"> <% if(locals.errors && errors.categoryid){ %><%= errors.categoryid.msg %><% } %>  
+                        </small>
+                    </div>
+                    <div class="register-input">
+                        <label for="image">Subir imagen</label>
+                        <input type="file" name="image" accept=".jpg, .jpeg, .png">
+                    </div>
+                    <div class="register-input">
+                        <label for="description">Detalles</label>
+                        <textarea type="description" name="description" id="description" cols="30" rows="3"><%= (locals.old && old.description)? old.description : "" %></textarea>
+                        
+                            <small id="descripcionError" class="alert-msg">
+                                <% if(locals.errors && errors.description) { %><%= errors.description.msg %><% } %> 
+                            </small>
+                        
+                    </div> 
+                    <div class="btn_register">
+                       <button type="submit" class="btn-submit_register">Agregar</button>
+                       <span class="admin"><a class="admin" href="/admin">Volver</a></span>
+                    </div>
+                    <small id="FormError" class="alert-msg"></small>
+            </form>
+             
+                     
+        </div>
+    </main>
+
+    <%- include('../partials/admin/footerAdmin')  %>
+
+</body>
+</html>
