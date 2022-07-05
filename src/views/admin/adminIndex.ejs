@@ -6,19 +6,7 @@
   <%- include('../partials/admin/headerAdmin') %> 
 
     <main>
-      <nav id="category">
-        <input type="checkbox" id="menu" class="botton">
-        <label for="menu">Categorias</i></label>
-        <ul>
-            <li><a href="/Admin/categoria/4">Accesorios</a></li>
-            <li><a href="/Admin/categoria/1">Bicicletas</a></li>
-            <li><a href="/Admin/categoria/6">Herramientas</a></li>
-            <li><a href="/Admin/categoria/5">Indumentaria</a></li>
-            <li><a href="/Admin/categoria/3">Repuestos</a></li>
-        </ul>
-    </nav>
-
-
+       
         <table>
             <caption>Lista general de productos</caption>
             <thead>
@@ -26,7 +14,19 @@
                     <th scope="col">ID</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Marca</th>
-                    <th scope="col">Categoria</th>
+                    <th scope="col" >
+                      <nav id="category">
+                        <input type="checkbox" id="menu" class="botton">
+                        <label for="menu">Categorias ▼</i></label>
+                        <ul id="">
+                            <li id=""><a href="/Admin/categoria/4" id="">Accesorios</a></li>
+                            <li id=""><a href="/Admin/categoria/1" id="">Bicicletas</a></li>
+                            <li id=""><a href="/Admin/categoria/6" id="">Herramientas</a></li>
+                            <li id=""><a href="/Admin/categoria/5" id="">Indumentaria</a></li>
+                            <li id=""><a href="/Admin/categoria/3" id="">Repuestos</a></li>
+                        </ul>
+                         
+                      </th>
                     <th scope="col">Precio</th>
                     <th scope="col">Stock</th>
                     <th scope="col">Descuento</th>

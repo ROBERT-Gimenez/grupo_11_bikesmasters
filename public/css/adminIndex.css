@@ -217,10 +217,9 @@ footer p {
     color: whitesmoke;
 }
 /* boton categoti */
-nav#category{
+nav#category {
     justify-content: center;
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
 }
 nav#category ul {
@@ -258,7 +257,7 @@ nav#category a:hover{
     background-color: #FF2E00;
     
   }
-nav#category label {
+nav#category label{
     width: 7rem;
     height: 2rem;
     display: flex;
@@ -267,15 +266,18 @@ nav#category label {
     box-shadow: 0 0 10px rgb(0 0 0 / 30%);
     border-radius: 3px;
     font-weight: 900;
-    color: black;
+    color: white;
     cursor: pointer;
-    margin-top: 1rem;
+    position: relative;
+  
+
 }  
 
 nav#category ul {
     position: absolute;
-    top: 10rem;
+    top: 3.5rem;
     display: none;
+    left: 34.3%;
 }
 nav#category label:hover {
     background-color: #FF2E00;
@@ -285,25 +287,25 @@ nav#category label:hover {
 }
 @keyframes menu-out{
     0%{
-        left: 0;
+        top: 3;
         opacity: 1;
     }
     100%{
-        left: -100%;
+        top: -100%;
         opacity: 0;
     }
 }
 @keyframes menu-in{
     0%{
-        left: -100%;
+        top: -100%;
         opacity: 0;
     }
     100%{
-        left: 0;
+        top: 3;
         opacity: 1;
     }
 }
-nav input:checked ~ ul{
+nav#category input:checked ~ ul{
     display: grid;
     flex-direction: column;
     opacity: 1;

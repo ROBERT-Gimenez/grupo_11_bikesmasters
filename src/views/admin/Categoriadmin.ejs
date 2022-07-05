@@ -8,18 +8,7 @@
   <%- include('../partials/admin/headerAdmin') %> 
 
     <main>
-      <nav>
-        <input type="checkbox" id="menu" class="botton">
-        <label for="menu">Categorias</i></label>
-        <ul>
-            <li><a href="/Admin">Todos Los Productos</a></li>
-            <li><a href="/Admin/categoria/4">Accesorios</a></li>
-            <li><a href="/Admin/categoria/1">Bicicletas</a></li>
-            <li><a href="/Admin/categoria/6">Herramientas</a></li>
-            <li><a href="/Admin/categoria/5">Indumentaria</a></li>
-            <li><a href="/Admin/categoria/3">Repuestos</a></li>
-        </ul>
-    </nav>
+     
 
 
         <table>
@@ -29,7 +18,18 @@
                     <th scope="col">ID</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Marca</th>
-                    <th scope="col">Categoria</th>
+                    <th scope="col">
+                      <nav id="category">
+                      <input type="checkbox" id="menu" class="botton">
+                      <label for="menu">Categorias ▼</i></label>
+                      <ul id="">
+                          <li id=""><a href="/Admin" id="">Todas las Categorias</a></li>
+                          <li id=""><a href="/Admin/categoria/4" id="">Accesorios</a></li>
+                          <li id=""><a href="/Admin/categoria/1" id="">Bicicletas</a></li>
+                          <li id=""><a href="/Admin/categoria/6" id="">Herramientas</a></li>
+                          <li id=""><a href="/Admin/categoria/5" id="">Indumentaria</a></li>
+                          <li id=""><a href="/Admin/categoria/3" id="">Repuestos</a></li>
+                      </ul></th>
                     <th scope="col">Precio</th>
                     <th scope="col">Stock</th>
                     <th scope="col">Descuento</th>
@@ -48,7 +48,7 @@
                     <td>$<%- toThousand(product.price) %></td>
                     <td><%= product.stock %></td>
                     <td><%- product.discount === ""? product.discount = 0 + "%" :`${product.discount}%`%></td>
-                    <td><%= product.image %></td>
+                    <td><img src="../../../images/products/<%= product.image %>" alt="" id="imgProduct"></td>
                     
                     <td>
                       <a href="/admin/producto/editar/<%= product.id  %>" class="btn btn-success">
