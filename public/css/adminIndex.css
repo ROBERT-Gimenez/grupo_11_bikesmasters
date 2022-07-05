@@ -311,3 +311,6 @@ nav input:checked ~ ul{
     animation-duration: 0.5s;
  
 }
+img#imgProduct{
+    width: 100%;
+}

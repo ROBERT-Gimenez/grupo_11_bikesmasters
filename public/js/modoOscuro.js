@@ -35,7 +35,7 @@ botondark.addEventListener('click' , function(){
     articles.forEach(article => { article.classList.remove('darck-mode_card')});
     parrafos.forEach(parrafo => { parrafo.classList.remove('dark-mode_letras')});
     titulos.forEach(titulos => { titulos.classList.remove('dark-mode_letras') });
-    avatar.style.backgroundColor = "none"
+    
     botondark.textContent = "Modo Oscuro"
     }
     if(localStorage.getItem('dark-mode')==='true'){
@@ -47,7 +47,7 @@ botondark.addEventListener('click' , function(){
         parrafos.forEach(parrafo => { parrafo.classList.add('dark-mode_letras')});
         titulos.forEach(titulos => { titulos.classList.add('dark-mode_letras') });
         botondark.textContent = "Modo Normal";
-        avatar.style.backgroundColor = "white"
+        
 
          }
 

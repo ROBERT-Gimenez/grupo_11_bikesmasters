@@ -363,6 +363,7 @@ header nav input{
 .dark-mode{
     color: white;
     background-color: #292726;
+/*     background-color: #5d5554;*/
 }
 .darck-mode_card{
     background-color: #303043;
@@ -373,4 +374,7 @@ header nav input{
 }
 form#buscador{
     height: 30px;
+}
+img#avatarImg{
+    background-color: white;
 }
