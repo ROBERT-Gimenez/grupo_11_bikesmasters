@@ -64,11 +64,19 @@
                     <div class="register-input">
                         <label for="image">Subir imagen</label>
                         <div class="img-container" id="img-preview">
-
                         </div>
                         <input type="file" id="image" name="image" value="<%= product.image %>">
-                        <SMall class="alert-msg" id="inputImageError"></SMall> 
+                        <small class="alert-msg" id="inputImageError"></small> 
                     </div>
+
+<!--                    <div class="load-image">
+                        <div id="avatar-user" class="user-image"><img src="../../../images/profile/< ejs producto.imagen> " alt="Imagen por defecto"></div>
+                        <div class="avatar-input">
+                            <label for="avatar">Seleccione imagen de perfil</label>
+                            <input type="file" name="avatar" id="inputAvatar" accept=".jpg, .jpeg, .png">
+                            <small id="avatarError" class="text-danger"></small>
+                        </div>
+                    </div> -->
                     <div class="register-input">
                         <label for="description">Detalles</label>
                         <textarea type="description" name="description" id="description" cols="30" rows="3"><%= (locals.old && old.description)? old.description : product.description %></textarea>
@@ -111,7 +119,7 @@
         </ul>
         <p>Comision 13 - Grupo 11 - &#169; Derechos Reservados.</p>
     </footer>
-    <script src="../../../public/js/editproductValidation.js"></script>
+    <script src="/js/editproductValidation.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="http://momentjs.com/downloads/moment.min.js"></script>
 </body>

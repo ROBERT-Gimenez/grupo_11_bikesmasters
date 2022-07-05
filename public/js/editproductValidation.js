@@ -1,11 +1,11 @@
-const qs = (element) => {
+/* const qs = (element) => {
     return document.querySelector(element)
-}
+} */
 
 window.addEventListener('load', () => {
     
     let $form = qs('#formulario'),
-    $inputName = qs('#name'),
+    inputName = qs('#name'),
     $inputMarca = qs ('#marca'),
     $inputPrice = qs ('#price'),
     $inputStock = qs ('#stock'),
@@ -14,7 +14,7 @@ window.addEventListener('load', () => {
     $inputFile = qs ('#image'),
     $imgPreview = qs ('#img-preview')
     $inputDescription = qs ('#description');
-    $inputNameError = qs ('#inputNameError'),
+    inputNameError = qs ('#inputNameError'),
     $inputMarcaError = qs ('#inputMarcaError'),
     $inputPriceError = qs ('#inputPriceError'),
     $inputStockError = qs ('#inputStockError'),
@@ -26,21 +26,20 @@ window.addEventListener('load', () => {
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
     regExAlt = /^[0-9]{7,8}$/;
 
+    console.log(inputName);
                   /*NOMBRE DEL PRODUCTO */
-    $inputName.addEventListener("blur", ()=>{
+    inputName.addEventListener("blur", ()=>{
         switch (true){
-            case !$inputName.value.trin():
-                $inputNameError.innerHTML = "Debe ingresar el nombre del producto";
-                $inputName.classList.add("is-invalid");
+            case inputName.value.length === 0://Validar que no este vacio
+                console.log(inputName.value.length);
+                inputNameError.innerHTML = "Debe ingresar el nombre del producto";
+                inputName.classList.add("is-invalid");
                 break;
-            case !regExAlt.test($inputName.value):
-                $inputNameError.innerHTML = "Nombre del producto invalido!!";
-                $inputName.classList.add("is-invalid");
-                break;
+
             default:
-                $inputName.classList.remove("is-invalid");
-                $inputName.classList.add("is-valid");
-                $inputNameError.innerHTML = "";
+                inputName.classList.remove("is-invalid");
+                inputName.classList.add("is-valid");
+                inputNameError.innerHTML = "";
                 break;
         }
 
@@ -50,14 +49,14 @@ window.addEventListener('load', () => {
 
     $inputMarca.addEventListener("blur", ()=>{
         switch (true){
-            case !$inputMarca.value.trin():
+            case !$inputMarca.value.trim()://
                 $inputMarcaError.innerHTML = "Debe ingresarla marca del producto";
                 $inputMarca.classList.add("is-invalid");
                 break;
-            case !regExAlt.test($inputMarca.value):
+/*             case !regExAlt.test($inputMarca.value):
                 $inputMarcaError.innerHTML = "Nombre del producto invalido!!";
                 $inputMarca.classList.add("is-invalid");
-                break;
+                break; */
             default:
                 $inputMarca.classList.remove("is-invalid");
                 $inputMarca.classList.add("is-valid");
@@ -70,7 +69,7 @@ window.addEventListener('load', () => {
 
         $inputPrice.addEventListener("blur", ()=>{
         switch (true){
-            case !$inputPrice.value.trin():
+            case !$inputPrice.value.trim():
                 $inputPriceError.innerHTML = "Debe ingresar el precio del producto";
                 $inputPrice.classList.add("is-invalid");
                 break;
@@ -90,7 +89,7 @@ window.addEventListener('load', () => {
 
         $inputStock.addEventListener("blur", ()=>{
         switch (true){
-            case !$inputStock.value.trin():
+            case !$inputStock.value.trim():
                 $inputStockError.innerHTML = "Debe ingresar stock del producto";
                 $inputStock.classList.add("is-invalid");
                 break;
@@ -111,7 +110,7 @@ window.addEventListener('load', () => {
 
         $inputDiscount.addEventListener("blur", ()=>{
         switch (true){
-            case !$inputDiscount.value.trin():
+            case !$inputDiscount.value.trim():
                   $inputDiscountError.innerHTML = "Debe ingresar stock del producto";
                   $inputDiscount.classList.add("is-invalid");
                   break;
@@ -130,7 +129,7 @@ window.addEventListener('load', () => {
                  /*CATEGORIA DE PRODUCTOS */
 
         $inputCategoryid.addEventListener("blur", function() {
-            if (!$inputCategoryid.value.trin()) {
+            if (!$inputCategoryid.value.trim()) {
                 $inputCategoryidError.innerHTML = "Debe seleccionar una categoria";
                 $inputCategoryid.classList.add("is-invalid")
                        } 
@@ -191,7 +190,7 @@ window.addEventListener('load', () => {
 
         $inputDescription.addEventListener("blur",() =>{
             switch (true) {
-                case !$inputDescription.value.trin():
+                case !$inputDescription.value.trim():
                     $inputDescriptionError.innerHTML = "Se requiere descripcion del producto";
                     $inputDescription.classList.add("is-invalid")
                     break;

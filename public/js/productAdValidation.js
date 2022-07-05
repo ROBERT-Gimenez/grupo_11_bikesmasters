@@ -164,7 +164,7 @@ let errors ;
                 if(elementsForm[i].value == ""
                 && elementsForm[i].boton !== "boton"
                 || elementsForm[i].classList.contains('invalido')) {
-                    elementsForm[i].classList.remove('input-style')
+
                     elementsForm[i].classList.add('invalido')
                     FormError.innerHTML = "Complete los campos vacios"
                     FormError.classList.add("invalido")
