@@ -23,7 +23,7 @@
                 <div class="inline"></div>
                 <label class="cuenta" for="cuenta" style="border:1px solid green;"><img id="avatar" src="/images/profile/<%= session.user.avatar%>" alt=""></label>
                 <% }else{ %> 
-                    <label class="cuenta" for="cuenta"><img src="/images/profile/user-default.png" alt=""></label>
+                    <label class="cuenta" for="cuenta"><img src="/images/profile/user-default.png" alt="" id="avatarImg"></label>
                     <% } %>
                     <ul class="acceso">
                         <% if (typeof session.user != "undefined") { %>

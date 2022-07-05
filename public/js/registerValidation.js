@@ -143,7 +143,7 @@ form.addEventListener("submit", function (event) {
         form.submit()
     } else {
         alert("Error , Verifique los Datos Nuevamente")
-        form.style.border= "4px red solid"
+        form.style.border= "4px solid #ff2e008c;"
 
     }
 

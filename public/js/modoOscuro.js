@@ -7,6 +7,7 @@ let botondark = document.querySelector('#darkMode');
 let titulos = document.querySelectorAll('h3');
 let divs = document.querySelectorAll('.recent-product');
 let divProfile = document.querySelector('#div-profile')
+let avatar = document.querySelector('img#avatarImg')
 
 console.log(localStorage)
 botondark.addEventListener('click' , function(){
@@ -34,7 +35,7 @@ botondark.addEventListener('click' , function(){
     articles.forEach(article => { article.classList.remove('darck-mode_card')});
     parrafos.forEach(parrafo => { parrafo.classList.remove('dark-mode_letras')});
     titulos.forEach(titulos => { titulos.classList.remove('dark-mode_letras') });
-
+    avatar.style.backgroundColor = "none"
     botondark.textContent = "Modo Oscuro"
     }
     if(localStorage.getItem('dark-mode')==='true'){
@@ -46,17 +47,19 @@ botondark.addEventListener('click' , function(){
         parrafos.forEach(parrafo => { parrafo.classList.add('dark-mode_letras')});
         titulos.forEach(titulos => { titulos.classList.add('dark-mode_letras') });
         botondark.textContent = "Modo Normal";
+        avatar.style.backgroundColor = "white"
 
          }
 
   //>>>>>>>>Vista Edit Perfil<<<<<<<<<<<<<//
   //AL TENER UN ELEMENTO QUE NO SE REPITE EN OTRAS VISTAS SE COLOCA A LO ULTIMO//
-    botondark.addEventListener('click' , () =>{
-        divProfile.classList.toggle('div-profile'); 
-
-    })
-
     if(localStorage.getItem('dark-mode')==='true'){
         divProfile.classList.add('div-profile')
     }
+    botondark.addEventListener('click' , () =>{
+        
+        divProfile.classList.toggle('div-profile'); 
+        
 
+    })
+/* document.body.style.backgroundColor =  */

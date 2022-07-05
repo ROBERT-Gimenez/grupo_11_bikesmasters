@@ -371,3 +371,6 @@ header nav input{
 .dark-mode_letras{
    color: white;
 }
+form#buscador{
+    height: 30px;
+}

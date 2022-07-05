@@ -11,8 +11,8 @@ body {
 
 a#link {
     text-transform: none;
-    color: #1700ff;
-    background-color: #607d8b99;
+    color: #ff2e00;
+    background-color: #a2a2a299;
     border-radius: 20px;
 }
 
@@ -314,4 +314,8 @@ span.admin a.admin {
 }
 .error-input:focus {
     outline: rgb(237, 0, 0);
+}
+main{
+    height: 100vh;
+    margin-top: -2rem;
 }
