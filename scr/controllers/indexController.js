@@ -1,3 +1,4 @@
 module.exports={
-index:
+index:(req, res) => res.send(""),
+login:(req, res) => res.send("")
 }
