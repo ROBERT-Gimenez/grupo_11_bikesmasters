@@ -15,11 +15,11 @@
         <div id="head-logo">
             <h2>Agregar dirección</h2>
         </div>
-        <form class="form-register" id="form" action="/usuario/perfil/<%= session.user.id %>" method="post">
+        <form class="form-register" id="formulario" action="/usuario/perfil/<%= session.user.id %>" method="post">
             <div class="register-input">
                 <label for="direccion">Dirección</label>
-                <input type="text" name="direccion" id="name" class="input-style" placeholder="Ingrese su calle">
-                <small class="text-danger" id="inputNameError"></small>
+                <input type="text" name="direccion" id="direccion" class="input-style" placeholder="Ingrese su calle">
+                <small class="text-danger" id="inputDireccionError"></small>
             </div>
             <div class="register-input">
                 <label for="altura">Altura</label>
@@ -31,20 +31,24 @@
                 <input type="number" name="postal" id="postal" class="input-style" placeholder="Código postal">
                 <small class="text-danger" id="inputPostalError"></small>
             </div>
-            <div class="register-input">
+<!--             <div class="register-input">
                 <label for="localidad">Localidad</label>
                 <input type="text" name="localidad" id="localidad" class="input-style" placeholder="Ingrese la localidad">
-            </div>
+            </div> -->
             <div class="register-input">
                 <label for="provincia">Provincia</label>
-                <select name="provincia" id="provincia"></select>
+                <select name="provincia" id="provincia" class="input-style">
+                    <option value=""></option>
+                </select>
+                <small class="text-danger" id="provinciaError"></small>
                <!-- <input type="text" name="provincia" id="provincia" class="input-style" placeholder="Ingrese su provincia"> -->
             </div>
             <div class="register-input">
-                <label for="pais">País</label>
-                <select name="pais" id="pais" class="input-style">
+                <label for="localidad">Localidad</label>
+                <select name="localidad" id="localidad" class="input-style">
                     <option value=""></option>
                 </select>
+                <small class="text-danger" id="localidadError"></small>
                 <!-- <input type="text" name="pais" id="pais" class="input-style" placeholder="Ingrese el país">  -->   
             </div>
             
@@ -59,6 +63,6 @@
     <%- include('../partials/footer') %> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="http://momentjs.com/downloads/moment.min.js"></script>
-    <script src="../../../js/addDirectionValidation.js"></script>
+    <script src="/js/addDirectionValidation.js"></script>
 </body>
 </html>

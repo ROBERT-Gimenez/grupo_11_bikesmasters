@@ -1,23 +1,23 @@
 function qs(element) {
     return document.querySelector(element)
 }
-alert("hola")
+
 window.addEventListener("load",() => {
-    let $direccion = qs("#name"),
+    let $direccion = qs("#direccion"),
         $altura = qs("#altura"),
         $postal = qs("#postal"),
         $localidad = qs("#localidad"),
         $provincia = qs("#provincia"),
-        $telefono = qs ("#telefono"),
-        $errorTelefono = ("#errorTelefono"),
-        $pais = qs("#pais"),
-        $form = qs("#form"),
-        $inputNameError = qs("#inputNameError"),
+        $form = qs("#formulario"),
+        $inputDireccionError = qs("#inputDireccionError"),
         $inputAlturaError = qs("#inputAlturaError"),
         $inputPostalError = qs("#inputPostalError"),
         $submitError = qs("#submitError"),
-         regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
+        $localidadError = qs('#localidadError'),
+        $provinciaError = qs('#provinciaError')
+        regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
         regExAlt = /^[0-9]{7,8}$/;
+        console.log($form)
 
 
         /*SELECCION DE PROVINCIA*/
@@ -26,15 +26,15 @@ window.addEventListener("load",() => {
     .then((response)=>response.json())
     .then((data)=>{ 
         let Provincias = data.provincias;
-        for (let index = 0; index <Provincias.length; index++) {
-            $pais.innerHTML += `<option value="${Provincias[index].id}">${Provincias[index].nombre}</option>`
+        for (let index = 0; index < Provincias.length; index++) {
+            $provincia.innerHTML += `<option value="${Provincias[index].id}">${Provincias[index].nombre}</option>`
             }
         
     })
     .catch((error)=> console.log(error))
 
             /*SELECCION DE PAIS*/
-    fetch('https://countries-cities.p.rapidapi.com/location/country/list')
+/*     fetch('https://countries-cities.p.rapidapi.com/location/country/list')
     .then((response)=>response.json())
     .then((data)=>{ 
         let Pais = data.country;
@@ -43,11 +43,11 @@ window.addEventListener("load",() => {
             }
         
     })
-    .catch((error)=> console.log(error))
+    .catch((error)=> console.log(error)) */
 
     
     /*SELECCION DE LOCALIDADES */
-$provincia.addEventListener("change", (event)=>{
+/* $provincia.addEventListener("change", (event)=>{
     let idProvincia = event.target.value;
     $localidad.innerHTML = `<option value="" hidden selected></option>`;
     fetch(`https://apis.datos.gob.ar/georef/api/localidades?provincia=${idProvincia}&campos=id,nombre&max=5000`)
@@ -58,23 +58,77 @@ $provincia.addEventListener("change", (event)=>{
         });
     })
     .catch((error)=> console.log(error))
+        }) */
+        $provincia.addEventListener("change", (event) => {
+            let idProvincia = event.target.value;
+            $localidad.innerHTML = `<option value="" hidden selected>Localidades</option>`
+    
+            fetch(`https://apis.datos.gob.ar/georef/api/localidades?provincia=${idProvincia}&campos=id,nombre&max=5000`)
+            .then((response) => response.json())
+            .then((data) => {
+                data.localidades.forEach(localidad => { 
+                    $localidad.innerHTML += `<option value="${localidad.id}">${localidad.nombre}</option>`
+                });
+            })
+            .catch((error) => console.log(error))
         })
+
+        /* Validaciones de provincia */
+        $provincia.addEventListener("blur", () => {
+            switch (true) {
+                case $provincia.value === "":
+                    $provinciaError.innerHTML += "Seleccione una provincia"
+                    $provincia.classList.add('is-invalid')
+                    break;
+                case $provincia.value.length === 0:
+                    $provinciaError.innerHTML += "Seleccione una provincia"
+                    $provincia.classList.add('is-invalid')
+                    break;
+                default:
+                    $provincia.classList.remove("is-invalid"); 
+                    $provincia.classList.add("is-valid");
+                    $provinciaError.innerHTML = "";    
+                    break;
+            }
+        })
+
+        /* Validacion de localidad */
+
+        $localidad.addEventListener("blur", () => {
+            switch (true) {
+                case $localidad.value === "":
+                    $localidadError.innerHTML += "Seleccione una localidad"
+                    $localidad.classList.add('is-invalid')
+                    break;
+                case $localidad.value.length === 0:
+                    $localidadError.innerHTML += "Seleccione una localidad"
+                    $localidad.classList.add('is-invalid')
+                    break;
+                default:
+                    $localidad.classList.remove("is-invalid"); 
+                    $localidad.classList.add("is-valid");
+                    $localidadError.innerHTML = "";    
+                    break;
+            }
+        })
+
+
 
         /*VALIDACION DE DIRECCION */
         $direccion.addEventListener("blur", ()=>{
             switch(true){
                 case !$direccion.value.trim():
-                    $inputNameError.innerHTML = "Direccion requerida"
+                    $inputDireccionError.innerHTML = "Direccion requerida"
                     $direccion.classList.add("is-invalid");
                     break;
-                    case !regExAlpha.test($direccion.value):
-                        $inputNameError.innerHTML = "Debe Ingresar un caracter Valido"
+/*                     case !regExAlpha.test($direccion.value):
+                        $inputDireccionError.innerHTML = "Debe Ingresar un caracter Valido"
                         $direccion.classList.add("is-invalid");
-                    break;    
+                    break;    */ 
             default:
                 $direccion.classList.remove("is-invalid"); 
                 $direccion.classList.add("is-valid");
-                $inputNameError.innerHTML = "";       
+                $inputDireccionError.innerHTML = "";       
             }
         })
         /*VALIDACION DE ALTURA */
@@ -84,10 +138,10 @@ $provincia.addEventListener("change", (event)=>{
                 $inputAlturaError.innerHTML = "Ingrese altura de la direccion"
                 $altura.classList.add("is-invalid");
                 break;
-                case !regExAlt.test($altura.value):
+/*                 case !regExAlt.test($altura.value):
                     $inputAlturaError.innerHTML = "Debe ingresar una numeración"
                     $altura.classList.add("is-invalid");
-                break;
+                break; */
             default:
                 $altura.classList.remove("is-invalid");
                 $altura.classList.add("is-valid");
@@ -100,38 +154,20 @@ $provincia.addEventListener("change", (event)=>{
             switch(true){
                 case !$postal.value.trim():
                     $inputPostalError.innerHTML = "Ingrese su Codigo Postal"
-                $postal.classList.add("is-invalid");
-                break;
-                case !regExAlt.test($postal.value):
-                    $inputPostalError.innerHTML = "Debe ingresar una numeración"
                     $postal.classList.add("is-invalid");
                 break;
+/*                 case !regExAlt.test($postal.value):
+                    $inputPostalError.innerHTML = "Debe ingresar una numeración"
+                    $postal.classList.add("is-invalid");
+                break; */
             default:
-                $altura.classList.remove("is-invalid");
-                $altura.classList.add("is-valid");
+                $postal.classList.remove("is-invalid");
+                $postal.classList.add("is-valid");
                 $inputPostalError.innerHTML = "";  
                 break;  
             }
         })
 
-        /*VALIDACION DE TELEFONO */
-        $telefono.addEventListener("blur",()=>{
-            switch(true){
-                case !$telefono.value.trim():
-                    $errorTelefono.innerHTML = "Ingrese su Codigo Postal"
-                $telefono.classList.add("is-invalid");
-                break;
-                case !regExAlt.test($telefono.value):
-                    $errorTelefono.innerHTML = "Debe ingresar una numeración"
-                    $telefono.classList.add("is-invalid");
-                break;
-            default:
-                $altura.classList.remove("is-invalid");
-                $altura.classList.add("is-valid");
-                $errorTelefono.innerHTML = "";  
-                break;  
-            }
-        })
         /*VALIDACION DE FORMULARIO */
         $form.addEventListener("submit", function (e) {
             e.preventDefault()
@@ -141,6 +177,7 @@ $provincia.addEventListener("change", (event)=>{
             if(elementsForm[index].value ==""
             || elementsForm[index].classList.contains("is-invalid")){
                 elementsForm[index].classList.add("is-invalid");
+                console.log(elementsForm[index])
                 $submitError.innerHTML = "Los campos señalados son obligatorios"
                 errores = true;
             }        
@@ -148,7 +185,9 @@ $provincia.addEventListener("change", (event)=>{
            if(!errores){
             alert("Direccion actualizado!")
             $form.submit()
-           }  
+           } else {
+            alert("Hay errores en el formulario")
+           }
 
         })
 

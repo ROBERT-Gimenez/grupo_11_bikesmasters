@@ -3,6 +3,7 @@ let bcrypt =require('bcryptjs');
 const db =require('../database/models');
 const fs = require('fs');
 const path = require('path');
+const fetch = require('node-fetch')
 
 /* const userSession = (session.user)
                 userSession.save(()=>{
@@ -229,21 +230,30 @@ module.exports = {
     },
 
     loadDirection: (req, res) => {
-        db.Direccione.create({
-            direccion: req.body.direccion,
-            altura: req.body.altura,
-            codigo_postal: req.body.postal,
-            localidad: req.body.localidad,
-            pais: req.body.pais,
-            provincia: req.body.provincia
+        fetch("https://apis.datos.gob.ar/georef/api/provincias")
+        .then((response)=>response.json())
+        .then((data)=>{ 
+            let provincias = data.provincias;
+            let userProvincia = provincias.find(provincia => provincia.id === req.body.provincia)
+        
+            return db.Direccione.create({
+                direccion: req.body.direccion,
+                altura: req.body.altura,
+                codigo_postal: req.body.postal,
+                localidad: req.body.localidad,
+                provincia: userProvincia.name
+            })
+            .then((direccion) => db.Usuario.update({
+                direccion_id: direccion.id
+            }, {
+                where: {id: req.session.user.id}
+            }))
+                .then(() => res.redirect(`/usuario/perfil/${+req.session.user.id}`))
+                .catch((error) => res.send(error))
+        
         })
-        .then((direccion) => db.Usuario.update({
-            direccion_id: direccion.id
-        }, {
-            where: {id: req.session.user.id}
-        }))
-            .then(() => res.redirect(`/usuario/perfil/${+req.session.user.id}`))
-            .catch((error) => res.send(error))
+        .catch((error)=> console.log(error))
+
     },
 
     editDirection: (req, res) => {

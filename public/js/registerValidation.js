@@ -126,10 +126,11 @@ form.addEventListener("submit", function (event) {
     for (let i = 0; i < elementsForm.length - 1; i++) {
         if(elementsForm[i].value == ""
            && elementsForm[i].boton !== "boton"
-        || elementsForm[i].classList.contains('invalido')) {
+        || elementsForm[i].classList.contains('invalido')) 
+        {
             elementsForm[i].style.boxShadow= "0px 0px 2px 2px rgb(255 0 0)"
             elementsForm[i].classList.add('invalido')
-            submitError.innerHTML= "Verifique los Datos"
+            submitError.innerHTML = "Verifique los Datos"
             submitError.classList.add("invalido")
             errors = true
             console.log(elementsForm[i])

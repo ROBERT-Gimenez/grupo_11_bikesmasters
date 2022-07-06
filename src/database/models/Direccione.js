@@ -22,15 +22,15 @@ module.exports = (sequelize, dataTypes) => {
         },
         localidad: {
             type: dataTypes.STRING(50),
-            allowNull: false
+            allowNull: true
         },
         pais: {
             type: dataTypes.STRING(40),
-            allowNull: false
+            allowNull: true
         },
         provincia: {
             type: dataTypes.STRING(40),
-            allowNull: false
+            allowNull: true
         }
     }
 
