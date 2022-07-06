@@ -1,6 +1,7 @@
 function qs(element) {
     return document.querySelector(element)
 }
+alert("hola")
 window.addEventListener("load",() => {
     let $direccion = qs("#name"),
         $altura = qs("#altura"),
