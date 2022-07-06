@@ -20,6 +20,14 @@ let discError =qs("#discError");
 let catError =qs("#catError");
 let descripcionError =qs("#descripcionError");
 let option = qs("#sinCateg")
+let InputProduct = qs("#input-Product")
+let ProductPreviw = qs("#ProductImage")
+let ImageError = qs("#ImageError")
+
+/* $inputAvatar = qs('#inputAvatar'),
+$avatarPreview = qs('#avatar-user'),
+$avatarError = qs('#avatarError'),
+error; */
 
 /* select.style.backgroundColor="red" */
 
@@ -181,6 +189,34 @@ let errors ;
             }
     
         })
-    
-	
+
+
+//>>>>>>>>>>> imagen <<<<<<<<<<<<<//
+
+InputProduct.addEventListener('change', 
+    function fileValidation(){
+        let filePath = InputProduct.value, //Capturo el valor del input
+            allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i //Extensiones permitidas
+	//si la imagen no es valida//
+        if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
+            ImageError.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
+            InputProduct.value = '';
+            ProductPreviw.innerHTML = '';
+            return false;
+	//si la imagen es valida//
+        }else{
+            // Image preview
+            if(InputProduct.files && InputProduct.files[0]){
+                let reader = new FileReader();
+                reader.onload = function(e){
+                    ProductPreviw.innerHTML = '<img src="' + e.target.result +'"style="width: 100%;"/>"';
+                    
+                    
+                };
+                reader.readAsDataURL(InputProduct.files[0]);
+                ImageError.innerHTML = '';
+                InputProduct.classList.remove('invalido')
+            }
+        }
+    })
 	
