@@ -4,10 +4,10 @@ function qs(element) {
 
 
 let producto = qs('#nameProduct');
-let price =qs("input#price");
-let marca =qs("input#marca");
-let discount =qs("input#discount");
-let stock =qs("input#stock");
+let price =qs("#price");
+let marca =qs("#marca");
+let discount =qs("#discount");
+let stock =qs("#stock");
 let description =qs("#description");
 let select =qs("#select");
 let form =qs(".form-register");
@@ -29,7 +29,7 @@ let ImageError = qs("#ImageError")
 //>> Restricciones de Campos << //
 regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/
 var reg = new RegExp('^[0-9]*$');
-let errors ;
+
 
     //>>>>>>>> Nombre Producto <<<<<<<<<<<<//
 
@@ -38,18 +38,16 @@ let errors ;
                 case !producto.value.trim():
                     productError.innerHTML= "ingrese un Producto";
                     productError.classList.add("invalido")
-                    errors = false;
-                    breack;
+                    break;
                 case !regExAlpha.test(nameProduct.value):
                     productError.innerHTML ="Nombre Invalido"
                     productError.classList.add("invalido");
-                    breack;
+                    break;
                 default :
                     producto.classList.remove("invalido");
                     producto.classList.add("valido");
                     productError.innerHTML =""
-                    errors = true ;
-                    breack;
+                    break;
                 }})
 
     //>>>>>>>>>>>>precio<<<<<<<<<<<<<//
@@ -60,16 +58,16 @@ let errors ;
                 case !price.value.trim():
                     priceError.innerHTML= "ingrese un monto valido";
                     price.classList.add("invalido")
-                    breack;
+                    break;
                 case !reg.test(price.value):
                     priceError.innerHTML ="Valor Invalido"
                     price.classList.add("invalido");
-                    breack;
+                    break;
                 default :
                     price.classList.remove("invalido");
                     price.classList.add("valido");
                     priceError.innerHTML =""
-                    breack;
+                    break;
                 }})
     //>>>>>>>>>>>>> Marca <<<<<<<<<<<<<//
 
@@ -78,16 +76,16 @@ let errors ;
                 case !marca.value.trim():
                     marcaError.innerHTML= "ingrese una marca";
                     marca.classList.add("invalido")
-                    breack;
+                    break;
                 case !regExAlpha.test(marca.value):
                     marcaError.innerHTML ="Valor Invalido"
                     marca.classList.add("invalido");
-                    breack;
+                    break;
                 default :
                     marca.classList.remove("invalido");
                     marca.classList.add("valido");
                     marcaError.innerHTML =""
-                    breack;
+                    break;
                 }})
 
     //>>>>>>>>>>>>> Stock <<<<<<<<<<<<<//
@@ -96,16 +94,16 @@ let errors ;
                 case !stock.value.trim():
                     stockError.innerHTML= "ingrese una cantidad";
                     stock.classList.add("invalido")
-                    breack;
+                    break;
                 case !reg.test(stock.value):
                     stockError.innerHTML ="Valor Invalido"
                     stock.classList.add("invalido");
-                    breack;
+                    break;
                 default :
                     stock.classList.remove("invalido");
                     stock.classList.add("valido");
                     stockError.innerHTML =""
-                    breack;
+                    break;
                 }})
 
                 
@@ -116,16 +114,16 @@ let errors ;
             case !discount.value.trim():
                 discError.innerHTML= "ingrese un valor";
                 discount.classList.add("invalido")
-                breack;
+                break;
             case !reg.test(discount.value):
                 discError.innerHTML ="Valor Invalido"
                 discount.classList.add("invalido");
-                breack;
+                break;
             default :
                 discount.classList.remove("invalido");
                 discount.classList.add("valido");
                 discError.innerHTML =""
-                breack;
+                break;
             }})
             
     //>>>>>>>>>>>>> description <<<<<<<<<<<<<//
@@ -134,12 +132,12 @@ let errors ;
             case !description.value.trim():
                 descripcionError.innerHTML= "ingrese una Descripcion";
                 description.classList.add("invalido")
-                breack;
+                break;
             default :
                 description.classList.remove("invalido");
                 description.classList.add("valido");
                 descripcionError.innerHTML =""
-                breack;
+                break;
             }})
      //>>>>>>>>>>>>> Categoria <<<<<<<<<<<<<//
     
@@ -167,7 +165,6 @@ let errors ;
                 if(elementsForm[i].value == ""
                 && elementsForm[i].boton !== "boton"
                 || elementsForm[i].classList.contains('invalido')) {
-
                     elementsForm[i].classList.add('invalido')
                     FormError.innerHTML = "Complete los campos vacios"
                     FormError.classList.add("invalido")
