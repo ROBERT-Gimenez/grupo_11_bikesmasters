@@ -14,18 +14,18 @@
             <form action="/admin/producto/agregar" method="POST" class="form-register" enctype="multipart/form-data">
                     <div class="register-input">
                         <label for="name">Nombre de producto</label>
-                        <input id="nameProduct" type="text" name="name" class="input-style" placeholder="Ingrese nombre de producto" value="<%= (locals.old && old.name)? old.name : "" %> ">
+                        <input id="nameProduct" type="text" name="name" class="input-style" placeholder="Ingrese nombre de producto" value="<%= (locals.old && old.name)? old.name : "" %>">
                         <small id="nameError" class="alert-msg"><%= (locals.errors && errors.name)? errors.name.msg : "" %></small>
                         
                     </div>
                     <div class="register-input">
                         <label for="marca">Marca</label>
-                        <input type="text" name="marca" id="marca" class="input-style" placeholder="Ingrese marca" value="<%= (locals.old && old.marca)? old.marca : "" %> ">
+                        <input type="text" name="marca" id="marca" class="input-style" placeholder="Ingrese marca" value="<%= (locals.old && old.marca)? old.marca : "" %>">
                         <small id="marcaError" class="alert-msg"><%= (locals.errors && errors.name)? errors.name.msg : "" %></small>
                     </div>
                     <div class="register-input">
                         <label for="price">Precio</label>
-                        <input type="number" name="price" id="price" class="input-style" placeholder="Ingrese precio" value="<%= (locals.old && old.price)? old.price : "" %> ">
+                        <input type="number" name="price" id="price" class="input-style" placeholder="Ingrese precio" value="<%= (locals.old && old.price)? old.price : "" %>">
                         <small id="priceError" class="alert-msg">
                         <%= (locals.errors && errors.price)? errors.price.msg : "" %>
                         </small>

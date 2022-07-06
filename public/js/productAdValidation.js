@@ -10,7 +10,7 @@ let discount =qs("#discount");
 let stock =qs("#stock");
 let description =qs("#description");
 let select =qs("#select");
-let form =qs(".form-register");
+let form =qs(".form-register")
 let FormError =qs("#FormError");
 let productError =qs("#nameError");
 let marcaError =qs("#marcaError");
@@ -23,7 +23,6 @@ let option = qs("#sinCateg")
 let InputProduct = qs("#input-Product")
 let ProductPreviw = qs("#ProductImage")
 let ImageError = qs("#ImageError")
-
 /* select.style.backgroundColor="red" */
 
 //>> Restricciones de Campos << //
@@ -39,7 +38,7 @@ var reg = new RegExp('^[0-9]*$');
                     productError.innerHTML= "ingrese un Producto";
                     productError.classList.add("invalido")
                     break;
-                case !regExAlpha.test(nameProduct.value):
+                case nameProduct.value.length < 3:
                     productError.innerHTML ="Nombre Invalido"
                     productError.classList.add("invalido");
                     break;
@@ -151,59 +150,62 @@ var reg = new RegExp('^[0-9]*$');
             catError.innerHTML =""
 
         })
-        console.log(errors) 
-
-        //>>>>>>>>>>>>> submit <<<<<<<<<<<<<//
+        
+//>>>>>>>>>>>>>>>>>>> submit <<<<<<<<<<<<<<<>><<<<<<<<<<<<<<<<<<<<<><//
           
         form.addEventListener("submit", function (event) {
             event.preventDefault()
             let elementsForm = this.elements
             console.log(elementsForm)
             let errors = false
-    
-            for (let i = 0; i < elementsForm.length - 1; i++) {
+       
+            for (let i = 0; i < elementsForm.length ; i++) {
                 if(elementsForm[i].value == ""
-                && elementsForm[i].boton !== "boton"
+                && elementsForm[i].type !== "submit"
                 || elementsForm[i].classList.contains('invalido')) {
+                   
                     elementsForm[i].classList.add('invalido')
                     FormError.innerHTML = "Complete los campos vacios"
                     FormError.classList.add("invalido")
+//>>>>>>>>>>>>>>>Se aplica invalido al siguiente elemento , es decir los Small <<<<<<<<<<<<<<//
+                    elementsForm[i].nextElementSibling.classList.add("invalido")
+                     if(!elementsForm[i].nextElementSibling.classList.contains("admin")){
+                    elementsForm[i].nextElementSibling.innerHTML ="Complete el Campo"} 
+
                     errors = true
-                    console.log(elementsForm[i])
+                    
+                    }
                 }
-                
-            }
-    
-            if(!errors) {
-                form.submit()
-            } else {
-                alert("Se encontraron errores en el formulario")
-            }
-    
-        })
+                if(!errors) {form.submit()
+                }else{ alert("Se encontraron errores en el formulario")}
+            })
+        form.addEventListener('change' , () => {
+            if((producto , marca , price, stock ).classList.contains("valido")){
+                form.lastElementChild.classList.remove("invalido")
+                form.lastElementChild.innerHTML = ""
+                FormError.classList.remove("invalido")         
+                } 
+            })
 
+        //>>>>>>>>>>> imagen <<<<<<<<<<<<<//
 
-//>>>>>>>>>>> imagen <<<<<<<<<<<<<//
-
-InputProduct.addEventListener('change', 
-    function fileValidation(){
-        let filePath = InputProduct.value, //Capturo el valor del input
-            allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i //Extensiones permitidas
-	//si la imagen no es valida//
-        if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
-            ImageError.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
-            InputProduct.value = '';
-            ProductPreviw.innerHTML = '';
+        InputProduct.addEventListener('change', 
+            function fileValidation(){
+            let filePath = InputProduct.value, 
+                allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i //Extensiones permitidas
+	        //si la imagen no es valida//
+            if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
+                ImageError.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
+                InputProduct.value = '';
+                ProductPreviw.innerHTML = '';
             return false;
-	//si la imagen es valida//
-        }else{
+	        //si la imagen es valida//
+            }else{
             // Image preview
             if(InputProduct.files && InputProduct.files[0]){
                 let reader = new FileReader();
                 reader.onload = function(e){
-                    ProductPreviw.innerHTML = '<img src="' + e.target.result +'"style="width: 100%;"/>"';
-                    
-                    
+                ProductPreviw.innerHTML = '<img src="' + e.target.result +'"style="width: 100%;"/>"';
                 };
                 reader.readAsDataURL(InputProduct.files[0]);
                 ImageError.innerHTML = '';

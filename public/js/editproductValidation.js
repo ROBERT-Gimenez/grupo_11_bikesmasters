@@ -20,11 +20,12 @@ window.addEventListener('load', () => {
     $inputStockError = qs ('#inputStockError'),
     $inputDiscountError = qs ('#inputDiscountError'),
     $inputSelectError = qs ('#inputSelectError'),
-    $inputFileErrors = qs ('#inputImageError'),
+    $FileErrors = qs ('#inputImageError'),
     $inputDescriptionError = qs ('#inputDescriptionError'),
     $submitError = qs("#submitError"),
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
     regExAlt = /^[0-9]{7,8}$/;
+    var reg = new RegExp('^[0-9]*$');
 
     console.log(inputName);
                   /*NOMBRE DEL PRODUCTO */
@@ -73,7 +74,7 @@ window.addEventListener('load', () => {
                 $inputPriceError.innerHTML = "Debe ingresar el precio del producto";
                 $inputPrice.classList.add("is-invalid");
                 break;
-            case !regExAlt.test($inputPrice.value):
+            case !reg.test($inputPrice.value):
                 $inputPriceError.innerHTML = "Precio del producto invalido!!";
                 $inputPrice.classList.add("is-invalid");
                 break;
@@ -93,7 +94,7 @@ window.addEventListener('load', () => {
                 $inputStockError.innerHTML = "Debe ingresar stock del producto";
                 $inputStock.classList.add("is-invalid");
                 break;
-            case !regExAlt.test($inputStock.value):
+            case !reg.test($inputStock.value):
                 $inputStockError.innerHTML = "stock del producto invalido!!";
                 $inputStock.classList.add("is-invalid");
                 break;
@@ -114,7 +115,7 @@ window.addEventListener('load', () => {
                   $inputDiscountError.innerHTML = "Debe ingresar stock del producto";
                   $inputDiscount.classList.add("is-invalid");
                   break;
-            case !regExAlt.test($inputDiscount.value):
+            case !reg.test($inputDiscount.value):
                  $inputDiscountError.innerHTML = "stock del producto invalido!!";
                  $inputDiscount.classList.add("is-invalid");
                  break;
@@ -167,7 +168,7 @@ window.addEventListener('load', () => {
             let filePath = $inputFile.value, //Capturo el valor del input
                 allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i //Extensiones permitidas
             if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
-                $inputFileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
+                $FileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
                 $inputFile.value = '';
                 $imgPreview.innerHTML = '';
                 return false;
@@ -177,7 +178,7 @@ window.addEventListener('load', () => {
                 if($inputFile.files && $inputFile.files[0]){
                     let reader = new FileReader();
                     reader.onload = function(e){
-                        $imgPreview.innerHTML = '<img src="' + e.target.result +'"/>';
+                        $imgPreview.innerHTML = '<img src="' + e.target.result +'"style="width: 100%;"/>"';
                     };
                     reader.readAsDataURL($inputFile.files[0]);
                     $fileErrors.innerHTML = '';
@@ -192,10 +193,6 @@ window.addEventListener('load', () => {
             switch (true) {
                 case !$inputDescription.value.trim():
                     $inputDescriptionError.innerHTML = "Se requiere descripcion del producto";
-                    $inputDescription.classList.add("is-invalid")
-                    break;
-                 case !regExAlpha.test($inputDescription.value):
-                    $inputDescriptionError.innerHTML = "El texto contiene caracteres invalidos";
                     $inputDescription.classList.add("is-invalid")
                     break;
                 default:
