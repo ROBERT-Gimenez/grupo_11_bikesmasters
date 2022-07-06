@@ -24,11 +24,6 @@ let InputProduct = qs("#input-Product")
 let ProductPreviw = qs("#ProductImage")
 let ImageError = qs("#ImageError")
 
-/* $inputAvatar = qs('#inputAvatar'),
-$avatarPreview = qs('#avatar-user'),
-$avatarError = qs('#avatarError'),
-error; */
-
 /* select.style.backgroundColor="red" */
 
 //>> Restricciones de Campos << //
