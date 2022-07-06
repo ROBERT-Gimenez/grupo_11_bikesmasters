@@ -23,7 +23,7 @@ let option = qs("#sinCateg")
 let InputProduct = qs("#input-Product")
 let ProductPreviw = qs("#ProductImage")
 let ImageError = qs("#ImageError")
-/* select.style.backgroundColor="red" */
+
 
 //>> Restricciones de Campos << //
 regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/
@@ -114,7 +114,7 @@ var reg = new RegExp('^[0-9]*$');
                 discError.innerHTML= "ingrese un valor";
                 discount.classList.add("invalido")
                 break;
-            case !reg.test(discount.value):
+            case !reg.test(discount.value)||discount.value.length > 2:
                 discError.innerHTML ="Valor Invalido"
                 discount.classList.add("invalido");
                 break;
