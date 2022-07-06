@@ -61,8 +61,12 @@
                         </small>
                     </div>
                     <div class="register-input">
-                        <label for="image">Subir imagen</label>
-                        <input type="file" name="image" accept=".jpg, .jpeg, .png">
+                        <div id="ProductImage" class=""><img src="" alt=""></div>
+                        <div class="Product-input">
+                            <label for="image">Seleccione imagen de perfil</label>
+                            <input type="file" name="image" id="input-Product" accept=".jpg, .jpeg, .png">
+                            <small id="ImageError" class="alert-msg"></small>
+                        </div>
                     </div>
                     <div class="register-input">
                         <label for="description">Detalles</label>
