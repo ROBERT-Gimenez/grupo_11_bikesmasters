@@ -33,32 +33,8 @@ window.addEventListener("load",() => {
     })
     .catch((error)=> console.log(error))
 
-            /*SELECCION DE PAIS*/
-/*     fetch('https://countries-cities.p.rapidapi.com/location/country/list')
-    .then((response)=>response.json())
-    .then((data)=>{ 
-        let Pais = data.country;
-        for (let index = 0; index <Pais.length; index++) {
-            $pais.innerHTML += `<option value="${Pais[index].id}">${Pais[index].nombre}</option>`
-            }
-        
-    })
-    .catch((error)=> console.log(error)) */
-
-    
-    /*SELECCION DE LOCALIDADES */
-/* $provincia.addEventListener("change", (event)=>{
-    let idProvincia = event.target.value;
-    $localidad.innerHTML = `<option value="" hidden selected></option>`;
-    fetch(`https://apis.datos.gob.ar/georef/api/localidades?provincia=${idProvincia}&campos=id,nombre&max=5000`)
-    .then((response)=>response.json())
-    .then((data)=>{
-        data.localidades.forEach(localidad => {
-            $localidad.innerHTML += `<option value="${localidad.id}">${localidad.nombre}</option>`
-        });
-    })
-    .catch((error)=> console.log(error))
-        }) */
+      
+  
         $provincia.addEventListener("change", (event) => {
             let idProvincia = event.target.value;
             $localidad.innerHTML = `<option value="" hidden selected>Localidades</option>`
@@ -121,10 +97,7 @@ window.addEventListener("load",() => {
                     $inputDireccionError.innerHTML = "Direccion requerida"
                     $direccion.classList.add("is-invalid");
                     break;
-/*                     case !regExAlpha.test($direccion.value):
-                        $inputDireccionError.innerHTML = "Debe Ingresar un caracter Valido"
-                        $direccion.classList.add("is-invalid");
-                    break;    */ 
+
             default:
                 $direccion.classList.remove("is-invalid"); 
                 $direccion.classList.add("is-valid");
@@ -138,10 +111,7 @@ window.addEventListener("load",() => {
                 $inputAlturaError.innerHTML = "Ingrese altura de la direccion"
                 $altura.classList.add("is-invalid");
                 break;
-/*                 case !regExAlt.test($altura.value):
-                    $inputAlturaError.innerHTML = "Debe ingresar una numeración"
-                    $altura.classList.add("is-invalid");
-                break; */
+
             default:
                 $altura.classList.remove("is-invalid");
                 $altura.classList.add("is-valid");
@@ -156,10 +126,7 @@ window.addEventListener("load",() => {
                     $inputPostalError.innerHTML = "Ingrese su Codigo Postal"
                     $postal.classList.add("is-invalid");
                 break;
-/*                 case !regExAlt.test($postal.value):
-                    $inputPostalError.innerHTML = "Debe ingresar una numeración"
-                    $postal.classList.add("is-invalid");
-                break; */
+
             default:
                 $postal.classList.remove("is-invalid");
                 $postal.classList.add("is-valid");

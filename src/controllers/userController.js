@@ -241,7 +241,7 @@ module.exports = {
                 altura: req.body.altura,
                 codigo_postal: req.body.postal,
                 localidad: req.body.localidad,
-                provincia: userProvincia.name
+                provincia: userProvincia.nombre
             })
             .then((direccion) => db.Usuario.update({
                 direccion_id: direccion.id
