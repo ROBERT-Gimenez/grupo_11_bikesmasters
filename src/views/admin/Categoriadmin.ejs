@@ -15,9 +15,9 @@
             <caption>Lista general de <%= categoria.nombre %> </caption>
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col" class="no-mobile" >ID</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Marca</th>
+                    <th scope="col" class="no-mobile">Marca</th>
                     <th scope="col">
                       <nav id="category">
                       <input type="checkbox" id="menu" class="botton">
@@ -30,9 +30,9 @@
                           <li id=""><a href="/Admin/categoria/5" id="">Indumentaria</a></li>
                           <li id=""><a href="/Admin/categoria/3" id="">Repuestos</a></li>
                       </ul></th>
-                    <th scope="col">Precio</th>
-                    <th scope="col">Stock</th>
-                    <th scope="col">Descuento</th>
+                    <th scope="col" class="colum-price">Precio</th>
+                    <th scope="col" class="colum-stock">Stock</th>
+                    <th scope="col" class="no-mobile">Descuento</th>
                     <th scope="col">Imagen</th>
                     <th id="add"><a href="/admin/producto/agregar">Agregar Producto</a></th>
                 </tr>
@@ -40,14 +40,14 @@
             <tbody>
                 <% product.forEach(product => { %>
                   <tr>
-                    <th scope="row"><%= product.id %></th>
+                    <th scope="row" class="no-mobile"><%= product.id %></th>
                     <td><%= product.name %></td>
-                    <td><%= product.marca %></td>
+                    <td class="no-mobile"><%= product.marca %></td>
                     <% let categoryName = categoria%>
                     <td><%= categoryName.nombre%></td>
-                    <td>$<%- toThousand(product.price) %></td>
-                    <td><%= product.stock %></td>
-                    <td><%- product.discount === ""? product.discount = 0 + "%" :`${product.discount}%`%></td>
+                    <td class="colum-price">$<%- toThousand(product.price) %></td>
+                    <td class="colum-stock"><%= product.stock %></td>
+                    <td class="no-mobile"><%- product.discount === ""? product.discount = 0 + "%" :`${product.discount}%`%></td>
                     <td><img src="../../../images/products/<%= product.image %>" alt="" id="imgProduct"></td>
                     
                     <td>

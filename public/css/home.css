@@ -211,5 +211,10 @@ main section.categorias div.img-link span a {
     main section.categorias div.img-link a:hover {
         color: white;
     }
+     div.img-producto img:hover{
+        transform: translate(-16px ,-45px) rotate(-30deg) scale(1.3);
+        transition: 0.3s ease-in;
+        background: transparent ;
+    } 
 
 }

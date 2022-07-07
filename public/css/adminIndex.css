@@ -11,6 +11,7 @@ a{
     text-transform: uppercase;
     width: 100%;
     text-align: center;
+    font-size: 10px;
 }
 
 a#logo-link {
@@ -315,4 +316,64 @@ nav#category input:checked ~ ul{
 }
 img#imgProduct{
     width: 100%;
+}
+
+@media(max-width:1000px){
+    nav#category ul {
+        
+        left: 32%;
+    }
+
+} 
+
+@media(max-width:850px){
+    .no-mobile{
+        display: none;
+    }
+    
+    section.mobile-admin{
+        width: 100%;
+        background-color: blue;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    div.div-img{
+        width: 6rem;
+    }
+    img.img-mobile{
+        width: 100%;
+        
+    }
+    nav#category ul {
+        
+        left: 16%;
+    }
+
+}
+
+@media(max-width:560px){
+    table{
+        width: 100%;
+    }
+    .colum-stock,.colum-price{
+        display: none;
+    }
+    thead{
+        font-size: 13px;
+    }
+    td,nav#category a ,
+    nav#category label{
+        font-size: 10px;
+    }
+    nav#category ul{
+    width: 5.5rem;
+    left: 29%;
+    }
+}
+@media(max-width:400px){
+    nav#category ul{
+        left: 26%;
+        }
 }
