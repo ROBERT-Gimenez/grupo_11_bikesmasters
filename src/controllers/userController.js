@@ -319,57 +319,54 @@ module.exports = {
     },
 
     updateDirection: async (req, res) => {
-            if(!req.body.localidad.value == undefined &&!req.body.provincia.value == undefined ){
-            try  {
-            /* db.Usuario.findByPk(req.session.user.id)
-            .then((user)=>{ */
+/*             if(!req.body.localidad.value == undefined &&!req.body.provincia.value == undefined ){ 
+ */                try {
 
-            
-            /* Consulta a API de provincia */
-            const responseProvincias = await fetch("https://apis.datos.gob.ar/georef/api/provincias")
-            const dataProvincia = await responseProvincias.json()
-            const provincias = await dataProvincia.provincias
+                    /* Consulta a API de provincia */
+                    const responseProvincias = await fetch("https://apis.datos.gob.ar/georef/api/provincias")
+                    const dataProvincia = await responseProvincias.json()
+                    const provincias = await dataProvincia.provincias
 
-            /* Consulta a API de localidades */
-            const responseLocalidades = await fetch(`https://apis.datos.gob.ar/georef/api/localidades?provincia=${req.body.provincia}&campos=id,nombre&max=5000`)
-            const dataLocalidades = await responseLocalidades.json()
-            const localidades = dataLocalidades.localidades
-            let userProvincia;
-            let userLocalidad;
+                    /* Consulta a API de localidades */
+                    const responseLocalidades = await fetch(`https://apis.datos.gob.ar/georef/api/localidades?provincia=${req.body.provincia}&campos=id,nombre&max=5000`)
+                    const dataLocalidades = await responseLocalidades.json()
+                    const localidades = dataLocalidades.localidades
+                    let userProvincia;
+                    let userLocalidad;
 
-            for (let i = 0; i < provincias.length; i++) {
-                if(provincias[i].id === req.body.provincia) {
-                    userProvincia = provincias[i].nombre
-                } else {
-                    "no se encontro provincia"
+                    for (let i = 0; i < provincias.length; i++) {
+                        if (provincias[i].id === req.body.provincia) {
+                            userProvincia = provincias[i].nombre
+                        } else {
+                            "no se encontro provincia"
+                        }
+                    };
+
+                    for (let i = 0; i < localidades.length; i++) {
+                        if (localidades[i].id === req.body.localidad) {
+                            userLocalidad = localidades[i].nombre
+                        } else {
+                            "no se encontro localidad"
+                        }
+                    };
+                    const user = await db.Usuario.findByPk(req.session.user.id)
+                    const newDireccion = await db.Direccione.update({
+                        direccion: req.body.direccion,
+                        altura: +req.body.altura,
+                        codigo_postal: +req.body.postal,
+                        localidad: userLocalidad,
+                        provincia: userProvincia
+                    }, { where: { id: user.direccion_id } })
+
+                    console.log(user.direccion_id);
+                    res.redirect(`/usuario/perfil/${+req.session.user.id}`)/* }).catch((error)=>res.send(error)) */
+                } catch (error) {
+                    res.send(error)
                 }
-            };
-
-            for (let i = 0; i < localidades.length; i++) {
-                if(localidades[i].id === req.body.localidad) {
-                    userLocalidad = localidades[i].nombre
-                } else {
-                    "no se encontro localidad"
-                }
-            };
-            const user = await db.Usuario.findByPk(req.session.user.id)
-            const newDireccion = await db.Direccione.update({
-                direccion: req.body.direccion,
-                altura:+req.body.altura,
-                codigo_postal: +req.body.postal,
-                localidad: userLocalidad,
-                provincia: userProvincia
-            },{where: { id:user.direccion_id }}).then(()=>{
-
-            
-           return res.redirect(`/usuario/perfil/${+req.session.user.id}`)})/* }).catch((error)=>res.send(error)) */
-        } catch (error) {
-            res.send(error)
-        }
     
-    }else{
-        return res.redirect(`/usuario/perfil/${+req.session.user.id}`)}
-    }
+/*      }else{
+        res.redirect(`/usuario/perfil/${+req.session.user.id}`)} */
+    } 
 }
 
     
