@@ -3,7 +3,7 @@ let bcrypt =require('bcryptjs');
 const db =require('../database/models');
 const fs = require('fs');
 const path = require('path');
-const fetch = require('node-fetch')
+const fetch = require('node-fetch');
 
 /* const userSession = (session.user)
                 userSession.save(()=>{
@@ -229,8 +229,8 @@ module.exports = {
         })
     },
 
-    loadDirection: (req, res) => {
-        fetch("https://apis.datos.gob.ar/georef/api/provincias")
+    loadDirection: async (req, res) => {
+/*         fetch("https://apis.datos.gob.ar/georef/api/provincias")
         .then((response)=>response.json())
         .then((data)=>{ 
             let provincias = data.provincias;
@@ -252,8 +252,51 @@ module.exports = {
                 .catch((error) => res.send(error))
         
         })
-        .catch((error)=> console.log(error))
+        .catch((error)=> console.log(error)) */
 
+        /* Comienzo de funcion */
+        try {
+            /* Consulta a API de provincia */
+            const responseProvincias = await fetch("https://apis.datos.gob.ar/georef/api/provincias")
+            const dataProvincia = await responseProvincias.json()
+            const provincias = await dataProvincia.provincias
+
+            /* Consulta a API de localidades */
+            const responseLocalidades = await fetch(`https://apis.datos.gob.ar/georef/api/localidades?provincia=${req.body.provincia}&campos=id,nombre&max=5000`)
+            const dataLocalidades = await responseLocalidades.json()
+            const localidades = dataLocalidades.localidades
+            let userProvincia;
+            let userLocalidad;
+
+            for (let i = 0; i < provincias.length; i++) {
+                if(provincias[i].id === req.body.provincia) {
+                    userProvincia = provincias[i].nombre
+                } else {
+                    "no se encontro provincia"
+                }
+            };
+
+            for (let i = 0; i < localidades.length; i++) {
+                if(localidades[i].id === req.body.localidad) {
+                    userLocalidad = localidades[i].nombre
+                } else {
+                    "no se encontro localidad"
+                }
+            };
+
+            const newDireccion = await db.Direccione.create({
+                direccion: req.body.direccion,
+                altura: +req.body.altura,
+                codigo_postal: +req.body.postal,
+                localidad: userLocalidad,
+                provincia: userProvincia,
+                pais: "Argentina"
+            })
+            const userDireccion = await db.Usuario.update({direccion_id: newDireccion.id}, {where: {id: req.session.user.id}})
+            res.redirect(`/usuario/perfil/${+req.session.user.id}`)
+        } catch (error) {
+            res.send(error)
+        }
     },
 
     editDirection: (req, res) => {
