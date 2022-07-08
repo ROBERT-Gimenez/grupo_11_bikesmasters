@@ -62,15 +62,15 @@ $password.addEventListener('blur', function(){
     switch (true) {
         case !$password.value.trim():
             $passwordError.innerHTML = 'El campo contraseña es obligatorio'
-            $password.classList.add('is-invalid')
+            $password.classList.add('invalido')
             break;
         case !regExPass.test($password.value):
             $passwordError.innerHTML = 'La contraseña debe tener: entre 8 y 12 caracteres, al menos una mayúscula, una minúscula y un número';
-            $password.classList.add('is-invalid')
+            $password.classList.add('invalido')
             break;    
         default:
-            $password.classList.remove("is-invalid");
-            $password.classList.add('is-valid')
+            $password.classList.remove("invalido");
+            $password.classList.add('valido')
             $passwordError.innerHTML = ""
             break;
     }
