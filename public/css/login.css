@@ -12,8 +12,11 @@
       flex-direction: column;
       margin: 0;
       padding: 0;
-      background-image: url('/images/Fondo-Nuevo.png');
+      background-image: url('/images/Dibujo.jpg');
       font-family: 'Nunito Sans', sans-serif;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position-x: 20rem;
   }
   body.forms a{
     font-size: 0.8rem;

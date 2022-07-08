@@ -94,6 +94,18 @@ window.addEventListener("load",() => {
 
 
         /*VALIDACION DE DIRECCION */
+
+        $direccion.addEventListener("keypress" , function(e){
+            if(!checkChar(e)){
+                e.preventDefault();}
+            });
+        
+        function checkChar(e){
+            const char = String.fromCharCode(e.keyCode);
+            const pattern = '[0-9a-zA-Z( )]';
+        if(char.match(pattern)){
+            return true }}
+
         $direccion.addEventListener("blur", (e)=>{
 
             switch(true){
