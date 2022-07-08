@@ -7,7 +7,7 @@ const userSessionCheck = require('../middlewares/userSessionCheck');
 const checkin = require('../middlewares/checkin');
 const imgProfile = require('../middlewares/imageProfileMiddleware')
 const userEditValidator = require('../validations/userEditValidator')
-
+const directioValidator = require('../validations/directionValidator')
 
 
 router.get('/carrito', userSessionCheck, userController.carrito);
@@ -23,10 +23,10 @@ router.get('/perfil/:id', userSessionCheck, userController.userProfile);
 router.get('/perfil/editar/:id', userSessionCheck, userController.editProfile);
 router.put('/perfil/:id', imgProfile.single('avatar'), userEditValidator, userController.userUpdate);
 
-router.get('/perfil/agregar/direccion/:id', userSessionCheck, userController.addDirection)
+router.get('/perfil/agregar/direccion/:id', userSessionCheck,directioValidator, userController.addDirection)
 router.post('/perfil/:id', userSessionCheck, userController.loadDirection)
-router.get('/perfil/editar/direccion/:id', userSessionCheck, userController.editDirection)
-router.put('/perfil/editar/:id', userSessionCheck, userController.updateDirection)
+router.get('/perfil/editar/direccion/:id', userSessionCheck,directioValidator, userController.editDirection)
+router.put('/perfil/editar/:id', userSessionCheck, directioValidator,userController.updateDirection)
 
 
 module.exports = router

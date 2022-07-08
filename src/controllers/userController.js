@@ -230,6 +230,7 @@ module.exports = {
     },
 
     loadDirection: async (req, res) => {
+       
         
         /* Comienzo de funcion */
         try {
@@ -296,8 +297,9 @@ module.exports = {
     },
 
     updateDirection: async (req, res) => {
-/*             if(!req.body.localidad.value == undefined &&!req.body.provincia.value == undefined ){ 
- */                try {
+                let errors = validationResult(req);
+                if(errors.isEmpty()){
+                 try {
 
                     /* Consulta a API de provincia */
                     const responseProvincias = await fetch("https://apis.datos.gob.ar/georef/api/provincias")
@@ -336,14 +338,29 @@ module.exports = {
                     }, { where: { id: user.direccion_id } })
 
                     console.log(user.direccion_id);
-                    res.redirect(`/usuario/perfil/${+req.session.user.id}`)/* }).catch((error)=>res.send(error)) */
+                    res.redirect(`/usuario/perfil/${+req.session.user.id}`)
                 } catch (error) {
                     res.send(error)
                 }
     
-/*      }else{
-        res.redirect(`/usuario/perfil/${+req.session.user.id}`)} */
-    } 
-}
 
-    
+      }else{
+        //Código para mostrar errores
+        let userId = req.session.user.id;
+        db.Usuario.findByPk(userId)
+            .then((user) => {
+                let direccionId = user.direccion_id
+                return db.Direccione.findByPk(direccionId)
+                .then((direccion) => {
+                res.render('users/editDirection', {
+                    direccion,
+                    titulo: "Editar direccion",
+                    css: 'register.css',
+                    errors: errors.mapped(),
+                    session: req.session,
+                    old: req.body
+        })
+    })
+})
+}
+    }}

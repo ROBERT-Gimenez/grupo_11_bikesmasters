@@ -12,7 +12,7 @@
       flex-direction: column;
       margin: 0;
       padding: 0;
-      background-image: url('/images/fondo-formularios.png');
+      background-image: url('/images/Fondo-Nuevo.png');
       font-family: 'Nunito Sans', sans-serif;
   }
   body.forms a{
@@ -161,6 +161,7 @@ div.google button:hover{
 /* Clase para mensajes para consumir desde el front */
 
 .error-message {
+  font-family: sans-serif;
   padding: 3px;
   color: red;
   font-weight: 400;

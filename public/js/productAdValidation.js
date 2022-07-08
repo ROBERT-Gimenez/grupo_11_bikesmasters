@@ -140,9 +140,14 @@ var reg = new RegExp('^[0-9]*$');
             }})
      //>>>>>>>>>>>>> Categoria <<<<<<<<<<<<<//
     
-     
-        catError.innerHTML= "seleccione una Categoria";
-        catError.classList.add("invalido")
+     select.addEventListener('blur' , () =>{
+        if(select.value ==="default"){
+            catError.innerHTML= "seleccione una Categoria";
+            catError.classList.add("invalido")
+
+        }
+        })
+        
    
         select.addEventListener('change' , () =>{
             catError.classList.remove("invalido");

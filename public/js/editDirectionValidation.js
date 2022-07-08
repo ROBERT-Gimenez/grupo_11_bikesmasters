@@ -148,7 +148,7 @@ window.addEventListener("load",() => {
         })
 
         /*VALIDACION DE FORMULARIO */
-        $form.addEventListener("submit", function (e) {
+          $form.addEventListener("submit", function (e) {
             e.preventDefault()
           let elementsForm = this.elements; 
           let errores = false;
@@ -169,6 +169,7 @@ window.addEventListener("load",() => {
             alert("Hay errores en el formulario")
            }
 
-        })
+        }) 
 
-})
+}) 
+
