@@ -230,30 +230,7 @@ module.exports = {
     },
 
     loadDirection: async (req, res) => {
-/*         fetch("https://apis.datos.gob.ar/georef/api/provincias")
-        .then((response)=>response.json())
-        .then((data)=>{ 
-            let provincias = data.provincias;
-            let userProvincia = provincias.find(provincia => provincia.id === req.body.provincia)
         
-            return db.Direccione.create({
-                direccion: req.body.direccion,
-                altura: req.body.altura,
-                codigo_postal: req.body.postal,
-                localidad: req.body.localidad,
-                provincia: userProvincia.nombre
-            })
-            .then((direccion) => db.Usuario.update({
-                direccion_id: direccion.id
-            }, {
-                where: {id: req.session.user.id}
-            }))
-                .then(() => res.redirect(`/usuario/perfil/${+req.session.user.id}`))
-                .catch((error) => res.send(error))
-        
-        })
-        .catch((error)=> console.log(error)) */
-
         /* Comienzo de funcion */
         try {
             /* Consulta a API de provincia */

@@ -78,3 +78,10 @@ footer p {
     }
 
 }
+
+@media (min-width:1440px) {
+    footer {
+        position: absolute;
+        bottom: 0;
+    }
+}

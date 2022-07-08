@@ -52,7 +52,7 @@ window.addEventListener("load",() => {
         /* Validaciones de provincia */
         $provincia.addEventListener("blur", () => {
             switch (true) {
-                case $provincia.value === "":
+                case $provincia.value === "" || $provincia.value === "default":
                     $provinciaError.innerHTML = "Seleccione una provincia"
                     $provincia.classList.add('is-invalid')
                     break;
@@ -72,7 +72,7 @@ window.addEventListener("load",() => {
 
         $localidad.addEventListener("blur", () => {
             switch (true) {
-                case $localidad.value === "":
+                case $localidad.value === "" || $localidad.value === "default":
                     $localidadError.innerHTML = "Seleccione una localidad"
                     $localidad.classList.add('is-invalid')
                     break;
@@ -89,6 +89,7 @@ window.addEventListener("load",() => {
         })
 
 
+
         /*VALIDACION DE DIRECCION */
         $direccion.addEventListener("blur", ()=>{
             switch(true){
@@ -96,10 +97,14 @@ window.addEventListener("load",() => {
                     $inputDireccionError.innerHTML = "Direccion requerida"
                     $direccion.classList.add("is-invalid");
                     break;
-            default:
-                $direccion.classList.remove("is-invalid"); 
-                $direccion.classList.add("is-valid");
-                $inputDireccionError.innerHTML = "";       
+                case $direccion.value.length < 4:
+                    $inputDireccionError.innerHTML = "Nombre de direccion inválida"
+                    $direccion.classList.add("is-invalid");
+                    break;
+                default:
+                    $direccion.classList.remove("is-invalid"); 
+                    $direccion.classList.add("is-valid");
+                    $inputDireccionError.innerHTML = "";       
             }
         })
         /*VALIDACION DE ALTURA */
@@ -139,9 +144,10 @@ window.addEventListener("load",() => {
           let elementsForm = this.elements; 
           let errores = false;
           for (let index = 0; index < elementsForm.length - 1; index++) {    
-            if(elementsForm[index].value ==""
-            || elementsForm[index].classList.contains("is-invalid")){
-                elementsForm[index].classList.add("is-invalid");
+            if(elementsForm[index].value === ""
+            || elementsForm[index].classList.contains("is-invalid")) {
+                elementsForm[index].classList.remove('input-style')
+                elementsForm[index].classList.add("error-input");
                 console.log(elementsForm[index])
                 $submitError.innerHTML = "Los campos señalados son obligatorios"
                 errores = true;
@@ -157,4 +163,3 @@ window.addEventListener("load",() => {
         })
 
 })
-
