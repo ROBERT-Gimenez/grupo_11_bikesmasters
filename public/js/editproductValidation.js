@@ -1,6 +1,6 @@
-/* const qs = (element) => {
+const qs = (element) => {
     return document.querySelector(element)
-} */
+} 
 
 window.addEventListener('load', () => {
     
@@ -50,14 +50,14 @@ window.addEventListener('load', () => {
 
     $inputMarca.addEventListener("blur", ()=>{
         switch (true){
-            case !$inputMarca.value.trim()://
+            case !$inputMarca.value.trim():
                 $inputMarcaError.innerHTML = "Debe ingresarla marca del producto";
                 $inputMarca.classList.add("is-invalid");
-                break;
-/*             case !regExAlt.test($inputMarca.value):
+                break; 
+            case !regExAlt.test($inputMarca.value):
                 $inputMarcaError.innerHTML = "Nombre del producto invalido!!";
                 $inputMarca.classList.add("is-invalid");
-                break; */
+                break; 
             default:
                 $inputMarca.classList.remove("is-invalid");
                 $inputMarca.classList.add("is-valid");
