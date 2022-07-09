@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
     let $inputCategory = qs("#category"),
-    $categoryError = qs("#categoryError"),
+    $categoryError = qs("#CategoriError"),
     $form = qs('form'),
     error;
     

@@ -1,6 +1,7 @@
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 /* const { body } = require('express-validator'); */
 const db = require('../database/models')
+const { validationResult } = require('express-validator');
 
 module.exports = {
 	
@@ -36,6 +37,8 @@ module.exports = {
     },
 
     updateCategory: (req, res) => {
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
         db.Categoria.update({
             nombre: req.body.nombre
         },{where: 
@@ -43,7 +46,25 @@ module.exports = {
         })
             .then(() => res.redirect('/admin/categorias'))
             .catch((error) => res.send(error))
-    },
+        } else {
+            db.Categoria.findAll()
+            .then((categories) => {
+                db.Categoria.findByPk(req.params.id)
+                    .then(categoryId => {
+                        res.render('admin/categories/adminEditCategory', {
+                            css: "adminIndex.css",
+                            session: req.session,
+                            categoryId,
+                            categories,
+                            errors: errors.mapped(),
+                            titulo: "Editar categoría"
+                        })
+                    })
+                    .catch((error) => res.send(error))
+            }).catch((error) => res.send(error))
+
+            
+    }},
 
     createCategory: (req, res) => {
         res.render('admin/categories/adminCreateCategory', {
@@ -54,11 +75,20 @@ module.exports = {
     },
 
     uploadCategoy: (req, res) => {
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
         db.Categoria.create({
             nombre: req.body.nombre
         })
             .then(() => res.redirect('/admin/categorias'))
             .catch((error) => {res.send(error)})
+        } else {res.render('admin/categories/adminCreateCategory', {
+            css: "addProduct.css",
+            titulo: "Agregar categoría",
+            session: req.session,
+            errors: errors.mapped(),
+        })
+    }
     },
 
     deleteCategory: (req, res) => {

@@ -14,7 +14,7 @@
                     <div class="register-input">
                         <label for="nombre">Nombre de categoría</label>
                         <input type="text" id="category" name="nombre" class="input-style" placeholder="Ingrese nombre de categoría">
-                        <small id="categoryError"></small>
+                        <small id="CategoriError" class="alert-msg"><%= (locals.errors && errors.nombre)? errors.nombre.msg : "" %></small>
                     </div>
                     <div class="btn_register">
                        <button type="submit" class="btn-submit_register">Crear</button>
