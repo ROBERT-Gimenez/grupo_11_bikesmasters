@@ -15,6 +15,20 @@ window.addEventListener('load', () => {
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/
 
 
+    $inputName.addEventListener("keypress", function (e) {
+        if (!checkChar(e)) {
+            e.preventDefault();
+        }
+    });
+    
+    function checkChar(e) {
+        const char = String.fromCharCode(e.keyCode);
+        const pattern = '[0-9a-zA-Z( )]';
+        if (char.match(pattern)) {
+            return true
+        }
+    }
+
     $inputName.addEventListener('blur', () => {
         switch (true) {
             case $inputName.value.length === 0:

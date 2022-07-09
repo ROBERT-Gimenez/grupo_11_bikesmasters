@@ -15,10 +15,12 @@ window.addEventListener("load",() => {
         $submitError = qs("#submitError"),
         $localidadError = qs('#localidadError'),
         $provinciaError = qs('#provinciaError')
-        regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
-        regExAlt = /^[0-9]{7,8}$/;
-        console.log($form)
 
+        regExAlpha = /^[a-zA-Z\sñáéíóúü]*$/,
+        regExAlt = /^[0-9]{7,8}$/;
+        regExCar = /^[A-Za-z0-9]/
+        regExEsp = /^[°!#$%&=?¡¿*<>+]/
+        
 
         /*SELECCION DE PROVINCIA*/
 
@@ -32,7 +34,6 @@ window.addEventListener("load",() => {
         
     })
     .catch((error)=> console.log(error))
-
       
   
         $provincia.addEventListener("change", (event) => {
@@ -48,7 +49,6 @@ window.addEventListener("load",() => {
             })
             .catch((error) => console.log(error))
         })
-
         /* Validaciones de provincia */
         $provincia.addEventListener("blur", () => {
             switch (true) {
@@ -91,7 +91,20 @@ window.addEventListener("load",() => {
 
 
         /*VALIDACION DE DIRECCION */
-        $direccion.addEventListener("blur", ()=>{
+
+        $direccion.addEventListener("keypress" , function(e){
+            if(!checkChar(e)){
+                e.preventDefault();}
+            });
+        
+        function checkChar(e){
+            const char = String.fromCharCode(e.keyCode);
+            const pattern = '[0-9a-zA-Z( )]';
+        if(char.match(pattern)){
+            return true }}
+
+        $direccion.addEventListener("blur", (e)=>{
+
             switch(true){
                 case !$direccion.value.trim():
                     $inputDireccionError.innerHTML = "Direccion requerida"
@@ -99,6 +112,11 @@ window.addEventListener("load",() => {
                     break;
                 case $direccion.value.length < 4:
                     $inputDireccionError.innerHTML = "Nombre de direccion inválida"
+                    $direccion.classList.add("is-invalid");
+                    break;
+                case !regExCar.test($direccion.value) :
+                    console.log($direccion.value)
+                    $inputDireccionError.innerHTML = "No debe tener caracteres especiales"
                     $direccion.classList.add("is-invalid");
                     break;
                 default:
@@ -139,7 +157,7 @@ window.addEventListener("load",() => {
         })
 
         /*VALIDACION DE FORMULARIO */
-        $form.addEventListener("submit", function (e) {
+          $form.addEventListener("submit", function (e) {
             e.preventDefault()
           let elementsForm = this.elements; 
           let errores = false;
@@ -160,7 +178,6 @@ window.addEventListener("load",() => {
             alert("Hay errores en el formulario")
            }
 
-        })
+        }) 
 
-})
-
+}) 
