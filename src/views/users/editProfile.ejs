@@ -31,7 +31,7 @@
             <div class="register-input">
                 <label for="telefono">Número de celular</label>
                 <input type="number" name="telefono" id="telefono" class="input-style" placeholder="Ingrese su número" value="<%= (locals.old && old.telefono)? old.telefono : user.telefono %>">
-                <small id="errorTelefono" class="text-danger"><%= (locals.errors && errors.telefono)? errors.telefono.msg : "" %> </small>
+                <small id="errorTelefono" class="text-danger"><%= (locals.errors && errors.telefono)? errors.telefono.msg : "" %></small>
             </div>
             <div class="btn_register">
                 <button class="btn-submit_register" type="submit">Guardar cambios</button>
