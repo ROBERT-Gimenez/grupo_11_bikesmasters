@@ -12,16 +12,13 @@
       flex-direction: column;
       margin: 0;
       padding: 0;
-      background-image: url('/images/Dibujo.jpg');
-     /*  background-image: url('/images/Fondo-Nuevo.jpg');
-      background-image: url('/images/Neon.jpg');
-      background-image: url('/images/asia-bicycle.jpg');
-      background-image: url('/images/Bosque.jpg');
-      background-image: url('/images/cyclist-involved-in-a.jpg'); */
+      background-image: url('/images/BIKE.jpg'); 
       font-family: 'Nunito Sans', sans-serif;
       background-repeat: no-repeat;
       background-size: contain;
-      background-position-x: 20rem;
+      background-size: cover;
+      background-position-y: -7rem;
+  
   }
   body.forms a{
     font-size: 0.8rem;
