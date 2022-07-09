@@ -37,12 +37,14 @@ window.addEventListener('load', () => {
                 $categoryError.classList.add('invalido')
                 error = true
                 break;
-            case $inputCategory.value.length < 3 || $inputCategory.value.length > 20:
+            case $inputCategory.value.length <= 3 || $inputCategory.value.length > 20:
+                console.log($inputCategory.value.length);
                 $inputCategory.classList.remove('input-style')
                 $inputCategory.classList.add('error')
                 $categoryError.innerHTML = "El nombre debe estar entre 4 y 20 letras como máximo"
                 $categoryError.classList.add('invalido')
                 error = true
+                break;
             default:
                 $inputCategory.classList.remove('error')
                 $inputCategory.classList.add('input-style')
