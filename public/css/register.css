@@ -266,7 +266,7 @@ span.admin a.admin {
 
     .register .form-register {
         flex-wrap: wrap;
-        /* width: 80%; */
+        width: 60%;
         display: flex;
         gap: 2rem;
         justify-content: center;
