@@ -214,13 +214,13 @@ var reg = new RegExp('^[0-9]*$');
                     alert("Se encontraron errores en el formulario")
                 }
             })
-        form.addEventListener('change' , () => {
+       /*  form.addEventListener('change' , () => {
             if((producto , marca , price, stock ).classList.contains("valido")){
                 form.lastElementChild.classList.remove("invalido")
                 form.lastElementChild.innerHTML = ""
                 FormError.classList.remove("invalido")         
                 } 
-            })
+            }) */
 
         //>>>>>>>>>>> imagen <<<<<<<<<<<<<//
 
