@@ -10,15 +10,15 @@ module.exports = (sequelize, dataTypes) => {
         },
         direccion: {
             type: dataTypes.STRING(100),
-            allowNull: false
+            allowNull: true
         },
         altura: {
             type: dataTypes.STRING(20),
-            allowNull: false
+            allowNull: true
         },
         codigo_postal: {
             type: dataTypes.STRING(10),
-            allowNull: false
+            allowNull: true
         },
         localidad: {
             type: dataTypes.STRING(50),

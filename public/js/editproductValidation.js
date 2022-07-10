@@ -1,206 +1,250 @@
-/* const qs = (element) => {
+function qs(element) {
     return document.querySelector(element)
-} */
+}
 
-window.addEventListener('load', () => {
+
+let producto = qs('#nameProduct');
+let price =qs("#price");
+let marca =qs("#marca");
+let discount =qs("#discount");
+let stock =qs("#stock");
+let description =qs("#description");
+let select =qs("#select");
+let form =qs(".form-register")
+let FormError =qs("#FormError");
+let productError =qs("#nameError");
+let marcaError =qs("#marcaError");
+let priceError =qs("#priceError");
+let stockError =qs("#stockError");
+let discError =qs("#discError");
+let catError =qs("#catError");
+let descripcionError =qs("#descripcionError");
+let option = qs("#sinCateg")
+let InputProduct = qs("#input-Product")
+let ProductPreviw = qs("#ProductImage")
+let ImageError = qs("#ImageError")
+
+
+//>> Restricciones de Campos << //
+regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/
+var reg = new RegExp('^[0-9]*$');
+
+
+    //>>>>>>>> Nombre Producto <<<<<<<<<<<<//
+
+    producto.addEventListener("keypress" , function(e){
+        if(!checkChar(e)){
+            e.preventDefault();}
+        });
     
-    let $form = qs('#formulario'),
-    inputName = qs('#name'),
-    $inputMarca = qs ('#marca'),
-    $inputPrice = qs ('#price'),
-    $inputStock = qs ('#stock'),
-    $inputDiscount = qs ('#discount'),
-    $inputCategoryid = qs ('#select')
-    $inputFile = qs ('#image'),
-    $imgPreview = qs ('#img-preview')
-    $inputDescription = qs ('#description');
-    inputNameError = qs ('#inputNameError'),
-    $inputMarcaError = qs ('#inputMarcaError'),
-    $inputPriceError = qs ('#inputPriceError'),
-    $inputStockError = qs ('#inputStockError'),
-    $inputDiscountError = qs ('#inputDiscountError'),
-    $inputSelectError = qs ('#inputSelectError'),
-    $FileErrors = qs ('#inputImageError'),
-    $inputDescriptionError = qs ('#inputDescriptionError'),
-    $submitError = qs("#submitError"),
-    regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
-    regExAlt = /^[0-9]{7,8}$/;
-    var reg = new RegExp('^[0-9]*$');
+    function checkChar(e){
+        const char = String.fromCharCode(e.keyCode);
+        const pattern = '[0-9a-zA-Z( )]';
+    if(char.match(pattern)){
+        return true }}
 
-    console.log(inputName);
-                  /*NOMBRE DEL PRODUCTO */
-    inputName.addEventListener("blur", ()=>{
-        switch (true){
-            case inputName.value.length === 0://Validar que no este vacio
-                console.log(inputName.value.length);
-                inputNameError.innerHTML = "Debe ingresar el nombre del producto";
-                inputName.classList.add("is-invalid");
-                break;
+        producto.addEventListener("blur" , () => {
+            switch (true) { 
+                case !producto.value.trim():
+                    productError.innerHTML= "Ingrese un Producto";
+                    productError.classList.add("invalido")
+                    break;
+                case nameProduct.value.length < 3:
+                    productError.innerHTML = "Nombre Invalido"
+                    productError.classList.add("invalido");
+                    break;
+                default :
+                    producto.classList.remove("invalido");
+                    producto.classList.add("valido");
+                    productError.innerHTML =""
+                    break;
+                }})
 
-            default:
-                inputName.classList.remove("is-invalid");
-                inputName.classList.add("is-valid");
-                inputNameError.innerHTML = "";
-                break;
-        }
+    //>>>>>>>>>>>>precio<<<<<<<<<<<<<//
 
-    })
 
-                     /*MARCA DEL PRODUCTO */
+        price.addEventListener("blur" , () => {
+            switch (true) { 
+                case !price.value.trim():
+                    priceError.innerHTML= "Ingrese un monto valido";
+                    price.classList.add("invalido")
+                    break;
+                case !reg.test(price.value):
+                    priceError.innerHTML = "Valor Invalido"
+                    price.classList.add("invalido");
+                    break;
+                default :
+                    price.classList.remove("invalido");
+                    price.classList.add("valido");
+                    priceError.innerHTML =""
+                    break;
+                }})
+    //>>>>>>>>>>>>> Marca <<<<<<<<<<<<<//
 
-    $inputMarca.addEventListener("blur", ()=>{
-        switch (true){
-            case !$inputMarca.value.trim()://
-                $inputMarcaError.innerHTML = "Debe ingresarla marca del producto";
-                $inputMarca.classList.add("is-invalid");
-                break;
-/*             case !regExAlt.test($inputMarca.value):
-                $inputMarcaError.innerHTML = "Nombre del producto invalido!!";
-                $inputMarca.classList.add("is-invalid");
-                break; */
-            default:
-                $inputMarca.classList.remove("is-invalid");
-                $inputMarca.classList.add("is-valid");
-                $inputMarcaError.innerHTML = "";
-                break;
-        }
+    marca.addEventListener("keypress" , function(e){
+        if(!checkChar(e)){
+            e.preventDefault();}
+        });
+    
+    function checkChar(e){
+        const char = String.fromCharCode(e.keyCode);
+        const pattern = '[0-9a-zA-Z( )]';
+    if(char.match(pattern)){
+        return true }}
 
-    })
-                   /*PRECIO DEL PRODUCTO */
+        marca.addEventListener("blur" , () => {
+            switch (true) { 
+                case !marca.value.trim():
+                    marcaError.innerHTML= "Ingrese una marca";
+                    marca.classList.add("invalido")
+                    break;
+                case !regExAlpha.test(marca.value):
+                    marcaError.innerHTML ="Valor Invalido"
+                    marca.classList.add("invalido");
+                    break;
+                default :
+                    marca.classList.remove("invalido");
+                    marca.classList.add("valido");
+                    marcaError.innerHTML =""
+                    break;
+                }})
 
-        $inputPrice.addEventListener("blur", ()=>{
-        switch (true){
-            case !$inputPrice.value.trim():
-                $inputPriceError.innerHTML = "Debe ingresar el precio del producto";
-                $inputPrice.classList.add("is-invalid");
-                break;
-            case !reg.test($inputPrice.value):
-                $inputPriceError.innerHTML = "Precio del producto invalido!!";
-                $inputPrice.classList.add("is-invalid");
-                break;
-            default:
-                $inputPrice.classList.remove("is-invalid");
-                $inputPrice.classList.add("is-valid");
-                $inputPriceError.innerHTML = "";
-                break;
-        }
+    //>>>>>>>>>>>>> Stock <<<<<<<<<<<<<//
+        stock.addEventListener("blur" , () => {
+            switch (true) { 
+                case !stock.value.trim():
+                    stockError.innerHTML= "Ingrese una cantidad";
+                    stock.classList.add("invalido")
+                    break;
+                case !reg.test(stock.value):
+                    stockError.innerHTML = "Valor Invalido"
+                    stock.classList.add("invalido");
+                    break;
+                case stock.value === "0":
+                    stockError.innerHTML = "Tiene que tener por lo menos 1 producto en stock"
+                    stock.classList.add("invalido");
+                    break;
+                default :
+                    stock.classList.remove("invalido");
+                    stock.classList.add("valido");
+                    stockError.innerHTML = ""
+                    break;
+                }})
 
-    })
-                  /*STOCK DEL PRODUCTO*/
-
-        $inputStock.addEventListener("blur", ()=>{
-        switch (true){
-            case !$inputStock.value.trim():
-                $inputStockError.innerHTML = "Debe ingresar stock del producto";
-                $inputStock.classList.add("is-invalid");
-                break;
-            case !reg.test($inputStock.value):
-                $inputStockError.innerHTML = "stock del producto invalido!!";
-                $inputStock.classList.add("is-invalid");
-                break;
-            default:
-                $inputStock.classList.remove("is-invalid");
-                $inputStock.classList.add("is-valid");
-                $inputStockError.innerHTML = "";
-                break;
-        }
-
-    })
-
-                 /*DESCUENTOS SOBRE EL PRODUCTO */
-
-        $inputDiscount.addEventListener("blur", ()=>{
-        switch (true){
-            case !$inputDiscount.value.trim():
-                  $inputDiscountError.innerHTML = "Debe ingresar stock del producto";
-                  $inputDiscount.classList.add("is-invalid");
-                  break;
-            case !reg.test($inputDiscount.value):
-                 $inputDiscountError.innerHTML = "stock del producto invalido!!";
-                 $inputDiscount.classList.add("is-invalid");
-                 break;
-            default:
-                 $inputDiscount.classList.remove("is-invalid");
-                 $inputDiscount.classList.add("is-valid");
-                 $inputDiscountError.innerHTML = "";
-                 break;
-                    }
-            
-                })
-                 /*CATEGORIA DE PRODUCTOS */
-
-        $inputCategoryid.addEventListener("blur", function() {
-            if (!$inputCategoryid.value.trim()) {
-                $inputCategoryidError.innerHTML = "Debe seleccionar una categoria";
-                $inputCategoryid.classList.add("is-invalid")
-                       } 
-            else {
-                $inputCategoryid.classList.remove("is-invalid");
-                $inputCategoryid.classList.add("is-valid");
-                $inputSelectError.innerHTML =""
-            }
-        })
                 
-        $form.addEventListener("submit", function(event){
-         event.preventDefault()
-         let elementsForm = this.elements;
-         let errores = false;
+    //>>>>>>>>>>>>> discount <<<<<<<<<<<<<//
+
+    discount.addEventListener("blur" , () => {
+        switch (true) { 
+            case !discount.value.trim():
+                discError.innerHTML = "Ingrese un valor";
+                discount.classList.add("invalido")
+                break;
+            case !reg.test(discount.value) || discount.value.length > 3:
+                discError.innerHTML ="Valor Invalido"
+                discount.classList.add("invalido");
+                break;
+            case discount.value >= 100:
+                discError.innerHTML = "No se puede aplicar descuento"
+                discount.classList.add("invalido");
+                break;
+            default :
+                discount.classList.remove("invalido");
+                discount.classList.add("valido");
+                discError.innerHTML =""
+                break;
+            }})
+            
+    //>>>>>>>>>>>>> description <<<<<<<<<<<<<//
+    description.addEventListener("blur" , () => {
+        switch (true) { 
+            case !description.value.trim() || description.value.length < 10:
+                descripcionError.innerHTML= "Ingrese una descripcion como mínimo de 10 palabras";
+                description.classList.add("invalido")
+                break;
+            default :
+                description.classList.remove("invalido");
+                description.classList.add("valido");
+                descripcionError.innerHTML =""
+                break;
+            }})
+     //>>>>>>>>>>>>> Categoria <<<<<<<<<<<<<//
+    
+     select.addEventListener('blur' , () => {
+        switch (true) {
+            case select.value === "0" || select.value === "":
+                catError.innerHTML = "Seleccione una categoria";
+                catError.classList.add("invalido")
+                break;
+            default:
+                select.classList.remove("invalido")
+                select.classList.add("valido")
+                catError.innerHTML = ""
+                break;
+        }
+     })
         
-         for (let index = 0; index < elementsForm.length - 1; index++) {
-           if (elementsForm[index].value == ""
-           && elementsForm[index].name !== "discount"
-           || elementsForm[index].classList.contains("is-invalid")){
-            elementsForm[index].classList.add("is-invalid");
-           $submitError.innerHTML = "Los campos señalados son obligatorios" 
-           errores = true;
-                 }
-         }
-         if(!errores){
-            alert("validado")
-            $form.submit()
-         }
+           
+//>>>>>>>>>>>>>>>>>>> submit <<<<<<<<<<<<<<<>><<<<<<<<<<<<<<<<<<<<<><//
+          
+        form.addEventListener("submit", function (event) {
+            event.preventDefault()
+            let elementsForm = this.elements
+            console.log(elementsForm)
+            let errors = false
+       
+            for (let i = 0; i < elementsForm.length ; i++) {
+                if(elementsForm[i].value == ""
+                && elementsForm[i].type !== "submit"
+                || elementsForm[i].classList.contains('invalido')) {
+                   
+                    elementsForm[i].classList.add('invalido')
+//>>>>>>>>>>>>>>>Se aplica invalido al siguiente elemento , es decir los Small <<<<<<<<<<<<<<//
+                    elementsForm[i].nextElementSibling.classList.add("invalido")
+                     if(!elementsForm[i].nextElementSibling.classList.contains("admin")){
+                    elementsForm[i].nextElementSibling.innerHTML ="Complete el campo"} 
 
-        })
-           /*IMAGEN DEL PRODUCTO */
-
-        $inputFile.addEventListener('change', 
-        function fileValidation(){
-            let filePath = $inputFile.value, //Capturo el valor del input
-                allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i //Extensiones permitidas
-            if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
-                $FileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
-                $inputFile.value = '';
-                $imgPreview.innerHTML = '';
-                return false;
-            }else{
-                // Image preview
-                console.log($inputFile.files);
-                if($inputFile.files && $inputFile.files[0]){
-                    let reader = new FileReader();
-                    reader.onload = function(e){
-                        $imgPreview.innerHTML = '<img src="' + e.target.result +'"style="width: 100%;"/>"';
-                    };
-                    reader.readAsDataURL($inputFile.files[0]);
-                    $fileErrors.innerHTML = '';
-                    $file.classList.remove('is-invalid')
+                    errors = true
+                    
+                    }
                 }
-            }
-        })
+                if(!errors) {
+                    form.submit()
+                } else { 
+                    alert("Se encontraron errores en el formulario")
+                }
+            })
+        form.addEventListener('change' , () => {
+            if((producto , marca , price, stock ).classList.contains("valido")){
+                form.lastElementChild.classList.remove("invalido")
+                form.lastElementChild.innerHTML = ""
+                FormError.classList.remove("invalido")         
+                } 
+            })
 
-                /*DETALLE DEL PRODUCTO */
+        //>>>>>>>>>>> imagen <<<<<<<<<<<<<//
 
-        $inputDescription.addEventListener("blur",() =>{
-            switch (true) {
-                case !$inputDescription.value.trim():
-                    $inputDescriptionError.innerHTML = "Se requiere descripcion del producto";
-                    $inputDescription.classList.add("is-invalid")
-                    break;
-                default:
-                    $inputDescription.classList.remove("is-invalid");
-                    $inputDescription.classList.add("is-valid");
-                    $inputDescriptionError.innerHTML = "";
-                    break;
+        InputProduct.addEventListener('change', 
+            function fileValidation(){
+            let filePath = InputProduct.value, 
+                allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i //Extensiones permitidas
+	        //si la imagen no es valida//
+            if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
+                ImageError.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
+                InputProduct.value = '';
+                ProductPreviw.innerHTML = '';
+            return false;
+	        //si la imagen es valida//
+            }else{
+            // Image preview
+            if(InputProduct.files && InputProduct.files[0]){
+                let reader = new FileReader();
+                reader.onload = function(e){
+                ProductPreviw.innerHTML = '<img src="' + e.target.result +'"style="width: 100%;"/>"';
+                };
+                reader.readAsDataURL(InputProduct.files[0]);
+                ImageError.innerHTML = '';
+                InputProduct.classList.remove('invalido')
             }
-        })
-   
-})
+        }
+    })

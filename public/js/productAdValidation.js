@@ -32,14 +32,25 @@ var reg = new RegExp('^[0-9]*$');
 
     //>>>>>>>> Nombre Producto <<<<<<<<<<<<//
 
+    producto.addEventListener("keypress" , function(e){
+        if(!checkChar(e)){
+            e.preventDefault();}
+        });
+    
+    function checkChar(e){
+        const char = String.fromCharCode(e.keyCode);
+        const pattern = '[0-9a-zA-Z( )]';
+    if(char.match(pattern)){
+        return true }}
+
         producto.addEventListener("blur" , () => {
             switch (true) { 
                 case !producto.value.trim():
-                    productError.innerHTML= "ingrese un Producto";
+                    productError.innerHTML= "Ingrese un Producto";
                     productError.classList.add("invalido")
                     break;
                 case nameProduct.value.length < 3:
-                    productError.innerHTML ="Nombre Invalido"
+                    productError.innerHTML = "Nombre Invalido"
                     productError.classList.add("invalido");
                     break;
                 default :
@@ -55,11 +66,11 @@ var reg = new RegExp('^[0-9]*$');
         price.addEventListener("blur" , () => {
             switch (true) { 
                 case !price.value.trim():
-                    priceError.innerHTML= "ingrese un monto valido";
+                    priceError.innerHTML= "Ingrese un monto valido";
                     price.classList.add("invalido")
                     break;
                 case !reg.test(price.value):
-                    priceError.innerHTML ="Valor Invalido"
+                    priceError.innerHTML = "Valor Invalido"
                     price.classList.add("invalido");
                     break;
                 default :
@@ -70,10 +81,21 @@ var reg = new RegExp('^[0-9]*$');
                 }})
     //>>>>>>>>>>>>> Marca <<<<<<<<<<<<<//
 
+    marca.addEventListener("keypress" , function(e){
+        if(!checkChar(e)){
+            e.preventDefault();}
+        });
+    
+    function checkChar(e){
+        const char = String.fromCharCode(e.keyCode);
+        const pattern = '[0-9a-zA-Z( )]';
+    if(char.match(pattern)){
+        return true }}
+
         marca.addEventListener("blur" , () => {
             switch (true) { 
                 case !marca.value.trim():
-                    marcaError.innerHTML= "ingrese una marca";
+                    marcaError.innerHTML= "Ingrese una marca";
                     marca.classList.add("invalido")
                     break;
                 case !regExAlpha.test(marca.value):
@@ -91,17 +113,21 @@ var reg = new RegExp('^[0-9]*$');
         stock.addEventListener("blur" , () => {
             switch (true) { 
                 case !stock.value.trim():
-                    stockError.innerHTML= "ingrese una cantidad";
+                    stockError.innerHTML= "Ingrese una cantidad";
                     stock.classList.add("invalido")
                     break;
                 case !reg.test(stock.value):
-                    stockError.innerHTML ="Valor Invalido"
+                    stockError.innerHTML = "Valor Invalido"
+                    stock.classList.add("invalido");
+                    break;
+                case stock.value === "0":
+                    stockError.innerHTML = "Tiene que tener por lo menos 1 producto en stock"
                     stock.classList.add("invalido");
                     break;
                 default :
                     stock.classList.remove("invalido");
                     stock.classList.add("valido");
-                    stockError.innerHTML =""
+                    stockError.innerHTML = ""
                     break;
                 }})
 
@@ -111,11 +137,15 @@ var reg = new RegExp('^[0-9]*$');
     discount.addEventListener("blur" , () => {
         switch (true) { 
             case !discount.value.trim():
-                discError.innerHTML= "ingrese un valor";
+                discError.innerHTML = "Ingrese un valor";
                 discount.classList.add("invalido")
                 break;
-            case !reg.test(discount.value)||discount.value.length > 2:
-                discError.innerHTML ="Valor Invalido"
+            case !reg.test(discount.value) || discount.value.length > 3:
+                discError.innerHTML = "Valor Invalido"
+                discount.classList.add("invalido");
+                break;
+            case discount.value >= 100:
+                discError.innerHTML = "No se puede aplicar descuento"
                 discount.classList.add("invalido");
                 break;
             default :
@@ -128,8 +158,8 @@ var reg = new RegExp('^[0-9]*$');
     //>>>>>>>>>>>>> description <<<<<<<<<<<<<//
     description.addEventListener("blur" , () => {
         switch (true) { 
-            case !description.value.trim():
-                descripcionError.innerHTML= "ingrese una Descripcion";
+            case !description.value.trim() || description.value.length < 10:
+                descripcionError.innerHTML= "Ingrese una descripcion como mínimo de 10 palabras";
                 description.classList.add("invalido")
                 break;
             default :
@@ -140,22 +170,21 @@ var reg = new RegExp('^[0-9]*$');
             }})
      //>>>>>>>>>>>>> Categoria <<<<<<<<<<<<<//
     
-     select.addEventListener('blur' , () =>{
-        if(select.value ==="default"){
-            catError.innerHTML= "seleccione una Categoria";
-            catError.classList.add("invalido")
-
+     select.addEventListener('blur' , () => {
+        switch (true) {
+            case select.value === "0" || select.value === "":
+                catError.innerHTML = "Seleccione una categoria";
+                catError.classList.add("invalido")
+                break;
+            default:
+                select.classList.remove("invalido")
+                select.classList.add("valido")
+                catError.innerHTML = ""
+                break;
         }
-        })
+     })
         
-   
-        select.addEventListener('change' , () =>{
-            catError.classList.remove("invalido");
-            select.classList.add("valido");
-            catError.innerHTML =""
-
-        })
-        
+           
 //>>>>>>>>>>>>>>>>>>> submit <<<<<<<<<<<<<<<>><<<<<<<<<<<<<<<<<<<<<><//
           
         form.addEventListener("submit", function (event) {
@@ -170,19 +199,20 @@ var reg = new RegExp('^[0-9]*$');
                 || elementsForm[i].classList.contains('invalido')) {
                    
                     elementsForm[i].classList.add('invalido')
-                    FormError.innerHTML = "Complete los campos vacios"
-                    FormError.classList.add("invalido")
 //>>>>>>>>>>>>>>>Se aplica invalido al siguiente elemento , es decir los Small <<<<<<<<<<<<<<//
                     elementsForm[i].nextElementSibling.classList.add("invalido")
                      if(!elementsForm[i].nextElementSibling.classList.contains("admin")){
-                    elementsForm[i].nextElementSibling.innerHTML ="Complete el Campo"} 
+                    elementsForm[i].nextElementSibling.innerHTML ="Complete el campo"} 
 
                     errors = true
                     
                     }
                 }
-                if(!errors) {form.submit()
-                }else{ alert("Se encontraron errores en el formulario")}
+                if(!errors) {
+                    form.submit()
+                } else { 
+                    alert("Se encontraron errores en el formulario")
+                }
             })
         form.addEventListener('change' , () => {
             if((producto , marca , price, stock ).classList.contains("valido")){

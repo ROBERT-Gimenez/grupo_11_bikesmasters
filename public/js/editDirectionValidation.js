@@ -89,7 +89,6 @@ window.addEventListener("load",() => {
         })
 
 
-
         /*VALIDACION DE DIRECCION */
 
         $direccion.addEventListener("keypress" , function(e){
