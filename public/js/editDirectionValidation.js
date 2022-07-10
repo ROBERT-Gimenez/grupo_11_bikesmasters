@@ -21,8 +21,6 @@ window.addEventListener("load",() => {
         regExCar = /^[A-Za-z0-9]/
         regExEsp = /^[°!#$%&=?¡¿*<>+]/
         
-        console.log($form)
-
 
         /*SELECCION DE PROVINCIA*/
 
@@ -51,7 +49,6 @@ window.addEventListener("load",() => {
             })
             .catch((error) => console.log(error))
         })
-
         /* Validaciones de provincia */
         $provincia.addEventListener("blur", () => {
             switch (true) {
@@ -90,7 +87,6 @@ window.addEventListener("load",() => {
                     break;
             }
         })
-
 
 
         /*VALIDACION DE DIRECCION */
@@ -184,4 +180,3 @@ window.addEventListener("load",() => {
         }) 
 
 }) 
-

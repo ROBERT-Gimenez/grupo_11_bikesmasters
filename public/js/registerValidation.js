@@ -21,6 +21,22 @@ regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
 regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}$/;
 
 /* >> validacion de nombre << */
+
+$name.addEventListener("keypress", function (e) {
+    if (!checkChar(e)) {
+        e.preventDefault();
+    }
+});
+
+function checkChar(e) {
+    const char = String.fromCharCode(e.keyCode);
+    const pattern = '[a-zA-Z()]';
+    if (char.match(pattern)) {
+        return true
+    }
+}
+
+
 $name.addEventListener('blur' , function(e){
         switch (true) { 
             case !$name.value.trim()||$name.value.length<4:
@@ -112,9 +128,6 @@ $terms.addEventListener('click', function (){
      
         })
        
-
-
-
         
 /* >>>>>>>  PreventDefault  <<<<<<< */
 form.addEventListener("submit", function (event) {

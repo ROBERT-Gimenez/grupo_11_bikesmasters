@@ -34,14 +34,14 @@
             <div class="register-input">
                 <label for="provincia">Provincia</label>
                 <select name="provincia" id="provincia" class="input-style">
-                    <option value=""><%= direccion.provincia %></option>
+                    <option value="<%= direccion.provincia %>"><%= direccion.provincia %></option>
                 </select>
                 <small class="text-danger" id="provinciaError"><%= (locals.errors && errors.provincia)? errors.provincia.msg : "" %></small>
             </div>
             <div class="register-input">
                 <label for="localidad">Localidad</label>
                 <select name="localidad" id="localidad" class="input-style">
-                    <option value=""><%= direccion.localidad %></option>
+                    <option value="<%= direccion.localidad %> "><%= direccion.localidad %></option>
                 </select>
                 <small class="text-danger" id="localidadError"><%= (locals.errors && errors.localidad)? errors.localidad.msg : "" %></small>
             </div>

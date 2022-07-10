@@ -29,14 +29,14 @@
                 </div>
                 <div class="register-input">
                     <label for="password">Ingrese una contraseña</label>
-                    <input type="password" name="password" id="password" class="input-style" value="<%= (locals.old && old.password)? old.password : "" %>">
+                    <input type="password" name="password" id="password" class="input-style" placeholder="Ingrese una Contraseña " value="<%= (locals.old && old.password)? old.password : "" %>">
                     <small class="text-danger" id="passwordError">
                         <%= (locals.errors && errors.password)? errors.password.msg : "" %>
                     </small>
                 </div>
                 <div class="register-input">
                     <label for="password2">Confirme su contraseña</label>
-                    <input type="password" name="password2" id="password2" class="input-style">
+                    <input type="password" name="password2" id="password2" placeholder="Reingrese la Contraseña" class="input-style">
                     <small class="text-danger" id="password2Error">
                         <%= (locals.errors && errors.password2)? errors.password2.msg : "" %>
                     </small>

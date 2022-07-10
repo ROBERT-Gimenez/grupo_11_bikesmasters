@@ -12,11 +12,13 @@
       flex-direction: column;
       margin: 0;
       padding: 0;
-      background-image: url('/images/Dibujo.jpg');
+      background-image: url('/images/BIKE.jpg'); 
       font-family: 'Nunito Sans', sans-serif;
       background-repeat: no-repeat;
       background-size: contain;
-      background-position-x: 20rem;
+      background-size: cover;
+      background-position-y: -7rem;
+  
   }
   body.forms a{
     font-size: 0.8rem;
@@ -194,4 +196,15 @@ div.google button:hover{
   height: 2.5rem;
   padding: 0.5rem;
   margin-bottom: 0.2rem;
+}
+@media(max-width:700px){
+  body.forms{
+  background-position-x: -9rem;
+  }
+ 
+}
+@media(max-width:400px){
+  body.forms{
+  background-position-x:-20rem;
+  }
 }

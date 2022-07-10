@@ -26,8 +26,9 @@
                         <button type="submit" id="ok">¿OK?</button>
                     </form>
                     <% } else { %>
-                        <input type="text" value="<%= category.nombre %>" disabled>   
+                        <input type="text" value="<%= category.nombre %>" disabled>  
                     <% } %>  
+                    <small id="CategoriError" class="alert-msg"><%= (locals.errors && errors.nombre)? errors.nombre.msg : "" %></small> 
                 </td>                
                 <td>
                   <a href="/admin/categorias/editar/<%= category.id  %>" class="btn btn-success">
@@ -40,7 +41,7 @@
                   </form>
                 </td>
               </tr>
-            <% }) %>  
+            <% }) %>
           </tbody>
     </table>
     <%- include('../../partials/admin/footerAdmin') %> 

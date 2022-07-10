@@ -119,4 +119,26 @@ la retrospectiva
 | ------------ | ------------ |
 | Posponer Reuniones | Procastinar |
 
+# Retroespectiva Sprint Nº6
+
+**La retrospectiva se centra en mejorar como equipo. Aqui nosotros les compartimos nuestra retrospectiva**.
+
+| Comenzar a  hacer |
+| ------------ |
+| Mejorar la Performance del codigo |
+| Practicar mas metodos de promesas |
+| Practicar con Fetch y las Peticiones de apis |
+
+| Continuar haciendo  |  Hacer más |
+| ------------ | ------------ |
+| Mejorar la interfaz UX/UI |Dinamico el Proyecto|
+| Compañerismo  | investigaciones acerca de base de datos |
+| Comunicacion | Mas Practicas con Apis |
+| Reportar inconvenientes  |    
+| mejorando el proyecto a largo plazo  |
+
+| Hacer menos  | Dejar de hacer  |
+| ------------ | ------------ |
+| Trabajar con base de datos personales | Trabajar con diferentes Base de datos |
+
 

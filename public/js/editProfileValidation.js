@@ -10,14 +10,30 @@ window.addEventListener('load', () => {
     $inputAvatar = qs('#inputAvatar'),
     $avatarPreview = qs('#avatar-user'),
     $avatarError = qs('#avatarError'),
+    $Telefono = qs('#telefono'),
+    $errorTelefono=qs("small#errorTelefono"),
     error;
 
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/
+    var reg = new RegExp('^[0-9]*$')
 
+    $inputName.addEventListener("keypress", function (e) {
+        if (!checkChar(e)) {
+            e.preventDefault();
+        }
+    });
+    
+    function checkChar(e) {
+        const char = String.fromCharCode(e.keyCode);
+        const pattern = '[0-9a-zA-Z( )]';
+        if (char.match(pattern)) {
+            return true
+        }
+    }
 
     $inputName.addEventListener('blur', () => {
         switch (true) {
-            case $inputName.value.length === 0:
+            case !$name.value.trim()||$name.value.length<4:
                 $inputName.classList.remove('input-style')
                 $inputName.classList.add('error-input')
                 $nameError.innerText = "Este campo no puede estar vacío"
@@ -39,6 +55,31 @@ window.addEventListener('load', () => {
                 break;
         }
     })
+    
+    $Telefono.addEventListener('blur', () => {
+        switch (true) {
+            case $Telefono.value.length<=8:
+                $Telefono.classList.remove('input-style')
+                $Telefono.classList.add('error-input')
+                $errorTelefono.innerText = "Ingrese un Telefono Valido"
+                $errorTelefono.classList.add('text-danger')
+                error = true
+                break;
+            case (!reg.test($Telefono.value)):
+                $Telefono.classList.remove('input-style')
+                $Telefono.classList.add('error-input')
+                $errorTelefono.innerText = "El nombre ingresado no es válido";
+                $errorTelefono.classList.add('text-danger')
+                error = true
+                break;
+            default:
+                $Telefono.classList.remove("error-input")
+                $Telefono.classList.add("input-style")
+                $errorTelefono.innerHTML = ""
+                error = false
+                break;
+        }
+    })
 
     $form.addEventListener('submit', (event) =>{
         event.preventDefault()
@@ -55,6 +96,20 @@ window.addEventListener('load', () => {
                 $inputName.classList.add('error-input')
                 $nameError.innerText = "El nombre ingresado no es válido";
                 $nameError.classList.add('text-danger')
+                error = true
+                break;
+                case $Telefono.value.length<=8 && $Telefono.value.length>=1 :
+                $Telefono.classList.remove('input-style')
+                $Telefono.classList.add('error-input')
+                $errorTelefono.innerText = "Ingrese un Telefono Valido"
+                $errorTelefono.classList.add('text-danger')
+                error = true
+                break;
+            case (!reg.test($Telefono.value)):
+                $Telefono.classList.remove('input-style')
+                $Telefono.classList.add('error-input')
+                $errorTelefono.innerText = "El nombre ingresado no es válido";
+                $errorTelefono.classList.add('text-danger')
                 error = true
                 break;
             default:

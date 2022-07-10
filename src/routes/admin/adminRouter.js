@@ -6,7 +6,7 @@ const userSessionCheck = require('../../middlewares/userSessionCheck');
 const adminSession = require('../../middlewares/adminSession');
 const categoryController = require('../../controllers/categoryController');
 const productValidator = require('../../validations/productValidator')
-
+const CategoriValidation = require('../../validations/CategoriValidation')
 
 router.get('/', userSessionCheck, adminSession, adminController.list);
 
@@ -31,13 +31,14 @@ router.delete('/:id', adminController.productDelete);
 // Muestra todas las categorías
 router.get('/categorias', userSessionCheck, adminSession, categoryController.allCategories)
 // Vista edición de categoría
-router.get('/categorias/editar/:id', userSessionCheck, adminSession, categoryController.editCategory)
+router.get('/categorias/editar/:id', userSessionCheck,CategoriValidation, adminSession, categoryController.editCategory)
 // Guarda cambios de categoría
-router.put('/categorias/:id', userSessionCheck, adminSession, categoryController.updateCategory)
+router.put('/categorias/:id', userSessionCheck,CategoriValidation, adminSession, categoryController.updateCategory)
 // Vista de creación de una categoría
 router.get('/categorias/crear', userSessionCheck, adminSession, categoryController.createCategory)
 // Crea la categoría
-router.post('/categorias/crear', categoryController.uploadCategoy)
+router.post('/categorias/crear',/* It's a middleware that checks if the category name is unique. */
+CategoriValidation, categoryController.uploadCategoy)
 // Elimina categoría
 router.delete('/categorias/eliminar/:id', userSessionCheck, adminSession, categoryController.deleteCategory)
 
