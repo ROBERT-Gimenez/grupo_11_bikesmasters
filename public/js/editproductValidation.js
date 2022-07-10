@@ -22,7 +22,7 @@ let descripcionError =qs("#descripcionError");
 let option = qs("#sinCateg")
 let InputProduct = qs("#input-Product")
 let ProductPreviw = qs("#ProductImage")
-let ImageError = qs("#ImageError")
+let ImageError = qs("#inputImageError")
 
 
 //>> Restricciones de Campos << //
@@ -214,13 +214,13 @@ var reg = new RegExp('^[0-9]*$');
                     alert("Se encontraron errores en el formulario")
                 }
             })
-        form.addEventListener('change' , () => {
+        /* form.addEventListener('change' , () => {
             if((producto , marca , price, stock ).classList.contains("valido")){
                 form.lastElementChild.classList.remove("invalido")
                 form.lastElementChild.innerHTML = ""
                 FormError.classList.remove("invalido")         
                 } 
-            })
+            }) */
 
         //>>>>>>>>>>> imagen <<<<<<<<<<<<<//
 
