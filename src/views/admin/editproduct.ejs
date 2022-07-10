@@ -56,18 +56,6 @@
                         <input type="file" id="input-Product" name="image" value="<%= product.image %>" accept=".jpg, .jpeg, .png">
                         <small class="alert-msg" id="inputImageError"></small> 
                     </div>
-<<<<<<< HEAD
-
-                  <div class="load-image">
-                        <div id="avatar-user" class="user-image"><img src="../../../images/profile/<%-producto.imagen %>" alt="Imagen por defecto"></div>
-                        <div class="avatar-input">
-                            <label for="avatar">Seleccione imagen de perfil</label>
-                            <input type="file" name="avatar" id="inputAvatar" accept=".jpg, .jpeg, .png">
-                            <small id="avatarError" class="text-danger"></small>
-                        </div>
-                    </div> 
-=======
->>>>>>> 9ef8e8d8156bb65e849bf3d0b0837730437a04d6
                     <div class="register-input">
                         <label for="description">Detalles</label>
                         <textarea type="description" name="description" id="description" cols="30" rows="3"><%= (locals.old && old.description)? old.description : product.description %></textarea>
