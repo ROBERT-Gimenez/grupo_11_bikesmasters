@@ -1,6 +1,12 @@
+<<<<<<< HEAD
+const qs = (element) => {
+    return document.querySelector(element)
+} 
+=======
 function qs(element) {
     return document.querySelector(element)
 }
+>>>>>>> 9ef8e8d8156bb65e849bf3d0b0837730437a04d6
 
 
 let producto = qs('#nameProduct');
@@ -81,6 +87,24 @@ var reg = new RegExp('^[0-9]*$');
                 }})
     //>>>>>>>>>>>>> Marca <<<<<<<<<<<<<//
 
+<<<<<<< HEAD
+    $inputMarca.addEventListener("blur", ()=>{
+        switch (true){
+            case !$inputMarca.value.trim():
+                $inputMarcaError.innerHTML = "Debe ingresarla marca del producto";
+                $inputMarca.classList.add("is-invalid");
+                break; 
+            case !regExAlt.test($inputMarca.value):
+                $inputMarcaError.innerHTML = "Nombre del producto invalido!!";
+                $inputMarca.classList.add("is-invalid");
+                break; 
+            default:
+                $inputMarca.classList.remove("is-invalid");
+                $inputMarca.classList.add("is-valid");
+                $inputMarcaError.innerHTML = "";
+                break;
+        }
+=======
     marca.addEventListener("keypress" , function(e){
         if(!checkChar(e)){
             e.preventDefault();}
@@ -91,6 +115,7 @@ var reg = new RegExp('^[0-9]*$');
         const pattern = '[0-9a-zA-Z( )]';
     if(char.match(pattern)){
         return true }}
+>>>>>>> 9ef8e8d8156bb65e849bf3d0b0837730437a04d6
 
         marca.addEventListener("blur" , () => {
             switch (true) { 
