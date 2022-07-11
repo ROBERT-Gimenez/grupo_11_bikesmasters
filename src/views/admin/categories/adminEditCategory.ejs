@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../../partials/admin/headAdmin') %> 
+    <script src="/js/EditCategori.js"></script>
 </head>
 <body>
     <%- include('../../partials/admin/headerAdmin') %> 
@@ -21,8 +22,8 @@
                 <th scope="row"><%= category.id %></th>
                 <td>
                     <% if(locals && locals.categoryId && categoryId.id === category.id) { %> 
-                    <form action="/admin/categorias/<%= categoryId.id %>?_method=PUT" method="post">
-                        <input type ="text" name ="nombre" id="<%= category.id%> "value="<%= category.nombre %>" style="border-bottom: thin solid rgb(246, 87, 1);">
+                    <form action="/admin/categorias/<%= categoryId.id %>?_method=PUT" method="post" id="Form-Category">
+                        <input type ="text" name ="nombre" id="IdCategori" value="<%= category.nombre %>" style="border-bottom: thin solid rgb(246, 87, 1);">
                         <button type="submit" id="ok">¿OK?</button>
                     </form>
                     <% } else { %>
