@@ -30,7 +30,7 @@ $name.addEventListener("keypress", function (e) {
 
 function checkChar(e) {
     const char = String.fromCharCode(e.keyCode);
-    const pattern = '[0-9a-zA-Z( )]';
+    const pattern = '[a-zA-Z()]';
     if (char.match(pattern)) {
         return true
     }

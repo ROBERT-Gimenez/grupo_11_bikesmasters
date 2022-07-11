@@ -197,3 +197,14 @@ div.google button:hover{
   padding: 0.5rem;
   margin-bottom: 0.2rem;
 }
+@media(max-width:700px){
+  body.forms{
+  background-position-x: -9rem;
+  }
+ 
+}
+@media(max-width:400px){
+  body.forms{
+  background-position-x:-20rem;
+  }
+}

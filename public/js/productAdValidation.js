@@ -214,13 +214,7 @@ var reg = new RegExp('^[0-9]*$');
                     alert("Se encontraron errores en el formulario")
                 }
             })
-        form.addEventListener('change' , () => {
-            if((producto , marca , price, stock ).classList.contains("valido")){
-                form.lastElementChild.classList.remove("invalido")
-                form.lastElementChild.innerHTML = ""
-                FormError.classList.remove("invalido")         
-                } 
-            })
+      
 
         //>>>>>>>>>>> imagen <<<<<<<<<<<<<//
 
@@ -249,3 +243,10 @@ var reg = new RegExp('^[0-9]*$');
         }
     })
 	
+ /*  form.addEventListener('change' , () => {
+            if((producto , marca , price, stock ).classList.contains("valido")){
+                form.lastElementChild.classList.remove("invalido")
+                form.lastElementChild.innerHTML = ""
+                FormError.classList.remove("invalido")         
+                } 
+            }) */
