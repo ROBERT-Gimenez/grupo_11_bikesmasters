@@ -50,11 +50,12 @@
                         <small id="catError" class="alert-msg"><%= (locals.errors && errors.categoryid)? errors.categoryid.msg : "" %> </small>
                     </div>
                     <div class="register-input">
-                        <label for="image">Subir imagen</label>
-                        <div class="img-container" id="img-preview">
+                        <div id="ProductImage" class=""><img src="" alt=""></div>
+                        <div class="Product-input">
+                            <label for="image">Seleccione imagen </label>
+                            <input type="file" name="image" id="input-Product" accept=".jpg, .jpeg, .png">
+                            <small id="ImageError" class="alert-msg"></small>
                         </div>
-                        <input type="file" id="input-Product" name="image" value="<%= product.image %>" accept=".jpg, .jpeg, .png">
-                        <small class="alert-msg" id="inputImageError"></small> 
                     </div>
                     <div class="register-input">
                         <label for="description">Detalles</label>

@@ -1,4 +1,4 @@
-const qs = (element) => {
+function qs(element){
     return document.querySelector(element)
 } 
 
@@ -22,7 +22,7 @@ let descripcionError =qs("#descripcionError");
 let option = qs("#sinCateg")
 let InputProduct = qs("#input-Product")
 let ProductPreviw = qs("#ProductImage")
-let ImageError = qs("#inputImageError")
+let ImageError = qs("#ImageError")
 
 
 //>> Restricciones de Campos << //
@@ -215,13 +215,7 @@ var reg = new RegExp('^[0-9]*$');
                     alert("Se encontraron errores en el formulario")
                 }
             })
-        /* form.addEventListener('change' , () => {
-            if((producto , marca , price, stock ).classList.contains("valido")){
-                form.lastElementChild.classList.remove("invalido")
-                form.lastElementChild.innerHTML = ""
-                FormError.classList.remove("invalido")         
-                } 
-            }) */
+        
 
         //>>>>>>>>>>> imagen <<<<<<<<<<<<<//
 
@@ -249,3 +243,12 @@ var reg = new RegExp('^[0-9]*$');
             }
         }
     })
+    
+    
+    /* form.addEventListener('change' , () => {
+            if((producto , marca , price, stock ).classList.contains("valido")){
+                form.lastElementChild.classList.remove("invalido")
+                form.lastElementChild.innerHTML = ""
+                FormError.classList.remove("invalido")         
+                } 
+            }) */
