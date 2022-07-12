@@ -49,9 +49,9 @@
                         </select>
                         <small id="catError" class="alert-msg"><%= (locals.errors && errors.categoryid)? errors.categoryid.msg : "" %> </small>
                     </div>
-                    <div class="register-input">
-                        <div id="ProductImage" class=""><img src="" alt=""></div>
-                        <div class="Product-input">
+                    <div class="load-image">
+                        <div id="ProductImage" class="product-image"><img src="../../../images/products/<%= product.image %> " alt="<%= product.name %>"></div>
+                        <div class="product-input">
                             <label for="image">Seleccione imagen </label>
                             <input type="file" name="image" id="input-Product" accept=".jpg, .jpeg, .png">
                             <small id="ImageError" class="alert-msg"></small>

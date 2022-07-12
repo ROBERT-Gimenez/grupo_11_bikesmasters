@@ -141,6 +141,39 @@ span.admin a.admin {
     font-style: italic;
 }
 
+/* Estilos de vista previa de imagen */
+
+.load-image {
+    max-height: 370px;
+}
+
+.load-image .product-image {
+    padding: 5px;
+    height: 200px;
+}
+
+.load-image .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.load-image .product-input {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.load-image .product-input label {
+    padding: 10px
+}
+
+.load-image .product-input input {
+    padding: 10px
+}
+
+/* Fin de estilos de vista previa de imagen */
+
 /* MEDIA QUERIES */
 
 /* Tablet */
