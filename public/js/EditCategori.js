@@ -1,8 +1,9 @@
 window.addEventListener('load', () => {
     let inputCategory = document.querySelectorAll("#IdCategori"),
     categoryError = qs("#CategoriError"),
-    form = qs('#Form-Category'),
-    error;
+    form = qs('#Form-Category')
+    
+    
 
 
     inputCategory.forEach(input =>{
@@ -18,6 +19,26 @@ window.addEventListener('load', () => {
             return true }}
 
     })
-
     
+    
+        
+        form.addEventListener("submit" , (event) => {
+            event.preventDefault()
+            let error;
+            inputCategory.forEach((input) => {
+                
+                    if(input.value.length < 4){
+                        
+                       return error = true
+                    }else{
+                        return error = false
+                    } 
+                })
+            if(error == true){
+                alert("El Campo debe tener mas de 4 Palabras")
+            }else{
+                form.submit()
+            }
+    
+})
 })

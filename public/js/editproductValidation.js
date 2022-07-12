@@ -252,3 +252,17 @@ var reg = new RegExp('^[0-9]*$');
                 FormError.classList.remove("invalido")         
                 } 
             }) */
+        /* let producto = this.productos.find(prod => prod.id === id);
+        let productosDelCarrito = [];
+        let productos = this.state.carrito.map((prod) => {
+                switch (true) { 
+                case prod.id === producto.id:
+                    prod.cantidad = prod.cantidad + producto.cantidad;
+                    productosDelCarrito.push(prod)
+                    break;
+                default :
+                    productosDelCarrito.push(prod)
+                    break;
+                }})
+        carrito:productosDelCarrito */
+                    
