@@ -54,7 +54,7 @@ CREATE TABLE `categorias` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(60) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -83,7 +83,7 @@ CREATE TABLE `direcciones` (
   `pais` varchar(40) DEFAULT NULL,
   `provincia` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -92,7 +92,7 @@ CREATE TABLE `direcciones` (
 
 LOCK TABLES `direcciones` WRITE;
 /*!40000 ALTER TABLE `direcciones` DISABLE KEYS */;
-INSERT INTO `direcciones` VALUES (1,'av.cruz','3625','1407','soldati','argentina','caba'),(2,'av gaona','2525','1407','caballito','argentina','caba'),(3,'Av Cruz ','3625','1437','Argentina','Argentina','Ciudad AutÃ³noma de Buenos Aires'),(4,'123','','','','','');
+INSERT INTO `direcciones` VALUES (1,'av.cruz','3625','1407','soldati','argentina','caba'),(2,'av gaona','2525','1407','caballito','argentina','caba'),(3,'Av Cruz ','3625','1437','Argentina','Argentina','Ciudad AutÃ³noma de Buenos Aires'),(4,'123','','','','',''),(5,'Calle falsa','123','123','10014040000',NULL,NULL),(6,'asdasd','123','123123',NULL,NULL,'Jujuy'),(10,'Av. Siempre Viva','931','1023','RETIRO','Argentina','Ciudad Autónoma de Buenos Aires'),(11,'Calle falsa ','123','1123','NUCLEO I','Argentina','Misiones'),(12,'Av EverGreen','123','1012','ICAÑO','Argentina','Santiago del Estero');
 /*!40000 ALTER TABLE `direcciones` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -177,7 +177,7 @@ CREATE TABLE `usuarios` (
   KEY `usuarios_FK` (`rol_id`),
   CONSTRAINT `usuarios_FK` FOREIGN KEY (`rol_id`) REFERENCES `user_rol` (`id`),
   CONSTRAINT `usuarios_FK_1` FOREIGN KEY (`direccion_id`) REFERENCES `direcciones` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -186,7 +186,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (2,'robert','mail@mail.com','123456789','1141806012',1,NULL,2),(3,'roberto','prueba@prueba.com','$2a$10$4CgdnwEsQj4Tv',NULL,NULL,'user-default.png',1),(4,'pepito','pepito@pepito.com','$2a$10$hjmz8Fwqud9Kz',NULL,NULL,'user-default.png',1),(5,'briana','brian@brian.com','$2a$10$3e7TribuwU4ej','1145698714',NULL,'user-default.png',1),(6,'betty','bety@bety.com','$2a$10$0gWO.o8LnVKM2','1212121212',3,'1655514391846-profile.jpg',2),(7,'donald','mac@donald.com','$2a$10$D7j4tK/qeAdAq',NULL,NULL,'user-default.png',1),(8,'loki','loki@loki.com','$2a$10$3zYEn2vj29sBX','12346789',2,'1654825760980-profile.jpg',1),(9,'pato','pato@pato.com','$2a$10$sx/t8dVmd.g1X','15471715',NULL,'1654823699746-profile.jpg',1),(10,'Fulano','fulano@mail.com','$2a$10$VdFPbmEn0LjnxgKrlFjKEOR0mdYzCIG7DzxQqC3uOsPJHj0wll6AS','123',4,'user-default.png',1);
+INSERT INTO `usuarios` VALUES (2,'robert','mail@mail.com','123456789','1141806012',1,NULL,2),(3,'roberto','prueba@prueba.com','$2a$10$4CgdnwEsQj4Tv',NULL,NULL,'user-default.png',1),(4,'pepito','pepito@pepito.com','$2a$10$hjmz8Fwqud9Kz',NULL,NULL,'user-default.png',1),(5,'briana','brian@brian.com','$2a$10$3e7TribuwU4ej','1145698714',NULL,'user-default.png',1),(6,'betty','bety@bety.com','$2a$10$0gWO.o8LnVKM2','1212121212',3,'1655514391846-profile.jpg',2),(7,'donald','mac@donald.com','$2a$10$D7j4tK/qeAdAq',NULL,NULL,'user-default.png',1),(8,'loki','loki@loki.com','$2a$10$3zYEn2vj29sBX','12346789',2,'1654825760980-profile.jpg',1),(9,'pato','pato@pato.com','$2a$10$sx/t8dVmd.g1X','15471715',NULL,'1654823699746-profile.jpg',1),(10,'Fulano','fulano@mail.com','$2a$10$VdFPbmEn0LjnxgKrlFjKEOR0mdYzCIG7DzxQqC3uOsPJHj0wll6AS','123',4,'user-default.png',1),(11,'Fulano','usuario@mail.com','$2a$10$vROe4vqLQtwtMgbtKYWJXeE06txr26ITXqqISWwPERbAe0UyR/dtK','15151515',10,'1656729019972-profile.png',1),(12,'Admin','admin@mail.com','$2a$10$2x0LIY/YPW9F0d6XK9XGJ.h70UZThAtGe96ub4iNFgumsK6/VSjTS',NULL,11,'user-default.png',2),(13,'Brian','brian@mail.com','$2a$10$jx1koXSr66LAnQrxwdsFK.d0qln2CLLZoQxkEnmyeiy3O3x8MZ8SS',NULL,NULL,'user-default.png',1),(14,'asdf','asd@mail.com','$2a$10$F5gr9Yj7LrFRDRxBtQBMvupZh6uFPDsa8NP/ze2psc7L/uHyUlhFi',NULL,NULL,'user-default.png',1),(15,'Usuario','elpepe@mail.com','$2a$10$5.ynpt2PoQPHfDb5a1KzB.MpOXzdQvBjuFQsDm1H3DaPoljfdQGFW','',12,'user-default.png',1);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -203,4 +203,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-29 18:54:33
+-- Dump completed on 2022-07-11 21:06:57
