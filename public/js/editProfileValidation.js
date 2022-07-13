@@ -33,7 +33,7 @@ window.addEventListener('load', () => {
 
     $inputName.addEventListener('blur', () => {
         switch (true) {
-            case !$name.value.trim()||$name.value.length<4:
+            case !$inputName.value.trim() || $inputName.value.length < 4:
                 $inputName.classList.remove('input-style')
                 $inputName.classList.add('error-input')
                 $nameError.innerText = "Este campo no puede estar vacío"
@@ -58,20 +58,20 @@ window.addEventListener('load', () => {
     
     $Telefono.addEventListener('blur', () => {
         switch (true) {
-            case $Telefono.value.length<=8:
+            case $Telefono.value.length <= 8 && $Telefono.value.length !== 0:
                 $Telefono.classList.remove('input-style')
                 $Telefono.classList.add('error-input')
-                $errorTelefono.innerText = "Ingrese un Telefono Valido"
+                $errorTelefono.innerText = "Ingrese un teléfono válido"
                 $errorTelefono.classList.add('text-danger')
                 error = true
                 break;
-            case (!reg.test($Telefono.value)):
+/*             case (!reg.test($Telefono.value)):
                 $Telefono.classList.remove('input-style')
                 $Telefono.classList.add('error-input')
-                $errorTelefono.innerText = "El nombre ingresado no es válido";
+                $errorTelefono.innerText = "El telefóno ingresado no es válido";
                 $errorTelefono.classList.add('text-danger')
                 error = true
-                break;
+                break; */
             default:
                 $Telefono.classList.remove("error-input")
                 $Telefono.classList.add("input-style")
