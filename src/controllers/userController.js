@@ -156,11 +156,12 @@ module.exports = {
     },
 
     userUpdate: (req, res) => {
+
         let userId = +req.session.user.id
         let errors = validationResult(req)
         db.Usuario.findByPk(userId) // Se obtiene los datos del usuario por el ID
-            .then((user) => {
-                if(errors.isEmpty()) {  // Se valida si hay errores
+        .then((user) => {
+            if(errors.isEmpty()) {  // Se valida si hay errores
                     if(req.file !== undefined) {   // Se pregunta si viene algun archivo
                         // Acá nos aseguramos de que no se borre la imagen que se agrega por defecto cuando un nuevo usuario se registra
                         if(fs.existsSync(path.join(__dirname, '../../public/images/profile/' + user.avatar))
@@ -230,7 +231,9 @@ module.exports = {
     },
 
     loadDirection: async (req, res) => {
-       
+        /* Verifico errores */
+        let errors = validationResult(req)
+        if(errors.isEmpty()) {
         
         /* Comienzo de funcion */
         try {
@@ -274,6 +277,18 @@ module.exports = {
             res.redirect(`/usuario/perfil/${+req.session.user.id}`)
         } catch (error) {
             res.send(error)
+        }
+        } else {
+            let userId = req.session.user.id;
+            db.Usuario.findByPk(userId)
+            .then((user) => {
+                res.render('users/addDirection', {
+                    titulo: "Agregar dirección",
+                    css: "register.css",
+                    session: req.session,
+                    user,
+                    errors: errors.mapped()})
+            })
         }
     },
 
