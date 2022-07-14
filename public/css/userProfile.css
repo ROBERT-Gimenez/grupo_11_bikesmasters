@@ -32,6 +32,7 @@ main .user-profile .image-profile img {
     height: 100%;
     object-fit: contain;
     border-radius: 50%;
+    background-color: white;
 }
 
 main .detail {
@@ -59,6 +60,7 @@ main .detail .edit-button a {
     height: 100%;
     width: 100%;
     color: white;
+    
 }
 
 main .user-products {

@@ -12,6 +12,57 @@ div.botones,
 img.carrito{
 display:none;
 }
+div.checkbox{
+    height: 25px;
+    width: 55px;
+    margin: 5px;
+    border-radius: 20px;
+    position: relative;
+    background-color: white;
+    border-radius: 20px;
+    left: 70%;
+    top: 30px;
+}
+div.checkbox input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    appearance: none;
+    cursor: pointer;
+}
+div.checkbox input::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 150px;
+    background: linear-gradient(45deg , #0f2623, #ff2e00);
+    box-shadow: 5px -5px 10px #070a10,
+    -5px 5px 10px #1b2630;
+    
+}
+
+div.checkbox input::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 150px;
+    background: black;
+    box-shadow: inset 5px -5px 10px #070a10, inset -5px 5px 10px #1b263e;
+    transform: translate(0px ,0px);
+    transition: 0.3s ease;
+}
+div.checkbox input:checked::after{
+    transform: translate(32px , 0px);
+    background-color: linear-gradient(45deg,deepskyblue,deeppink);
+    background: white;
+
+}
 div.logo_container{
     height: 4rem;
     width: 10rem;
@@ -161,7 +212,8 @@ nav a:hover{
     font-weight: 900;
     color: black;
     cursor: pointer;
-    margin-top: 1rem;    
+    margin-top: 1rem;   
+    background-color: white; 
 }
 header nav input:checked ~ ul{
     display: grid;
@@ -184,6 +236,7 @@ header nav input{
 
 /* ---version Tablet--- */
 @media (min-width:700px) {
+    
     .contenedor_header{
         flex-direction: row;
         justify-content: space-between;
@@ -255,7 +308,9 @@ header nav input{
         height: 2rem;
     }
     nav ul li#app_nav,
-    header nav label {
+    header nav label ,
+    div.checkbox ,
+    div.checkbox input{
        display: none;
     }
     header nav ul{
@@ -339,7 +394,7 @@ header nav input{
     div button.registrar a,
     div button.inicio a{
         color: black;
-        font-size: 13px;
+        font-size: 10px;
         text-transform: none;
         width: 100%;
     }
@@ -363,6 +418,11 @@ header nav input{
     }
 }
 @media (min-width:988px){
+    div button.registrar a,
+    div button.inicio a{
+        color: black;
+        font-size: 12px;
+    }
     .buscador {
         width: 35%;
     }
