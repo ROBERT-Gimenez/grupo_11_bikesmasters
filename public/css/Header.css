@@ -38,11 +38,11 @@ div.checkbox input::before{
     height: 100%;
     width: 100%;
     border-radius: 150px;
-    background: linear-gradient(45deg , #0f2623, #ff2e00);
-    box-shadow: 5px -5px 10px #070a10,
-    -5px 5px 10px #1b2630;
-    
+    background: linear-gradient(45deg , #b8bfbe, #ff2e00);
+    box-shadow: 5px -5px 10px #a84420, -5px 5px 10px #1b2630;
 }
+    
+
 
 div.checkbox input::after{
     content: "";
@@ -124,8 +124,8 @@ button.carrito{
 .search-form_button {
     position: absolute;
     right: -1px;
-    height: 1.9rem;
-    width: 1.9rem;
+    height: 1.8rem;
+    width: 1.8rem;
     background-color: white;
     cursor: pointer;
     border-radius: 50%;
@@ -133,7 +133,7 @@ button.carrito{
 }
 
 .search-form_button i {
-    color: lightgray;
+    color: #562d24;
 }
 
 @keyframes menu-out{
@@ -425,9 +425,9 @@ header nav input{
         color: black;
         font-size: 12px;
     }
-    .buscador {
+    /* .buscador {
         width: 35%;
-    }
+    } */
     .search-form{
         width: 100%;
     }
