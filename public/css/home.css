@@ -218,3 +218,17 @@ main section.categorias div.img-link span a {
     } 
 
 }
+#btn_agregar{
+    position: relative;
+    left: 9rem;
+    padding: 2px 0.5rem;
+    border-radius: 20px;
+    border: none;
+    bottom: 1rem;
+    box-shadow: 1px 1px 10px rgb(0 0 0 / 30%);
+}
+#btn_agregar:hover{
+cursor: pointer;
+background: linear-gradient(45deg , #b8bfbe, #ff2e00);
+box-shadow: 5px -5px 10px #a84420, -5px 5px 10px #1b2630;
+} 

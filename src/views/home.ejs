@@ -3,6 +3,7 @@
 
     <%- include ('partials/head') %> 
     <script src="/js/index.js" defer></script>
+   
 <body>
     <%- include ('partials/header') %> 
     
@@ -28,6 +29,7 @@
                                     <%= product.discount + '% 0FF' %>
                                 </p>
                             <% } %>
+                            <button id="btn_agregar">Agregar</button>
                         </div>
                         <div class="product-description">
                             <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
@@ -100,7 +102,7 @@
 
 
     </main>
-
+    
     <%- include ('partials/footer') %> 
     
 </body>
