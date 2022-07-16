@@ -106,6 +106,10 @@ module.exports = {
     },
 
     carrito: (req, res) => {
+        db.Producto.findAll()
+        .then((products)=>{
+
+        
         const userId = +req.params.id
         db.Usuario.findOne({ where: { id: req.session.id}})
         .then((user)=>{ 
@@ -115,10 +119,12 @@ module.exports = {
                 titulo: "Carrito de compras",
                 css:('carrito.css','') ,
                 session: req.session,
-                user
+                user,
+                products,
+                
 
             })
-    })}).catch((error)=> {res.send(error)})
+    })})}).catch((error)=> {res.send(error)})
 },
 
     userProfile: (req, res) => {

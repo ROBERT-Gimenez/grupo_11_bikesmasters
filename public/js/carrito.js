@@ -53,8 +53,21 @@ elimina.onclick = function() {
 }
 window.addEventListener("load", () => {
     //if (localStorage.setItem("nombreUsuario" == null)){//
-    let nombre = prompt ("INGRESA TU NOMBRE")
-    document.querySelector(".bienvenida").innerHTML = "HOLA COMO ESTAS " +  nombre;
-    localStorage.setItem("nombreUsuario", nombre);
+   
    // }
 })
+
+let productos = document.querySelectorAll('.idtarget')
+let carrito = localStorage.getItem('carrito')
+let carr2 ="";
+Object.values(carrito).forEach(item => {carr2 += item});
+
+
+productos.forEach(product=>{
+    let product_id = product.getAttribute("target");
+    let pedidos = carrito.filter(item => {product_id == item});
+    if(pedidos.length == 0){
+        product.style.dispaly="none"
+    }
+    }
+   )

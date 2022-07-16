@@ -42,18 +42,23 @@
                         </thead>
                         
                      <tbody>
+
+                        
+                         <% products.forEach(product => { %>
+                             
+                            
                          
-                         <tr>
+                         <tr class="idtarget" target="<%= product.id  %>">
                              <td>
                                  <div class="product-img">
                                      <div class="img-prdct">
-                                         <img src="/images/products/Bici-niño-1.png" alt="">
+                                         <img src="/images/products/<%= product.image  %>" alt="">
 
                                      </div>
                                  </div>
                              </td>
                              <td>
-                                <P class="text-primary">Bici para niño</P>
+                                <P class="text-primary"><%= product.name %></P>
                              </td>
                              <td>
                                  <div class="button-container">
@@ -66,41 +71,15 @@
                                  </div>
                              </td>
                              <td>
-                                 <input type="text" value="3395" class="price form-control" disabled>
+                                 <input type="text" value="<%= product.price  %>" class="price form-control" disabled>
                              </td>
                              <td align ="right">$ <span id="amount" class="amount">$0</span>
 
                              </td>
                          </tr>
-                         <tr>
-                            <td>
-                                <div class="product-img">
-                                    <div class="img-prdct">
-                                        <img src="/images/products/GAFAS.jpg" alt="">
-
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <p class="text-primary">Gafas de sol</p>
-                            </td>
-                            <td>
-                                <div class="button-container">
-                                    <button class="cart-qty-plus"
-                                    type="button" value="+">+</button>
-                                    <input type="text" name="qty"
-                                    min="0" class="qty form-control" value="0" />
-                                    <button class="cart-qty-minus" type="button" value="-"
-                                    >-</button>
-                                </div>
-                            </td>
-                            <td>
-                                <input type="text" value="4050" class="price form-control" disabled>
-                            </td>
-                            <td align="right">$ <span id="amount" class="amount">0</span>
-
-                            </td>
-                        </tr>
+                        
+                         <% }) %>
+                         
                      </tbody>
                      <tfoot>
                          <tr>

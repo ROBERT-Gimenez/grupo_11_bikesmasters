@@ -3,7 +3,7 @@
 
     <%- include ('partials/head') %> 
     <script src="/js/index.js" defer></script>
-   
+   <script src="/js/homePeticion.js" defer></script>
 <body>
     <%- include ('partials/header') %> 
     
@@ -29,7 +29,7 @@
                                     <%= product.discount + '% 0FF' %>
                                 </p>
                             <% } %>
-                            <button id="btn_agregar">Agregar</button>
+                            <button id="btn_agregar" target="<%= product.id  %>">Agregar</button>
                         </div>
                         <div class="product-description">
                             <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
