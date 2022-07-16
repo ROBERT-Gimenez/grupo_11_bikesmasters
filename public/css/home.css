@@ -212,7 +212,7 @@ main section.categorias div.img-link span a {
         color: white;
     }
      div.img-producto img:hover{
-        transform: scale(1.2);
+        transform: scale(1.1);
         transition: 0.3s ease-in;
         background: transparent ;
     } 
@@ -220,12 +220,13 @@ main section.categorias div.img-link span a {
 }
 #btn_agregar{
     position: relative;
-    left: 9rem;
-    padding: 2px 0.5rem;
+    left: 60%;
+    padding: 4px 1rem;
     border-radius: 20px;
     border: none;
     bottom: 1rem;
-    box-shadow: 1px 1px 10px rgb(0 0 0 / 30%);
+    box-shadow: 1px 1px 10px rgb(8 7 7);
+    background: linear-gradient(45deg , #b8bfbe, #ff2e00);
 }
 #btn_agregar:hover{
 cursor: pointer;
