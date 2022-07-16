@@ -59,12 +59,14 @@
                                     <%= product.discount + '% 0FF' %>
                                 </p>
                             <% } %>
+                            <button id="btn_agregar">Agregar</button>
                         </div>
                         <div class="product-description">
                             <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
                                 <% if (product.discount> 0) {%>
                                     <span class="precio">$<%= toThousand(product.price)%></span>
                                 <% } %>
+                                
                             </p>
                             <p><%- product.name %></p>
                         </div>

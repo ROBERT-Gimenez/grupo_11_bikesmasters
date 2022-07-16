@@ -47,9 +47,14 @@
         <label for="menu"><i class="fas fa-bars"></i>  </label>
         <ul>
             <% if (typeof session.user != "undefined") { %>
+            <% if (session.user.rol == 2) { %>
+                <li id="app_nav"><a href="/admin">Admin</a></li>
+                    <% } %>
+                    
             <li id="app_nav"><a href="/usuario/perfil/<%= session.user.id %>">Perfil</a></li>
             <li id="app_nav"><a href="/usuario/logout">Cerrar Sesion</a></li>
             <li id="app_nav"><a href="/usuario/carrito">Carrito</a></li>
+            
             <% }else{ %> 
             <li id="app_nav"><a href="/usuario/login">Iniciar session</a></li>
             <% } %> 

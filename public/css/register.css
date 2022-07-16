@@ -177,6 +177,7 @@ span.admin a.admin {
 /* Tablet */
 
 @media (min-width: 768px) {
+    
     .register #head-logo {
         margin: 30px auto;
         width: 75%;
@@ -206,6 +207,9 @@ span.admin a.admin {
         width: 100%;
         padding: 10px;
         font-size: 1.2rem;
+        position: relative;
+        top: 1.4rem
+
     }
     /* Estilos vista de previa de avatar */
 
@@ -260,6 +264,10 @@ span.admin a.admin {
 /* Desktop */
 
 @media (min-width: 1024px) {
+    select#localidad{
+        position: relative;
+        right: 25%;
+    }
     h2 {
         font-size: 2rem;
     }
