@@ -59,15 +59,18 @@ window.addEventListener("load", () => {
 
 let productos = document.querySelectorAll('.idtarget')
 let carrito = localStorage.getItem('carrito')
-let carr2 ="";
-Object.values(carrito).forEach(item => {carr2 += item});
 
 
+
+/* for (let i = 0 ; i < carrito.length ; i++){ */
 productos.forEach(product=>{
     let product_id = product.getAttribute("target");
-    let pedidos = carrito.filter(item => {product_id == item});
-    if(pedidos.length == 0){
-        product.style.dispaly="none"
+    console.log(product_id)
+    if(carrito.includes(product_id)){
+        product.style.display="block"
+    }else{
+        product.style.display="none"
     }
-    }
-   )
+    })
+ 
+
