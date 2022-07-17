@@ -1,4 +1,4 @@
-$(document).ready(function(){
+/* 
     update_amounts();
 $('.qty, .pice').on('keyup keypress blur change',function(e){
     update_amounts();
@@ -25,7 +25,7 @@ var incrementQty = plusBtn.click (function() {
     var $n = $(this)
     .parent(".button-container")
     .find(".qty");
-    $n.val(Number($n.val())+1 );
+    
     update_amounts();
 });
 var decrementQty = minusBtn.click(function(){
@@ -55,22 +55,36 @@ window.addEventListener("load", () => {
     //if (localStorage.setItem("nombreUsuario" == null)){//
    
    // }
-})
+}) */
 
-let productos = document.querySelectorAll('.idtarget')
+let productos = document.querySelectorAll('tr.idtarget')
 let carrito = localStorage.getItem('carrito')
+let select = document.querySelectorAll('select')
+let Precios = document.querySelectorAll('.colum-price')
 
+select.forEach(select => {
+    select.style.color="red"
+   select.addEventListener('click' , (e) => {
+    let option = select.lastElementChild
+    console.log(option)
+    console.log(option.getAttribute("value"))
+    console.log(option.getAttribute("value" * price))
+   })
+})
 
 
 /* for (let i = 0 ; i < carrito.length ; i++){ */
 productos.forEach(product=>{
     let product_id = product.getAttribute("target");
-    console.log(product_id)
+   /*  console.log(product_id) */
     if(carrito.includes(product_id)){
-        product.style.display="block"
+        product.style.display="table-row;"
     }else{
         product.style.display="none"
     }
     })
  
+/* ------------------------------------------- */
+
+
 

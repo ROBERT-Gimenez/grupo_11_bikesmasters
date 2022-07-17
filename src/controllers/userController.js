@@ -1,4 +1,5 @@
 const { validationResult } = require('express-validator');
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 let bcrypt =require('bcryptjs');
 const db =require('../database/models');
 const fs = require('fs');
@@ -121,6 +122,7 @@ module.exports = {
                 session: req.session,
                 user,
                 products,
+                toThousand
                 
 
             })
