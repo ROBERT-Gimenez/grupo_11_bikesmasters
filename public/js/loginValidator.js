@@ -17,6 +17,7 @@ window.addEventListener('load', () => {
     let $passwordError = qs('#error_pass')
     let $form = qs('#form')
     let $customError = qs('#error_custom')
+    let errors
 
     $email.addEventListener('blur', (e) => {
         switch (true) {
@@ -50,6 +51,12 @@ window.addEventListener('load', () => {
                 $passwordError.classList.add("error-message")
                 errors = true
                 break;
+            case $password.value.length < 8:
+                console.log($password.value.length);
+                $passwordError.innerHTML = "*La contraseña tiene que tener un mínimo de 8 caracteres";
+                $passwordError.classList.add("error-message")
+                errors = true
+                break;
             case !regExPass.test($password.value):
                 $passwordError.innerHTML = "*Recuerde: La contraseña debe tener entre 8 y 12 caracteres, debe incluir al menos una mayúscula y un número."
                 $passwordError.classList.add("error-message")
@@ -71,23 +78,37 @@ window.addEventListener('load', () => {
 
     $form.addEventListener("submit", function (event) {
         event.preventDefault()
-        let elementsForm = this.elements
-        console.log(elementsForm)
-        let errors = false
-
-        for (let i = 0; i < elementsForm.length - 1; i++) {
-            if(elementsForm[i].value == ""
-            && elementsForm[i].recordar !== "recordar"
-            && elementsForm[i].boton !== "boton"
-            || elementsForm[i].classList.contains('error-message')) {
-                elementsForm[i].classList.remove('input-style')
-                elementsForm[i].classList.add('error-view')
-                $customError.innerHTML = "Complete los campos"
-                $customError.classList.add("error-message")
+        
+        switch (true) {
+            case $email.value.length === 0:
+                $emailError.innerHTML = "*Campo requerido";
+                $emailError.classList.add("error-message")
                 errors = true
-                console.log(elementsForm[i])
-            }
-            
+                break;
+            case !regExEmail.test($email.value):
+                $emailError.innerHTML = "*Introduzca un email inválido"
+                $emailError.classList.add("error-message")
+                errors = true
+                break;
+            case !$password.value.trim():
+                $passwordError.innerHTML = "*Campo requerido";
+                $passwordError.classList.add("error-message")
+                errors = true
+                break;
+            case $password.value.length < 8:
+                console.log($password.value.length);
+                $passwordError.innerHTML = "*La contraseña tiene que tener un mínimo de 8 caracteres";
+                $passwordError.classList.add("error-message")
+                errors = true
+                break;
+            case !regExPass.test($password.value):
+                $passwordError.innerHTML = "*Recuerde: La contraseña debe tener entre 8 y 12 caracteres, debe incluir al menos una mayúscula y un número."
+                $passwordError.classList.add("error-message")
+                errors = true
+                break;
+            default:
+                errors = false
+                break;
         }
 
         if(!errors) {
