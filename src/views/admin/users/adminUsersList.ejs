@@ -1,0 +1,53 @@
+<html lang="en">
+
+    <%- include('../../partials/admin/headAdmin') %> 
+
+<body>
+
+    <%- include('../../partials/admin/headerAdmin') %> 
+
+    <main>   
+        <table>
+            <caption>Lista usuarios registrados</caption>
+            <thead>
+                <tr>
+                    <th scope="col" class="no-mobile">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col" class="no-mobile">Email</th>
+                    <th scope="col" class="no-mobile">Telefono</th>
+                    <th scope="col" class="colum-stock">Localidad</th>
+                    <th scope="col" class="colum-price">Provincia</th>
+                    <th scope="col" class="colum-price">Rol</th>
+                    <th scope="col">Detalles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(user => { %>
+                  <tr>
+                    <th scope="row" class="no-mobile"><%= user.id %></th>
+                    <td><%= user.name %></td>
+                    <td class="no-mobile"><%= user.email %></td>
+                    <td class="no-mobile"><%= locals.users && user.telefono !== null? user.telefono : "Sin teléfono disponible"%></td>
+                    <td class="colum-price"><%= locals.users && user.direccion !== null ? user.direccion.localidad : "Sin información disponible" %></td>
+                    <td class="colum-stock"><%= locals.users && user.direccion !== null ? user.direccion.provincia : "Sin información disponible" %></td>
+                    <td class="no-mobile"><%= user.UserRol.nombre %></td>
+                    <td>
+                      <a href="/admin/usuario/detalle/<%= user.id  %>" class="btn btn-success">
+                        <i id="edit" class="fa-solid fa-pen-to-square"></i>
+                      </a>
+                      <form action="/admin/<%= user.id %>?_method=DELETE" method="post">
+                        <button class="erase" type="submit">
+                          <i id="trash" class="fa-solid fa-trash-can"></i>
+                        </button>
+                      </form>
+                    </td>
+                  </tr>
+                <% }) %>  
+              </tbody>
+        </table>
+    </main>
+
+    <%- include('../../partials/admin/footerAdmin') %> 
+
+</body>
+</html>

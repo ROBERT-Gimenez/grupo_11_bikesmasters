@@ -1,33 +1,41 @@
 const express = require('express');
 const router = express.Router();
-const adminController = require('../../controllers/admin/adminController');
+
+/* Controladores */
+const adminProductController = require('../../controllers/admin/adminProductController');
+const adminUsersController = require('../../controllers/admin/adminUsersController');
+const categoryController = require('../../controllers/categoryController');
+
+/* Middlewares */
 const uploadFile = require('../../middlewares/imageProductMiddleware');
 const userSessionCheck = require('../../middlewares/userSessionCheck');
 const adminSession = require('../../middlewares/adminSession');
-const categoryController = require('../../controllers/categoryController');
-const productValidator = require('../../validations/productValidator')
-const CategoriValidation = require('../../validations/CategoriValidation')
 
-router.get('/', userSessionCheck, adminSession, adminController.list);
+/* Validaciones */
+const productValidator = require('../../validations/productValidator');
+const CategoriValidation = require('../../validations/CategoriValidation');
 
-/* Get admin views */
-router.get('/usuarioadmin', adminController.userAdmin);
+router.get('/', userSessionCheck, adminSession, adminProductController.list);
 
 router.get('/categoria/:id', userSessionCheck, adminSession, categoryController.CategoryAdmin)
 
-/* Routes productos */
-// Vista de creacion
-router.get('/producto/agregar', userSessionCheck, adminSession, adminController.productAdd);
-// Carga de producto
-router.post('/producto/agregar', uploadFile.single('image'), productValidator, adminController.productCreate);
-// Vista edición de producto
-router.get('/producto/editar/:id', userSessionCheck, adminSession, adminController.productEdit);
-// Carga actualizaciones
-router.put('/producto/editar/:id', uploadFile.single('image'), productValidator, userSessionCheck, adminSession, adminController.productUpdate);
-// Elimina producto
-router.delete('/:id', adminController.productDelete); 
 
-/* Routes categorías */
+/******** Routes productos ************/
+
+// Vista de creacion
+router.get('/producto/agregar', userSessionCheck, adminSession, adminProductController.productAdd);
+// Carga de producto
+router.post('/producto/agregar', uploadFile.single('image'), productValidator, adminProductController.productCreate);
+// Vista edición de producto
+router.get('/producto/editar/:id', userSessionCheck, adminSession, adminProductController.productEdit);
+// Carga actualizaciones
+router.put('/producto/editar/:id', uploadFile.single('image'), productValidator, userSessionCheck, adminSession, adminProductController.productUpdate);
+// Elimina producto
+router.delete('/:id', adminProductController.productDelete); 
+
+
+/******** Routes categorías ***********/
+
 // Muestra todas las categorías
 router.get('/categorias', userSessionCheck, adminSession, categoryController.allCategories)
 // Vista edición de categoría
@@ -37,11 +45,20 @@ router.put('/categorias/:id', userSessionCheck,CategoriValidation, adminSession,
 // Vista de creación de una categoría
 router.get('/categorias/crear', userSessionCheck, adminSession, categoryController.createCategory)
 // Crea la categoría
-router.post('/categorias/crear',/* It's a middleware that checks if the category name is unique. */
-CategoriValidation, categoryController.uploadCategoy)
+router.post('/categorias/crear', CategoriValidation, categoryController.uploadCategoy)
 // Elimina categoría
 router.delete('/categorias/eliminar/:id', userSessionCheck, adminSession, categoryController.deleteCategory)
 
 
+/******* Routes users **********/
+
+// Muestra todos los usuarios
+router.get('/usuarios', adminUsersController.list)
+// Detalle de usuario y edicion de usuario
+router.get('/usuario/detalle/:id', adminUsersController.userDetail)
+// Edicion de usuario
+router.put('/usuario/detalle/:id', adminUsersController.userUpdate)
+// Dar de baja usuario
+/* router.post('/usuario/baja/:id', adminUsersController.userDown) */
 
 module.exports = router;

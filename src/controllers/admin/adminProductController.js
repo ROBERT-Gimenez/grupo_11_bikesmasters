@@ -168,22 +168,6 @@ module.exports = {
     /* Recibe los datos del producto a buscar */
     productSearch: (req, res) => {
 
-    },
-    userAdmin:(req , res , next) =>{
-        if(req.session.user){
-            let user = users.find(user => user.id === +req.params.id);
-            let adminuser = req.session.user.rol = 'ADMIN';
-            writeUsers(users);
-    
-                res.render('admin/adminIndex', {
-                    products,
-                    user,
-                    toThousand,
-                    categories,
-                    session: req.session,
-                    adminuser,
-                    css:'adminIndex.css'
-       
-    })}}
+    }
 
 }
