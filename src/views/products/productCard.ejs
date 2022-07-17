@@ -5,70 +5,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
-    <link rel="stylesheet" href="/css/carrito.css">
-    <s rel="stylesheet" href="/js/carrito.js" defer>
-<!--     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
+     <link rel="stylesheet" href="/css/carrito.css"> 
+     <script src="/js/carrito.js" defer></script>
+        <%- include('../partials/head') %> 
 
-<script src="https://kit.fontawesome.com/adc0842e66.js" crossorigin="anonymous"></script>
-<%- include('../partials/head')  %>
     <title>Tienda</title>
 </head>
 
 <body>
-     <%- include ('../partials/header') %> 
-      
-     <main>
-       
-        <table>
-            <thead>
-                <tr>
-                    <th scope="col">Producto</th>                                             
-                    <th scope="col" class="colum-price">Precio</th>
-                    <th scope="col" class="colum-price">Cantidad</th>
-                    <th scope="col" class="colum-price">Total</th>
-                    <th scope="col" class="colum-price">Operacion</th>
-                   
-                </tr>
-            </thead>
-            <tbody>
-                <% products.forEach(product => { %>
-                  <tr class="idtarget" target="<%= product.id %>">
-                    <td><img src="../../../images/products/<%= product.image %>" alt="" id="imgProduct"><%= product.name %></td>
-                    
-                   
-                    
-                    <td class="colum-price">$<%- toThousand(product.price) %></td>
-                    <td class="colum-stock"><div class="amount">
-                        <label class="cantidad" for="amount">Cantidad</label>
-                        <select class="cantidad" name="amount" id="">
+    <%- include('../partials/header') %> 
+    <main class="main-carrito">
+        <div class="contenedor">
+            <div class="detalle-pedido">
+                <section class="section-pedidos">
+                    <div class="info-pedido">
+                        <p><b>Producto</b></p>
+                        <p><b>Precio</b></p>
+                        <p><b>Cantidad</b></p>
+                        <p><b>Subtotal</b></p>
+                        <p><b>Eliminar</b></p>
+                    </div>
+                    <hr>
+                    <% products.forEach(product => { %>
+                    <div class="producto-pedido" target="<%= product.id %>">
+                        <img src="../../../images/products/<%= product.image %>" class="img-carrito-producto">
+                        <p class="price"><%- toThousand(product.price) %></p>
+                        <select class="select-cantidad-de-productos" name="amount" id="">
                             <% for (let i= 1; i <= product.stock; i++) { %> 
                             <option value="<%= i %>"><%= i %></option>
                             <% } %> 
                         </select>
-                        <span class="cantidad"><%= product.stock %>Disponibles</span>
-                    </div></td>
+                        <p class="subtotal">SUMA TOTAL</p>
+                        <button class="delete" target="<%= product.id %>"><i class="fa-solid fa-trash"></i></button>                  
+                    </div>
                     
+                    <% }) %>  
+                </section>
+
+                <div class="botones-carrito">
+                    <button class="boton-rosa" id="vaciar-carrito">Vaciar carrito</button>
+                    <button class="boton-rosa"><a href="/">Seguir Mirando</a></button>
+                </div>
+            </div>
+
+            <div class="detalle-subtotal">
+                <section class="subtotal-section">
+                    <div class="subtotal-div-info">
+                        <h2><b>Mi compra</b></h2>
+                        <p><b>Subtotal: $</b></p>
+                        <button class="boton-rosa">Finalizar Compra</button>
+                    </div>
                     
-                    
-                    <td>
-                     
-                      
-                    </td>
-                  </tr>
-                <% }) %>  
-              </tbody>
-        </table>
+                </section>
+
+            </div>
+
+        </div> 
+
     </main>
-              
-   <!--  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.sj"></script> -->
-    <script src="/js/carrito.js"></script>
-
-    <!-- <%- include('../partials/footer') %>  -->
-
 </body>
-
-<script src="/js/carrito.js"></script>
 
 </html>

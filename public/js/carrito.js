@@ -57,18 +57,18 @@ window.addEventListener("load", () => {
    // }
 }) */
 
-let productos = document.querySelectorAll('tr.idtarget')
+let productos = document.querySelectorAll('div.producto-pedido')
 let carrito = localStorage.getItem('carrito')
 let select = document.querySelectorAll('select')
 let Precios = document.querySelectorAll('.colum-price')
-
+let btnVaciar = document.querySelector('button#vaciar-carrito')
+let btnDelete = document.querySelectorAll('button.delete')
 select.forEach(select => {
     select.style.color="red"
    select.addEventListener('click' , (e) => {
     let option = select.lastElementChild
     console.log(option)
     console.log(option.getAttribute("value"))
-    console.log(option.getAttribute("value" * price))
    })
 })
 
@@ -82,9 +82,26 @@ productos.forEach(product=>{
     }else{
         product.style.display="none"
     }
-    })
- 
+    
+ })
 /* ------------------------------------------- */
+btnVaciar.addEventListener('click' , () => {
+    productos.forEach(product=>{
+        product.style.display="none"})
+})
+
+btnDelete.forEach(btn => {
+    btn.addEventListener('click' , (e) => {
+    productos.forEach((product) => {if(product.getAttribute("target") == btn.getAttribute("target")){
+        product.style.display="none"
+    }});
+   
+    })
+})
+
+    
+    
+
 
 
 

@@ -5,8 +5,10 @@ a{
     text-transform: uppercase;
 }
 header{
-    
+    box-shadow: -5px 5px 10px #637c94;
+    margin-bottom: 2rem;
     background-color: white;
+    padding-bottom: 1rem;
 }
 div.botones,
 img.carrito{
@@ -443,6 +445,7 @@ header nav input{
 .dark-mode{
     color: white;
     background-color: #292726;
+    background-image: none;
 /*     background-color: #5d5554;*/
 }
 .darck-mode_card{

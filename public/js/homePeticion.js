@@ -29,18 +29,18 @@ let carrito = [];
  */
 
 
-
+                localStorage.setItem('carrito', JSON.stringify(carrito));
                
                 btns_Agregar.forEach(btn_Agregar => {
                    
                 
 
                     btn_Agregar.addEventListener('click' ,(e) =>{
-                          function guardarCarritoEnLocalStorage() {
+                          
+                        function guardarCarritoEnLocalStorage() {
                    
                             localStorage.setItem('carrito', JSON.stringify(carrito));
                             }
-                       
                             function cargarCarritoDeLocalStorage() {
                                 // ¿Existe un carrito previo guardado en LocalStorage?
                                 if (localStorage.getItem('carrito') !== null) {
