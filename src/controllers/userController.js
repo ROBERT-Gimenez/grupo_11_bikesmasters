@@ -382,8 +382,8 @@ module.exports = {
                     errors: errors.mapped(),
                     session: req.session,
                     old: req.body
+                })
+            })
         })
-    })
-})
-}
-    }}
+        }
+}}
