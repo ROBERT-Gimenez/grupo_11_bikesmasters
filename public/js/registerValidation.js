@@ -173,7 +173,6 @@ $terms.addEventListener('click', function (){
 form.addEventListener("submit", function (event) {
     event.preventDefault()
     let elementsForm = this.elements
-    console.log(elementsForm)
     let errors = false
 
     for (let i = 0; i < elementsForm.length - 1; i++) {
@@ -184,6 +183,9 @@ form.addEventListener("submit", function (event) {
             elementsForm[i].classList.add('invalido')
             invalidInput(elementsForm[i].nextElementSibling)
             submitError.innerHTML = "Verifique los Datos"
+            submitError.style.color="red"
+            
+            
             errors = true
         }else{elementsForm[i].style.boxShadow = "none"
 
@@ -194,6 +196,7 @@ form.addEventListener("submit", function (event) {
     if(!errors) {
         form.submit()
     } else {
+
         alert("Error , Verifique los Datos Nuevamente")
         form.style.border= "4px solid #ff2e008c;"
 
