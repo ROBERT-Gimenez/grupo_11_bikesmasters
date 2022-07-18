@@ -381,7 +381,7 @@ header nav input{
     }
     div button.carrito {
         display: flex;
-        margin-right: 1.2rem;
+        margin-right:none;
         background-color: lightgray;
         
     }
@@ -438,6 +438,7 @@ header nav input{
     }
     div button.carrito{
         margin-right: 3rem;
+        margin-right: 1.2rem;
     }
     
     

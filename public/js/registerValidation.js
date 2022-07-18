@@ -94,7 +94,7 @@ $password.addEventListener('blur', function(){
 /* >> validacion de Password2 << */
 $password2.addEventListener('blur', function(){
     switch (true) {
-        case !$password2.value.trim():
+        case $password2.value.length == "":
             $password2Error.innerHTML = 'Reingresa tu contraseña'
             $password2.classList.add('invalido')
             break;
@@ -114,7 +114,7 @@ $password2.addEventListener('blur', function(){
 spanTerm.addEventListener('mouseover', function (){
     if(!$terms.classList.contains('valido')){
         $terms.classList.add('invalido')
-        $termsError.innerHTML = "Acepata Los Terminos?"
+        $termsError.innerHTML = "Acepta Los Terminos?"
     }else{
         $terms.classList.remove('invalido')
         $termsError.innerHTML = ""
