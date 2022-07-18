@@ -193,13 +193,27 @@ tbody td input:focus {
     outline: none;
 }
 
-tbody td form button#ok {
+tbody td form {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+tbody td form select {
+    border: none;
+    background-color: inherit;
+    padding: 4px;
+    border-bottom: thin solid #FF2E00;
+    margin-right: 5px;
+}
+
+tbody td form button.ok {
     border: none;
     text-align: center;
     background-color: #FF2E00;
     color: white;
     padding: 5px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 /* Footer */

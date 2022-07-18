@@ -24,7 +24,7 @@
                     <% if(locals && locals.categoryId && categoryId.id === category.id) { %> 
                     <form action="/admin/categorias/<%= categoryId.id %>?_method=PUT" method="post" id="Form-Category">
                         <input type ="text" name ="nombre" id="IdCategori" value="<%= category.nombre %>" style="border-bottom: thin solid rgb(246, 87, 1);">
-                        <button type="submit" id="ok">¿OK?</button>
+                        <button type="submit" class="ok">¿OK?</button>
                     </form>
                     <% } else { %>
                         <input type="text" value="<%= category.nombre %>" disabled> 

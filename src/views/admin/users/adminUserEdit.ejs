@@ -30,7 +30,21 @@
                     <td class="no-mobile"><%= locals.users && user.telefono !== null? user.telefono : "Sin teléfono disponible"%></td>
                     <td class="colum-price"><%= locals.users && user.direccion !== null ? user.direccion.localidad : "Sin información disponible" %></td>
                     <td class="colum-stock"><%= locals.users && user.direccion !== null ? user.direccion.provincia : "Sin información disponible" %></td>
-                    <td class="no-mobile"><%= user.UserRol.nombre %></td>
+                    <td class="no-mobile">
+                      <% if(locals && locals.userEdit && userEdit.id === user.id) { %> 
+                      <form action="/admin/usuarios/<%= user.id %>?_method=PUT" method="post">
+                        <select name="rol" id="rol">
+                          <option value="<%= userEdit.UserRol.id %>" hidden><%= userEdit.UserRol.nombre %> </option>
+                          <% rols.forEach(rol => { %>
+                            <option value="<%= rol.id %>"><%= rol.nombre %></option>
+                          <% }) %>
+                        </select>
+                        <button type="submit" class="ok">Asignar</button>
+                      </form>
+                      <% } else { %>
+                        <%= user.UserRol.nombre %>  
+                      <% } %>  
+                    </td>
                     <td>
                       <a href="/admin/usuarios/detalle/<%= user.id %>" class="btn btn-success">
                         <i id="edit" class="fa-solid fa-pen-to-square"></i>
