@@ -16,9 +16,10 @@ const indexRouter = require('./routes/indexRouter');
 const productRouter = require('./routes/productRouter');
 const userRouter = require('./routes/userRouter');
 const adminRouter = require('./routes/admin/adminRouter');
+const apiAdmin = require('./routes/Apis/ApiAdminRoutes')
 
 //>>API ROUTES<<//
-const apiProductRouter =require('./routes/Apis/apiProductRouter');
+
 
 
 /* Views config */
@@ -41,6 +42,7 @@ app.use(session({
     saveUninitialized: true,
     cookie: {}
 }));
+app.use(express.json());
 app.use(cookieParser());
 app.use(cookieSession);
 
@@ -52,7 +54,10 @@ app.use('/admin', adminRouter);
 
 ///Ruta de APIS///
 
-app.use('/api/producto' , apiProductRouter);
+app.use('/api' , apiAdmin);
+app.use((req, res, next) => {
+    res.status(404).render('not-found')
+})
 
 app.use(express.json());
 

@@ -35,6 +35,39 @@ module.exports = {
                 res.status(200).json(respuesta)
                 })  
             },
-            
-
-}
+            Usuarios : (req, res) => {
+                db.Usuario.findAll()
+                .then((Usuario) => {
+                    let respuesta = {meta :{
+                    status:200,
+                    total:Usuario.length,
+                    url:'/api/Usuario'
+                    }, data:Usuario }
+               
+                    res.status(200).json(respuesta)
+                    }).catch((error) => res.status(400).send(error))
+                
+                
+            },
+             unUsuario : (req, res) => {
+                db.Usuario.findByPk(req.params.id)
+                .then((Usuario) => {
+                    if(Usuario){
+                    let respuesta = {meta :{
+                    status:200,
+                    total:Usuario.length,
+                    url:'/api/Usuario/:id'
+                    }, data:Usuario }
+               
+                    res.status(200).json(respuesta)
+                    }else{ return res.status(404).json({
+                        meta: {
+                            status: 404,
+                            msg: "Not found",
+                        },
+                    });
+                }
+            })
+            .catch((error) => res.status(400).send(error));
+         }
+        }

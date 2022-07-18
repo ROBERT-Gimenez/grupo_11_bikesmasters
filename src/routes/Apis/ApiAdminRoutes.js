@@ -4,9 +4,11 @@ const adminController = require('../../controllers/api/adminController');
 
 
 
-router.get('/', adminController.list);
+router.get('/producto', adminController.list);
 /* router.get('/:id', adminController.detalle); 
  */
 router.get('/categoria', adminController.allCategories); 
+router.get('/Usuario', adminController.Usuarios); 
+router.get('/Usuario/:id', adminController.unUsuario); 
 
 module.exports = router;
