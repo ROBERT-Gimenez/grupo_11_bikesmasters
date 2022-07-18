@@ -120,7 +120,7 @@ small.text-danger {
     font-size: medium;
     letter-spacing: 1px;
     position: relative;
-    bottom: 10%;
+    bottom: 2rem;
 }
 
 small#terms {
