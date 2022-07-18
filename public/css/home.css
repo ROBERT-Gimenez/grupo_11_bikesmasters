@@ -43,7 +43,7 @@ main section article {
     height: 350px;
     background-color: white;
     margin-bottom: 1rem;
-    border: 2px solid rgba(167, 165, 165, 0.356); 
+    border: thin solid rgba(167, 165, 165, 0.356); 
 }
 
 main section article div.img-producto {

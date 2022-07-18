@@ -55,9 +55,9 @@ router.delete('/categorias/eliminar/:id', userSessionCheck, adminSession, catego
 // Muestra todos los usuarios
 router.get('/usuarios', adminUsersController.list)
 // Detalle de usuario y edicion de usuario
-router.get('/usuario/detalle/:id', adminUsersController.userDetail)
+router.get('/usuarios/detalle/:id', adminUsersController.userDetail)
 // Edicion de usuario
-router.put('/usuario/detalle/:id', adminUsersController.userUpdate)
+router.put('/usuarios/:id', adminUsersController.userUpdate)
 // Dar de baja usuario
 /* router.post('/usuario/baja/:id', adminUsersController.userDown) */
 
