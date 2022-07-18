@@ -68,8 +68,13 @@ a#link {
     flex-direction: column;
     gap: 1rem;
 }
-
+input#terms{
+    margin-left: 10px;
+    margin-right: 10px;
+}
 span.terminos {
+    position: relative;
+    top: 5rem;
     text-align: center;
     justify-content: center;
     background-color: white;
