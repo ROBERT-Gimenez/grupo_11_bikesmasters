@@ -19,9 +19,7 @@ body{
 }
 
 P.price{
-    color: white;
-    background: linear-gradient(45deg , #000000, #f0428d);
-    border-radius: 10px;
+    color: black;
 }
 p.subtotal{
     color: white;
@@ -31,7 +29,7 @@ p.subtotal{
 b{
     color: black;
     background: #e91e63;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 header {
     display: flex;
@@ -103,7 +101,7 @@ header nav.menu-barr {
 .section-pedidos{
     border: 0.3px solid black;
     border-radius: 10px;
-    background-color: #e91e63;
+    background-color: #fcfeff;
 }
 
 .info-pedido{
