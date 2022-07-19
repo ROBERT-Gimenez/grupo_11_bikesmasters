@@ -36,7 +36,8 @@ button.erase i#trash {
 }
 
 th#add{
-    background-color: #FF2E00;;
+    background-color: #FF2E00;
+    padding: inherit;
 }
 
 header {
@@ -61,10 +62,13 @@ header div img {
 
 header .div-titulo {
     display: flex;
-    height: 100%;
-    align-items: center;
     justify-content: center;
-    margin-right: 2rem;
+    position: absolute;
+    top: 0;
+    right: 4rem;   
+}
+header .div-titulo h3{
+    text-align: center;
 }
 
 /* ////////////////////////// */
@@ -196,6 +200,7 @@ tbody td input:focus {
 tbody td form {
     display: flex;
     justify-content: space-evenly;
+    flex-direction: column-reverse;
 }
 
 tbody td form select {
@@ -390,4 +395,18 @@ img#imgProduct{
     nav#category ul{
         left: 26%;
         }
+    
+    header div img{ 
+    position: relative;
+    bottom: 1rem;
+    }
+    header nav.menu-barr li.menu{
+        position: relative;
+        right: 1.5rem;
+        padding: 5px;
+    
+    }
+    header .div-titulo{
+        right: 0;
+    }
 }

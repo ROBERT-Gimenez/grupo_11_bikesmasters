@@ -84,6 +84,15 @@ productos.forEach(product=>{
     }
     
  })
+
+ /* ------------------------------------------ */
+ productos.forEach((product)=>{
+    product.addEventListener('click' , (E) =>{ 
+        textPrice=product.nextSibling;
+        select=textPrice.nextSibling;
+        console.log(select.target)
+    })
+ })
 /* ------------------------------------------- */
 btnVaciar.addEventListener('click' , () => {
     productos.forEach(product=>{
