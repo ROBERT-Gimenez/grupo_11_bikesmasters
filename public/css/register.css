@@ -2,11 +2,15 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image: url('/images/BIKE.jpg'); 
     font-family: 'Nunito Sans', sans-serif;
     background-repeat: no-repeat;
     background-attachment: fixed; 
 }
+.LoginVideo{
+    position: absolute;
+    z-index: -1;
+    top: 10rem;
+  }
 
 a#link {
     padding: 5px;
@@ -27,6 +31,10 @@ a#link {
 }
 
 .register #head-logo h2 {
+    font-size: 52px;
+    background: linear-gradient(270deg , #cf4927 , #da069a );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     padding: 10px;
 }
 
@@ -201,10 +209,16 @@ span.admin a.admin {
 
 /* Tablet */
 
-@media (min-width: 768px) {
+@media (min-width: 700px) {
     body{
         background-size: cover;
         background-attachment: inherit; 
+    }
+    .LoginVideo{
+        top: 6rem;
+      }
+      .register #head-logo h2 {
+        font-size: 62px;
     }
     .register #head-logo {
         margin: 30px auto;

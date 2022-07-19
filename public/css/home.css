@@ -3,7 +3,12 @@
 
 
 /* MAIN */
-
+body{
+    
+    width: 100%;
+    background: linear-gradient(90deg , #ec2a65, #ff2e00);
+    
+}
 main .slider {
     display: none;
 }
@@ -13,7 +18,7 @@ main .contenedor-banner{
 }
 
 main {
-    background-color: white;
+    background-color: transparent;
 }
 
 main.home a {
