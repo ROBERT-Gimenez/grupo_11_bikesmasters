@@ -327,7 +327,7 @@ span.admin a.admin {
 
     .register .form-register {
         flex-wrap: wrap;
-        width: 60%;
+        /* width: 60%; */
         display: flex;
         gap: 2rem;
         justify-content: center;
@@ -363,6 +363,7 @@ span.admin a.admin {
         margin-left: 6px;
     }
     
+    
 }
 
 /* Fin desktop */
@@ -388,8 +389,8 @@ span.admin a.admin {
     outline: rgb(237, 0, 0);
 }
 main{
-/*     height: 100vh; */
-    margin-top: -2rem;
+    margin-top: -3.3rem;
+   
 }
 @media(max-width:450px){
     body{
