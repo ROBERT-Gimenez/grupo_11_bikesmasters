@@ -132,6 +132,7 @@
 }
 section.form-container.login a{
   color: blue;
+  -webkit-text-stroke: medium;
 }
 form div.btn-container{
     flex-direction: column-reverse;
@@ -177,7 +178,7 @@ div.google button:hover{
   font-family: sans-serif;
   padding: 3px;
   color: red;
-  font-weight: 400;
+  font-weight: 800;
   font-size: 14px;
   font-style: italic;
   letter-spacing: 1px;
