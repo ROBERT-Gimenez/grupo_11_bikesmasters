@@ -17,6 +17,7 @@ window.addEventListener('load', () => {
     $menues.forEach(menu => {
         menu.addEventListener('mouseover', function() {
             menu.style.boxShadow = "0px 1px 2px 0px rgb(241 114 5)"
+            menu.style.zIndex = "1"
             menu.children[0].classList.remove('options')
             menu.children[0].classList.add('show-options')
         })
@@ -24,6 +25,7 @@ window.addEventListener('load', () => {
     $menues.forEach(menu => {
         menu.addEventListener('mouseout', function() {
             menu.style.boxShadow = "0px 3px 8px -8px"
+            menu.style.zIndex = "0"
             menu.children[0].classList.remove('show-options')
             menu.children[0].classList.add('options')
         })
@@ -31,7 +33,7 @@ window.addEventListener('load', () => {
 
     $optionLists.forEach(option => {
         option.addEventListener('mouseover', () => {
-            option.style.boxShadow = "0px 5px 0px -4px rgb(241 114 5)"
+            option.style.boxShadow = "0px 5px 0px -4px rgb(241 114 5)";
         })
     })
 

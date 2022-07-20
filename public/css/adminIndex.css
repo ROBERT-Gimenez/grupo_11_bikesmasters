@@ -42,15 +42,16 @@ th#add{
 
 header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    height: 100px;
+/*     height: 100px; */
     width: 100%;
     border-bottom: thin solid lightgrey;
 }
 
 header .div-logo {
-    width: 170px;
+/*     width: 170px; */
     height: 100%;
 }
 
@@ -63,9 +64,10 @@ header div img {
 header .div-titulo {
     display: flex;
     justify-content: center;
-    position: absolute;
+    margin: 10px auto 40px;
+/*     position: absolute;
     top: 0;
-    right: 4rem;   
+    right: 4rem;    */
 }
 header .div-titulo h3{
     text-align: center;
@@ -81,10 +83,11 @@ ul, li {
 
 header nav.menu-barr {
     display: flex;
-    width: 80%;
-    height: 50px;
+    width: 100%;
     justify-content: space-evenly;
-    margin: 43px auto 0;
+    order: 1;
+/*     height: 50px; */
+/*     margin: 43px auto 0; */
 }
 
 header nav.menu-barr li.menu {
@@ -92,7 +95,7 @@ header nav.menu-barr li.menu {
     color: black;
     padding: 15px;
     height: fit-content;
-    width: 110px;
+/*     width: 110px; */
     border: none;
     border-radius: 5px;
 /*     box-shadow: 0px 3px 8px -8px; */
@@ -219,6 +222,16 @@ tbody td form button.ok {
     padding: 5px;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.actions__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.actions__buttons > a {
+    width: 30px;
 }
 
 /* Footer */
@@ -372,6 +385,28 @@ img#imgProduct{
 
 }
 
+@media(min-width:768px){
+    header {
+        flex-direction: row;
+        height: 100px;
+    }
+
+    header .div-logo {
+        width: 170px;
+    }
+
+    header nav.menu-barr {
+        order: 0;
+        height: 50px;
+        margin: 43px auto 0px;
+    }
+
+    header .div-titulo {
+        display: block;
+        margin: 0px;
+    }
+}
+
 @media(max-width:560px){
     table{
         width: 100%;
@@ -396,17 +431,17 @@ img#imgProduct{
         left: 26%;
         }
     
-    header div img{ 
+/*     header div img{ 
     position: relative;
     bottom: 1rem;
-    }
+    } */
     header nav.menu-barr li.menu{
-        position: relative;
-        right: 1.5rem;
+/*         position: relative;
+        right: 1.5rem; */
         padding: 5px;
     
     }
-    header .div-titulo{
+/*     header .div-titulo{
         right: 0;
-    }
+    } */
 }

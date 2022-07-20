@@ -11,7 +11,7 @@
             <caption>Lista usuarios registrados</caption>
             <thead>
                 <tr>
-                    <th scope="col" class="no-mobile">ID</th>
+                    <th scope="col">ID</th>
                     <th scope="col">Nombre</th>
                     <th scope="col" class="no-mobile">Email</th>
                     <th scope="col" class="no-mobile">Telefono</th>
@@ -24,14 +24,14 @@
             <tbody>
                 <% users.forEach(user => { %>
                   <tr>
-                    <th scope="row" class="no-mobile"><%= user.id %></th>
+                    <th scope="row"><%= user.id %></th>
                     <td><%= user.name %></td>
                     <td class="no-mobile"><%= user.email %></td>
                     <td class="no-mobile"><%= locals.users && user.telefono !== null? user.telefono : "Sin teléfono disponible"%></td>
                     <td class="colum-price"><%= locals.users && user.direccion !== null ? user.direccion.localidad : "Sin información disponible" %></td>
                     <td class="colum-stock"><%= locals.users && user.direccion !== null ? user.direccion.provincia : "Sin información disponible" %></td>
-                    <td class="no-mobile"><%= user.UserRol.nombre %></td>
-                    <td>
+                    <td><%= user.UserRol.nombre %></td>
+                    <td class="actions__buttons">
                       <a href="/admin/usuarios/detalle/<%= user.id %>" class="btn btn-success">
                         <i id="edit" class="fa-solid fa-pen-to-square"></i>
                       </a>

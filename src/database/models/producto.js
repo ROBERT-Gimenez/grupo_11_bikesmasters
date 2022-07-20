@@ -12,8 +12,8 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
         },
         categoryid: {
-            type: dataTypes.INTEGER(11)
-            
+            type: dataTypes.INTEGER(11),
+            allowNull: false
         },
         description: {
             type: dataTypes.TEXT,
@@ -60,9 +60,6 @@ module.exports = (sequelize, dataTypes) => {
             as: "Usuario",
             foreignKey: "user_id",
         })
-
-      
-
         
     }
     return Producto;
