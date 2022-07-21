@@ -77,7 +77,6 @@ main section.product_shown .product_image img {
 
 .details {
     padding: 10px;
-    height: 200px;
 }
 
 .order_detail .name {
@@ -205,6 +204,14 @@ main section.product_shown .product_image img {
     text-decoration: underline;
 }
 
+.info__articles {
+    margin: 30px 0px;
+}
+
+.info__articles .description ul li {
+    margin: 5px;
+}
+
 /* ************************************** */
 
 /* MEDIA QUERIES */
@@ -266,10 +273,10 @@ main section.product_shown .product_image img {
     }
 
     main .details {
-        width: 60%;
+        width: 100%;
         padding: 40px;
-        border: thin solid lightgray;
-        height: 450px;
+        border-top: thin solid lightgray;
+        border-bottom: thin solid lightgray;
     }
 
     main .details .name {
