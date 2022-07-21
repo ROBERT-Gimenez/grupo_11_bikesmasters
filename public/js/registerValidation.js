@@ -1,24 +1,41 @@
-function qs(element) {
+function qsOne(element) {
     return document.querySelector(element)
 }
-let $name =qs('#name');
-let $email =qs('#email');
-let $password = qs('#password');
-let $password2 = qs('#password2');
-let $terms = qs('#terms');
-let $termsError = qs('#termsError');
-let spanTerm = qs('span.terminos')
-let form = qs('form#form');
-let submitError = qs('#submitError');
-let $nameError =qs('#nameError');
-let $emailError =qs('#emailError');
-let $passwordError =qs('#passwordError');
-let $password2Error =qs('#password2Error');
+
+function alertError(msg) {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true
+      })              
+      Toast.fire({
+        icon: 'error',
+        title: `${msg}`
+      })
+}
+
+let $name =qsOne('#name');
+let $email =qsOne('#email');
+let $password = qsOne('#password');
+let $password2 = qsOne('#password2');
+let $terms = qsOne('#terms');
+let $termsError = qsOne('#termsError');
+let spanTerm = qsOne('span.terminos')
+let form = qsOne('form#form');
+let submitError = qsOne('#submitError');
+let $nameError =qsOne('#nameError');
+let $emailError =qsOne('#emailError');
+let $passwordError =qsOne('#passwordError');
+let $password2Error =qsOne('#password2Error');
 
 regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
 regExDNI = /^[0-9]{7,8}$/,
 regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
 regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}$/;
+
+window.addEventListener('load', () => {
 
 /* >> validacion de nombre << */
 
@@ -153,7 +170,7 @@ $password2.addEventListener('blur', function(){
 spanTerm.addEventListener('mouseover', function (){
     if(!$terms.classList.contains('valido')){
         $terms.classList.add('invalido')
-        $termsError.innerHTML = "Acepta Los Terminos?"
+        $termsError.innerHTML = "¿Acepta los términos?"
         $termsError.style.top="1.5rem"
     }else{
         $terms.classList.remove('invalido')
@@ -170,7 +187,7 @@ $terms.addEventListener('click', function (){
        
         
 /* >>>>>>>  PreventDefault  <<<<<<< */
-form.addEventListener("submit", function (event) {
+form.addEventListener("submit", function (event) { 
     event.preventDefault()
     let elementsForm = this.elements
     let errors = false
@@ -182,10 +199,8 @@ form.addEventListener("submit", function (event) {
         {
             elementsForm[i].classList.add('invalido')
             invalidInput(elementsForm[i].nextElementSibling)
-            submitError.innerHTML = "Verifique los Datos"
+            submitError.innerHTML = "Verifique los datos"
             submitError.style.color="red"
-            
-            
             errors = true
         }else{elementsForm[i].style.boxShadow = "none"
 
@@ -196,14 +211,9 @@ form.addEventListener("submit", function (event) {
     if(!errors) {
         form.submit()
     } else {
-
-        alert("Error , Verifique los Datos Nuevamente")
+        alertError("Se encontraron algunos errores")
         form.style.border= "4px solid #ff2e008c;"
-
     }
 
 })
-    
-                    
-             
-        
+})

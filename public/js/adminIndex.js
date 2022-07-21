@@ -1,5 +1,5 @@
 /* Funciones de captura de elementos */
-function qs(element) {
+function qse(element) {
     return document.querySelector(element)
 };
 

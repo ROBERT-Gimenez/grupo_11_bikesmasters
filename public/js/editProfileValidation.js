@@ -1,17 +1,31 @@
-const qs = (element) => {
+const qsOne = (element) => {
     return document.querySelector(element)
+}
+
+function alertError(msg) {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true
+      })              
+      Toast.fire({
+        icon: 'error',
+        title: `${msg}`
+      })
 }
 
 window.addEventListener('load', () => {
     
-    let $form = qs('#formulario'),
-    $inputName = qs('#inputName'),
-    $nameError = qs('#errorName'),
-    $inputAvatar = qs('#inputAvatar'),
-    $avatarPreview = qs('#avatar-user'),
-    $avatarError = qs('#avatarError'),
-    $Telefono = qs('#telefono'),
-    $errorTelefono=qs("small#errorTelefono"),
+    let $form = qsOne('#formulario'),
+    $inputName = qsOne('#inputName'),
+    $nameError = qsOne('#errorName'),
+    $inputAvatar = qsOne('#inputAvatar'),
+    $avatarPreview = qsOne('#avatar-user'),
+    $avatarError = qsOne('#avatarError'),
+    $Telefono = qsOne('#telefono'),
+    $errorTelefono=qsOne("small#errorTelefono"),
     error;
 
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/
@@ -119,7 +133,7 @@ window.addEventListener('load', () => {
             if(!error) {
                 $form.submit();
             } else {
-                alert('Se encontraron errores')
+                alertError("Se encontraron errores")
             }
     })
 

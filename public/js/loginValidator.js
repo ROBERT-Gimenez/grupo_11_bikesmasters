@@ -1,22 +1,32 @@
-const qs = (element) => {
-    return document.querySelector(element)
-};
+function alertError() {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true
+      })              
+      Toast.fire({
+        icon: 'error',
+        title: 'Se encontraron errores en el formulario'
+      })
+}
 
-const qsAll = (element) => {
-    return document.querySelectorAll(element)
-};
+function qsOne(element) {
+    return document.querySelector(element);
+}
 
 window.addEventListener('load', () => {
 
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
     regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}$/;
 
-    let $email = qs('#email')
-    let $emailError = qs('#error_email')
-    let $password = qs('#password')
-    let $passwordError = qs('#error_pass')
-    let $form = qs('#form')
-    let $customError = qs('#error_custom')
+    let $email = qsOne('#email')
+    let $emailError = qsOne('#error_email')
+    let $password = qsOne('#password')
+    let $passwordError = qsOne('#error_pass')
+    let $form = qsOne('#form')
+    let $customError = qsOne('#error_custom')
     let errors
 
     $email.addEventListener('blur', (e) => {
@@ -114,7 +124,7 @@ window.addEventListener('load', () => {
         if(!errors) {
             $form.submit()
         } else {
-            alert("Se encontraron errores en el formulario")
+            alertError()
         }
 
     })

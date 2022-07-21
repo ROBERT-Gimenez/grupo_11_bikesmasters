@@ -1,20 +1,34 @@
-function qs(element) {
+function qsOne(element) {
     return document.querySelector(element)
 }
 
+function alertError(msg) {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true
+      })              
+      Toast.fire({
+        icon: 'error',
+        title: `${msg}`
+      })
+}
+
 window.addEventListener("load",() => {
-    let $direccion = qs("#direccion"),
-        $altura = qs("#altura"),
-        $postal = qs("#postal"),
-        $localidad = qs("#localidad"),
-        $provincia = qs("#provincia"),
-        $form = qs("#formulario"),
-        $inputDireccionError = qs("#inputDireccionError"),
-        $inputAlturaError = qs("#inputAlturaError"),
-        $inputPostalError = qs("#inputPostalError"),
-        $submitError = qs("#submitError"),
-        $localidadError = qs('#localidadError'),
-        $provinciaError = qs('#provinciaError')
+    let $direccion = qsOne("#direccion"),
+        $altura = qsOne("#altura"),
+        $postal = qsOne("#postal"),
+        $localidad = qsOne("#localidad"),
+        $provincia = qsOne("#provincia"),
+        $form = qsOne("#formulario"),
+        $inputDireccionError = qsOne("#inputDireccionError"),
+        $inputAlturaError = qsOne("#inputAlturaError"),
+        $inputPostalError = qsOne("#inputPostalError"),
+        $submitError = qsOne("#submitError"),
+        $localidadError = qsOne('#localidadError'),
+        $provinciaError = qsOne('#provinciaError')
 
         regExAlpha = /^[a-zA-Z\sñáéíóúü]*$/,
         regExAlt = /^[0-9]{7,8}$/;
@@ -174,9 +188,8 @@ window.addEventListener("load",() => {
             alert("Direccion actualizado!")
             $form.submit()
            } else {
-            alert("Hay errores en el formulario")
+            alertError("Hay errores en el formulario")
            }
-
         }) 
 
 }) 

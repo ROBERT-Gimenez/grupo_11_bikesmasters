@@ -128,8 +128,8 @@ small.text-danger {
     font-style: italic;
     font-size: medium;
     letter-spacing: 1px;
-    position: relative;
-    bottom: 2rem;
+/*     position: relative;
+    bottom: 2rem; */
 }
 
 small#terms {
