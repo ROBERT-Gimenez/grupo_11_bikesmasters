@@ -1,95 +1,155 @@
-footer{
-    position: relative;
-    width: 100%;
-    background-color: black;
-    min-height: 100px;
-    padding: 20px 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    top: 4rem;
-
-}
-footer .social_icon,
-footer .menu
-{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0px;
-    flex-wrap: wrap;
-}
-footer .social_icon li,
-footer .menu li
-{
+ul, li {
     list-style: none;
-}
-footer .social_icon li a,
-footer .menu li a
-
-{
-    font-size: 2em;
-    color:var(--naranja);
-    margin: 0 15px;
-    display: inline-block;
-    transition: 0.5s;      
+    padding: 0;
+    margin: 0;
 }
 
+footer {
+    background-color: #1B1717;
+    padding: 10px;
+    margin-top: 60px;
+}
 
-footer .social_icon li a:hover{
-    transform: translateY(-10px);
-   
+footer a {
+    color: lightgray;
+    letter-spacing: 1px;
 }
-footer .menu li a {
-    font-size: 1.2em;
-    color: var(--naranja);
-    margin: 0 10px;
-    display: inline-block;
-    text-decoration: none;
-    opacity: 0.75;
+
+footer strong {
+    color: white;
 }
-footer .menu li a:hover {
-opacity: 1;
-}
+
 footer p {
-    color: var(--naranja);
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    font-size: 1.1em;
-
+    color: lightgrey;
+    font-size: 12px;
+    text-align: end;
+    margin-top: 47px;
 }
 
-@media (max-width: 380px){
-    
-    footer .menu { 
-        font-size: 12px;
-    }
-    footer p {
-        font-size: 12px;
-
-    }
-    footer .social_icon{
-        font-size: 12px;
-    }
-    footer .menu li a{
-        text-align: center;
-    }
-
+footer .footer__contenido {
+    margin: 20px auto;
 }
 
-@media (min-width:1440px) {
-    footer {
-        position: relative;
-        width: 100%;
-        background-color: black;
-        min-height: 100px;
-        padding: 20px 50px;
+
+.columns__references {
+    border-bottom: thin solid lightgrey;
+    padding: 15px 0;
+    overflow: hidden;
+    height: 60px;
+}
+
+
+
+footer .tittle__columns {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .tittle__columns i {
+    color: lightgray;
+    padding: 0px 10px;
+    margin: 0px 10px;
+}
+
+footer .columns ul {
+    padding: 10px 0px 0px;
+}
+
+footer .columns ul li {
+    padding: 5px 0px 0px;
+    margin: 5px 0px;
+}
+
+footer .columns ul li a {
+    font-size: 13px;
+    font-family: 'Roboto', sans-serif;
+    padding: 5px 0px 0px;
+}
+
+footer .social_icon {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+footer .social_icon li {
+    margin: 0px 15px;
+}
+
+footer .social_icon li a {
+    font-size: 27px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* DOM */
+
+.show {
+    border-bottom: thin solid lightgrey;
+    padding: 15px 0;
+    overflow: visible;
+    height: auto;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+/* FIN VERSION MOBILE */
+
+/************** MEDIA QUERIES **************/
+/* Version Descktop */
+
+@media (min-width: 1024px) {
+    footer .footer__contenido {
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
+        max-height: 1024px;
+    }
+
+    .columns__references {
+        overflow: visible;
+        height: auto;
+        border: none;
+    }
+    footer .tittle__columns i {
+        display: none;
+    }
+
+    footer .columns ul li {
+        margin: 10px 0px;
+    }
+
+    footer .columns ul li a {
+        letter-spacing: 2px;
+    }
+
+    footer .social_icon {
+        width: 50%;
+        height: 60px;
         align-items: center;
-        flex-direction: column;
+    }
+
+    footer .social_icon li {
+        width: 50px;
+    }
+
+    footer .social_icon li a i {
+        font-size: 35px;
+    }
+
+    footer .columns ul li a:hover {
+        color: white;
+    }
+
+    footer .social_icon li a i:hover {
+        transform: translateY(-10px);
+        color: #CE1212;
+        transition: all 0.3s ease-in-out;
     }
 }
