@@ -389,7 +389,8 @@ span.admin a.admin {
     outline: rgb(237, 0, 0);
 }
 main{
-    margin-top: -3.3rem;
+    margin-top: -3rem;
+    margin-bottom: -4rem;
    
 }
 @media(max-width:450px){
