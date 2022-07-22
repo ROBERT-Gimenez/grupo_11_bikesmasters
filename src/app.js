@@ -9,7 +9,8 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const cookieSession = require('./middlewares/cookieSession');
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+const cors = require('cors')
 
 /* routes */
 const indexRouter = require('./routes/indexRouter');
@@ -32,7 +33,9 @@ app.use(express.urlencoded({extended: false}));
 
 app.use(methodOverride('_method'));
 app.use(bodyParser.json()) 
-app.set(bcrypt)
+app.set(bcrypt);
+app.use(express.json());
+app.use(cors())
 
 /* session */
 /* app.set('trust proxy', 1); */
@@ -59,7 +62,7 @@ app.use((req, res, next) => {
     res.status(404).render('not-found')
 })
 
-app.use(express.json());
+
 
 
 app.listen(PORT, () => console.log( `Servidor levantado en el puerto ${PORT}
