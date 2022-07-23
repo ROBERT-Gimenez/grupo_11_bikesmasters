@@ -11,9 +11,9 @@
         <div class="product_card">
             <div class="filters_routes">
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">/ Filtro 1</a></li>
-                    <li><a href="#">/ Filtro 2</a></li>
+                    <li><a href="/">Inicio</a></li>
+                    <li>/ <a href="/producto/categoria/<%= product.categoryid %>"><%= productCategory %> </a></li>
+                    <li>/ <a href="#"><%= product.name %> </a></li>
                 </ul>
             </div>
             <section class="product_shown">
@@ -67,7 +67,7 @@
                             </form>
                         </div>
                     </div>
-                    <div class="seller">
+<!--                     <div class="seller">
                         <div class="name"><h4 class="name_article">Información del vendedor</h4></div>
                         <div class="seller_direction">
                             <p>Vendido por: </p>
@@ -77,7 +77,7 @@
                             <p>Ubicación</p>
                             <small class="direction">Retiro - CABA - Buenos Aires</small>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
     
             </section>

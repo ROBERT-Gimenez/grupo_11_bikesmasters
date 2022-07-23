@@ -6,12 +6,15 @@ module.exports = {
 	detalle: (req, res) => {
 /* 		let product = products.find(product => product.id === +req.params.id);
  */		
-        db.Producto.findByPk(+req.params.id)
+        db.Producto.findByPk(+req.params.id, {
+            include: "category"
+        })
         .then((product) => {
            res.render('products/productDetail',{
             titulo: "Detalle",
             css: 'productDetail.css',
             product,
+            productCategory: product.category.nombre,
             toThousand,
             session:req.session
 		})  
