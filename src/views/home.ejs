@@ -64,7 +64,12 @@
                                     <%= product.discount + '% 0FF' %>
                                 </p>
                             <% } %>
-                            <button id="btn_agregar" target="<%= product.id  %>">Agregar</button>
+                            <button id="btn_agregar" class="btn_agregar" target="<%= product.id  %>">
+                                <span class="span-agregar">Agregar</span>
+                                <span class="span-Agregado">Agregado</span>
+                                <i class="fas fa-shopping-cart cart-icon"></i>
+                                <i class="fas fa-box cart-item"></i>
+                            </button>
                         </div>
                         <div class="product-description">
                             <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
