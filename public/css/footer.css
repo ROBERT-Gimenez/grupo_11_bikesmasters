@@ -67,6 +67,25 @@ footer .columns ul li a {
     padding: 5px 0px 0px;
 }
 
+footer .contact__icons {
+    display: flex;
+    align-items: center;
+}
+
+footer .contact__icons i.fa-whatsapp {
+    font-size: 20px;
+    margin: 9px 8px 4px 0px;
+    /* color: #4caf50; */
+    color: lightgrey;
+}
+
+footer .contact__icons i.fa-envelope {
+    font-size: 20px;
+    margin: 9px 8px 4px 0px;
+    /* color: #ff1f1f; */
+    color: lightgrey;
+}
+
 footer .social_icon {
     display: flex;
     width: 100%;
