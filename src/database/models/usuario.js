@@ -35,6 +35,14 @@ module.exports = (sequelize, dataTypes) => {
         telefono: {
             type: dataTypes.INTEGER(20),
             allowNull: true
+        },
+        social_id: {
+            type:dataTypes.STRING(100),
+            defaultValue: null
+        },
+        social_provider: {
+            type:dataTypes.STRING(100),
+            defaultValue: null
         }
     };
 

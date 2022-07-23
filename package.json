@@ -34,6 +34,9 @@
     "mysql2": "^2.3.3",
     "node-fetch": "^2.6.7",
     "nodemon": "^2.0.16",
+    "passport": "^0.6.0",
+    "passport-google-oauth": "^2.0.0",
+    "passport-google-oauth2": "^0.2.0",
     "sequelize": "^6.21.2",
     "sweetalert2": "^11.4.23"
   }

@@ -10,7 +10,10 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const cookieSession = require('./middlewares/cookieSession');
 const bcrypt = require('bcryptjs');
-const cors = require('cors')
+const cors = require('cors');
+const google = require('./middlewares/Google');
+const passport = require('passport')
+const loginRouter = require('./controllers/userController')
 
 /* routes */
 const indexRouter = require('./routes/indexRouter');
@@ -49,12 +52,33 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cookieSession);
 
+// Initializes passport and passport sessions
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use ('/', indexRouter);
 app.use('/usuario', userRouter);
 app.use('/producto', productRouter);
 app.use('/admin', adminRouter);
 
+
+const isLoggedIn = (req, res, next) => {
+    if (req.user) {
+        next();
+    } else {
+        res.sendStatus(401);
+    }
+}
+
+
+// Auth Routes
+app.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+
+app.get('/google/callback', passport.authenticate('google', { failureRedirect: '/usuario/login' }),
+  function(req, res) {
+    res.redirect('/');
+  }
+);
 ///Ruta de APIS///
 
 app.use('/api' , apiAdmin);

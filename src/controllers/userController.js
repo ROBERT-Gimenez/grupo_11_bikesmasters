@@ -386,4 +386,16 @@ module.exports = {
             })
         })
         }
-}}
+},
+loginGoogle: (req, res) => {
+    let user = req.session.passport.user[0]
+    req.session.usuario = {
+      id: user.id,
+      nombre: user.nombre,
+      email: user.email,
+      googleId: user.social_id,
+}
+
+    res.redirect('/')
+}
+}
