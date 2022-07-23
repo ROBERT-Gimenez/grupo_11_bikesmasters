@@ -24,7 +24,63 @@ main.home a {
 main div.banner {
     display: none;
 }
-
+.ofertas{
+    font-size: 2rem;
+    position:relative;
+    font-weight: bold;
+    color: orangered;
+    text-align: center;
+}
+.ofertas::before{
+    position: absolute;
+    content: attr(data-context);
+    text-shadow: 0px 0px 20px orangered;
+    filter: blur(10px) brightness(0);
+    animation: fliker 2s linear infinite;
+    animation-delay: 1s; 
+}
+@keyframes fliker {
+    0%{
+        filter: blur(5px) brightness(1)
+    }
+    3%{
+        filter: blur(5px) brightness(0)
+    }
+    6%{
+        filter: blur(5px) brightness(0)
+    }
+    7%{
+        filter: blur(5px) brightness(1)
+    }
+    8%{
+        filter: blur(5px) brightness(0)
+    }
+    9%{
+        filter: blur(5px) brightness(1)
+    }
+    10%{
+        filter: blur(5px) brightness(0)
+    }
+    20%{
+        filter: blur(5px) brightness(1)
+    }
+    50%{
+        filter: blur(5px) brightness(1)
+    }
+    99%{
+        filter: blur(5px) brightness(0)
+    }
+    100%{
+        filter: blur(5px) brightness(1)
+    }
+}
+.destacados{
+    text-shadow: -1px 0px #ff2e00,
+    0px 1px #ff2e00,
+    1px 0px #ff2e00,
+    0px -1px #ff2e00;
+    text-align: center;
+}
 main div.titulo-seccion {
     margin: 10px;
 }
@@ -43,7 +99,7 @@ main section article {
     height: 350px;
     background-color: white;
     margin-bottom: 1rem;
-    border: thin solid rgba(167, 165, 165, 0.356); 
+    border: thin solid rgb(167 165 165 / 83%); 
 }
 
 main section article div.img-producto {
@@ -225,6 +281,11 @@ main div#map {
 /* TABLET */
 
 @media (min-width: 700px) {
+    .btn_agregar {
+        font-size: 10px;
+        width: 40%;
+        height: 34px;
+    }
     main .slider {
         display: block;
     }
@@ -359,17 +420,28 @@ main div#map {
 /* Fin descktop */
 
 
+<<<<<<< HEAD
 /* #btn_agregar{
+=======
+.btn_agregar{
+>>>>>>> c277fac7fc583c7c251371b20720fc3b8721818a
     position: relative;
-    left: 55%;
-    padding: 4px 1rem;
+    padding: 10px;
     border-radius: 20px;
+    outline: none;
     border: none;
     bottom: 1rem;
-    box-shadow: 1px 1px 10px 1px rgb(8 7 7);
-    background: linear-gradient(45deg , #b8bfbe, #ff2e00);
+    cursor: pointer;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+    overflow: hidden;
+    width:40%;
+    height: 44px;
+    left: 55%;
+    
+    background: linear-gradient(45deg , #b8bfbe, #f33f0e);
 }
-#btn_agregar:hover{
+ #btn_agregar:hover{
 cursor: pointer;
 background: linear-gradient(45deg , #b8bfbe, #ff2e00);
 box-shadow: 5px -5px 10px #a84420, -5px 5px 10px #1b2630;

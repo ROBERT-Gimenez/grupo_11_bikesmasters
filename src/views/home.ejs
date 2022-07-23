@@ -14,7 +14,7 @@
         <%- include('partials/bannerMarcas') %> 
 
         <div class="titulo-seccion">  
-            <h3>Ofertas</h3>
+            <h3 class="ofertas" data-context="Ofertas">Ofertas</h3>
         </div>
         <section>
             <% products.forEach(product=> { %>
@@ -50,7 +50,7 @@
             <% }) %>
         </section>
         <div class="titulo-seccion">
-            <h3>Productos destacados</h3>
+            <h3 class="destacados">Productos destacados</h3>
         </div>
         <section>
             <% products.forEach(product=> { %>
@@ -65,6 +65,15 @@
                                     - <%= product.discount + '%' %>
                                 </p>
                             <% } %>
+<<<<<<< HEAD
+=======
+                            <button id="btn_agregar" class="btn_agregar" target="<%= product.id  %>">
+                                <span class="span-agregar">Agregar</span>
+                                <span class="span-Agregado">Agregado</span>
+                                <i class="fas fa-shopping-cart cart-icon"></i>
+                                <i class="fas fa-box cart-item"></i>
+                            </button>
+>>>>>>> c277fac7fc583c7c251371b20720fc3b8721818a
                         </div>
                         <div class="product-description">
                             <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
