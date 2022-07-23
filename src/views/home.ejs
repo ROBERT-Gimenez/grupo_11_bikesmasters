@@ -26,18 +26,24 @@
                             </a>
                             <% if (product.discount> 0) { %>
                                 <p class="sale-off">
-                                    <%= product.discount + '% 0FF' %>
+                                    - <%= product.discount + '%' %>
                                 </p>
                             <% } %>
-                            <button id="btn_agregar" target="<%= product.id  %>">Agregar</button>
                         </div>
                         <div class="product-description">
                             <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
                                 <% if (product.discount > 0) {%>
                                     <span class="precio">$<%= toThousand(product.price)%></span>
-                                <% } %>
-                            </p>
-                            <p><%- product.name %></p>
+                                    <% } %>
+                                </p>
+                                <p class="name"><%- product.name %></p>
+                                <div class="actions">
+                                    <p>Añadir</p>
+                                    <i class="fa-solid fa-heart"></i>
+                                    <button class="agregar" id="btn_agregar" target="<%= product.id  %>">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </button>
+                                </div>
                         </div>
                     </article>
                 <% } %>
@@ -51,24 +57,29 @@
                 <% if (product.discount == 0 ) { %>
                     <article>
                         <div class="img-producto">
-                            <a href="/producto/detalle/<%- product.id  %>" class="image">
+                            <a href="/producto/detalle/<%= product.id  %>" class="image">
                                 <img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>">
                             </a>
                             <% if (product.discount> 0) { %>
                                 <p class="sale-off">
-                                    <%= product.discount + '% 0FF' %>
+                                    - <%= product.discount + '%' %>
                                 </p>
                             <% } %>
-                            <button id="btn_agregar">Agregar</button>
                         </div>
                         <div class="product-description">
                             <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
-                                <% if (product.discount> 0) {%>
+                                <% if (product.discount > 0) {%>
                                     <span class="precio">$<%= toThousand(product.price)%></span>
-                                <% } %>
-                                
-                            </p>
-                            <p><%- product.name %></p>
+                                    <% } %>
+                                </p>
+                                <p class="name"><%- product.name %></p>
+                                <div class="actions">
+                                    <p>Añadir</p>
+                                    <i class="fa-solid fa-heart"></i>
+                                    <button class="agregar" id="btn_agregar" target="<%= product.id  %>">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </button>
+                                </div>
                         </div>
                     </article>
                 <% } %>

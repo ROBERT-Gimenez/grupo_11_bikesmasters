@@ -66,29 +66,46 @@ main section article div.img-producto img {
 }
 
 .product-description {
-    padding: 1rem;
     height: 40%;
+    padding: 1rem;
+}
+
+.product-description p.name {
+    margin: 10px 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 main section article p {
-    margin: 10px;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 main section article p.sale-off {
     position: absolute;
-    margin: 5px 10px;
-    bottom: -0.5rem;
-    left: 0;
-    background: var(--naranja);
+    top: 0;
+    right: 0;
+    height: 34px;
+    background: var(--oferta);
     color: white;
-    border-radius: 6px;
-    padding: 5px;
+    width: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(10% 1%, 100% 0%, 100% 100%, 10% 100%, 0% 50%);
+    font-family: var(--font-oswald);
+    letter-spacing: 1px;
+    font-weight: bolder;
+    font-size: 20px;
 }
 
 main section article p.precio-discount {
     font-weight: 900;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-family: var(--font-raleway);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 main section article p.precio-discount .precio{
@@ -98,6 +115,40 @@ main section article p.precio-discount .precio{
     color: var(--oferta);
     margin-left: 6px;
 }
+
+.actions {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 65px 25% 25%;
+    align-items: center;
+    padding: 5px 0px;
+}
+
+.actions p {
+    font-family: var(--font-roboto);
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.actions .fa-heart {
+    justify-self: flex-end;
+    font-weight: normal;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.actions .agregar {
+    justify-self: flex-end;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.actions .agregar > i {
+    font-size: 24px;
+}
+
 
 /* Section Categorias */
 
@@ -248,8 +299,22 @@ main div#map {
         transition: all 0.5s ease-out;
     }
 
+    .product-description {
+        height: 23%;
+        overflow: hidden;
+    }
+
     main section article:hover {
         box-shadow: 1px 2px 10px rgba(255, 98, 1, 0.9);
+    }
+
+    .actions .fa-heart:hover {
+        color: var(--oferta);
+        font-weight: bold;
+    }
+
+    .actions .agregar:hover {
+        color: var(--naranja);
     }
 
     main section.categorias div.img-link {
@@ -263,8 +328,9 @@ main div#map {
     }
 
     main section.categorias div.img-link a:hover {
-        color: white;
+        color: rgb(255, 255, 255);
     }
+
      div.img-producto img:hover{
         transform: scale(1.1);
         transition: 0.3s ease-in;
@@ -293,7 +359,7 @@ main div#map {
 /* Fin descktop */
 
 
-#btn_agregar{
+/* #btn_agregar{
     position: relative;
     left: 55%;
     padding: 4px 1rem;
@@ -307,4 +373,4 @@ main div#map {
 cursor: pointer;
 background: linear-gradient(45deg , #b8bfbe, #ff2e00);
 box-shadow: 5px -5px 10px #a84420, -5px 5px 10px #1b2630;
-} 
+}  */

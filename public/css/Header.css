@@ -358,10 +358,10 @@ header nav input{
     .search-form_button{
         position: absolute;
     }
-    button.transition{
+    .nav_cuenta button.transition{
         transition: all 0.3s ease-in;
         }
-        button:hover {
+        .nav_cuenta button:hover {
             background-color: var(--naranja);
             color: #fff;
         }
