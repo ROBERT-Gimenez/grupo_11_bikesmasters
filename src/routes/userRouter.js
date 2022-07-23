@@ -8,7 +8,21 @@ const checkin = require('../middlewares/checkin');
 const imgProfile = require('../middlewares/imageProfileMiddleware')
 const userEditValidator = require('../validations/userEditValidator')
 const directioValidator = require('../validations/directionValidator')
+const passport = require('passport');
+const googleLogin = require('../middlewares/Google');
+googleLogin()
 
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
+
+
+
+router.get("/google", passport.authenticate("google", { scope: ["profile", "email"] }));
+router.get('/google/callback', passport.authenticate('google', { failureRedirect: '/usuario/login' }), userController.loginGoogle);
 
 router.get('/carrito', userSessionCheck, userController.carrito);
 
