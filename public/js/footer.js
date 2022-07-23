@@ -11,5 +11,4 @@ window.addEventListener('load', () => {
             this.children[0].children[1].classList.toggle("rotate")
         })
     })
-
 })

@@ -3,7 +3,7 @@
 
     <%- include ('partials/head') %> 
     <script src="/js/index.js" defer></script>
-   <script src="/js/homePeticion.js" defer></script>
+    <script src="/js/homePeticion.js" defer></script>
 <body>
     <%- include ('partials/header') %> 
     
@@ -101,11 +101,29 @@
             </div>
         </section>
 
+        <section id="info__ubications">
+            <div class="ubications">
+                <div><h4>Visita nuestras sucursales</h4></div>
+                <ul>
+                    <li class="sucursal__name">
+                        <i class="fa-solid fa-location-dot"></i> Sucursal Retiro
+                    </li>
+                    <li class="sucursal__name">
+                        <i class="fa-solid fa-location-dot"></i> Sucursal Nuñez
+                    </li>
+                    <li class="sucursal__name">
+                        <i class="fa-solid fa-location-dot"></i> Sucursal Lugano
+                    </li>
+                </ul>
+            </div>
+            <div id="map"></div>
+        </section>
 
 
     </main>
     
-    <%- include ('partials/footer') %> 
-    
+    <%- include ('partials/footer') %>
+    <script src="../js/googleMap.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
 </body>
 </html>

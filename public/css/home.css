@@ -134,8 +134,42 @@ main section.categorias div.img-link span a {
     color: rgba(223, 223, 223, 0.829);
 }
 
+/* Fin seccion categorias populares */
 
-/* Media Queries */
+/* Sucursales */
+
+main section#info__ubications {
+    background-color: var(--negro);
+}
+
+
+main section#info__ubications div h4 {
+    color: var(--naranja);
+    margin: 10px 0px;
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+main section#info__ubications .sucursal__name {
+    color: lightgrey;
+    padding: 10px 0px;
+}
+
+main section#info__ubications .fa-location-dot {
+    color: var(--oferta);
+    margin-right: 8px;
+}
+
+main div#map {
+    width: 100%;
+    height: 200px;
+    margin: 25px 0px;
+}
+
+
+/* Fin sucursales */
+
+/************** Media Queries *************/
 
 /* TABLET */
 
@@ -183,6 +217,26 @@ main section.categorias div.img-link span a {
         width: 40%;
         margin: 0px;
     }
+
+    main section#info__ubications .ubications {
+        width: 100%;
+    }
+
+    main section#info__ubications .ubications ul {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        margin-top: 32px;
+    }
+
+    main section#info__ubications div h4 {
+        text-align: center;
+    }
+
+    main div#map {
+        height: 240px;
+    }
+
 }
 
 /* DESKTOP */
@@ -215,9 +269,30 @@ main section.categorias div.img-link span a {
         transform: scale(1.1);
         transition: 0.3s ease-in;
         background: transparent ;
-    } 
+    }
 
+    main section#info__ubications {
+        flex-wrap: nowrap;
+    }
+
+    main section#info__ubications .ubications {
+        width: 60%;
+    }
+
+    main section#info__ubications .ubications ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main section#info__ubications .sucursal__name {
+        width: 50%;
+        padding: 20px 0px;
+    }
 }
+
+/* Fin descktop */
+
+
 #btn_agregar{
     position: relative;
     left: 55%;
