@@ -14,7 +14,7 @@
         <%- include('partials/bannerMarcas') %> 
 
         <div class="titulo-seccion">  
-            <h3>Ofertas</h3>
+            <h3 class="ofertas" data-context="Ofertas">Ofertas</h3>
         </div>
         <section>
             <% products.forEach(product=> { %>
@@ -29,7 +29,12 @@
                                     <%= product.discount + '% 0FF' %>
                                 </p>
                             <% } %>
-                            <button id="btn_agregar" target="<%= product.id  %>">Agregar</button>
+                            <button id="btn_agregar" class="btn_agregar" target="<%= product.id  %>">
+                                <span class="span-agregar">Agregar</span>
+                                <span class="span-Agregado">Agregado</span>
+                                <i class="fas fa-shopping-cart cart-icon"></i>
+                                <i class="fas fa-box cart-item"></i>
+                            </button>
                         </div>
                         <div class="product-description">
                             <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
@@ -44,7 +49,7 @@
             <% }) %>
         </section>
         <div class="titulo-seccion">
-            <h3>Productos destacados</h3>
+            <h3 class="destacados">Productos destacados</h3>
         </div>
         <section>
             <% products.forEach(product=> { %>
@@ -59,7 +64,7 @@
                                     <%= product.discount + '% 0FF' %>
                                 </p>
                             <% } %>
-                            <button id="btn_agregar">Agregar</button>
+                            <button id="btn_agregar" target="<%= product.id  %>">Agregar</button>
                         </div>
                         <div class="product-description">
                             <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
