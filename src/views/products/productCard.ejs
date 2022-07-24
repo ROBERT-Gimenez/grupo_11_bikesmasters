@@ -32,6 +32,7 @@
                         <p class="price"><%- toThousand(product.price) %></p>
                         <select class="select-cantidad-de-productos" name="amount" id="">
                             <% for (let i= 1; i <= product.stock; i++) { %> 
+                           <!--  <option value="0" selected="selected"></option> -->
                             <option value="<%= i %>"><%= i %></option>
                             <% } %> 
                         </select>
