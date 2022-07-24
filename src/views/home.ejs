@@ -26,23 +26,23 @@
                             </a>
                             <% if (product.discount> 0) { %>
                                 <p class="sale-off">
-                                    <%= product.discount + '% 0FF' %>
+                                    - <%= product.discount + '%' %>
                                 </p>
                             <% } %>
-                            <button id="btn_agregar" class="btn_agregar" target="<%= product.id  %>">
-                                <span class="span-agregar" target="<%= product.id  %>" >Agregar</span>
-                                <span class="span-Agregado" target="<%= product.id  %>">Agregado</span>
-                                <i class="fas fa-shopping-cart cart-icon"></i>
-                                <i class="fas fa-box cart-item" target="<%= product.id  %>" ></i>
-                            </button>
                         </div>
                         <div class="product-description">
                             <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
                                 <% if (product.discount > 0) {%>
                                     <span class="precio">$<%= toThousand(product.price)%></span>
-                                <% } %>
-                            </p>
-                            <p><%- product.name %></p>
+                                    <% } %>
+                                </p>
+                                <p class="name"><%- product.name %></p>
+                                <div class="actions">
+                                    <p>Añadir</p>
+                                    <i class="fa-solid fa-heart"></i>
+                                    <button class="agregar" target="<%= product.id %>">
+                                        <i class="fa-solid fa-cart-plus"></i>
+                                    </button>
                         </div>
                     </article>
                 <% } %>
@@ -56,29 +56,29 @@
                 <% if (product.discount == 0 ) { %>
                     <article>
                         <div class="img-producto">
-                            <a href="/producto/detalle/<%- product.id  %>" class="image">
+                            <a href="/producto/detalle/<%= product.id  %>" class="image">
                                 <img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>">
                             </a>
                             <% if (product.discount> 0) { %>
                                 <p class="sale-off">
-                                    <%= product.discount + '% 0FF' %>
+                                    - <%= product.discount + '%' %>
                                 </p>
                             <% } %>
-                            <button id="btn_agregar" class="btn_agregar" target="<%= product.id  %>">
-                                <span class="span-agregar">Agregar</span>
-                                <span class="span-Agregado">Agregado</span>
-                                <i class="fas fa-shopping-cart cart-icon"></i>
-                                <i class="fas fa-box cart-item"></i>
-                            </button>
                         </div>
                         <div class="product-description">
                             <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
-                                <% if (product.discount> 0) {%>
+                                <% if (product.discount > 0) {%>
                                     <span class="precio">$<%= toThousand(product.price)%></span>
-                                <% } %>
-                                
-                            </p>
-                            <p><%- product.name %></p>
+                                    <% } %>
+                                </p>
+                                <p class="name"><%- product.name %></p>
+                                <div class="actions">
+                                    <p>Añadir</p>
+                                    <i class="fa-solid fa-heart"></i>
+                                    <button class="agregar" target="<%= product.id %>">
+                                        <i class="fa-solid fa-cart-plus"></i>
+                                    </button>
+                                </div>
                         </div>
                     </article>
                 <% } %>
