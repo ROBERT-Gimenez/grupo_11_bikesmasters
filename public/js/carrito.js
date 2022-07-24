@@ -57,19 +57,18 @@ window.addEventListener("load", () => {
    // }
 }) */
 
+
+
 let productos = document.querySelectorAll('div.producto-pedido')
 let carrito = localStorage.getItem('carrito')
-let select = document.querySelectorAll('select')
+let select = document.querySelectorAll('select');
 let Precios = document.querySelectorAll('.colum-price')
 let btnVaciar = document.querySelector('button#vaciar-carrito')
 let btnDelete = document.querySelectorAll('button.delete')
-select.forEach(select => {
-    select.style.color="red"
-   select.addEventListener('click' , (e) => {
-    let option = select.lastElementChild
-    console.log(option)
-    console.log(option.getAttribute("value"))
-   })
+select.forEach((select) => {
+    select.onClick = () => {
+        console.log(select)
+    }
 })
 
 
@@ -87,12 +86,27 @@ productos.forEach(product=>{
 
  /* ------------------------------------------ */
  productos.forEach((product)=>{
-    product.addEventListener('click' , (E) =>{ 
-        textPrice=product.nextSibling;
-        select=textPrice.nextSibling;
-        console.log(select.target)
-    })
- })
+    let price = product.children[1].textContent
+    let select = product.children[2].innerHTML  ;
+    let select3 = product.childNodes[5]
+
+    /* select.addEventListener('click' , () =>{
+        
+    }) */
+    if(product.style.display !== "none"){
+     console.log("primer")  
+     console.log( select)
+     console.log("4to")  
+     console.log(select3)  
+     console.log(price)  
+     product.onchange = function(event) {
+    console.log((select*price))
+    console.log((select3.innerHTML*price))
+     }
+        
+     }})
+    
+ 
 /* ------------------------------------------- */
 btnVaciar.addEventListener('click' , () => {
     productos.forEach(product=>{
