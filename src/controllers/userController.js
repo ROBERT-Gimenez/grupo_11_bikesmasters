@@ -389,13 +389,14 @@ module.exports = {
 },
 loginGoogle: (req, res) => {
     let user = req.session.passport.user[0]
-    req.session.usuario = {
+    req.session.user = {
       id: user.id,
-      nombre: user.nombre,
+      name: user.name,
       email: user.email,
+      avatar: user.avatar,
+      rol: user.rol_id,
       googleId: user.social_id,
 }
-
     res.redirect('/')
 }
 }

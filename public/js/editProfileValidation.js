@@ -18,7 +18,7 @@ function alertError(msg) {
 
 window.addEventListener('load', () => {
     
-    let $form = qsOne('#formulario'),
+    let $form = qsOne('#formulario__profile'),
     $inputName = qsOne('#inputName'),
     $nameError = qsOne('#errorName'),
     $inputAvatar = qsOne('#inputAvatar'),
