@@ -66,7 +66,7 @@ let btnVaciar = document.querySelector('button#vaciar-carrito')
 let btnDelete = document.querySelectorAll('button.delete');
 let totales = document.querySelectorAll('p.subtotal')
 let subtotal = document.querySelector('b#subTotal')
-
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 
@@ -87,8 +87,6 @@ productos.forEach(product=>{
     if(carrito.includes(t.getAttribute("target"))){
         to.push(t.textContent)
         to.reduce((a,b) => {return Number(+a - -b) })
-        
-        
     }
     })
  
@@ -97,16 +95,16 @@ subtotal.innerHTML=to.reduce((a,b) => {return Number(+a - -b) })
         
  /* ------------------------------------------ */
  productos.forEach((product)=>{
-    let price = product.children[1].textContent
+    let price = Number(product.children[1].getAttribute("target"))
     let select = product.children[2];
     let Total = product.children[3];
-    Total.innerHTML= price
+    Total.innerHTML= toThousand(price)
     if(product.style.display !== "none"){
    
      product.onchange = function(event) {
    /*  console.log((+select.value * +price.value))
     console.log((select.value)) */
-    Total.innerHTML= +select.value * +price +".000"
+    Total.innerHTML = toThousand(+select.value * price)
     
     
     totales.forEach(t => {

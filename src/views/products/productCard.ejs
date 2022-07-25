@@ -29,7 +29,7 @@
                     <% products.forEach(product => { %>
                     <div class="producto-pedido" target="<%= product.id %>">
                         <img src="../../../images/products/<%= product.image %>" class="img-carrito-producto">
-                        <p class="price"><%- toThousand(product.price) %></p>
+                        <p class="price" target="<%= product.price %>"><%- toThousand(product.price) %></p>
                         <select class="select-cantidad-de-productos" name="amount" id="">
                             <% for (let i= 1; i <= product.stock; i++) { %> 
                            <!--  <option value="0" selected="selected"></option> -->
