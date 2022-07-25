@@ -63,7 +63,7 @@ CREATE TABLE `categorias` (
 
 LOCK TABLES `categorias` WRITE;
 /*!40000 ALTER TABLE `categorias` DISABLE KEYS */;
-INSERT INTO `categorias` VALUES (1,'bicicletas'),(2,'kids'),(3,'repuestos'),(4,'accesorios'),(5,'indumentaria'),(6,'Herramientas');
+INSERT INTO `categorias` VALUES (1,'Bicicletas'),(2,'Kids'),(3,'Repuestos'),(4,'Accesorios'),(5,'Indumentaria'),(6,'Herramientas');
 /*!40000 ALTER TABLE `categorias` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,7 +119,7 @@ CREATE TABLE `productos` (
   KEY `productos_FK_1` (`user_id`),
   CONSTRAINT `productos_FK` FOREIGN KEY (`categoryid`) REFERENCES `categorias` (`id`),
   CONSTRAINT `productos_FK_1` FOREIGN KEY (`user_id`) REFERENCES `usuarios` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -128,7 +128,7 @@ CREATE TABLE `productos` (
 
 LOCK TABLES `productos` WRITE;
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
-INSERT INTO `productos` VALUES (2,'Gafas de sol',4,'Las mejores gafas del condado ponele que esta bueno ','olmo',5,25,'GAFAS.jpg',5000,6),(3,'Remera deportiva',4,'La mejor Remera del condado','Raleigh',0,4,'Ropa.jpg',3000,NULL),(4,'Casco',4,'El mejor Casco del Condado','Vertigo',0,3,'casco.jpg',4000,NULL),(5,'Bici para niÃ±o Rodado 16',2,'La mejor Bici de niÃ±os del condado','SLP',3,12,'Bici-niÃ±o-1.png',25000,NULL),(6,'Bici Firebird MTB Rodado 29',1,'La mejor bici del condado','Firebird',5,12,'BIci-Coluer-Limbo-296.jpg',65000,NULL),(7,'Bici de paseo para dama Rodado 26',1,'La mejor bici para damas del condado','Roller',0,5,'Bici-paseo-dama-1.jpg',37000,NULL),(8,'Bici MTB Rodado 29',1,'La mejor bici MTB del condado','OLMO',10,10,'bIci-MTB-2.jpg',37000,NULL),(9,'Silla de competicion',4,'Silla de competiciÃ³n de gel, super ergonÃ³mica y confortable para un uso constante y para competiciones largas','patito',0,20,'1649980893734-product-.jpg',6500,NULL),(10,'Bicicleta para niña',2,'Bicicleta para niÃ±a fucsia rodado 14, con pie de apoyo. Incluye silla de pasajero y canasta.','Divina',0,12,'1650594387359-product.webp',35000,NULL),(11,'Bicicleta mountain-bike R29',1,'Bicicleta Mtb Vairo Xr 3.5 R29 Bloqueo Disco\\r\\n- Color azul\\r\\n- Cambios Shimano\\r\\n- Amortiguadores delanteros\\r\\n- Asiento de gel super ergonÃ³mico','Vairo',15,10,'1650594749373-product.jpg',108821,NULL),(12,'Casco para ciclismo deportivo',4,'Casco unisex varios colores\\r\\nDiseÃ±o y seguridad es una de nuestros compromisos con nuestros clientes, es por eso que desde Shellmets presentamos el casco SM1. Confort, seguridad y agradable diseÃ±o moderno un producto pensado para uso semi-profesional o cotidiano.','Shellmets',0,20,'1650595305384-product.webp',5000,NULL),(13,'Cubierta para bicicleta R29',3,'Cubierta para bicicletas mountain-bike R29 con diseÃ±o de vanguardia para todo tipo de terreno. \\r\\nSi esta publicado es porque hay stock','GoodShear',5,50,'cubierta-goodyear.png',7500,NULL),(14,'Inflador manual con medidor de presion',6,'Inflador manual con accionamiento a pedal con medidor de presiÃ³n.\\r\\nIncluye funda para ser transportado.','Patito',0,22,'1655794330595-product.jpg',6000,NULL),(15,'Kit de transmision Shimano',3,'Kit Transmision Bicicleta Mtb Shimano Mountain 21v 3x7','Shimano',0,10,'1650595799423-product.png',13500,NULL),(16,'Set de herramientas manuales para bicicleta',6,'Kit Reparacion Bicicleta Bici Parche SoluciÃ³n Llaves Estuche','ToolHards',5,10,'1650595891816-product.png',1899,NULL),(17,'Pedales profesionales para bicicleta',3,'Pedales anatÃ³micos con agarre de seguridad ideal para competiciÃ³n y exigentes de las dos ruedas.\\r\\nSu diseÃ±o otorga un cÃ³modo uso al andar.','Heinks',2,10,'1650596003864-product.jpg',10000,NULL),(18,'Cadena con funda para bici',4,'Cadena para bicicleta con funda.\\r\\nSistema de seguridad con llave tipo tambor.\\r\\n- Largo de cadena 1m.','Andromeda',3,30,'1650596151641-product.webp',6000,NULL);
+INSERT INTO `productos` VALUES (4,'Casco',4,'El mejor Casco del Condado','Vertigo',0,3,'casco.jpg',4000,NULL),(6,'Bici Firebird MTB Rodado 29',1,'La mejor bici del condado','Firebird',5,12,'BIci-Coluer-Limbo-296.jpg',65000,NULL),(7,'Bici de paseo para dama Rodado 26',1,'La mejor bici para damas del condado','Roller',0,5,'Bici-paseo-dama-1.jpg',37000,NULL),(8,'Bici MTB Rodado 29',1,'La mejor bici MTB del condado','OLMO',10,10,'bIci-MTB-2.jpg',37000,NULL),(9,'Silla de competicion',4,'Silla de competiciÃ³n de gel, super ergonÃ³mica y confortable para un uso constante y para competiciones largas','patito',0,20,'1649980893734-product-.jpg',6500,NULL),(10,'Bicicleta para niña',2,'Bicicleta para niÃ±a fucsia rodado 14, con pie de apoyo. Incluye silla de pasajero y canasta.','Divina',0,12,'1650594387359-product.webp',35000,NULL),(11,'Bicicleta mountain-bike R29',1,'Bicicleta Mtb Vairo Xr 3.5 R29 Bloqueo Disco\\r\\n- Color azul\\r\\n- Cambios Shimano\\r\\n- Amortiguadores delanteros\\r\\n- Asiento de gel super ergonÃ³mico','Vairo',15,10,'1650594749373-product.jpg',108821,NULL),(12,'Casco para ciclismo deportivo',4,'Casco unisex varios colores\\r\\nDiseÃ±o y seguridad es una de nuestros compromisos con nuestros clientes, es por eso que desde Shellmets presentamos el casco SM1. Confort, seguridad y agradable diseÃ±o moderno un producto pensado para uso semi-profesional o cotidiano.','Shellmets',0,20,'1650595305384-product.webp',5000,NULL),(13,'Cubierta para bicicleta R29',3,'Cubierta para bicicletas mountain-bike R29 con diseÃ±o de vanguardia para todo tipo de terreno. \\r\\nSi esta publicado es porque hay stock','GoodShear',5,50,'cubierta-goodyear.png',7500,NULL),(14,'Inflador manual con medidor de presion',6,'Inflador manual con accionamiento a pedal con medidor de presiÃ³n.\\r\\nIncluye funda para ser transportado.','Patito',0,22,'1655794330595-product.jpg',6000,NULL),(15,'Kit de transmision Shimano',3,'Kit Transmision Bicicleta Mtb Shimano Mountain 21v 3x7','Shimano',0,10,'1650595799423-product.png',13500,NULL),(16,'Set de herramientas manuales para bicicleta',6,'Kit Reparacion Bicicleta Bici Parche SoluciÃ³n Llaves Estuche','ToolHards',5,10,'1650595891816-product.png',1899,NULL),(17,'Pedales profesionales para bicicleta',3,'Pedales anatÃ³micos con agarre de seguridad ideal para competiciÃ³n y exigentes de las dos ruedas.\\r\\nSu diseÃ±o otorga un cÃ³modo uso al andar.','Heinks',2,10,'1650596003864-product.jpg',10000,NULL),(18,'Cadena con funda para bici',4,'Cadena para bicicleta con funda.\\r\\nSistema de seguridad con llave tipo tambor.\\r\\n- Largo de cadena 1m.','Andromeda',3,30,'1650596151641-product.webp',6000,NULL),(71,'Bicicleta infantil R20',1,'- CUADRO MTB ALUMINIO 25 PRO\r\n- 21 VELOCIDADES\r\n- CALCO AL AGUA BAJO BARNIZ\r\n- JUEGO DE DIRECCIÓN INTEGRADO\r\n- CAMBIOS SHIMANO\r\n- DESCARRILADOR TRASERO SHIMANO\r\n- HORQUILLA SUSPENSIÓN\r\n- FRENOS A DISCO\r\n- RUEDAS MTB REFORZADA','Ciclone',0,20,'1657589408733-product.jpg',57000,12);
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,12 +172,14 @@ CREATE TABLE `usuarios` (
   `direccion_id` int(11) DEFAULT NULL,
   `avatar` varchar(100) DEFAULT NULL,
   `rol_id` int(11) NOT NULL,
+  `social_id` varchar(100) DEFAULT NULL,
+  `social_provider` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `usuarios_FK_1` (`direccion_id`),
   KEY `usuarios_FK` (`rol_id`),
   CONSTRAINT `usuarios_FK` FOREIGN KEY (`rol_id`) REFERENCES `user_rol` (`id`),
   CONSTRAINT `usuarios_FK_1` FOREIGN KEY (`direccion_id`) REFERENCES `direcciones` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -186,7 +188,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (2,'robert','mail@mail.com','123456789','1141806012',1,NULL,2),(3,'roberto','prueba@prueba.com','$2a$10$4CgdnwEsQj4Tv',NULL,NULL,'user-default.png',1),(4,'pepito','pepito@pepito.com','$2a$10$hjmz8Fwqud9Kz',NULL,NULL,'user-default.png',1),(5,'briana','brian@brian.com','$2a$10$3e7TribuwU4ej','1145698714',NULL,'user-default.png',1),(6,'betty','bety@bety.com','$2a$10$0gWO.o8LnVKM2','1212121212',3,'1655514391846-profile.jpg',2),(7,'donald','mac@donald.com','$2a$10$D7j4tK/qeAdAq',NULL,NULL,'user-default.png',1),(8,'loki','loki@loki.com','$2a$10$3zYEn2vj29sBX','12346789',2,'1654825760980-profile.jpg',1),(9,'pato','pato@pato.com','$2a$10$sx/t8dVmd.g1X','15471715',NULL,'1654823699746-profile.jpg',1),(10,'Fulano','fulano@mail.com','$2a$10$VdFPbmEn0LjnxgKrlFjKEOR0mdYzCIG7DzxQqC3uOsPJHj0wll6AS','123',4,'user-default.png',1),(11,'Fulano','usuario@mail.com','$2a$10$vROe4vqLQtwtMgbtKYWJXeE06txr26ITXqqISWwPERbAe0UyR/dtK','15151515',10,'1656729019972-profile.png',1),(12,'Admin','admin@mail.com','$2a$10$2x0LIY/YPW9F0d6XK9XGJ.h70UZThAtGe96ub4iNFgumsK6/VSjTS',NULL,11,'user-default.png',2),(13,'Brian','brian@mail.com','$2a$10$jx1koXSr66LAnQrxwdsFK.d0qln2CLLZoQxkEnmyeiy3O3x8MZ8SS',NULL,NULL,'user-default.png',1),(14,'asdf','asd@mail.com','$2a$10$F5gr9Yj7LrFRDRxBtQBMvupZh6uFPDsa8NP/ze2psc7L/uHyUlhFi',NULL,NULL,'user-default.png',1),(15,'Usuario','elpepe@mail.com','$2a$10$5.ynpt2PoQPHfDb5a1KzB.MpOXzdQvBjuFQsDm1H3DaPoljfdQGFW','',12,'user-default.png',1);
+INSERT INTO `usuarios` VALUES (2,'robert','mail@mail.com','123456789','1141806012',1,NULL,1,NULL,NULL),(3,'roberto','prueba@prueba.com','$2a$10$4CgdnwEsQj4Tv',NULL,NULL,'user-default.png',1,NULL,NULL),(4,'pepito','pepito@pepito.com','$2a$10$hjmz8Fwqud9Kz',NULL,NULL,'user-default.png',1,NULL,NULL),(5,'briana','brian@brian.com','$2a$10$3e7TribuwU4ej','1145698714',NULL,'user-default.png',1,NULL,NULL),(6,'betty','bety@bety.com','$2a$10$0gWO.o8LnVKM2','1212121212',3,'1655514391846-profile.jpg',1,NULL,NULL),(7,'donald','mac@donald.com','$2a$10$D7j4tK/qeAdAq',NULL,NULL,'user-default.png',1,NULL,NULL),(8,'loki','loki@loki.com','$2a$10$3zYEn2vj29sBX','12346789',2,'1654825760980-profile.jpg',1,NULL,NULL),(9,'pato','pato@pato.com','$2a$10$sx/t8dVmd.g1X','15471715',NULL,'1654823699746-profile.jpg',1,NULL,NULL),(10,'Fulano','fulano@mail.com','$2a$10$VdFPbmEn0LjnxgKrlFjKEOR0mdYzCIG7DzxQqC3uOsPJHj0wll6AS','123',4,'user-default.png',1,NULL,NULL),(11,'Fulano','usuario@mail.com','$2a$10$vROe4vqLQtwtMgbtKYWJXeE06txr26ITXqqISWwPERbAe0UyR/dtK','15151515',10,'1656729019972-profile.png',1,NULL,NULL),(12,'Admin','admin@mail.com','$2a$10$2x0LIY/YPW9F0d6XK9XGJ.h70UZThAtGe96ub4iNFgumsK6/VSjTS','1512332115',11,'1658691904703-profile.png',2,NULL,NULL),(13,'Brian','brian@mail.com','$2a$10$jx1koXSr66LAnQrxwdsFK.d0qln2CLLZoQxkEnmyeiy3O3x8MZ8SS',NULL,NULL,'user-default.png',1,NULL,NULL),(14,'asdf','asd@mail.com','$2a$10$F5gr9Yj7LrFRDRxBtQBMvupZh6uFPDsa8NP/ze2psc7L/uHyUlhFi',NULL,NULL,'user-default.png',1,NULL,NULL),(15,'Usuario','elpepe@mail.com','$2a$10$5.ynpt2PoQPHfDb5a1KzB.MpOXzdQvBjuFQsDm1H3DaPoljfdQGFW','',12,'user-default.png',2,NULL,NULL),(16,'nina','nina@mail.com','$2a$10$Sqf7Cb0XiAfRMzlBsEVMGOsGrmXTbS6ganfoj4b7olzDs3/ME8tva','123456078',NULL,'user-default.png',1,NULL,NULL);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -203,4 +205,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-11 21:06:57
+-- Dump completed on 2022-07-25 19:09:51
