@@ -61,21 +61,17 @@ window.addEventListener("load", () => {
 
 let productos = document.querySelectorAll('div.producto-pedido')
 let carrito = localStorage.getItem('carrito')
-let select = document.querySelectorAll('select');
 let Precios = document.querySelectorAll('.colum-price')
 let btnVaciar = document.querySelector('button#vaciar-carrito')
-let btnDelete = document.querySelectorAll('button.delete')
-select.forEach((select) => {
-    select.onClick = () => {
-        console.log(select)
-    }
-})
+let btnDelete = document.querySelectorAll('button.delete');
+let totales = document.querySelectorAll('p.subtotal')
+let subtotal = document.querySelector('b#subTotal')
 
 
-/* for (let i = 0 ; i < carrito.length ; i++){ */
+
+
 productos.forEach(product=>{
     let product_id = product.getAttribute("target");
-   /*  console.log(product_id) */
     if(carrito.includes(product_id)){
         product.style.display="table-row;"
     }else{
@@ -84,6 +80,21 @@ productos.forEach(product=>{
     
  })
 
+
+ var to = []
+ totales.forEach(t => {
+        
+    if(carrito.includes(t.getAttribute("target"))){
+        to.push(t.textContent)
+        to.reduce((a,b) => {return Number(+a - -b) })
+        
+        
+    }
+    })
+ 
+
+subtotal.innerHTML=to.reduce((a,b) => {return Number(+a - -b) })
+        
  /* ------------------------------------------ */
  productos.forEach((product)=>{
     let price = product.children[1].textContent
@@ -91,15 +102,31 @@ productos.forEach(product=>{
     let Total = product.children[3];
     Total.innerHTML= price
     if(product.style.display !== "none"){
-      
+   
      product.onchange = function(event) {
    /*  console.log((+select.value * +price.value))
     console.log((select.value)) */
     Total.innerHTML= +select.value * +price +".000"
-
+    
+    
+    totales.forEach(t => {
+        
+        if(carrito.includes(t.getAttribute("target"))){
+            let too =to.map(i => {})
+            to.push(t.textContent)
+            to.reduce((a,b) => {return Number(+a - -b) })
+            
+            
+        }
+        })
+        console.log(to)
+        subtotal.innerHTML=to.reduce((a,b) => {return Number(+a - -b) })
      }
         
      }})
+
+     
+
     
  
 /* ------------------------------------------- */

@@ -36,7 +36,7 @@
                             <option value="<%= i %>"><%= i %></option>
                             <% } %> 
                         </select>
-                        <p class="subtotal">SUMA TOTAL</p>
+                        <p class="subtotal" target="<%= product.id %>"><%= product.price%></p>
                         <button class="delete" target="<%= product.id %>"><i class="fa-solid fa-trash"></i></button>                  
                     </div>
                     
@@ -53,7 +53,7 @@
                 <section class="subtotal-section">
                     <div class="subtotal-div-info">
                         <h2><b>Mi compra</b></h2>
-                        <p><b>Subtotal: $</b></p>
+                        <p><b id="subTotal">Subtotal: $</b></p>
                         <button class="boton-rosa">Finalizar Compra</button>
                     </div>
                     
