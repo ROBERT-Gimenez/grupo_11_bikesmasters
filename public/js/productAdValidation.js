@@ -2,6 +2,20 @@ function qs(element) {
     return document.querySelector(element)
 }
 
+function alertError(msg) {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true
+      })              
+      Toast.fire({
+        icon: 'error',
+        title: `${msg}`
+      })
+}
+
 
 let producto = qs('#nameProduct');
 let price =qs("#price");
@@ -196,6 +210,7 @@ var reg = new RegExp('^[0-9]*$');
             for (let i = 0; i < elementsForm.length ; i++) {
                 if(elementsForm[i].value == ""
                 && elementsForm[i].type !== "submit"
+                && elementsForm[i].type !== "file"
                 || elementsForm[i].classList.contains('invalido')) {
                    
                     elementsForm[i].classList.add('invalido')
@@ -209,9 +224,12 @@ var reg = new RegExp('^[0-9]*$');
                     }
                 }
                 if(!errors) {
+                    if (InputProduct.value.length === 0) {
+                        alert("El producto se cargara con una imagen por defecto")
+                    }
                     form.submit()
-                } else { 
-                    alert("Se encontraron errores en el formulario")
+                } else {
+                    alertError("Se encontraron errores en el formulario")
                 }
             })
       
@@ -242,11 +260,3 @@ var reg = new RegExp('^[0-9]*$');
             }
         }
     })
-	
- /*  form.addEventListener('change' , () => {
-            if((producto , marca , price, stock ).classList.contains("valido")){
-                form.lastElementChild.classList.remove("invalido")
-                form.lastElementChild.innerHTML = ""
-                FormError.classList.remove("invalido")         
-                } 
-            }) */

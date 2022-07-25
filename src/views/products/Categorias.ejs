@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('../partials/head') %> 
+    <%- include('../partials/head') %>
 
 <body>
     <%- include('../partials/header') %> 
@@ -17,7 +17,7 @@
                 <div  id="imgProducto" class="img-producto">
                     <a href="/producto/detalle/<%- product.id  %>" class="image"><img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>"></a>                   
                     <% if (product.discount > 0) { %>
-                        <p class="sale-off"><%= product.discount + '% 0FF'%></p>
+                        <p class="sale-off">- <%= product.discount + '%'%></p>
                     <% } %>
                     <small id="imgProductoError" ></small>
                 </div>
@@ -28,12 +28,19 @@
                         <% } %> 
                     </p>
                     <p><%- product.name %> </p>
-                    <small id="precioError"></small>
+                    <div class="actions">
+                        <p>Añadir</p>
+                        <i class="fa-solid fa-heart"></i>
+                        <button class="agregar" target="<%= product.id %>">
+                            <i class="fa-solid fa-cart-plus"></i>
+                        </button>
+                    </div>
                 </div>
                 </article> 
             <% }) %>
         </section>
         <%- include("../partials/footer") %> 
         <script src="/js/index.js"></script>
+        <script src="/js/homePeticion.js"></script>
     </body>
 </html>
