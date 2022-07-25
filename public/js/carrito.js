@@ -87,21 +87,16 @@ productos.forEach(product=>{
  /* ------------------------------------------ */
  productos.forEach((product)=>{
     let price = product.children[1].textContent
-    let select = product.children[2].innerHTML  ;
-    let select3 = product.childNodes[5]
-
-    /* select.addEventListener('click' , () =>{
-        
-    }) */
+    let select = product.children[2];
+    let Total = product.children[3];
+    Total.innerHTML= price
     if(product.style.display !== "none"){
-     console.log("primer")  
-     console.log( select)
-     console.log("4to")  
-     console.log(select3)  
-     console.log(price)  
+      
      product.onchange = function(event) {
-    console.log((select*price))
-    console.log((select3.innerHTML*price))
+   /*  console.log((+select.value * +price.value))
+    console.log((select.value)) */
+    Total.innerHTML= +select.value * +price +".000"
+
      }
         
      }})
