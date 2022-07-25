@@ -150,6 +150,8 @@ span.admin a.admin {
 .load-image .product-image {
     padding: 5px;
     height: 200px;
+    border: thin solid #ffc400;
+    border-radius: 6px;
 }
 
 .load-image .product-image img {

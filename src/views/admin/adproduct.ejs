@@ -19,25 +19,25 @@
                     </div>
                     <div class="register-input">
                         <label for="marca">Marca</label>
-                        <input type="text" name="marca" id="marca" class="input-style" placeholder="Ingrese marca" value="<%= (locals.old && old.marca)? old.marca : "" %>">
+                        <input type="text" name="marca" id="marca" class="input-style" placeholder="Ingrese la marca" value="<%= (locals.old && old.marca)? old.marca : "" %>">
                         <small id="marcaError" class="alert-msg"><%= (locals.errors && errors.name)? errors.name.msg : "" %></small>
                     </div>
                     <div class="register-input">
                         <label for="price">Precio</label>
-                        <input type="number" name="price" id="price" class="input-style" placeholder="Ingrese precio" value="<%= (locals.old && old.price)? old.price : "" %>">
+                        <input type="number" name="price" id="price" class="input-style" placeholder="Ingrese el precio" value="<%= (locals.old && old.price)? old.price : "" %>">
                         <small id="priceError" class="alert-msg">
                         <%= (locals.errors && errors.price)? errors.price.msg : "" %>
                         </small>
                     </div>
                     <div class="register-input">
                         <label for="stock">Stock</label>
-                        <input type="number" name="stock" id="stock" class="input-style" placeholder="cantidad de stock" value="<%= (locals.old && old.stock)? old.stock : "" %>">
+                        <input type="number" name="stock" id="stock" class="input-style" placeholder="Cantidad de stock" value="<%= (locals.old && old.stock)? old.stock : "" %>">
                         <small id="stockError" class="alert-msg"><%= (locals.errors && errors.stock)? errors.stock.msg : "" %></small>
                           
                     </div>
                     <div class="register-input">
                         <label for="discount">Descuento</label>
-                        <input type="number" name="discount" id="discount" class="input-style" value="<%= (locals.old && old.discount)? old.discount : "" %>">
+                        <input type="number" name="discount" id="discount" class="input-style" placeholder="Ingrese 0 si no aplica ningun descuento" value="<%= (locals.old && old.discount)? old.discount : "" %>">
                         <small id="discError" class="alert-msg"><%= (locals.errors && errors.discount)? errors.discount.msg : "" %></small>
                     </div>
                     <div id="sinCateg" class="register-input">
