@@ -10,13 +10,17 @@ let divProfile = document.querySelector('#div-profile');
 let avatar = document.querySelector('img#avatarImg');
 let checkbox = document.querySelector('input#checkbox')
 
+/* Icono de carrito */
+let cartIcon = document.querySelectorAll(".fa-cart-plus")
+/* console.log(cartIcon[0]);
+cartIcon[0].classList.toggle("i") */
+
 console.log(localStorage)
 
 
 
 
 checkbox.addEventListener('click' , () =>{
-    
     divs.forEach(divs => { divs.classList.toggle('div-profile') })
     body.classList.toggle('dark-mode');
     header.classList.toggle('dark-mode');
@@ -39,7 +43,6 @@ checkbox.addEventListener('click' , () =>{
 
 })
 botondark.addEventListener('click' , function(){
-    
     divs.forEach(divs => { divs.classList.toggle('div-profile') })
     body.classList.toggle('dark-mode');
     header.classList.toggle('dark-mode');
@@ -79,10 +82,6 @@ botondark.addEventListener('click' , function(){
         titulos.forEach(titulos => { titulos.classList.add('dark-mode_letras') });
         botondark.textContent = "Modo Normal";  
         checkbox.value="on"
-        
-       
-        
-
          }
         
         

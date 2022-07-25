@@ -198,7 +198,7 @@ main section article p.precio-discount .precio{
 .actions .agregar {
     justify-self: center;
     border: none;
-    background-color: white;
+    background-color: inherit;
     cursor: pointer;
     font-family: var(--font-roboto);
     font-weight: bolder;
@@ -206,10 +206,9 @@ main section article p.precio-discount .precio{
     border-radius: 3px;
 }
 
-.actions .agregar > i {
+.actions .agregar i {
     font-size: 24px;
 }
-
 
 /* Section Categorias */
 
@@ -434,6 +433,10 @@ main div#map {
 .actions .heart__full {
     color: var(--oferta);
     font-weight: bold;
+}
+
+.i {
+    color: white;
 }
 
 

@@ -14,7 +14,7 @@
         <div id="head-logo">
             <h2>Editar dirección</h2>
         </div>
-        <form id="formulario" class="form-register" action="/usuario/perfil/editar/<%= session.user.id %>?_method=PUT" method="post">
+        <form id="formulario__direction" class="form-register" action="/usuario/perfil/editar/<%= session.user.id %>?_method=PUT" method="post">
             <div class="register-input">
                 <label for="direccion">Dirección</label>
                 <input type="text" name="direccion" id="direccion" class="input-style" placeholder="Ingrese su calle" value="<%= direccion.direccion %>">
@@ -24,11 +24,6 @@
                 <label for="altura">Altura</label>
                 <input type="number" name="altura" id="altura" class="input-style" placeholder="Ingrese la altura" value="<%= direccion.altura %>">
                 <small class="text-danger" id="inputAlturaError"><%= (locals.errors && errors.altura)? errors.altura.msg : "" %></small>
-            </div>
-            <div class="register-input">
-                <label for="postal">Código postal</label>
-                <input type="number" name="postal" id="postal" class="input-style" placeholder="Código postal" value="<%= direccion.codigo_postal %>">
-                <small class="text-danger" id="inputPostalError"><%= (locals.errors && errors.postal)? errors.postal.msg : "" %></small>
             </div>
             
             <div class="register-input">
@@ -46,8 +41,13 @@
                 <small class="text-danger" id="localidadError"><%= (locals.errors && errors.localidad)? errors.localidad.msg : "" %></small>
             </div>
             
+            <div class="register-input">
+                <label for="postal">Código postal</label>
+                <input type="number" name="postal" id="postal" class="input-style" placeholder="Código postal" value="<%= direccion.codigo_postal %>">
+                <small class="text-danger" id="inputPostalError"><%= (locals.errors && errors.postal)? errors.postal.msg : "" %></small>
+            </div>
             
-            <div class="btn_register">
+            <div class="btn_register" id="submit__direction">
                 <button class="btn-submit_register" type="submit">Guardar</button>
                 <small class="text-danger" id="submitError"></small>
             </div>
