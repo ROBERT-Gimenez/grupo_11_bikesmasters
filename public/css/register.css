@@ -15,11 +15,14 @@ body {
   }
 
 a#link {
-    padding: 5px;
+/*     padding: 5px;
     text-transform: none;
     color: #ff2e00;
     background-color: #a2a2a299;
-    border-radius: 20px;
+    border-radius: 20px; */
+    color: white;
+    text-decoration: underline;
+    text-transform: uppercase;
 }
 
 .register {
@@ -42,14 +45,33 @@ a#link {
 
 .register .form-register {
     padding: 28px;
-    background-color: rgb(251 251 251 / 39%);
+/*     background-color: rgb(251 251 251 / 39%); */
+    background-color: rgb(34 26 26 / 39%);
+    box-shadow: 0px 0px 13px 1px #b4ffb4;
     margin: 1rem;
 }
+
 
 .register .form-register .register-input {
     display: flex;
     flex-direction: column;
 }
+
+.register .contain__inputs {
+    position: relative;
+}
+
+.register .contain__inputs span {
+    position: absolute;
+    right: 10px;
+    top: 47px;
+}
+
+.register .contain__inputs span .fa-circle-exclamation{
+    color: var(--oferta);
+    font-size: 19px;
+}
+
 
 .register .form-register .register-input label {
     margin-bottom: 1rem;
@@ -62,7 +84,7 @@ a#link {
     box-shadow: 0px 0px 2px 1px rgb(255, 196, 0);
     border-radius: 8px;
     padding: 5px 10px;
-    margin-bottom: 1rem;
+    margin-bottom: 6px;
 }
 
 .register .form-register .register-input .input-style {
@@ -76,8 +98,9 @@ a#link {
 .btn_register {
     display: flex;
     flex-direction: column;
+    margin-top: inherit;
 }
-.input-pass{
+/* .input-pass{
     color: green;
     outline: none;
     position: relative;
@@ -93,13 +116,13 @@ a#link {
     bottom: 2.8rem;
     left: 95%;
     width: 1rem;
-}
+} */
 input#terms{
     margin-left: 10px;
     margin-right: 10px;
 }
 span.terminos {
-    position: relative;
+/*     position: relative;
     top: 5rem;
     text-align: center;
     justify-content: center;
@@ -107,7 +130,12 @@ span.terminos {
     display: flex;
     align-items: center;
     color: #1000ff;
-    border-radius: 10px;
+    border-radius: 10px; */
+    display: flex;
+    width: 100%;
+    font-size: 14px;
+    color: white;
+    font-family: var(--font-roboto);
 }
 
 .btn_register .btn-submit_register {
@@ -126,7 +154,7 @@ small.text-danger {
     margin: 0 0 1rem;
     height: 20px;
     font-style: italic;
-    font-size: medium;
+    font-size: 13px;
     letter-spacing: 1px;
 }
 
@@ -322,7 +350,7 @@ span.admin a.admin {
         color: whitesmoke;
         font-size: 1rem;
     }
-    .input-pass{
+/*     .input-pass{
         bottom: 3rem;
         left: 90%;
         margin-left: 6px;
@@ -331,7 +359,7 @@ span.admin a.admin {
         position: relative;
         left: 90%;
         margin-left: 6px;
-    }
+    } */
 }
 
 /* Fin Tablet */
@@ -408,7 +436,18 @@ span.admin a.admin {
         margin-left: 6px;
     }
     
-    
+    /* Registro */
+    .register .registro .register-input{
+        width: 100%;
+    }
+
+    .register span.terminos {
+        justify-content: center;
+    }
+
+    .register .registro .btn-submit_register {
+        width: 50%;
+    }
 }
 
 @media (min-width: 2560px) {
@@ -440,7 +479,7 @@ span.admin a.admin {
     outline: rgb(237, 0, 0);
 }
 
-@media(max-width:450px){
+/* @media(max-width:450px){
     body{
         background-position-x: -9rem;
     }
@@ -454,4 +493,4 @@ span.admin a.admin {
         left: 90%;
         margin-left: 6px;
     }
-}
+} */
