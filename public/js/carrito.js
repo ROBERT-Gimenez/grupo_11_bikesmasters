@@ -110,7 +110,7 @@ subtotal.innerHTML=to.reduce((a,b) => {return Number(+a - -b) })
     totales.forEach(t => {
         
         if(carrito.includes(t.getAttribute("target"))){
-            let too =to.map(i => {})
+            let too = to.map(i => {})
             to.push(t.textContent)
             to.reduce((a,b) => {return Number(+a - -b) })
             
@@ -137,8 +137,18 @@ btnDelete.forEach(btn => {
     btn.addEventListener('click' , (e) => {
     productos.forEach((product) => {if(product.getAttribute("target") == btn.getAttribute("target")){
         product.style.display="none"
+        let carritoCargado = localStorage.getItem("carrito")
+        let productoDelete = product.getAttribute("target")
+/*         console.log(+productoDelete);
+        console.log(typeof carritoCargado); */
+/*         console.log(JSON.parse(localStorage.getItem("carrito"))); */
+        console.log(carritoCargado);
+        console.log(carritoCargado.length);
+/*         let productoFind = carritoCargado.find((producto) => {producto === productoDelete})
+        console.log(productoFind); */
+        localStorage.removeItem(productoDelete);
     }});
-   
+
     })
 })
 
