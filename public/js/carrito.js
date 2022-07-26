@@ -59,6 +59,9 @@ window.addEventListener("load", () => {
 
 
 
+
+
+
 let productos = document.querySelectorAll('div.producto-pedido')
 let carrito = localStorage.getItem('carrito')
 let Precios = document.querySelectorAll('.colum-price')
@@ -68,20 +71,20 @@ let totales = document.querySelectorAll('p.subtotal')
 let subtotal = document.querySelector('b#subTotal')
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-
-
 productos.forEach(product=>{
+   
     let product_id = product.getAttribute("target");
     if(carrito.includes(product_id)){
-        product.style.display="table-row;"
+    product.style.display="flex"
+    console.log(product)
     }else{
-        product.style.display="none"
-    }
+        product.style.display = "none"
+    }        
+    })  
     
- })
+/* ------------------------------------------- */
 
-
- var to = []
+ let to = []
  totales.forEach(t => {
         
     if(carrito.includes(t.getAttribute("target"))){
@@ -90,8 +93,8 @@ productos.forEach(product=>{
     }
     })
  
-
-subtotal.innerHTML=to.reduce((a,b) => {return Number(+a - -b) })
+if(to.length >= 1){
+subtotal.innerHTML=to.reduce((a,b) => {return Number(+a - -b) })}
         
  /* ------------------------------------------ */
  productos.forEach((product)=>{
@@ -129,30 +132,31 @@ subtotal.innerHTML=to.reduce((a,b) => {return Number(+a - -b) })
  
 /* ------------------------------------------- */
 btnVaciar.addEventListener('click' , () => {
+    let carrito = new Array();
+    localStorage.setItem("carrito", JSON.stringify(carrito));
     productos.forEach(product=>{
         product.style.display="none"})
 })
+/* ---------------------------------------------- */
+let items = JSON.parse(carrito);
 
 btnDelete.forEach(btn => {
     btn.addEventListener('click' , (e) => {
-    productos.forEach((product) => {if(product.getAttribute("target") == btn.getAttribute("target")){
-        product.style.display="none"
-        let carritoCargado = localStorage.getItem("carrito")
-        let productoDelete = product.getAttribute("target")
-/*         console.log(+productoDelete);
-        console.log(typeof carritoCargado); */
-/*         console.log(JSON.parse(localStorage.getItem("carrito"))); */
-        console.log(carritoCargado);
-        console.log(carritoCargado.length);
-/*         let productoFind = carritoCargado.find((producto) => {producto === productoDelete})
-        console.log(productoFind); */
-        localStorage.removeItem(productoDelete);
-    }});
-
-    })
+        if(carrito.includes(btn.getAttribute("target"))){
+        let ProductDelete = +btn.getAttribute("target")
+        
+            for (let i = 0; i < items.length; i++) {
+        if(items[i] == ProductDelete){
+       items.splice(i,1);
+       break;
+     }
+     
+  }
+}
+console.log(items)
+localStorage.setItem("carrito",JSON.stringify(items)) 
+btn.parentElement.style.display="none"})
 })
-
-    
     
 
 

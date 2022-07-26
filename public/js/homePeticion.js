@@ -32,30 +32,30 @@ $favoritos.forEach(favorito => {
 })
 
 
-let carrito = JSON.parse(localStorage.getItem('carrito')) ? [] : JSON.parse(localStorage.getItem('carrito'));
-
-
-                localStorage.setItem('carrito', JSON.stringify(carrito));
-               
+    let carrito = JSON.parse(localStorage['carrito'] || '[]');             
+              
                 boton_carrito.forEach(btn_Agregar => {
-                   
-                
 
                     btn_Agregar.addEventListener('click' ,(e) =>{
+                        let id_prod = +e.target.parentElement.getAttribute('target')
+                        if(!carrito.includes(id_prod)){
                         function guardarCarritoEnLocalStorage() {
-                            localStorage.setItem('carrito', JSON.stringify(carrito));
+                            localStorage.setItem('carrito', JSON.stringify((id_prod)));
                             }
                         function cargarCarritoDeLocalStorage() {
                                 // ¿Existe un carrito previo guardado en LocalStorage?
                                 if (localStorage.getItem('carrito') !== null) {
-                                    // Carga la información
-                                    carrito = JSON.parse(localStorage.getItem('carrito'));
+                                    
+                                   
+                                    carrito.push(+e.target.parentElement.getAttribute('target'));
+                                    localStorage.setItem('carrito', JSON.stringify(carrito))
                                 }
                             }
-                        carrito.push(+e.target.parentElement.getAttribute('target'))
-                        guardarCarritoEnLocalStorage()
-                        cargarCarritoDeLocalStorage()
-                        console.log(carrito)
-                
+                      /*   (localStorage.setItem("carrito" ,(+e.target.parentElement.getAttribute('target')))) */
+                        guardarCarritoEnLocalStorage() 
+                        cargarCarritoDeLocalStorage() 
+                        console.log(localStorage)
+                       
+                    }
                     })
                 })
