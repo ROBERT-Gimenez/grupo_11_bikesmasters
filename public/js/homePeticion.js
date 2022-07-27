@@ -31,33 +31,26 @@ $favoritos.forEach(favorito => {
     )
 })
 
-    if(!localStorage.getItem('carrito')){
-        localStorage.setItem('carrito')
-    }
+
     let carrito = JSON.parse(localStorage['carrito'] || '[]');             
               
-                boton_carrito.forEach(btn_Agregar => {
+        boton_carrito.forEach(btn_Agregar => {
 
-                    btn_Agregar.addEventListener('click' ,(e) =>{
-                        let id_prod = +e.target.parentElement.getAttribute('target')
-                        if(!carrito.includes(id_prod)){
-                        function guardarCarritoEnLocalStorage() {
-                            localStorage.setItem('carrito', JSON.stringify((id_prod)));
+            btn_Agregar.addEventListener('click' ,(e) =>{
+            let id_prod = +e.target.parentElement.getAttribute('target')
+                if(!carrito.includes(id_prod)){
+            function guardarCarritoEnLocalStorage() {
+                localStorage.setItem('carrito', JSON.stringify((id_prod)));
                             }
-                        function cargarCarritoDeLocalStorage() {
-                                // ¿Existe un carrito previo guardado en LocalStorage?
-                                if (localStorage.getItem('carrito') !== null) {
-                                    
-                                   
-                                    carrito.push(+e.target.parentElement.getAttribute('target'));
-                                    localStorage.setItem('carrito', JSON.stringify(carrito))
-                                }
-                            }
-                      /*   (localStorage.setItem("carrito" ,(+e.target.parentElement.getAttribute('target')))) */
-                        guardarCarritoEnLocalStorage() 
-                        cargarCarritoDeLocalStorage() 
-                        console.log(localStorage)
-                       
-                    }
-                    })
-                })
+            function cargarCarritoDeLocalStorage() {
+            // ¿Existe un carrito previo guardado en LocalStorage?
+                if (localStorage.getItem('carrito') !== null) {                
+            carrito.push(+e.target.parentElement.getAttribute('target'));
+                localStorage.setItem('carrito', JSON.stringify(carrito))
+                }
+                }
+                guardarCarritoEnLocalStorage() 
+                cargarCarritoDeLocalStorage() 
+                console.log(localStorage)
+                }
+                })  })
