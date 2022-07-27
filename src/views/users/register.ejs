@@ -17,7 +17,7 @@
                 <div class="register-input contain__inputs">
                         <label for="name">Nombre y Apellido</label>
                         <input type="text" name="name" id="name" class="input-style" placeholder="Ingrese su nombre y apellido" value="<%= (locals.old && old.name)? old.name : "" %>">
-                        <span>
+                        <span class="icon__alert">
                             <i class="fa-solid fa-circle-exclamation"></i>
                         </span>
                     <small class="text-danger" id="nameError">
@@ -27,7 +27,7 @@
                 <div class="register-input contain__inputs">
                     <label for="email">Correo electrónico</label>
                     <input type="email" name="email" id="email" class="input-style" placeholder="Ingrese su email" value="<%= (locals.old && old.email)? old.email : "" %>">
-                    <span>
+                    <span class="icon__alert">
                         <i class="fa-solid fa-circle-exclamation"></i>
                     </span>
                     <small class="text-danger" id="emailError">
@@ -37,7 +37,7 @@
                 <div class="register-input contain__inputs">
                     <label for="password">Ingrese una contraseña</label>
                     <input type="password" name="password" id="password" class="input-style" placeholder="Ingrese una contraseña " value="<%= (locals.old && old.password)? old.password : "" %>">
-                    <span>
+                    <span class="icon__alert">
                         <i class="fa-solid fa-circle-exclamation"></i>
                     </span>
                     <small class="text-danger" id="passwordError">
@@ -47,7 +47,7 @@
                 <div class="register-input contain__inputs">
                     <label for="password2">Confirme su contraseña</label>
                     <input type="password" name="password2" id="password2" placeholder="Reingrese su contraseña" class="input-style">
-                    <span>
+                    <span class="icon__alert">
                         <i class="fa-solid fa-circle-exclamation"></i>
                     </span>
                     <small class="text-danger" id="password2Error">
@@ -61,7 +61,7 @@
                         <%= (locals.errors && errors.terms)? errors.terms.msg: "" %>
                     </small>
                     <button type="submit" class="btn-submit_register">Registrarme</button>
-                    <span class="login"><a id="link" href="/usuario/login">Ya tengo cuenta</a></span>
+                    <span id="span" class="login"><a id="link" href="/usuario/login">Ya tengo cuenta</a></span>
                     <small class="" style="font-size: 20px; text-align: center;" id="submitError"></small>
                 </div>
             </form>

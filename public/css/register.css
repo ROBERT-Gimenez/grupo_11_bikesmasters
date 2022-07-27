@@ -61,10 +61,8 @@ a#link {
     position: relative;
 }
 
-.register .contain__inputs span {
-    position: absolute;
-    right: 10px;
-    top: 47px;
+.register .contain__inputs .icon__alert {
+    display: none;
 }
 
 .register .contain__inputs span .fa-circle-exclamation{
@@ -231,6 +229,22 @@ span.admin a.admin {
     color: whitesmoke;
 }
 
+
+.register .contain__inputs .show__icon {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 47px;
+}
+
+.register .contain__inputs .pass {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 47px;
+}
+
+
 /* ************************************************************* */
 /* MEDIA QUERIES */
 
@@ -391,6 +405,8 @@ span.admin a.admin {
 
     form.form-register div.btn_register{
         min-width: 5rem;
+        width: 50%;
+        margin: 0 auto;
     }
     
     .register .form-register .register-input input {
@@ -398,7 +414,7 @@ span.admin a.admin {
     }
 
     .register .form-register .register-input {
-        width: 48%;
+    width: 100%;
     }
 
     .register .input__fields .register-input {
@@ -414,9 +430,10 @@ span.admin a.admin {
     }
 
     #submit__direction {
-        width: 48%;
+        /* width: 48%; */
         justify-content: center;
         align-items: center;
+        width: 100%
     }
 
     #submit__direction button {

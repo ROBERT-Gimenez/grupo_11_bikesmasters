@@ -6,12 +6,15 @@ const { validationResult } = require('express-validator');
 module.exports = {
 	
 	allCategories: (req, res) => {
-        db.Categoria.findAll()
+        db.Categoria.findAll( {
+            include: ["products"]
+        })
             .then(categories => {
                 res.render('admin/categories/adminCategories',{
                     css: "adminIndex.css",
                     session: req.session,
                     categories,
+                    productos: categories.products,
                     titulo: "Lista de categorías"
                 })
             })
