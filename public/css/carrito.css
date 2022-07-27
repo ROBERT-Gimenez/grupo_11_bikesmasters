@@ -114,7 +114,7 @@ header nav.menu-barr {
 }
 
 .producto-pedido{
-    display: flex;
+    display: none;
     justify-content: space-around;
     align-items: center;
     margin-top: 10px;

@@ -70,92 +70,91 @@ let btnDelete = document.querySelectorAll('button.delete');
 let ProdPrice = document.querySelectorAll('p.subtotal')
 let AllPrices = document.querySelector('b#subTotal')
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+let carro = []
+JSON.parse(carrito).forEach(item =>{
 
+/* --------------Productos a Mostrar---------------------------- */
 productos.forEach(product=>{
-   
     let product_id = product.getAttribute("target");
-    if(carrito.includes(product_id)){
-    product.style.display="flex"
-    console.log(product)
-    }else{
-        product.style.display = "none"
-    }        
-    })  
+
+        if(item== product_id){
+        product.style.display="flex"
+            console.log(product)
+            }
+        })
     
-/* ------------------------------------------- */
-
- let carro = []
- ProdPrice.forEach(t => {
+/* ------------------Precio------------------------- */
         
-    if(carrito.includes(t.getAttribute("target"))){
-        carro.push(t.textContent)
-      /*   to.reduce((a,b) => {return Number(+a - -b) }) */
-    }
-    })
- 
-if(carro.length >= 1){
-    AllPrices.innerHTML=toThousand(carro.reduce((a,b) => {return Number(+a - -b) }))
-
-}        
- /* ------------------------------------------ */
+        ProdPrice.forEach(t => {
+               
+        if(item==(t.getAttribute("target"))){
+            carro.push(t.textContent)
+            }   })
+            console.log(carro)
+        if(carro.length >= 1){
+           AllPrices.innerHTML=toThousand(carro.reduce((a,b) => {return Number(+a - -b) }))
+            }    
+        })
+    
+     
+ /* --------------Precio al Cambiar las Cantidades--------------- */
  productos.forEach((product)=>{
     let price = Number(product.children[1].getAttribute("target"))
     let select = product.children[2];
     let Total = product.children[3];
     Total.innerHTML= toThousand(price)
     if(product.style.display !== "none"){
-   
+/* --------------SI CAMBIA EL PRODUCTO------------------------ */
      product.onchange = function(event) {
-   /*  console.log((+select.value * +price.value))
-    console.log((select.value)) */
     
     Total.innerHTML = toThousand(+select.value * price)
     carro=[]
     ProdPrice.forEach(t => {
         
         if(carrito.includes(t.getAttribute("target"))){
-            
-            
-            carro.push((t.textContent).replace("." , ""))
-            
+            carro.push((t.textContent).replace("." , ""))    
             }
         })
-        console.log(carro)
-        
-        AllPrices.innerHTML=toThousand(carro.reduce((a,b) => {return Number(+a + +b) }))}
-        
-     }})
+        console.log(carro) 
+        AllPrices.innerHTML=toThousand(carro.reduce((a,b) => {return Number(+a + +b) }))}   
+        }  })
 
  
-/* ------------------------------------------- */
+/* ------------------Boton para Vaciar Carro------------------------- */
 btnVaciar.addEventListener('click' , () => {
     let carrito = new Array();
     localStorage.setItem("carrito", JSON.stringify(carrito));
     productos.forEach(product=>{
         product.style.display="none"})
 })
-/* ---------------------------------------------- */
+/* ----------------Boton para eliminar Producto------------------------------ */
 let items = JSON.parse(carrito);
 
 btnDelete.forEach(btn => {
     btn.addEventListener('click' , (e) => {
+
         if(carrito.includes(btn.getAttribute("target"))){
         let ProductDelete = +btn.getAttribute("target")
         
-            for (let i = 0; i < items.length; i++) {
-        if(items[i] == ProductDelete){
-       items.splice(i,1);
-       break;
-     }
-     
-  }
+        for (let i = 0; i < items.length; i++) {
+            if(items[i] == ProductDelete){
+            items.splice(i,1);
+        break;
+        }  
+    }
 }
+/* ------------------ACTUUALIZAR EL PRECIO FINAL--------------------- */
+let resta = btn.previousElementSibling.textContent.replace("." , "")
+let precioFinal = (AllPrices.textContent).replace("." , "")
+AllPrices.innerHTML= toThousand(Number(precioFinal-resta))
 console.log(items)
+console.log(resta)
 localStorage.setItem("carrito",JSON.stringify(items)) 
-btn.parentElement.style.display="none"})
-})
-    
+btn.parentElement.style.display="none"
 
+})
+     
+})
 
 
 
