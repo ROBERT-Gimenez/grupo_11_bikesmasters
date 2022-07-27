@@ -23,12 +23,13 @@ let $password2 = qsOne('#password2');
 let $terms = qsOne('#terms');
 let $termsError = qsOne('#termsError');
 let spanTerm = qsOne('span.terminos')
-let form = qsOne('form#form');
+let form = qsOne('form#form-register');
 let submitError = qsOne('#submitError');
 let $nameError =qsOne('#nameError');
 let $emailError =qsOne('#emailError');
 let $passwordError =qsOne('#passwordError');
 let $password2Error =qsOne('#password2Error');
+let $spanErrorInputs = document.querySelectorAll(".icon__alert")
 
 regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
 regExDNI = /^[0-9]{7,8}$/,
@@ -70,19 +71,23 @@ function checkChar(e) {
 
 $name.addEventListener('blur' , function(e){
         switch (true) { 
-            case !$name.value.trim()||$name.value.length<4:
-                $nameError.innerHTML= "Se requiere un Nombre valido"
+            case !$name.value.trim()||$name.value.length < 4:
+                $nameError.innerHTML= "Se requiere un nombre valido"
                 $name.classList.add("invalido")
 /*                 invalidInput($name.nextElementSibling) */
+                $name.nextElementSibling.classList.add("show__icon")
+
                 break;
             case !regExAlpha.test($name.value):
                 $nameError.innerHTML ="Nombre Invalido , no debe poseer numeros"
                 $name.classList.add("invalido");
 /*                 invalidInput($name.nextElementSibling) */
+                $name.nextElementSibling.classList.add("show__icon")
                 break;
             default :
                 $name.classList.remove("invalido");
                 $name.classList.add("valido");
+                $name.nextElementSibling.classList.remove("show__icon")
 /*                 validInput($name.nextElementSibling) */
                 $nameError.innerHTML =""
                 break;
@@ -93,19 +98,22 @@ $name.addEventListener('blur' , function(e){
 $email.addEventListener("blur" , function(e) {
     switch (true) { 
         case !$email.value.trim():
-            $emailError.innerHTML= "Email Requerido";
+            $emailError.innerHTML= "Debe ingresar un email";
             $email.classList.add("invalido")
+            $email.nextElementSibling.classList.add("show__icon")
 /*             invalidInput($email.nextElementSibling) */
             break;
         case !regExEmail.test($email.value):
             $emailError.innerHTML ="Email Invalido"
             $email.classList.add("invalido");
+            $email.nextElementSibling.classList.add("show__icon")
 /*             invalidInput($email.nextElementSibling) */
             break;
         default :
             $email.classList.remove("invalido");
             $email.classList.add("valido");
             $emailError.innerHTML =""
+            $email.nextElementSibling.classList.remove("show__icon")
 /*             validInput($email.nextElementSibling) */
             break;
         }
@@ -116,8 +124,9 @@ $email.addEventListener('blur', () => {
     .then(result => {
         result.data.forEach(element => {
             if($email.value === element.email){
+                $email.nextElementSibling.classList.add("show__icon")
 /*                 invalidInput($email.nextElementSibling) */
-                $emailError.innerHTML = "email ya registrado";
+                $emailError.innerHTML = "El email ya se encuentra registrado";
                 $email.classList.add('invalido');
             }
         });
@@ -127,18 +136,21 @@ $email.addEventListener('blur', () => {
 $password.addEventListener('blur', function(){
     switch (true) {
         case !$password.value.trim():
-            $passwordError.innerHTML = 'El campo contraseña es obligatorio'
+            $passwordError.innerHTML = 'Coloque una contraseña'
             $password.classList.add('invalido')
+            $password.nextElementSibling.classList.add("show__icon")
 /*             invalidInput($password.nextElementSibling) */
             break;
         case !regExPass.test($password.value):
             $passwordError.innerHTML = 'La contraseña debe tener: entre 8 y 12 caracteres, al menos una mayúscula, una minúscula y un número';
             $password.classList.add('invalido')
+            $password.nextElementSibling.classList.add("show__icon")
 /*             invalidInput($password.nextElementSibling) */
             break;    
         default:
             $password.classList.remove("invalido");
             $password.classList.add('valido')
+            $password.nextElementSibling.classList.remove("show__icon")
 /*             validInput($password.nextElementSibling) */
             $passwordError.innerHTML = ""
             break;
@@ -150,18 +162,21 @@ $password2.addEventListener('blur', function(){
         case $password2.value.length == "":
             $password2Error.innerHTML = 'Reingresa tu contraseña'
             $password2.classList.add('invalido')
+            $password2.nextElementSibling.classList.add("show__icon")
 /*             invalidInput($password2.nextElementSibling)
  */            break;
         case $password2.value !== $password.value:
             $password2Error.innerHTML = 'Las contraseñas no coinciden';
             $password2.classList.add('invalido')
-            invalidInput($password2.nextElementSibling)
+            $password2.nextElementSibling.classList.add("show__icon")
+            /* invalidInput($password2.nextElementSibling) */
             break;    
         default:
             $password2.classList.remove("invalido");
             $password2.classList.add('valido')
+            $password2.nextElementSibling.classList.remove("show__icon")
 /*             validInput($password2.nextElementSibling)
- */            $password2Error.innerHTML = ""
+ */         $password2Error.innerHTML = ""
             break;
     }
 })
@@ -182,7 +197,6 @@ $terms.addEventListener('click', function (){
         $terms.classList.toggle('valido')
         $terms.classList.remove('invalido')
         $termsError.innerHTML = ""
-     
         })
        
         
@@ -192,18 +206,23 @@ form.addEventListener("submit", function (event) {
     let elementsForm = this.elements
     let errors = false
 
-    for (let i = 0; i < elementsForm.length - 1; i++) {
+    for (let i = 0; i < elementsForm.length -1; i++) {
         if(elementsForm[i].value == ""
-           && elementsForm[i].boton !== "boton"
+           && elementsForm[i].name !== "button"
+           && elementsForm[i].id !== "span"
         || elementsForm[i].classList.contains('invalido')) 
         {
             elementsForm[i].classList.add('invalido')
-/*             invalidInput(elementsForm[i].nextElementSibling)
- */            submitError.innerHTML = "Verifique los datos"
+            elementsForm[i].nextElementSibling.classList.add("show__icon")
+            console.log(elementsForm[i])
+            console.log("-----------------------");
+            console.log(elementsForm[i].nextElementSibling)
+/*             invalidInput(elementsForm[i].nextElementSibling) */
+            submitError.innerHTML = "Verifique los datos"
             submitError.style.color="red"
             errors = true
-        }else{elementsForm[i].style.boxShadow = "none"
-
+        } else {
+            elementsForm[i].style.boxShadow = "none"
         }
         
     }
