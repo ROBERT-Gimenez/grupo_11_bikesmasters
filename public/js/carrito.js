@@ -67,8 +67,8 @@ let carrito = localStorage.getItem('carrito')
 let Precios = document.querySelectorAll('.colum-price')
 let btnVaciar = document.querySelector('button#vaciar-carrito')
 let btnDelete = document.querySelectorAll('button.delete');
-let totales = document.querySelectorAll('p.subtotal')
-let subtotal = document.querySelector('b#subTotal')
+let ProdPrice = document.querySelectorAll('p.subtotal')
+let AllPrices = document.querySelector('b#subTotal')
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 productos.forEach(product=>{
@@ -84,18 +84,19 @@ productos.forEach(product=>{
     
 /* ------------------------------------------- */
 
- let to = []
- totales.forEach(t => {
+ let carro = []
+ ProdPrice.forEach(t => {
         
     if(carrito.includes(t.getAttribute("target"))){
-        to.push(t.textContent)
-        to.reduce((a,b) => {return Number(+a - -b) })
+        carro.push(t.textContent)
+      /*   to.reduce((a,b) => {return Number(+a - -b) }) */
     }
     })
  
-if(to.length >= 1){
-subtotal.innerHTML=to.reduce((a,b) => {return Number(+a - -b) })}
-        
+if(carro.length >= 1){
+    AllPrices.innerHTML=toThousand(carro.reduce((a,b) => {return Number(+a - -b) }))
+
+}        
  /* ------------------------------------------ */
  productos.forEach((product)=>{
     let price = Number(product.children[1].getAttribute("target"))
@@ -107,28 +108,24 @@ subtotal.innerHTML=to.reduce((a,b) => {return Number(+a - -b) })}
      product.onchange = function(event) {
    /*  console.log((+select.value * +price.value))
     console.log((select.value)) */
+    
     Total.innerHTML = toThousand(+select.value * price)
-    
-    
-    totales.forEach(t => {
+    carro=[]
+    ProdPrice.forEach(t => {
         
         if(carrito.includes(t.getAttribute("target"))){
-            let too = to.map(i => {})
-            to.push(t.textContent)
-            to.reduce((a,b) => {return Number(+a - -b) })
             
             
-        }
+            carro.push((t.textContent).replace("." , ""))
+            
+            }
         })
-        console.log(to)
-        subtotal.innerHTML=to.reduce((a,b) => {return Number(+a - -b) })
-     }
+        console.log(carro)
+        
+        AllPrices.innerHTML=toThousand(carro.reduce((a,b) => {return Number(+a + +b) }))}
         
      }})
 
-     
-
-    
  
 /* ------------------------------------------- */
 btnVaciar.addEventListener('click' , () => {

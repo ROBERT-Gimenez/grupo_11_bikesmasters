@@ -31,7 +31,9 @@ $favoritos.forEach(favorito => {
     )
 })
 
-
+    if(!localStorage.getItem('carrito')){
+        localStorage.setItem('carrito')
+    }
     let carrito = JSON.parse(localStorage['carrito'] || '[]');             
               
                 boton_carrito.forEach(btn_Agregar => {
