@@ -84,10 +84,11 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 /* ------------------ACTUUALIZAR EL PRECIO FINAL--------------------- */
             let resta = btn.previousElementSibling.textContent.replace("." , "")
-            let precioFinal = (AllPrices.textContent).replace("." , "")
+            let precioFinal = (AllPrices.textContent.replace("." , "").replace("." , ""))
             AllPrices.innerHTML= toThousand(Number(precioFinal-resta))
-            console.log(items)
-            console.log(resta)
+            console.log(items + " item")
+            console.log(resta + " restaa")
+            console.log(precioFinal + "precioFInal")
             localStorage.setItem("carrito",JSON.stringify(items)) 
             btn.parentElement.style.display="none"
 
