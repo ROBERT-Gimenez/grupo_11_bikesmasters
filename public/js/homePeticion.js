@@ -33,15 +33,21 @@ boton_carrito.forEach(boton => {
         }
     )
 }) */
-
+    
 
     let carrito = JSON.parse(localStorage['carrito'] || '[]');             
-              
+        
+    
         boton_carrito.forEach(btn_Agregar => {
 
             btn_Agregar.addEventListener('click' ,(e) =>{
-            let id_prod = +e.target.getAttribute('target')
-                if(!carrito.includes(id_prod)){
+                console.log(carrito)
+                let id_prod = +e.target.getAttribute('target')
+                let car =(carrito.find(item=>{if(item == id_prod){return item}}))
+                console.log(car!= id_prod)
+                console.log(id_prod)
+                console.log(car+"   caaar")
+                if(car!==id_prod && id_prod !== 0){
             function guardarCarritoEnLocalStorage() {
                 localStorage.setItem('carrito', JSON.stringify((id_prod)));
                             }
@@ -56,4 +62,5 @@ boton_carrito.forEach(boton => {
                 cargarCarritoDeLocalStorage() 
                 console.log(localStorage)
                 }
-                })  })
+                  })
+            })
