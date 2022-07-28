@@ -13,6 +13,7 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Nombre</th>
+                <th scope="col">Total de productos</th>
                 <th id="add"><a href="/admin/categorias/crear">Agregar categoría</a></th>
             </tr>
         </thead>
@@ -30,9 +31,9 @@
                         <input type="text" value="<%= category.nombre %>" disabled> 
                          
                     <% } %>  
-                    <br>
                     <small id="CategoriError" class="alert-msg"><%= (locals.errors && errors.nombre)? errors.nombre.msg : "" %></small> 
-                </td>                
+                </td>
+                <td><%= category.products.length %></td>                 
                 <td class="actions__buttons">
                   <a href="/admin/categorias/editar/<%= category.id  %>" class="btn btn-success">
                     <i id="edit" class="fa-solid fa-pen-to-square"></i>

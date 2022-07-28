@@ -252,7 +252,7 @@ var reg = new RegExp('^[0-9]*$');
             if(InputProduct.files && InputProduct.files[0]){
                 let reader = new FileReader();
                 reader.onload = function(e){
-                ProductPreviw.innerHTML = '<img src="' + e.target.result +'"style="width: 100%;"/>"';
+                ProductPreviw.innerHTML = `<img src="${e.target.result}" style="width: 100%"/>`;
                 };
                 reader.readAsDataURL(InputProduct.files[0]);
                 ImageError.innerHTML = '';

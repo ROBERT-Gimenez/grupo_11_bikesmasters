@@ -167,7 +167,7 @@ footer .social_icon li a {
         color: white;
     }
 
-    footer .social_icon li a i:hover {
+    footer .social_icon li a:hover {
         transform: translateY(-10px);
         color: #CE1212;
         transition: all 0.3s ease-in-out;

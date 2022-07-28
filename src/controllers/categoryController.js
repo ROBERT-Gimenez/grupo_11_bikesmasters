@@ -14,7 +14,6 @@ module.exports = {
                     css: "adminIndex.css",
                     session: req.session,
                     categories,
-                    productos: categories.products,
                     titulo: "Lista de categorías"
                 })
             })
@@ -22,7 +21,9 @@ module.exports = {
 	},
 
     editCategory: (req, res) => {
-        db.Categoria.findAll()
+        db.Categoria.findAll({
+            include: "products"
+        })
             .then((categories) => {
                 db.Categoria.findByPk(req.params.id)
                     .then(categoryId => {
