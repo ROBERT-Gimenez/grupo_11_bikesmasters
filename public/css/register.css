@@ -381,7 +381,9 @@ span.admin a.admin {
 /* Desktop */
 
 @media (min-width: 1024px) {
-
+    .text-danger#termsError{
+        text-align: center;
+    }
     h2 {
         font-size: 2rem;
     }
@@ -488,6 +490,11 @@ span.admin a.admin {
     color: red;
     display: block;
     box-shadow: 0px 0px 2px 2px rgb(255 0 0 / 61%);;
+}
+.input_invalido{
+    color: red;
+    display: block;
+    padding-top: 4px;
 }
 
 .error-input {

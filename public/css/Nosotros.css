@@ -142,13 +142,13 @@ div.links a {
     transform: scale(1);
     display: flex;
     animation:entrada 1s  ease;
-    bottom:20%
+    bottom:15%
     
 }
 
 @keyframes entrada{
     0%{bottom: -100%;}
-    100%{bottom:20%}
+    100%{bottom:15%}
 }
 @media(max-width:1000px){
     section.grupo{

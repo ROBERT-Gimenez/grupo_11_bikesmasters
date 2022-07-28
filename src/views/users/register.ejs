@@ -18,7 +18,7 @@
                         <label for="name">Nombre y Apellido</label>
                         <input type="text" name="name" id="name" class="input-style" placeholder="Ingrese su nombre y apellido" value="<%= (locals.old && old.name)? old.name : "" %>">
                         <span class="icon__alert">
-                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <i class=""></i>
                         </span>
                     <small class="text-danger" id="nameError">
                         <%= (locals.errors && errors.name)? errors.name.msg : "" %>
@@ -28,7 +28,7 @@
                     <label for="email">Correo electrónico</label>
                     <input type="email" name="email" id="email" class="input-style" placeholder="Ingrese su email" value="<%= (locals.old && old.email)? old.email : "" %>">
                     <span class="icon__alert">
-                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <i class=""></i>
                     </span>
                     <small class="text-danger" id="emailError">
                         <%= (locals.errors && errors.email)? errors.email.msg : "" %>

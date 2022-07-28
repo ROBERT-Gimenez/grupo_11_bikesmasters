@@ -28,7 +28,7 @@ p.subtotal{
 }
 b{
     color: black;
-    background: #e91e63;
+    background: #ffffff;
     border-radius: 10px;
 }
 header {
@@ -146,12 +146,16 @@ header nav.menu-barr {
 }
 
 .boton-rosa {
-    background-color: #e91e63;
+    background-color: #ff2e00;
     border-style: none;
     box-shadow: 0px 4px 4px rgb(219 104 129 / 65%);
     width: 30%;
     border-radius: 10px;
+    color: white;
     
+}
+.boton-rosa a {
+    color: white;
 }
 
 div.subtotal-div-info button:hover,
@@ -164,6 +168,8 @@ div.producto-pedido button:hover{
 
 .detalle-subtotal{
     width: 30%;
+    background-color: #d3d3d3;
+    border-radius: 20px;
 }
 
 .subtotal-section{
@@ -206,6 +212,7 @@ div.producto-pedido button:hover{
 @media (max-width: 1440px){
     .contenedor {
         padding: 15px;
+        gap: 1rem;
     }
 
     .botones-carrito{
