@@ -141,14 +141,14 @@ div.links a {
     opacity: 1;
     transform: scale(1);
     display: flex;
-    animation:entrada 1s  ease-in;
+    animation:entrada 1s  ease;
     bottom:20%
     
 }
 
 @keyframes entrada{
     0%{bottom: -100%;}
-    100%{bottom:30%}
+    100%{bottom:20%}
 }
 @media(max-width:1000px){
     section.grupo{
