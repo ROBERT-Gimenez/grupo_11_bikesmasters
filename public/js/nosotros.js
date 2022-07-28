@@ -16,19 +16,22 @@ let Carlos = qs('div.Carlos');
 
 
 let Cerrar = function cerar(a){
-    a.addEventListener('mouseleave' , function(){
         a.classList.remove('active')
-    }) }
+    }
 
 
 imgRobert.addEventListener('click', () => {
         Robert.classList.toggle('active')
+        Cerrar(Carlos)
+        Cerrar(Brian)
     })
 cerrar.addEventListener('click' , () =>{
     Robert.classList.toggle('active')
 })
  imgCarlos.addEventListener('click', () => {
         Carlos.classList.toggle('active')
+        Cerrar(Robert)
+        Cerrar(Brian)
 })
 cerrar2.addEventListener('click' , () =>{
     Carlos.classList.toggle('active')
@@ -36,11 +39,12 @@ cerrar2.addEventListener('click' , () =>{
 
 imgBrian.addEventListener('click', () => {
     Brian.classList.toggle('active')
+    Cerrar(Robert)
+    Cerrar(Carlos)
+
 })
 cerrar3.addEventListener('click' , () =>{
     Brian.classList.toggle('active')
 })
-Cerrar(Robert)
-Cerrar(Carlos)
-Cerrar(Brian)
+
 

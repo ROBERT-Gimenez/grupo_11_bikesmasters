@@ -25,14 +25,13 @@ section.grupo{
     padding: 1rem;
     box-sizing: border-box;
     font-family: 'Nunito Sans', sans-serif;
-
     border-radius: 20px;
     -webkit-text-stroke-width: thin;
     width: 20rem;
     height: 10rem;
     position: absolute;
-    top: 10rem;
-    right: 0rem;
+    top: 18%;
+    right: 0%;
     font-size: 10px;
 
 }
@@ -89,17 +88,18 @@ div.links a {
     background: #FFFFFF;
     display: flex;
     flex-direction: column;
-    width: 340px;
+    width: 50%;
     align-items: center;
     justify-content: center;
     height: 450px;
-    background-color: #fbd8dc;
+    background-color: rgb(245 161 110);
     transition: all 0.5s;
     position: absolute;
     margin: 0 auto;
-    left: 36%;
-    top: 30%;
+    left: 16%;
+    bottom: 100%;
     text-align: center;
+    
 }
 
 
@@ -141,4 +141,46 @@ div.links a {
     opacity: 1;
     transform: scale(1);
     display: flex;
+    animation:entrada 1s  ease-in;
+    bottom:20%
+    
+}
+
+@keyframes entrada{
+    0%{bottom: -100%;}
+    100%{bottom:30%}
+}
+@media(max-width:1000px){
+    section.grupo{
+        top:20%;
+        right: -5%;
+        
+    }
+    img.avatares {
+        height: 3rem;
+        }
+}
+@media(max-width:700px){
+.Robert , .Brian ,.Carlos{
+    width: 80%;
+    left: 10%;
+    }
+    #integrantes.active {
+        opacity: 1;
+        transform: scale(1);
+        display: flex;
+        animation: entrada 1s ease-in;
+        bottom: -10%;
+    }
+    @keyframes entrada{
+        0%{bottom: -100%;}
+        100%{bottom:-10%}
+    }
+    section.grupo{
+        top:29%;
+        
+    }
+    img.avatares {
+    height: 3rem;
+    }
 }
