@@ -422,6 +422,9 @@ header nav input{
     }
 }
 @media (min-width:988px){
+    header{
+        margin-bottom: 0rem;
+    }
     div button.registrar a,
     div button.inicio a{
         color: black;
