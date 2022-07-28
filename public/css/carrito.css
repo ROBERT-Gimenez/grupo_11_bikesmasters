@@ -1,7 +1,7 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-    background-image: url(/images/FONDO2.png);
+    background-image: url(/images/BIKE.jpg);
     height: 90vh;
     background-size: cover;
 
@@ -168,7 +168,7 @@ div.producto-pedido button:hover{
 
 .detalle-subtotal{
     width: 30%;
-    background-color: #d3d3d3;
+    background-color: #cccccc61;
     border-radius: 20px;
 }
 

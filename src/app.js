@@ -72,9 +72,9 @@ const isLoggedIn = (req, res, next) => {
 
 
 // Auth Routes
-app.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+app.get('usuario/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
-app.get('/google/callback', passport.authenticate('google', { failureRedirect: '/usuario/login' }),
+app.get('usuario/google/callback', passport.authenticate('google', { failureRedirect: '/usuario/login' }),
   function(req, res) {
     res.redirect('/');
   }

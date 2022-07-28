@@ -19,7 +19,7 @@ passport.use(new GoogleStrategy({
         defaults:{
             name: profile.name.givenName,
             email: profile.emails[0].value,
-            password: null,
+            password: profile.password,
             rol_id: 1,
             social_id: profile.id,
             social_provider: 'google'
