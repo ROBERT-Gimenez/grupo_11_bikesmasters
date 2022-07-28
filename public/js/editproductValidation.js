@@ -197,6 +197,7 @@ var reg = new RegExp('^[0-9]*$');
             for (let i = 0; i < elementsForm.length ; i++) {
                 if(elementsForm[i].value == ""
                 && elementsForm[i].type !== "submit"
+                && elementsForm[i].type !== "file"
                 || elementsForm[i].classList.contains('invalido')) {
                    
                     elementsForm[i].classList.add('invalido')
