@@ -29,7 +29,7 @@
                     <% products.forEach(product => { %>
                     <div class="producto-pedido" target="<%= product.id %>">
                         <img src="../../../images/products/<%= product.image %>" class="img-carrito-producto">
-                        <p class="price" target="<%= product.price %>"><%- toThousand(product.price) %></p>
+                        <p class="price" target="<%= product.price %>"><b>$</b><%- toThousand(product.price) %></p>
                         <select class="select-cantidad-de-productos" name="amount" id="">
                             <% for (let i= 1; i <= product.stock; i++) { %> 
                            <!--  <option value="0" selected="selected"></option> -->
@@ -51,16 +51,29 @@
 
             <div class="detalle-subtotal">
                 <section class="subtotal-section">
+                    <div class="retiros">
+                    <label for="local" id="label-retiro"><input name="local" type="radio">Retirar por el Local <div class="img-contenedor"><img class="pagos-img" src="/images/pagos/mapas-de-google.gif" alt=""></div></label>
+                    <label for="local" id="label-retiro"><input name="local" type="radio">Enviar a mi Direccion <div class="img-contenedor"><img class="pagos-img" src="/images/pagos/envio.gif" alt=""></div></label>
+                    <label for="local" id="label-retiro"><input name="local" type="radio">Enviar a otra Direccion <div class="img-contenedor"><img class="pagos-img" src="/images/pagos/camino.gif" alt=""></div></label>
+                    </div>
+                    <div class="retiros-pagos">
+                    <label for="pagos" id="label-retiro"><input name="pagos" type="radio">Pago en efectivo<div class="img-contenedor"><img class="pagos-img" src="/images/pagos/bolsa-de-dinero.gif" alt=""></div></label>
+                    <label for="pagos" id="label-retiro"><input name="pagos" type="radio">Pago con targeta<div class="img-contenedor"><img class="pagos-img" src="/images/pagos/tarjeta-de-credito.gif" alt=""></div></label>
+                    <label for="pagos" id="label-retiro"><p>Tiempo estimado de entrega 24hs <div class="img-contenedor"><img class="pagos-img" src="/images/pagos/reloj.gif" alt=""></div></p>
+                    </div></label>
                     <div class="subtotal-div-info">
+                        
                         <h2><b>Precio Final</b></h2>
                         <p><b>$</b><b id="subTotal">0</b></p>
                         <button class="boton-rosa">Finalizar Compra</button>
-                        <label for="local"><input name="local" type="radio">Retirar por el Local</label>
-                        <label for="local"><input name="local" type="radio">Enviar a mi Direccion</label>
-                        
                     </div>
-                    
+                    <div class="pagos">
+
+                    </div>  
                 </section>
+                
+                      
+                
 
             </div>
 

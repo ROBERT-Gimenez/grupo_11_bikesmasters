@@ -22,8 +22,8 @@ P.price{
     color: black;
 }
 p.subtotal{
-    color: white;
-    background: linear-gradient(45deg , #000000, #ff2e00);
+    /* color: white;
+    background: linear-gradient(45deg , #000000, #ff2e00); */
     border-radius: 10px;
 }
 b{
@@ -175,6 +175,11 @@ div.producto-pedido button:hover{
 .subtotal-section{
     width: 100%;
     height: 100%;
+    gap: 3rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem;
+    
 }
 
 .subtotal-div-info{
@@ -183,6 +188,7 @@ div.producto-pedido button:hover{
     justify-content: space-between;
     min-height: 136px;
     margin-left: 5%;
+ 
 }
 
 .subtotal-div-info h2{
@@ -296,6 +302,34 @@ div.producto-pedido button:hover{
         padding-top: 20px;
     }
 } 
-label .local{
+label#label-retiro{
     text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-family: cursive;
+    font-size: larger;
+}
+div.retiros{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+div.retiros-pagos{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-top: solid 2px;
+    padding: 1rem 0;
+    border-bottom: solid 2px;
+}
+div.img-contenedor{
+    width: 2rem;
+    height: 2rem;
+}
+img.pagos-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
