@@ -29,9 +29,9 @@ passport.use(new GoogleStrategy({
     .then(usuario =>{
         return done(null, usuario)
     })
-    .catch(error=>{
+    /* .catch(error=>{
         console.log(error)
-    })
+    }) */
 }
 )
 ))
