@@ -19,10 +19,11 @@ passport.use(new GoogleStrategy({
         defaults:{
             name: profile.name.givenName,
             email: profile.emails[0].value,
-            password: profile.password,
+            password: null,
             rol_id: 1,
             social_id: profile.id,
-            social_provider: 'google'
+            social_provider: 'google',
+            avatar: "user-default.png" || profile.photos[0].value,
         }
     })
     .then(usuario =>{
