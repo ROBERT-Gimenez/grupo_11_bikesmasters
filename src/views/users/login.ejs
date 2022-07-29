@@ -9,14 +9,14 @@
     <video class="LoginVideo" autoplay muted preload loop src="../../../images/Bicycle 3d animation.mp4"></video>
     
     <section class="form-container login">
-        <a href="/usuario/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
+        <!-- <a href="/usuario/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a> -->
 
         <h2>Login</h2>
         <hr>
         <form id="form" action="/usuario/login" method="POST">
-<!--             <div class="google">
-                <button id="boton" class="boton-google">Iniciar sesión con Google <span><img class="google-logo" src="/images/icons8-logo-de-google.svg" alt="google.img" ></span></button>
-            </div> -->
+            <div class="google">
+                <button id="boton" class="boton-google"> <a href="/usuario/google" class="btn btn-danger" id="link-google"></a>Iniciar sesión con Google</a><span><img class="google-logo" src="/images/icons8-logo-de-google.svg" alt="google.img" ></span></button>
+            </div> 
             <div class="input-container">
                 <input type="email" class="input-style" name="email" id="email" placeholder="Ingrese su email">
                 <small id="error_email" class="error-message"><%= (locals.errors && errors.email)? errors.email.msg : "" %></small>

@@ -27,7 +27,14 @@ window.addEventListener('load', () => {
     let $passwordError = qsOne('#error_pass')
     let $form = qsOne('#form')
     let $customError = qsOne('#error_custom')
+    let google = qsOne('button#boton.boton-google')
     let errors
+
+
+    /* google.addEventListener('submit' , function(event){
+        if(google.style.display!=="none"){
+           event.preventDefault(google) 
+        } */
 
     $email.addEventListener('blur', (e) => {
         switch (true) {

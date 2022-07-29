@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const process = require('process');
 require('dotenv').config();
-const PORT = process.env.PORT || 3500;
+const PORT = /*  process.env.PORT  || */ 4000;
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 const bodyParser = require('body-parser');
 const session = require('express-session');
