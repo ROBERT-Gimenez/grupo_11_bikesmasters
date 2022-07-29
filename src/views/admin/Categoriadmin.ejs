@@ -48,7 +48,7 @@
                     <td class="colum-price">$<%- toThousand(product.price) %></td>
                     <td class="colum-stock"><%= product.stock %></td>
                     <td class="no-mobile"><%- product.discount === ""? product.discount = 0 + "%" :`${product.discount}%`%></td>
-                    <td><img src="../../../images/products/<%= product.image %>" alt="" id="imgProduct"></td>
+                    <td class="img__cell"><img src="../../../images/products/<%= product.image %>" alt="" class="imgProduct"></td>
                     
                     <td>
                       <a href="/admin/producto/editar/<%= product.id  %>" class="btn btn-success">
