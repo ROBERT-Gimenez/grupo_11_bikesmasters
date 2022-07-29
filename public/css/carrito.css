@@ -123,7 +123,7 @@ header nav.menu-barr {
 }
 
 .select-cantidad-de-productos{
-    background-color: #FFC4E1;
+    background-color: #f44336;
     border-style: none;
     box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
     border-radius: 10px;
@@ -296,3 +296,6 @@ div.producto-pedido button:hover{
         padding-top: 20px;
     }
 } 
+label .local{
+    text-align: center;
+}
