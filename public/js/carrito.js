@@ -1,5 +1,10 @@
 
 
+
+
+
+let direccion = document.querySelector("input#direccion")
+let SessionId = document.querySelector('div.inline').getAttribute("target")
 let productos = document.querySelectorAll('div.producto-pedido')
 let carrito = localStorage.getItem('carrito')
 let Precios = document.querySelectorAll('.colum-price')
@@ -28,7 +33,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     ProdPrice.forEach(t => {
                
         if(item==(t.getAttribute("target"))){
-            carro.push(t.textContent)
+            carro.push((t.textContent).replace(("$"),("")))
             }   })
             console.log(carro)
         if(carro.length >= 1){
@@ -47,13 +52,13 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 /* --------------SI CAMBIA EL PRODUCTO------------------------ */
         if(product.style.display !== "none"){
         product.onchange = function() {
-        Total.innerHTML = toThousand(+select.value * price)
+        Total.innerHTML = "$" + toThousand(+select.value * price)
         let carro=[]
         
         ProdPrice.forEach(t => {
         JSON.parse(carrito).forEach(item =>{ 
             if(item ==(t.getAttribute("target"))){
-                carro.push((t.textContent).replace("." , ""))    
+                carro.push((t.textContent).replace("." , "").replace(("$"),("")))    
             }   })  })
         AllPrices.innerHTML=toThousand(carro.reduce((a,b) => {return Number(+a + +b) }))
             console.log(carro) 
@@ -64,6 +69,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 /* ------------------Boton para Vaciar Carro----------------------- */
         btnVaciar.addEventListener('click' , () => {
         let carrito = new Array();
+        AllPrices.innerHTML ="0"
         localStorage.setItem("carrito", JSON.stringify(carrito));
         productos.forEach(product=>{
             product.style.display="none"})
@@ -83,9 +89,9 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         }
 
 /* ------------------ACTUUALIZAR EL PRECIO FINAL--------------------- */
-            let resta = btn.previousElementSibling.textContent.replace("." , "")
-            let precioFinal = (AllPrices.textContent.replace("." , "").replace("." , ""))
-            AllPrices.innerHTML= toThousand(Number(precioFinal-resta))
+            let resta = btn.previousElementSibling.textContent.replace("." , "").replace(("$"),(""))
+            let precioFinal = (AllPrices.textContent.replace("." , "").replace("." , "").replace(("$"),("")))
+            AllPrices.innerHTML=toThousand(Number(precioFinal-resta))
             console.log(items + " item")
             console.log(resta + " restaa")
             console.log(precioFinal + "precioFInal")
@@ -97,4 +103,23 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
             })
 
 
+/* -------------------------------------------------------------- */
+/* req.session.id */
 
+fetch("http://localhost:4000/api/Usuario")
+    .then((response)=>response.json())
+    .then((data)=>{ 
+        let user = data.data.find((user) => {if(user.id == SessionId){return user}}) 
+        console.log(user)
+        console.log(SessionId)
+        direccion.addEventListener('click' ,(e) =>{
+        if(user.direccion_id == null){
+            alert("direccion no registrada")
+            e.preventDefault()
+        }
+    })
+        
+    })
+    .catch((error)=> console.log(error))
+
+    

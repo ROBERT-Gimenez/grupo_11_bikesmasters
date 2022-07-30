@@ -35,7 +35,6 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
-    height: 100px;
     width: 100%;
     border-bottom: thin solid lightgrey;
 }
@@ -144,12 +143,13 @@ header nav.menu-barr {
 }
 
 .boton-rosa {
-    background-color: #ff2e00;
+    background-color: #ff0000;
     border-style: none;
     box-shadow: 0px 4px 4px rgb(219 104 129 / 65%);
     width: 30%;
     border-radius: 10px;
     color: white;
+    font-size: 1rem;
     
 }
 .boton-rosa a {
@@ -158,14 +158,14 @@ header nav.menu-barr {
 
 div.subtotal-div-info button:hover,
 div.producto-pedido button:hover{
-    background-color: #f0428d;
+    background-color: #fa830d;
     transition: 0.5s;
     box-shadow: 0px 4px 4px rgb(187 187 187 / 84%);
    
 }
 
 .detalle-subtotal{
-    width: 30%;
+    width: 23%;
     border-radius: 20px;
     border: 1px solid #0000005c;
 }
@@ -184,6 +184,7 @@ div.producto-pedido button:hover{
     justify-content: space-between;
     min-height: 136px;
     margin-left: 5%;
+    padding-bottom: 1rem;
  
 }
 
@@ -212,6 +213,28 @@ div.producto-pedido button:hover{
         padding: 15px;
         gap: 1rem;
     }
+    div.pagos{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 7rem;
+    }
+    div.img-contenedor{
+        width: 7%;
+        height: 5%;
+    }
+    div.img-contenedor2{
+        width: 9%;
+        height: 8%;
+    }
+    div.retiros-pagos{
+        display: flex;
+        flex-direction: column;
+        border-top: solid 2px #0000005c;
+        border-bottom: solid 2px #0000005c;
+        padding: 0.5rem 1rem;
+        gap: 0.5rem;
+    }
 }
 
 @media (max-width: 1440px){
@@ -223,9 +246,53 @@ div.producto-pedido button:hover{
     .botones-carrito{
         padding-top: 10px;
     }
+    
 }
 
-@media (max-width: 768px){
+@media (max-width: 1000px){
+    div.pagos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7rem;
+}
+    div.img-contenedor{
+        width: 7%;
+        height: 5%;
+    }
+    div.img-contenedor2{
+        width: 9%;
+        height: 8%;
+    }
+    div.contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    }
+    div.detalle-subtotal{
+        display: flex;
+        width: 80%;
+    }
+    .subtotal-section{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    div.retiros-pagos {
+        border: none;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        padding: none;
+        
+    }
+    .subtotal-div-info button{
+        font-size: 1.1rem;
+        width: 100%;
+        padding: none;
+        justify-content: center;
+    }
     p {
         font-size: 12px;
     }
@@ -245,11 +312,48 @@ div.producto-pedido button:hover{
     }
 }
 
-@media (max-width: 425px){
+@media (max-width:750px){
+    div.img-contenedor2 {
+        width: 18%;
+        height: 10%;
+    }
+    div.pagos{
+        display: flex;
+        gap: 7rem;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-bottom: 1rem;
+        border-top: 1px solid #0000005e;
+    }
+    .subtotal-div-info button{
+        font-size: 1rem;
+    }
+    .main-carttio{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .subtotal-div-info button{
+        font-size: 0.8rem;
+
+    }
+    label#label-retiro{
+    font-size: 0.8rem;
+    }
+    label#label-retiro {
+        gap: none;
+    }
+
+    .detalle-pedido{
+        width: 80%;
+    }
+   
     .contenedor {
         flex-direction: column;
         align-items: center;
         padding: 15px;
+        
     }
 
     .detalle-pedido {
@@ -267,15 +371,38 @@ div.producto-pedido button:hover{
     }
 
     .subtotal-div-info {
-        margin-left: 0px;
+        margin-left: 2px;
     }
+    
 
     .detalle-subtotal{
         width: 100%;
     }
 }   
 
-@media (max-width: 375px){
+@media (max-width: 600px){
+    div.img-contenedor {
+        width: 10%;
+        height: 5%;
+    }
+    div.pagos{
+        gap: 0px;
+    }
+.subtotal-section {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+div.retiros-pagos {
+    border: none;
+    border-top: 1px solid #0000005e;
+    border-bottom: 1px solid #0000005e;
+}
+    .subtotal-div-info p {
+        text-align: center;
+        font-size: 1.2rem;
+        padding: 0.5rem;
+    }
 
     .img-carrito-producto{
         width: 13%;
@@ -287,7 +414,7 @@ div.producto-pedido button:hover{
     }
 }
 
-@media (max-width: 320px){
+
     .boton-rosa {
         width: 40%;
     }
@@ -300,12 +427,12 @@ div.producto-pedido button:hover{
         padding-bottom: 20px;
         padding-top: 20px;
     }
-} 
+
 label#label-retiro{
     text-align: center;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap:none;
 }
 div.retiros{
     display: flex;
@@ -313,19 +440,10 @@ div.retiros{
     gap: 0.5rem;
     padding: 1rem 1rem;
 }
-div.retiros-pagos{
-    display: flex;
-    flex-direction: column;
-    border-top: solid 2px #0000005c;
-    border-bottom: solid 2px #0000005c;
-    padding: 1rem 1rem;
-}
-div.img-contenedor{
-    width: 2rem;
-    height: 2rem;
-}
-img.pagos-img{
+
+
+img.pagos{
     width: 100%;
     height: 100%;
-    border-radius: 50%;
+   
 }
