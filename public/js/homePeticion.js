@@ -2,6 +2,24 @@ function qs(element) {
     return document.querySelector(element)
 }
 
+const alertCarrito = () => {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 1200,
+            timerProgressBar: false,
+            didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+         
+        Toast.fire({
+            icon: 'success',
+            title: 'Agregado a carrito'
+        })
+}
 let boton_carrito = document.querySelectorAll('.agregar');
 let $favoritos = document.querySelectorAll('.fa-heart');
 
@@ -43,6 +61,7 @@ boton_carrito.forEach(boton => {
             btn_Agregar.addEventListener('click' ,(e) =>{
                 console.log(carrito)
                 let id_prod = +e.target.getAttribute('target')
+                alertCarrito()
                 let car =(carrito.find(item=>{if(item == id_prod){return item}}))
                 console.log(car!= id_prod)
                 console.log(id_prod)
