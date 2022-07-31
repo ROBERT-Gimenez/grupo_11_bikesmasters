@@ -21,9 +21,7 @@
                     <div class="image">
                         <img src="/images/products/<%= product.image %> " alt="Imagen de producto">
                         <% if(product.discount > 0) { %> 
-                        <div class="discount">
-                            <h4>- <%= product.discount %>%</h4>
-                        </div>
+                            <p class="discount">- <%= product.discount %>%</p>
                         <% } %> 
                     </div>
                 </div>
@@ -53,9 +51,15 @@
                                 <div class="amount">
                                     <label class="cantidad" for="amount">Cantidad</label>
                                     <select class="cantidad" name="amount" id="">
-                                        <% for (let i= 1; i <= product.stock; i++) { %> 
-                                        <option value="<%= i %>"><%= i %> </option>
-                                        <% } %> 
+                                        <% if(product.stock > 10) { %> 
+                                            <% for (let i= 1; i <= 10; i++) { %> 
+                                            <option value="<%= i %>"><%= i %> </option>
+                                            <% } %>
+                                        <% } else { %>
+                                            <% for (let j= 1; j <= product.stock; j++) { %> 
+                                                <option value="<%= j %>"><%= j %> </option>
+                                                <% } %>
+                                            <% } %>   
                                     </select>
                                     <span class="cantidad"><%= product.stock %> Disponibles</span>
                                 </div>
