@@ -42,12 +42,14 @@ main .filters_routes ul li a{
 
 main section.product_shown .product_image{
     width: 100%;
+    height: 250px;
     margin-bottom: 10px;
     padding: 10px;
 }
 
 main section.product_shown .product_image .image {
     width: 100%;
+    height: 100%;
     position: relative;
 }
 
@@ -120,6 +122,18 @@ main section.product_shown .product_image img {
 .data .data_send p {
     margin-right: 10px;
     color: green;
+}
+
+.data .medios__pago {
+    width: 100%;
+    height: 50px;
+    margin: 10px auto;
+}
+
+.data .medios__pago img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .data .name {

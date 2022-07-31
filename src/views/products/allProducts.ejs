@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../partials/head')  %> 
+
+<body>
+<!-- Header -->
+    <%-include('../partials/header')  %> 
+<!-- Fin header -->
+
+    <main class="home">
+        <div id="titulo" class="titulo-seccion">  
+            <h3 class="destacados">Nuestros productos</h3>
+        </div>
+        <section>
+            <% productos.forEach(product => { %>			 
+                <article>
+                <div  id="imgProducto" class="img-producto">
+                    <a href="/producto/detalle/<%- product.id  %>" class="image"><img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>"></a>                   
+                    <% if (product.discount > 0) { %>
+                        <p class="sale-off">- <%= product.discount + '%'%></p>
+                    <% } %>
+                    <small id="imgProductoError" ></small>
+                </div>
+                <div id="precio" class="product-description">
+                    <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
+                        <% if (product.discount > 0) {%> 
+                        <span class="precio">$<%= toThousand(product.price)%></span>
+                        <% } %> 
+                    </p>
+                    <p class="name"><%- product.name %> </p>
+                    <div class="actions">
+                        <button class="agregar" target="<%= product.id %>">
+                            Añadir
+                            <i class="fa-solid fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                </article> 
+            <% }) %>
+        </section>
+
+    <!-- Footer -->
+        <%- include("../partials/footer") %> 
+    <!-- Fin footer -->
+    </main> 
+    <!-- Scripts locales -->
+    <script src="/js/index.js"></script>
+    <script src="/js/homePeticion.js"></script>
+</body>
+</html>

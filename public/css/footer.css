@@ -68,6 +68,12 @@ footer .columns ul li a {
     padding: 5px 0px 0px;
 }
 
+footer .columns ul li.pagos img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 footer .contact__icons {
     display: flex;
     align-items: center;
@@ -147,6 +153,10 @@ footer .social_icon li a {
 
     footer .columns ul li a {
         letter-spacing: 2px;
+    }
+
+    footer .columns ul li.pagos {
+        height: 30px;
     }
 
     footer .social_icon {
