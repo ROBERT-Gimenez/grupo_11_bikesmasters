@@ -38,13 +38,19 @@ window.addEventListener("load",() => {
 
         /*SELECCION DE PROVINCIA*/
 
+     /*    console.log(data)
+        for (let index = 0; index < data.provincias.length; index++) {
+            $provincia.innerHTML += `<option value="${data.provincias[index].id}">${data.provincias[index].nombre}</option>`
+            } */
+
     fetch("https://apis.datos.gob.ar/georef/api/provincias")
     .then((response)=>response.json())
     .then((data)=>{ 
-        let Provincias = data.provincias;
-        console.log(Provincias);
-        for (let index = 0; index < Provincias.length; index++) {
-            $provincia.innerHTML += `<option value="${Provincias[index].id}">${Provincias[index].nombre}</option>`
+        
+        /* let Provincias = data.provincias; */
+        console.log(data.provincias);
+        for (let index = 0; index < data.provincias.length; index++) {
+            $provincia.innerHTML += `<option value="${data.provincias[index].id}">${data.provincias[index].nombre}</option>`
             }
         
     })

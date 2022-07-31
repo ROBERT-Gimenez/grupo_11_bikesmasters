@@ -447,3 +447,20 @@ img.pagos{
     height: 100%;
    
 }
+.div-btn-direccion{
+    display: flex;
+    gap:1rem;
+}
+.btns-direccion{
+    background-color: #ff0000;
+    border-style: none;
+    box-shadow: 0px 4px 4px rgb(219 104 129 / 65%);
+    width: 30%;
+    border-radius: 10px;
+    color: white;
+    font-size: 0.8rem;
+}
+div.newDireccion{
+    display: flex;
+    flex-direction: column;
+}

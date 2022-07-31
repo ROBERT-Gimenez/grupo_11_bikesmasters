@@ -1,9 +1,7 @@
 
 
-
-
-
 let direccion = document.querySelector("input#direccion")
+let newDireccion = document.querySelector("input#newdireccion")
 let SessionId = document.querySelector('div.inline').getAttribute("target")
 let productos = document.querySelectorAll('div.producto-pedido')
 let carrito = localStorage.getItem('carrito')
@@ -105,6 +103,34 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 /* -------------------------------------------------------------- */
 /* req.session.id */
+function redirect(){
+    window.location.href = "http://localhost:4000/usuario/perfil/agregar/direccion/:id";
+}
+
+function Direccion(msg) {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: false,
+        timerProgressBar: false,
+        html:`
+        <div class="div-btn-direccion">
+        <button class="btns-direccion" onClick="redirect()" >
+        Añadir Direccion
+        </button>
+        <button class="btns-direccion" >
+        Omitir
+        </button></div>`,
+        buttonsStyling:true,
+        allowOutsideClick:true
+        
+      })              
+      Toast.fire({
+        icon: 'warning',
+        title: `${msg}`
+      })
+}
 
 fetch("http://localhost:4000/api/Usuario")
     .then((response)=>response.json())
@@ -114,12 +140,56 @@ fetch("http://localhost:4000/api/Usuario")
         console.log(SessionId)
         direccion.addEventListener('click' ,(e) =>{
         if(user.direccion_id == null){
-            alert("direccion no registrada")
+            Direccion("direccion no registrada")
             e.preventDefault()
         }
     })
         
     })
     .catch((error)=> console.log(error))
+
+/* ------------------------------------------------------ */
+async function direccionNew(){
+
+    const { value: formValues } = await Swal.fire({
+        title: 'Direccion',
+        html:
+        '<div class="newDireccion">'+
+          '<label id="">Nueva Direccion</label><input id="swal-input1" class="swal2-input">' +
+          '<label id="">Quien lo Recibe?</label><input id="swal-input2" class="swal2-input">'+
+        '</div>',
+        buttonsStyling:true,
+        focusConfirm: false, 
+        showCancelButton: true,        
+        preConfirm: () => {
+            if(document.getElementById('swal-input1').value == "" ||
+            document.getElementById('swal-input2').value == ""){
+                return "Datos invalidos"
+            }else{
+                return ( 
+            "En  "+document.getElementById('swal-input1').value+ "   recibira   " +
+            document.getElementById('swal-input2').value
+               )
+        }
+       
+            }
+
+         
+      })
+            if (formValues) {
+                    Swal.fire(JSON.stringify(formValues))
+                }
+           
+      
+        
+}
+
+newDireccion.addEventListener('click' , (e)=>{
+    direccionNew()
+    console.log( (direccionNew().then(result => {return result})))
+    /* if(formValues == "datos invalido"){
+        e.preventDefault()
+    } */
+})
 
     
