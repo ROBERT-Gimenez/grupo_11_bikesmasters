@@ -42,6 +42,7 @@ window.addEventListener("load",() => {
     .then((response)=>response.json())
     .then((data)=>{ 
         let Provincias = data.provincias;
+        console.log(Provincias);
         for (let index = 0; index < Provincias.length; index++) {
             $provincia.innerHTML += `<option value="${Provincias[index].id}">${Provincias[index].nombre}</option>`
             }
@@ -157,7 +158,7 @@ window.addEventListener("load",() => {
         $postal.addEventListener("blur",()=>{
             switch(true){
                 case !$postal.value.trim():
-                    $inputPostalError.innerHTML = "Ingrese su Codigo Postal"
+                    $inputPostalError.innerHTML = "Ingrese su código postal"
                     $postal.classList.add("is-invalid");
                 break;
 

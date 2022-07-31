@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include ('../partials/head') %>
-    <script src="/js/homePeticion.js" defer></script>
+    <%- include('../partials/head')  %> 
 
 <body>
-
-    <%- include ('../partials/header') %> 
+<!-- Header -->
+    <%-include('../partials/header')  %> 
+<!-- Fin header -->
 
     <main class="home">
-        <div class="titulo-seccion">  
-            <h3>Resultados de: <%- keyword %> </h3>
+        <div id="titulo" class="titulo-seccion">  
+            <h3 class="destacados">Nuestros productos</h3>
         </div>
         <section>
-
-            <% if (resultado.length > 0) { %>
-             
-
-            <% resultado.forEach(product => { %>			 
+            <% productos.forEach(product => { %>			 
                 <article>
-                <div class="img-producto">
+                <div  id="imgProducto" class="img-producto">
                     <a href="/producto/detalle/<%- product.id  %>" class="image"><img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>"></a>                   
                     <% if (product.discount > 0) { %>
                         <p class="sale-off">- <%= product.discount + '%'%></p>
                     <% } %>
+                    <small id="imgProductoError" ></small>
                 </div>
-                <div class="product-description">
+                <div id="precio" class="product-description">
                     <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
                         <% if (product.discount > 0) {%> 
                         <span class="precio">$<%= toThousand(product.price)%></span>
@@ -41,17 +38,14 @@
                 </div>
                 </article> 
             <% }) %>
-
-            <% } else { %>
-
-                <div class="titulo-seccion">  
-                    <h3>No se encontraron productos </h3>
-                </div>
-
-             <% } %> 
         </section>
-    
-        <%- include('../partials/footer')  %> 
 
+    <!-- Footer -->
+        <%- include("../partials/footer") %> 
+    <!-- Fin footer -->
+    </main> 
+    <!-- Scripts locales -->
+    <script src="/js/index.js"></script>
+    <script src="/js/homePeticion.js"></script>
 </body>
 </html>

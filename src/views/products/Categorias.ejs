@@ -7,38 +7,39 @@
     <%- include('../partials/header') %> 
     
     <main class="home">
-        <div id="titulo" class="titulo-seccion">  
-            <h3 class="destacados"><%= categoria.nombre  %></h3>
-            <small id="tituloError"></small>
-        </div>
-        <section>
-            <% product.forEach(product => { %>			 
-                <article>
-                <div  id="imgProducto" class="img-producto">
-                    <a href="/producto/detalle/<%- product.id  %>" class="image"><img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>"></a>                   
-                    <% if (product.discount > 0) { %>
-                        <p class="sale-off">- <%= product.discount + '%'%></p>
-                    <% } %>
-                    <small id="imgProductoError" ></small>
-                </div>
-                <div id="precio" class="product-description">
-                    <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
-                        <% if (product.discount > 0) {%> 
-                        <span class="precio">$<%= toThousand(product.price)%></span>
-                        <% } %> 
-                    </p>
-                    <p class="name"><%- product.name %> </p>
-                    <div class="actions">
-                        <button class="agregar" target="<%= product.id %>">
-                            Añadir
-                            <i class="fa-solid fa-cart-plus"></i>
-                        </button>
+            <div id="titulo" class="titulo-seccion">  
+                <h3 class="destacados"><%= categoria.nombre  %></h3>
+                <small id="tituloError"></small>
+            </div>
+            <section>
+                <% product.forEach(product => { %>			 
+                    <article>
+                    <div  id="imgProducto" class="img-producto">
+                        <a href="/producto/detalle/<%- product.id  %>" class="image"><img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>"></a>                   
+                        <% if (product.discount > 0) { %>
+                            <p class="sale-off">- <%= product.discount + '%'%></p>
+                        <% } %>
+                        <small id="imgProductoError" ></small>
                     </div>
-                </div>
-                </article> 
-            <% }) %>
-        </section>
+                    <div id="precio" class="product-description">
+                        <p class="precio-discount">$<%- toThousand(product.price - product.price * product.discount /100)%>
+                            <% if (product.discount > 0) {%> 
+                            <span class="precio">$<%= toThousand(product.price)%></span>
+                            <% } %> 
+                        </p>
+                        <p class="name"><%- product.name %> </p>
+                        <div class="actions">
+                            <button class="agregar" target="<%= product.id %>">
+                                Añadir
+                                <i class="fa-solid fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    </article> 
+                <% }) %>
+            </section>
         <%- include("../partials/footer") %> 
+    </main>  
         <script src="/js/index.js"></script>
         <script src="/js/homePeticion.js"></script>
     </body>

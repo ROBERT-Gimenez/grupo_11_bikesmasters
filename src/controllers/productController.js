@@ -2,10 +2,22 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const db =require('../database/models');
 
 module.exports = {
+    allProducts: async (req, res) => {
+        try {
+            let productos = await db.Producto.findAll()
+            res.render('products/allProducts', {
+                productos,
+                css: "home.css",
+                session: req.session,
+                titulo: "Nuestro productos",
+                toThousand
+            })
+        } catch (error) {
+            res.send(error)
+        }
+    },
 	// Detail - Detail from one product
 	detalle: (req, res) => {
-/* 		let product = products.find(product => product.id === +req.params.id);
- */		
         db.Producto.findByPk(+req.params.id, {
             include: "category"
         })

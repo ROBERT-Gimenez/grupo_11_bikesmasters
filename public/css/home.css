@@ -24,17 +24,19 @@ main.home a {
 main div.banner {
     display: none;
 }
+
 .ofertas{
     font-size: 2rem;
     position:relative;
     font-weight: bold;
-    color: orangered;
+    color: var(--naranja);
     text-align: center;
 }
+
 .ofertas::before{
     position: absolute;
     content: attr(data-context);
-    text-shadow: 0px 0px 20px orangered;
+    text-shadow: 0px 0px 20px var(--naranja);
     filter: blur(10px) brightness(0);
     animation: fliker 2s linear infinite;
     animation-delay: 1s; 
@@ -43,7 +45,8 @@ main div.banner {
     font-size: 2rem;
     position:relative;
     font-weight: bold;
-    color: rgb(10, 255, 251);
+/*     color: rgb(10, 255, 251); */
+    color: var(--boton2);
     text-align: center;
 }
 .destacados::before{
@@ -229,6 +232,7 @@ main section article p.precio-discount .precio{
     letter-spacing: 1px;
     border-radius: 6px;
     box-shadow: 1px 4px 12px -4px rgb(0 0 0);
+    cursor: pointer;
 }
 
 .actions .agregar i {
