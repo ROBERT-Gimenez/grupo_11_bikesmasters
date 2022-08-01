@@ -10,7 +10,8 @@ let btnVaciar = document.querySelector('button#vaciar-carrito')
 let btnDelete = document.querySelectorAll('button.delete');
 let ProdPrice = document.querySelectorAll('p.subtotal')
 let AllPrices = document.querySelector('b#subTotal')
-let inputprice = document.querySelector('input#pago_efectivo')
+let inputEfectivo = document.querySelector('input#pago_efectivo')
+let inputtarjeta = document.querySelector('input#pago_tarjeta')
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
@@ -179,6 +180,8 @@ async function direccionNew(){
       })
             if (formValues) {
                     Swal.fire(JSON.stringify(formValues))
+                }else{
+                    return false
                 }
            
       
@@ -187,7 +190,10 @@ async function direccionNew(){
 
 newDireccion.addEventListener('click' , (e)=>{
     direccionNew()
-    console.log(direccionNew())
+    if(direccionNew){
+        e.preventDefault()
+    }
+    console.log(document.getElementById('swal-input2').value + "holaaa")
     /* if(formValues == "datos invalido"){
         e.preventDefault()
     } */
@@ -201,21 +207,21 @@ fetch("http://localhost:4000/api/Usuario")
     
    
 
-inputprice.addEventListener('click' , (e) =>{
-async function efectivo(){
+inputtarjeta.addEventListener('click' , (e) =>{
+async function Tarjeta(){
 
 
 const inputOptions = new Promise((resolve) => {
     setTimeout(() => {
       resolve({
-        'en efectivo': 'efectivo en caja',
-        'con Mercado Pago': 'Mercado Pago',
-        'con Trans. Bancaria': 'Tras. Bancaria'
+        'Con Debito': 'Tarjeta de Debito',
+        'Con Tarjeta de Credio': 'Tarjeta de Credito',
+        'Con Tras. Bancaria':'Trans. Bancaria'
       })
     }, 1000)
   })
   
-  const { value: efectivo } = await Swal.fire({
+  const { value: Tarjeta } = await Swal.fire({
     title: 'Selecciona metodo',
     input: 'radio',
     width:'50%',
@@ -232,15 +238,15 @@ const inputOptions = new Promise((resolve) => {
  
   
   
-  if (efectivo) {
+  if (Tarjeta) {
     Swal.fire({ html: `Se enviaran los detalles a :${user.email} ` })
   }else{
     newDireccion.checked = off
     e.preventDefault()
-  }    
+  }
 }
  
-efectivo()
+Tarjeta()
 
   })
 })
