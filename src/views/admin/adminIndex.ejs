@@ -37,7 +37,7 @@
             </thead>
             <tbody>
                 <% products.forEach(product => { %>
-                  <tr>
+                  <tr id="<%= product.id %>">
                     <th scope="row" class="no-mobile"><%= product.id %></th>
                     <td><%= product.name %></td>
                     <td class="no-mobile"><%= product.marca %></td>

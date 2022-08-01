@@ -53,9 +53,8 @@ module.exports = {
                 name , description , marca , discount , stock , price, categoryid ,user_id:+req.session.user.id,
                 image: req.file ? req.file.filename : "product-default-4.png",
                 
-            }).then(() => {
-                
-            res.redirect('/admin')   
+            }).then((producto) => {
+            res.redirect(`/admin#${producto.id}`)   
             }).catch((error)=>{res.send(error)})
 
         })} else {
@@ -124,8 +123,8 @@ module.exports = {
                     stock: req.body.stock,
                     image: req.file? req.file.filename : product.image,
             },{ where: { id: req.params.id,}
-            }).then(() => {
-              res.redirect('/admin')
+            }).then((producto) => {
+              res.redirect(`/admin#${producto.id}`)
             }).catch(error => console.log(error))
             }) 
           }else{
