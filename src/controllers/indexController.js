@@ -35,6 +35,37 @@ module.exports = {
                 toThousand,
                 session: req.session})
             })  })
+/*             let busqueda = req.query.keywords.toLowerCase()
+            try {
+            let products = await db.Producto.findAll({
+                where: {
+                    [Op.or]: [
+                        { marca: {[Op.substring]: busqueda}},
+                        { name: {[Op.substring]: busqueda}}
+                    ]
+                }
+            })
+            let categories = await db.Categoria.findAll({
+                include: ["products"],
+                where: {
+                    [Op.or]: [
+                        { nombre: {[Op.substring]: busqueda}},
+                    ]
+                }
+            })
+            res.send([products, busqueda])
+            res.render ('products/searchResults',{
+                titulo: 'Bikesmasters',
+                css: 'home.css',
+                resultado: products,
+                keyword: req.query.keywords,
+                toThousand,
+                session: req.session})
+
+
+        } catch (error) {
+            res.send(error)
+        } */
             
     },
     Nosotros: (req, res)=> {

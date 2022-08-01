@@ -23,7 +23,7 @@
             </thead>
             <tbody>
                 <% users.forEach(user => { %>
-                  <tr>
+                  <tr id="<%= user.id %>">
                     <th scope="row" class="no-mobile"><%= user.id %></th>
                     <td><%= user.name %></td>
                     <td class="no-mobile"><%= user.email %></td>
