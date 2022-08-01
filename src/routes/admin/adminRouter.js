@@ -53,12 +53,12 @@ router.delete('/categorias/eliminar/:id', userSessionCheck, adminSession, catego
 /******* Routes users **********/
 
 // Muestra todos los usuarios
-router.get('/usuarios', adminUsersController.list)
+router.get('/usuarios', userSessionCheck, adminSession, adminUsersController.list)
 // Detalle de usuario y edicion de usuario
-router.get('/usuarios/detalle/:id', adminUsersController.userDetail)
+router.get('/usuarios/detalle/:id', userSessionCheck, adminSession, adminUsersController.userDetail)
 // Edicion de usuario
 router.put('/usuarios/:id', adminUsersController.userUpdate)
 // Dar de baja usuario
-/* router.post('/usuario/baja/:id', adminUsersController.userDown) */
+router.delete('/usuarios/baja/:id', adminUsersController.userDelete)
 
 module.exports = router;
