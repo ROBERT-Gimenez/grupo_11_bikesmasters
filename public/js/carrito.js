@@ -10,6 +10,7 @@ let btnVaciar = document.querySelector('button#vaciar-carrito')
 let btnDelete = document.querySelectorAll('button.delete');
 let ProdPrice = document.querySelectorAll('p.subtotal')
 let AllPrices = document.querySelector('b#subTotal')
+let inputprice = document.querySelector('input#pago_efectivo')
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
@@ -186,10 +187,60 @@ async function direccionNew(){
 
 newDireccion.addEventListener('click' , (e)=>{
     direccionNew()
-    console.log( (direccionNew().then(result => {return result})))
+    console.log(direccionNew())
     /* if(formValues == "datos invalido"){
         e.preventDefault()
     } */
 })
-
+/*--------------------------------------------*/ 
+fetch("http://localhost:4000/api/Usuario")
+    .then((response)=>response.json())
+    .then((data)=>{ 
+        let user = data.data.find((user) => {if(user.id == SessionId){return user}}) 
+        console.log(user)
     
+   
+
+inputprice.addEventListener('click' , (e) =>{
+async function efectivo(){
+
+
+const inputOptions = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        'en efectivo': 'efectivo en caja',
+        'con Mercado Pago': 'Mercado Pago',
+        'con Trans. Bancaria': 'Tras. Bancaria'
+      })
+    }, 1000)
+  })
+  
+  const { value: efectivo } = await Swal.fire({
+    title: 'Selecciona metodo',
+    input: 'radio',
+    width:'50%',
+    showCloseButton: true,
+    showCancelButton: true,
+    inputOptions: inputOptions,
+    inputValidator: (value) => {
+      if (!value) {
+        return 'Selleccione una opcion'
+
+      }
+    }
+  })
+ 
+  
+  
+  if (efectivo) {
+    Swal.fire({ html: `Se enviaran los detalles a :${user.email} ` })
+  }else{
+    newDireccion.checked = off
+    e.preventDefault()
+  }    
+}
+ 
+efectivo()
+
+  })
+})
