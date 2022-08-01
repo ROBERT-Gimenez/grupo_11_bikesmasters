@@ -9,6 +9,7 @@
     <main>   
         <table>
             <caption>Lista usuarios registrados</caption>
+            <caption>Total de usuarios: <%= users.length %></caption>
             <thead>
                 <tr>
                     <th scope="col">ID</th>
@@ -35,7 +36,7 @@
                       <a href="/admin/usuarios/detalle/<%= user.id %>" class="btn btn-success">
                         <i id="edit" class="fa-solid fa-pen-to-square"></i>
                       </a>
-                      <form action="/admin/<%= user.id %>?_method=DELETE" method="post">
+                      <form action="/admin/usuarios/baja/<%= user.id %>?_method=DELETE" method="post">
                         <button class="erase" type="submit">
                           <i id="trash" class="fa-solid fa-trash-can"></i>
                         </button>

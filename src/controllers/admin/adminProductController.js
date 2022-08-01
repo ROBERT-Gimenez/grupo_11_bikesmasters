@@ -151,19 +151,22 @@ module.exports = {
           }
     },
     /* Recibe la info del producto a eliminar */
-    productDelete: (req, res) => {
-        let ProductoId = +req.params.id;
+    productDelete: async (req, res) => {
+        let productId = +req.params.id
+        try {
+            let product = await db.Producto.findByPk(productId)
+            if(fs.existsSync(path.join(__dirname, '../../../public/images/products/' + product.image)) && product.image !== "product-default-4.png") {
+                fs.unlinkSync(path.join(__dirname, '../../../public/images/products/' + product.image))
+                let productDelete = await db.Producto.destroy({ where: { id: productId } })
+            } else {
+                let productDelete = await db.Producto.destroy({ where: { id: productId } })
+            }
 
-        db.Producto.destroy({
-        where: { id: ProductoId },
-        }).then((result) => {
-        if (result) {
-        res.redirect("/admin");
-        } else {
-        res.send("Ups algo rompí");
+            res.redirect("/admin")
+
+        } catch (error) {
+            res.send(error)
         }
-        })
-        .catch((error) => res.send(error));
     },
     /* Recibe los datos del producto a buscar */
     productSearch: (req, res) => {
