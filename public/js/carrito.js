@@ -138,7 +138,6 @@ fetch("http://localhost:4000/api/Usuario")
     .then((response)=>response.json())
     .then((data)=>{ 
         let user = data.data.find((user) => {if(user.id == SessionId){return user}}) 
-        console.log(user)
         console.log(SessionId)
         direccion.addEventListener('click' ,(e) =>{
         if(user.direccion_id == null){
@@ -225,13 +224,13 @@ const inputOptions = new Promise((resolve) => {
     title: 'Selecciona metodo',
     input: 'radio',
     width:'50%',
-    showCloseButton: true,
     showCancelButton: true,
+    allowOutsideClick:false,
+    stopKeydownPropagation:false,
     inputOptions: inputOptions,
     inputValidator: (value) => {
       if (!value) {
         return 'Selleccione una opcion'
-
       }
     }
   })
@@ -241,12 +240,25 @@ const inputOptions = new Promise((resolve) => {
   if (Tarjeta) {
     Swal.fire({ html: `Se enviaran los detalles a :${user.email} ` })
   }else{
-    newDireccion.checked = off
+
     e.preventDefault()
   }
 }
- 
 Tarjeta()
 
-  })
+})
+ 
+})
+
+/* ------------------------------------------- */
+
+let Finalizar = document.querySelector('button.Finalizar')
+
+Finalizar.addEventListener('click' , () => {
+    productos.forEach(product=>{
+        let product_id = product.getAttribute("target");
+            if(product.style.display="flex"){
+                
+                }
+            })
 })
