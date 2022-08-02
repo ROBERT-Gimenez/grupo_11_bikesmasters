@@ -27,7 +27,7 @@ module.exports = {
                 include: ['UserRol']
             })
             const rols = await db.UserRol.findAll()
-            res.render(`admin/users/adminUserEdit#${req.params.id}`, {
+            res.render(`admin/users/adminUserEdit`, {
                 titulo: "Editar usuario",
                 userEdit,
                 users,

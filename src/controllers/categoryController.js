@@ -84,7 +84,7 @@ module.exports = {
         db.Categoria.create({
             nombre: req.body.nombre
         })
-            .then(() => res.redirect('/admin/categorias'))
+            .then((category) => res.redirect(`/admin/categorias#${category.id}`))
             .catch((error) => {res.send(error)})
         } else {res.render('admin/categories/adminCreateCategory', {
             css: "addProduct.css",

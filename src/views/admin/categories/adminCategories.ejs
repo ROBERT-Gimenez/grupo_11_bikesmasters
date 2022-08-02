@@ -18,7 +18,7 @@
         </thead>
         <tbody>
             <% categories.forEach(category => { %>
-              <tr>
+              <tr id="<%= category.id %> ">
                 <th scope="row"><%= category.id %></th>
                 <td><%= category.nombre %> </td>        
                 <td><%= category.products.length %> </td>        
