@@ -229,7 +229,7 @@ main section.product_shown .product_image img {
     font-size: 1.2rem;
     margin: 5px 0px;
     text-decoration: underline;
-    font-family: var(--font-oswald);
+    font-family: var(--font-roboto);
     letter-spacing: 2px;
 }
 
@@ -317,12 +317,12 @@ main section.product_shown .product_image img {
     }
 
     main .details .name_article {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
         font-weight: 800;
     }
 
     main .details .description p {
-        font-size: 1.2rem;
-        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        font-family: var(--font-roboto)
     }
 }
