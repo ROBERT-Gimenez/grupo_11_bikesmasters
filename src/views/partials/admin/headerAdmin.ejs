@@ -3,6 +3,12 @@
         <a href="/" id="logo-link"><img src="/images/logo-2.svg" alt="logo-Bikes"></a>
     </div>
     <nav class="menu-barr">
+        <div class="home">
+            <a id="home__link" href="/">
+                <i class="fa-solid fa-house-chimney"></i>
+                <p class="p__home">Home</p>
+            </a>
+        </div>
         <li class="menu">Productos
             <ul class="options show-options">
                 <li class="option-list"><a class="option-link" href="/admin">Ver lista</a></li>
@@ -18,12 +24,12 @@
         <li class="menu">Usuarios
             <ul class="options show-options">
                 <li class="option-list"><a class="option-link" href="/admin/usuarios">Ver lista</a></li>
-                <li class="option-list"><a class="option-link" href="/admin/usuarios/crear">Crear</a></li>
             </ul>
         </li>
     </nav>
     <div class="div-titulo">
-        <h3>Administrador de <%= session.user.name  %> 
-        </h3>
+        <img class="user__avatar" src="../../../../images/profile/<%= session.user.avatar %>" alt="<%= session.user.name %> ">
+        <i class="fa-solid fa-circle"></i>
+        <p><%= session.user.name %> </p>
     </div>
 </header>
