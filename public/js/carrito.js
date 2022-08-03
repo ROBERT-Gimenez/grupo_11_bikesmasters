@@ -189,7 +189,7 @@ async function direccionNew(){
 
 newDireccion.addEventListener('click' , (e)=>{
     direccionNew()
-    if(direccionNew){
+    if(!direccionNew){
         e.preventDefault()
     }
     console.log(document.getElementById('swal-input2').value + "holaaa")
@@ -235,14 +235,6 @@ const inputOptions = new Promise((resolve) => {
     }
   })
  
-  
-  
-  if (Tarjeta) {
-    Swal.fire({ html: `Se enviaran los detalles a :${user.email} ` })
-  }else{
-
-    e.preventDefault()
-  }
 }
 Tarjeta()
 
@@ -252,13 +244,38 @@ Tarjeta()
 
 /* ------------------------------------------- */
 
-let Finalizar = document.querySelector('button.Finalizar')
+let Finalizar = document.querySelector('button#Finalizar')
 
 Finalizar.addEventListener('click' , () => {
-    productos.forEach(product=>{
-        let product_id = product.getAttribute("target");
-            if(product.style.display="flex"){
-                
-                }
-            })
-})
+    
+             
+            console.log(carrito)
+        
+            fetch("http://localhost:4000/api/Usuario")
+            .then((response)=>response.json())
+            .then((data)=>{ 
+                let user = data.data.find((user) => {if(user.id == SessionId){return user}}) 
+                console.log(user)
+function Finaliza(fin) {
+    
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: false,
+        timerProgressBar: false,
+        buttonsStyling:true,
+        allowOutsideClick:true
+        
+      })    
+    JSON.parse(carrito).forEach(item =>{  })     
+     Swal.fire({ html: `
+     <div class="div-btn-direccion">
+    ${JSON.parse(carrito)}
+     </div>GRACIAS POR SU COMPRA ! 
+    Se enviaran los detalles a tu correo  : ${user.email} `,
+    title:`${fin}` })
+
+}
+Finaliza("Finalizacion de Compra")
+})})
