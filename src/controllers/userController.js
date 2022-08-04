@@ -5,6 +5,7 @@ const db =require('../database/models');
 const fs = require('fs');
 const path = require('path');
 const fetch = require('node-fetch');
+const { profileEnd } = require('console');
 
 /* const userSession = (session.user)
                 userSession.save(()=>{
@@ -136,16 +137,27 @@ module.exports = {
         .then((user)=> {
             let direccionId = user.direccion_id
             return db.Direccione.findByPk(direccionId)
-                .then((direccion) => 
-                res.render('users/userProfile', {
-                    titulo: 'Mi perfil',
-                    css: 'userProfile.css',
-                    user,
-                    session: req.session,
-                    direccion
-                })
-        )})
-            .catch((error) => console.log(error))
+                .then((direccion) => {
+                    return db.Carrito.findAll({where:{usuario_id:userId}})
+                .then((compras) =>{ 
+                    return db.Producto.findAll()
+                    .then((Productos) => {
+                        res.render('users/userProfile', {
+                            titulo: 'Mi perfil',
+                            css: 'userProfile.css',
+                            user,
+                            compras,
+                            toThousand,
+                            Productos,
+                            session: req.session,
+                            direccion
+                        })
+                        
+                    }).catch((err)=>{res.send(err)})             
+                }).catch((err)=>{res.send(err)})
+            }).catch((err)=>{res.send(err)})
+        }).catch((err)=>{res.send(err)})
+            
             
     },
 

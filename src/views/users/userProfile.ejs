@@ -45,47 +45,30 @@
         </article>
         <div class="user-products" id="div-profile">
             <h2>Mis Compras</h2>
+             <% compras.forEach(item=> { %>
+                    
+                <% Productos.forEach(product=> { %>
+                    <% if (product.id == item.product_id) {%>
             <div class="recent-product">
+               
                 <div class="image-product">
-                    <img src="../../../images/products/product-default-4.png" alt="">
+                    <img src="../../../images/products/<%= product.image  %>" alt="">
                 </div>
                 <div class="product-detail">
-                    <p>Nombre: Frenos</p>
-                    <p>Precio: $$$$$$</p>
-                    <p>Detalle: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, reiciendis!</p>
+                    <p>Nombre: <%- product.name %></p>
+                    <p>Precio: $<%= toThousand(product.price)%></p>
+                    <p>Detalle: <%= product.description %></p>
                 </div>
+
+            
             </div>
-            <div class="recent-product">
-                <div class="image-product">
-                    <img src="../../../images/products/product-default-4.png" alt="">
-                </div>
-                <div class="product-detail">
-                    <p>Nombre: Frenos</p>
-                    <p>Precio: $$$$$$</p>
-                    <p>Detalle: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, reiciendis!</p>
-                </div>
-            </div>
-            <div class="recent-product">
-                <div class="image-product">
-                    <img src="../../../images/products/casco.jpg" alt="">
-                </div>
-                <div class="product-detail">
-                    <p>Nombre: Frenos</p>
-                    <p>Precio: $$$$$$</p>
-                    <p>Detalle: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, reiciendis!</p>
-                </div>
-            </div>
-            <div class="recent-product">
-                <div class="image-product">
-                    <img src="../../../images/products/product-default-4.png" alt="">
-                </div>
-                <div class="product-detail">
-                    <p>Nombre: Frenos</p>
-                    <p>Precio: $$$$$$</p>
-                    <p>Detalle: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, reiciendis!</p>
-                </div>
-            </div>
+             
+        <% } %>
+            <% }) %>
+            
+            <% }) %>
         </div>
+           
     </main> 
 
     <%- include('../partials/footer') %> 

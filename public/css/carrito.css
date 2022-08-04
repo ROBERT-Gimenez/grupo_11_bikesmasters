@@ -464,3 +464,8 @@ div.newDireccion{
     display: flex;
     flex-direction: column;
 }
+.form-Compra{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

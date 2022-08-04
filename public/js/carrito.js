@@ -150,52 +150,49 @@ fetch("http://localhost:4000/api/Usuario")
     .catch((error)=> console.log(error))
 
 /* ------------------------------------------------------ */
-async function direccionNew(){
-
-    const { value: formValues } = await Swal.fire({
-        title: 'Direccion',
-        html:
-        '<div class="newDireccion">'+
-          '<label id="">Nueva Direccion</label><input id="swal-input1" class="swal2-input">' +
-          '<label id="">Quien lo Recibe?</label><input id="swal-input2" class="swal2-input">'+
-        '</div>',
-        buttonsStyling:true,
-        focusConfirm: false, 
-        showCancelButton: true,        
-        preConfirm: () => {
-            if(document.getElementById('swal-input1').value == "" ||
-            document.getElementById('swal-input2').value == ""){
-                return "Datos invalidos"
-            }else{
-                return ( 
-            "En  "+document.getElementById('swal-input1').value+ "   recibira   " +
-            document.getElementById('swal-input2').value
-               )
-        }
-       
-            }
-
-         
-      })
-            if (formValues) {
-                    Swal.fire(JSON.stringify(formValues))
-                }else{
-                    return false
-                }
-           
+ 
       
         
-}
+
 
 newDireccion.addEventListener('click' , (e)=>{
-    direccionNew()
-    if(!direccionNew){
-        e.preventDefault()
-    }
-    console.log(document.getElementById('swal-input2').value + "holaaa")
-    /* if(formValues == "datos invalido"){
-        e.preventDefault()
-    } */
+    e.preventDefault()
+    function direccionNew(){
+
+        const { value: formValues } = Swal.fire({
+            title: 'Direccion',
+            html:
+            '<div class="newDireccion">'+
+              '<label id="">Nueva Direccion</label><input id="swal-input1" class="swal2-input">' +
+              '<label id="">Quien lo Recibe?</label><input id="swal-input2" class="swal2-input">'+
+            '</div>',
+            buttonsStyling:true,
+            focusConfirm: false, 
+            showCancelButton: true,        
+            preConfirm: () => {
+                if(document.getElementById('swal-input1').value == "" ||
+                document.getElementById('swal-input2').value == ""){
+                    return "Datos invalidos"
+                }
+                }
+    
+             
+          }).then((result) =>{
+            if (result.isConfirmed) {
+                Swal.fire(
+                  'Listo!',
+                  'Direccion Confirmada',
+                  'success'
+                  )
+                  setTimeout(()=>{
+                    
+                    newDireccion.checked=true
+                  },1000)
+                  
+              }
+            })
+        }
+        direccionNew()    
 })
 /*--------------------------------------------*/ 
 fetch("http://localhost:4000/api/Usuario")
@@ -207,7 +204,8 @@ fetch("http://localhost:4000/api/Usuario")
    
 
 inputtarjeta.addEventListener('click' , (e) =>{
-async function Tarjeta(){
+    e.preventDefault()
+function Tarjeta(){
 
 
 const inputOptions = new Promise((resolve) => {
@@ -220,7 +218,7 @@ const inputOptions = new Promise((resolve) => {
     }, 1000)
   })
   
-  const { value: Tarjeta } = await Swal.fire({
+  const { value: Tarjeta } = Swal.fire({
     title: 'Selecciona metodo',
     input: 'radio',
     width:'50%',
@@ -228,12 +226,26 @@ const inputOptions = new Promise((resolve) => {
     allowOutsideClick:false,
     stopKeydownPropagation:false,
     inputOptions: inputOptions,
+    confirmButtonText: 'Confirmar',
     inputValidator: (value) => {
       if (!value) {
         return 'Selleccione una opcion'
       }
     }
-  })
+  }).then((result) =>{
+    if (result.isConfirmed) {
+        Swal.fire(
+          'Listo!',
+          'Estamos Preparando Tu factura',
+          'success'
+          )
+          setTimeout(()=>{
+            
+            inputtarjeta.checked=true
+          },1000)
+          
+      }
+    })
  
 }
 Tarjeta()
@@ -248,34 +260,88 @@ let Finalizar = document.querySelector('button#Finalizar')
 
 Finalizar.addEventListener('click' , () => {
     
-             
-            console.log(carrito)
-        
+ function Finaliza(fin) {               
+           
+     
             fetch("http://localhost:4000/api/Usuario")
             .then((response)=>response.json())
             .then((data)=>{ 
                 let user = data.data.find((user) => {if(user.id == SessionId){return user}}) 
-                console.log(user)
-function Finaliza(fin) {
-    
-    const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: false,
-        timerProgressBar: false,
-        buttonsStyling:true,
-        allowOutsideClick:true
-        
-      })    
-    JSON.parse(carrito).forEach(item =>{  })     
-     Swal.fire({ html: `
-     <div class="div-btn-direccion">
-    ${JSON.parse(carrito)}
-     </div>GRACIAS POR SU COMPRA ! 
-    Se enviaran los detalles a tu correo  : ${user.email} `,
-    title:`${fin}` })
+           
 
+    const { value: formValues } = Swal.fire({
+        title: 'Estas por Comprar',
+        html:
+        `<form class="form-Compra" action="/producto/compras" method="POST" class="form-register">
+        </form>`,
+        buttonsStyling:true,
+        focusConfirm: false, 
+        showCancelButton: true, 
+            }).then((result) =>{
+                let form2 =document.querySelector('.form-Compra2')
+                
+                if (result.isConfirmed) {
+                    
+                    Swal.fire(
+                      'Gracias Por tu Compra!',
+                      `Te enviaremos los detalles a tu correo : ${user.email}`,
+                      'success'
+                      ).then((aviso) =>{
+                        if(aviso.isConfirmed){
+                            
+                            JSON.parse(carrito).forEach(item =>{  
+                                fetch("http://localhost:4000/api/producto")
+                                    .then((response)=>response.json())
+                                    .then((producto)=>{ 
+                                        
+                                            let product = producto.data.find((product) => {if(product.id == +item){return product}})       
+                            
+                            
+                            form2.innerHTML+=`<label for="prod" id="prod">${product.name}</label>
+                            <input type="text" name="prod" id="prod"  value="${product.name}" hidden> ` 
+                            })
+                            })
+                            setTimeout(()=>{
+                                form2 = document.querySelector('.form-Compra2')
+                                console.log(form2)
+                                form2.submit() 
+                                let carrito = new Array();
+                                AllPrices.innerHTML ="0"
+                                localStorage.setItem("carrito", JSON.stringify(carrito));
+                                                  },1000)    
+                            
+                                                      
+                        }
+                      })
+                  }
+                })
+
+   
+})
 }
 Finaliza("Finalizacion de Compra")
-})})
+ 
+JSON.parse(carrito).forEach(item =>{  
+    fetch("http://localhost:4000/api/producto")
+        .then((response)=>response.json())
+        .then((producto)=>{ 
+            
+                let product = producto.data.find((product) => {if(product.id == +item){return product}})       
+
+let form =document.querySelector('.form-Compra')
+
+
+form.innerHTML+=`<label for="prod" id="prod">${product.name}</label>
+<input type="text" name="prod" id="prod"  value="${product.name}" hidden> `
+
+})
+
+})
+
+ /* setTimeout(()=>{
+    form2 = document.querySelector('.form-Compra2')
+    console.log(form2) 
+                      },2000)   */
+                      
+})
+

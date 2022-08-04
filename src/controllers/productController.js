@@ -72,17 +72,30 @@ module.exports = {
 
         })
 
-		/*let namecategori = categorias.find(categori => categori.id === +req.params.id)
-		let Categori = [];
-            products.forEach(product => {
-                if(product.categoryId === +req.params.id){
-                    Categori.push(product)
-                }
-            }
-            );*/
-            
-
             })
 	
-	}
+	},
+    compra:(req,res) =>{
+            db.Producto.findAll({where:{name:req.body.prod}})
+            .then(productos =>{
+              
+                 productos.forEach(item => {
+                    db.Carrito.create({
+                        product_id:item.id,
+                        usuario_id:req.session.user.id
+                    }).then((producto)=>{
+                        return producto
+                    }).catch(erro=>{res.send(erro)})
+                }); 
+                res.redirect('/')
+            }).catch(error =>{ res.send(error)})
+        
+  
+             /*  db.Carrito.bulkCreate(products ,{ignoreDuplicates:true})
+              .then(() => res.redirect('/'))
+              .catch(error => console.log(error))
+           
+ */
+         
+},
 }
