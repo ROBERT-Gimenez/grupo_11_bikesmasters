@@ -7,4 +7,3 @@ app.listen(port)
 
 console.log("listen on port"+ port)
 
-app()
