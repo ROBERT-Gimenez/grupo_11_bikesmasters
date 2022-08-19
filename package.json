@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BrianFloresOk/grupo_11_bikesmasters.git"
+    "url": "git+https://github.com/ROBERT-Gimenez/grupo_11_bikesmasters"
   },
   "author": "bikes_master",
   "license": "ISC",
@@ -17,9 +17,9 @@
     "ignore": "./src/data/*.json"
   },
   "bugs": {
-    "url": "https://github.com/BrianFloresOk/grupo_11_bikesmasters/issues"
+    "url": "https://github.com/ROBERT-Gimenez/grupo_11_bikesmasters/issues"
   },
-  "homepage": "https://github.com/BrianFloresOk/grupo_11_bikesmasters#readme",
+  "homepage": "https://github.com/ROBERT-Gimenez/grupo_11_bikesmasters#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
