@@ -2,8 +2,7 @@
     "version":2 ,
     "buidls":[
         {
-            "sec":"./index.js",
-            "use":"@vercel/node"
+            "src": "*.js", "use": "@vercel/node"
         }
     ],
     "routes":[
